@@ -23,7 +23,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-size: 100%; }
 
-h1 { margin-bottom: 1em; }
+h1 { margin-bottom: 0.5em; }
 p { margin: 1em 0; }
 
 a				 { color: #00a; }
@@ -49,8 +49,11 @@ border-radius: 1em 4em 1em 4em;
 padding: 1em 4em 1em 4em;*/
 }
 ul.posts {
+	text-align: left;
 	list-style-type: none;
+	margin-top: 1em;
 	margin-bottom: 2em;
+	
 }
 
 ul.posts li {
@@ -129,12 +132,18 @@ ul.posts span {
 	font-size: 200%;
 }
 
-.site .header a.extra {
-	color: #aaa;
-	margin-left: 1em;
+.site .header .links {
+	text-align: left;
+	float: left;
+	display: block;
 }
 
-.site .header a.extra:hover {
+.site .header .links a {
+	color: #aaa;
+	margin-right: 1em;
+}
+
+.site .header .links a:hover {
 	color: #000;
 }
 
