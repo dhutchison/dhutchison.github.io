@@ -5,17 +5,16 @@ title: Dev With Imagination
 
 <div id="home" class="home">
 <!--  <h1>Blog Posts</h1>-->
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; 
+  <div class="posts">
+    {% for post in site.posts limit:1 %}
+      <span>{{ post.date | date_to_string }}</span> &raquo; 
+
+	  <span class="meta"><a href="{{ post.url }}">{{ post.title }}</a></span>
       {% if post.content contains '<!--more-->' %}
-	      <a href="{{ post.url }}">{{ post.title }}</a>
-      	  {{ post.content | split:'<!--more-->' | first }}
-      	{% else %}
-	      <span class="meta">{{ post.title }}</span>
+		  {{ post.content | split:'<!--more-->' | first }}
+      {% else %}
       	  {{ post.content }}
-      	{% endif %}
-      </li>
+      {% endif %}
     {% endfor %}
-  </ul>
+  </div>
 </div>

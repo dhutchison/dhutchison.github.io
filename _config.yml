@@ -3,3 +3,6 @@ jobtitle: Software Developer
 location: Scotland
 email: david@devwithimagination.com
 pygments: true
+markdown: maruku
+timezone: Europe/London
+permalink: /blog/:categories/:year/:month/:day/:title/
