@@ -16,7 +16,7 @@ body {
   height: 100%;
 }
 body {
-  background-color: #CCCCCC;
+  background-color: #cccccc;
   color: #333333;
   /*	font: 13.34px Helvetica, Arial, sans-serif;*/
 
@@ -32,9 +32,6 @@ h4,
 h5,
 h6 {
   font-size: 100%;
-}
-h1 {
-  margin-bottom: 0.5em;
 }
 p {
   margin: 1em 0;
@@ -83,7 +80,7 @@ ul.posts span {
 .site {
   /*	background*/
 
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   -moz-border-radius: 1em 4em 1em 4em;
   border-radius: 1em 4em 1em 4em;
   padding: 1em 4em 1em 4em;
@@ -130,12 +127,9 @@ ul.posts span {
 		background-image: linear-gradient(to right, #FFFFFF 0%, #5D83C4 100%);*/
 
 }
-.site .header a {
-  font-weight: bold;
-  text-decoration: none;
-}
 .site .header h1.title {
-  color: #666666;
+  margin-bottom: 0.5em;
+  color: #3c4756;
   font-size: 200%;
 }
 .site .header .links {
@@ -144,11 +138,13 @@ ul.posts span {
   display: block;
 }
 .site .header .links a {
-  color: #aaa;
+  color: #666666;
   margin-right: 1em;
+  font-weight: bold;
+  text-decoration: none;
 }
 .site .header .links a:hover {
-  color: #000;
+  color: #aaaaaa;
 }
 .site .meta {
   color: #aaa;
@@ -168,14 +164,14 @@ ul.posts span {
   float: left;
   margin-right: 3em;
 }
-.site .footer .contact a {
-  color: #8085C1;
+.site .footer a {
+  color: #666666;
+}
+.site .footer a:hover {
+  color: #aaaaaa;
 }
 .site .footer .social {
   float: right;
-}
-.site .footer .social a {
-  color: #8085C1;
 }
 .site .footer .rss {
   margin-top: 1.1em;
@@ -189,9 +185,6 @@ ul.posts span {
   float: none;
   text-align: center;
   margin-top: 7em;
-}
-.site .footer .gratitude a {
-  color: #8085C1;
 }
 /*****************************************************************************/
 /*
@@ -207,7 +200,7 @@ ul.posts span {
   font-style: italic;
   float: left;
   display: inline-block;
-  color: #3C4756;
+  color: #3c4756;
   font-size: 24px;
   font-weight: 400;
   letter-spacing: -1px;
@@ -254,7 +247,7 @@ ul.posts span {
 
   border: 0;
   height: 1px;
-  background: #333;
+  background: #333333;
   background-image: -webkit-linear-gradient(left, #cccccc, #333333, #cccccc);
   background-image: -moz-linear-gradient(left, #cccccc, #333333, #cccccc);
   background-image: -ms-linear-gradient(left, #cccccc, #333333, #cccccc);
@@ -278,11 +271,11 @@ ul.posts span {
 }
 .post pre .terminal {
   border: 1px solid #000;
-  background-color: #333;
+  background-color: #333333;
   color: #FFF;
 }
 .post pre .terminal code {
-  background-color: #333;
+  background-color: #333333;
 }
 .post ul {
   margin-left: 1.35em;

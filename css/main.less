@@ -1,7 +1,16 @@
 /*
  * Variables 
  */
+@mainHeaderColour: #3C4756;
 @mainFontColour: #666666;
+@outerBackgroundColour: #CCCCCC;
+@backgroundColour: #FFFFFF;
+
+@lightBackgroundColour: #333333;
+@standardFontWeight: 400;
+
+@linkColour: @mainFontColour;
+@linkHoverColour: #AAAAAA;
 
 /*****************************************************************************/
 /*
@@ -18,11 +27,11 @@
 html, body { height: 100%; }
 
 body {
-	background-color: #CCCCCC;
-	color: #333333;
+	background-color: @outerBackgroundColour;
+	color: @lightBackgroundColour;
 /*	font: 13.34px Helvetica, Arial, sans-serif;*/
 	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
+	font-weight: @standardFontWeight;
 	font-size: small;
 	text-align: center;
 }
@@ -30,10 +39,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-size: 100%; }
 
-h1 { margin-bottom: 0.5em; }
 p { margin: 1em 0; }
 
-a				 { color: #00a; }
+a { color: #00a; }
 a:hover	 { color: #000; }
 a:visited { color: #a0a; }
 
@@ -77,7 +85,7 @@ ul.posts span {
 
 .site {
 	/*	background*/
-	background-color: #FFFFFF;
+	background-color: @backgroundColour;
 	-moz-border-radius: 1em 4em 1em 4em;
 	border-radius: 1em 4em 1em 4em;
 	padding: 1em 4em 1em 4em;
@@ -125,15 +133,10 @@ ul.posts span {
 		
 		/* W3C Markup, IE10 Release Preview *!/ 
 		background-image: linear-gradient(to right, #FFFFFF 0%, #5D83C4 100%);*/
-	
-	
-		a {
-			font-weight: bold;
-			text-decoration: none;
-		}
 		
 		h1.title {
-			color: @mainFontColour;
+			margin-bottom: 0.5em; 
+			color: @mainHeaderColour;
 			font-size: 200%;
 		}
 		
@@ -143,12 +146,15 @@ ul.posts span {
 			display: block;
 		
 			a {
-				color: #aaa;
+				color: @linkColour;
 				margin-right: 1em;
+				
+				font-weight: bold;
+				text-decoration: none;
 			}
 			
 			a:hover {
-				color: #000;
+				color: @linkHoverColour;
 			}
 		}
 	}
@@ -159,7 +165,7 @@ ul.posts span {
 	
 	.footer {
 		font-size: 80%;
-		color: #666666;
+		color: @mainFontColour;
 		border-top: 4px solid #eee;
 		margin-top: 2em;
 		overflow: hidden;
@@ -172,19 +178,19 @@ ul.posts span {
 		
 		.contact {
 			float: left;
-			margin-right: 3em;
+			margin-right: 3em;	
+		}
 		
-			a {
-				color: #8085C1;
-			}
+		a {
+			color: @linkColour;
+		}
+		
+		a:hover {
+			color:  @linkHoverColour;
 		}
 		
 		.social{
 			float: right;
-
-			 a {
-				color: #8085C1;
-			}
 		}
 		
 		.rss {
@@ -201,10 +207,6 @@ ul.posts span {
 			float: none;
 			text-align: center;
 			margin-top: 7em;
-		
-			a {
-				color: #8085C1;
-			}
 		}
 	}
 }
@@ -217,6 +219,7 @@ ul.posts span {
 
 .profile {
 	@contentSpacing: 200px;
+	@thinLetterSpacing: -1px;
 
 	margin:66px auto 0;
 	padding:0 0 40px;
@@ -226,18 +229,18 @@ ul.posts span {
 		font-style: italic;
 		float: left;
 		display: inline-block;
-		color:#3C4756;
+		color: @mainHeaderColour;
 		font-size:24px;
-		font-weight:400;
-		letter-spacing:-1px
+		font-weight: @standardFontWeight;
+		letter-spacing: @thinLetterSpacing;
 	}
 	
 	h2 {
 		color:#0066AA;
 		padding-left: @contentSpacing;
 		font-size:22px;
-		font-weight:400;
-		letter-spacing:-1px
+		font-weight: @standardFontWeight;
+		letter-spacing: @thinLetterSpacing;
 	}
 
 	h3 {
@@ -245,14 +248,14 @@ ul.posts span {
 		color:#262625;
 		font-size:15px;
 		font-style:italic;
-		font-weight:400;
+		font-weight: @standardFontWeight;
 		padding-bottom: 1em;
 	}
 
 	.date {
 		float:right;
 		background-color:#eeeeee;
-		color:#333333;
+		color:@lightBackgroundColour;
 		font-size:10px;
 		text-transform:uppercase;
 		margin-top: -6em;
@@ -280,11 +283,11 @@ ul.posts span {
 		/* Gradient c1 c2 c1. From http://css-tricks.com/examples/hrs/ */
     	border: 0;
 	    height: 1px;
-	    background: #333;
-	    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc); 
-	    background-image:    -moz-linear-gradient(left, #ccc, #333, #ccc); 
-	    background-image:     -ms-linear-gradient(left, #ccc, #333, #ccc); 
-	    background-image:      -o-linear-gradient(left, #ccc, #333, #ccc); 
+	    background: @lightBackgroundColour;
+	    background-image: -webkit-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
+	    background-image:    -moz-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
+	    background-image:     -ms-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
+	    background-image:      -o-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
 	    margin-top: 1em;
 	    margin-bottom: 1em; 
 	}
@@ -309,11 +312,11 @@ ul.posts span {
 		
 		.terminal {
 			border: 1px solid #000;
-			background-color: #333;
+			background-color: @lightBackgroundColour;
 			color: #FFF;
 			
 			code {
-				background-color: #333;
+				background-color: @lightBackgroundColour;
 			}
 		}
 	}
