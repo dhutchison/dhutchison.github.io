@@ -223,8 +223,37 @@ ul.posts span {
 
 	margin:66px auto 0;
 	padding:0 0 40px;
+	
+	/* H1, H2 and ing used for profile heading */
+	img{
+		float:left;
+		margin-right:25px;
+		background-color: @backgroundColour;
+		border:1px solid #dedede;
+		padding:10px;
+	}
+	h1{
+		margin-top:20px;
+		width:100%;
+		margin-top:25px;
+		color:#475261;
+		font-size:48px;
+		font-weight:400;
+		letter-spacing:@thinLetterSpacing;
+	}
+	h2{
+		margin-top:20px;
+		width:100%;
+		color:#475261;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:20px;
+		font-weight: @standardFontWeight;
+		letter-spacing:-.7px;
+		text-transform:uppercase;
+	}
 
-	h1 {
+	 /* H3-5 used in main profile */
+	h3 {
 		width:@contentSpacing;
 		font-style: italic;
 		float: left;
@@ -235,7 +264,7 @@ ul.posts span {
 		letter-spacing: @thinLetterSpacing;
 	}
 	
-	h2 {
+	h4 {
 		color:#0066AA;
 		padding-left: @contentSpacing;
 		font-size:22px;
@@ -243,7 +272,7 @@ ul.posts span {
 		letter-spacing: @thinLetterSpacing;
 	}
 
-	h3 {
+	h5 {
 		padding-left: @contentSpacing;
 		color:#262625;
 		font-size:15px;
@@ -274,8 +303,14 @@ ul.posts span {
 	ul {
 		padding-left: @contentSpacing+20px;
 		
-		.nested {
-			padding-left: 2em;
+//		.nested {
+//			padding-left: 2em;
+//		}
+		
+		li {
+			ul {
+				padding-left: 2em;
+			}
 		}
 	}
 

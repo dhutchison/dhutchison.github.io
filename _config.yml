@@ -1,7 +1,11 @@
 name: Dev With Imagination
+description: I like to develop. This is a random dumping ground of thoughts.
+url: http://www.devwithimagination.com
+
 jobtitle: Software Developer
 location: Scotland
 email: david@devwithimagination.com
+
 pygments: true
 markdown: maruku
 timezone: Europe/London

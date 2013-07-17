@@ -194,8 +194,38 @@ ul.posts span {
 .profile {
   margin: 66px auto 0;
   padding: 0 0 40px;
+  /* H1, H2 and ing used for profile heading */
+
+  /* H3-5 used in main profile */
+
+}
+.profile img {
+  float: left;
+  margin-right: 25px;
+  background-color: #ffffff;
+  border: 1px solid #dedede;
+  padding: 10px;
 }
 .profile h1 {
+  margin-top: 20px;
+  width: 100%;
+  margin-top: 25px;
+  color: #475261;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+.profile h2 {
+  margin-top: 20px;
+  width: 100%;
+  color: #475261;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.7px;
+  text-transform: uppercase;
+}
+.profile h3 {
   width: 200px;
   font-style: italic;
   float: left;
@@ -205,14 +235,14 @@ ul.posts span {
   font-weight: 400;
   letter-spacing: -1px;
 }
-.profile h2 {
+.profile h4 {
   color: #0066AA;
   padding-left: 200px;
   font-size: 22px;
   font-weight: 400;
   letter-spacing: -1px;
 }
-.profile h3 {
+.profile h5 {
   padding-left: 200px;
   color: #262625;
   font-size: 15px;
@@ -239,7 +269,7 @@ ul.posts span {
 .profile ul {
   padding-left: 220px;
 }
-.profile ul .nested {
+.profile ul li ul {
   padding-left: 2em;
 }
 .profile hr {
