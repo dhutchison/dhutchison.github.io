@@ -7,6 +7,6 @@ location: Scotland
 email: david@devwithimagination.com
 
 pygments: true
-markdown: maruku
+markdown: rdiscount
 timezone: Europe/London
-permalink: /blog/:categories/:year/:month/:day/:title/
+permalink: /:categories/:year/:month/:day/:title/
