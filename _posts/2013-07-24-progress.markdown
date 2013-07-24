@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "Progress"
+date:   2013-07-24 21:00:00
+categories: site
+---
+
+While I've not had a huge amount of time to devote to building this site, I have got stuck down a few rabbit holes exploring some of the amazing improvements in web technologies and the power that CSS 2+ provides. This site uses many (and possibly too many) ideas and projects I've stumbled across in the last couple of weeks. As a side note, I have been deliberately avoiding using [Jekyll Bootstrap](http://jekyllbootstrap.com/) because I wanted to do the research and coding of the site myself. 
+
+<!--more-->
+
+- [CSS3 Patterns Gallery](http://lea.verou.me/css3patterns/) - When viewing this site on a compatible desktop browser, the background uses the "Carbon" texture from this site. On browsers that do not support the radial gradients, it degrades gracefully to a solid background colour.
+- [Pure CSS Post Tags](http://cssglobe.com/pure-css3-post-tags/) - Guide on how to create the "tag label" style that is used for the tag and category lists at the bottom of each post. I've got a Mixin in my Less file that sets up this appearance (nearly correctly) based on a couple of variables.
+- [CSS3 Ribbon Without Images](http://www.sitepoint.com/pure-css3-ribbons/) - The blog post titles use this effect. The theme on my previous [Wordpress blog](http://devwithimagination.wordpress.com) used images to achieve this effect.
+- [Jekyll Template Toolkit](http://www.github.com/NetzwergX/jekyll-template-toolkit) - Yesterday I got bored reinventing the wheel, this project provides some includes that can be used in Jekyll to layout tags, categories and more. The appearance of these elements is controlled by my own CSS.
+
+I've been using less to generate CSS which avoids a lot of code duplication, and so makes it easier to make tweaks to the design. I am probably not using the full power of it yet but it is certainly improving my workflow. 
+
+### The Site ###
+This site is still work in progress, but I feel it is time to push an update to the production version. It still has some outstanding work required, such as the layout of mobile devices
+
+It is hosted on [GitHub Pages](http://pages.github.com) and is coded using [Jekyll](http://jekyllrb.com). Jekyll is a blog-aware, static site generator written in Ruby. This setup removes the need for a database or the ability to execute code on a server, which really is not required for a simple site like this. My first web site was a pain to maintain but was completely static. The old TS sites were written in PHP, but could have been static if a page generation engine like this existed at the time. I'm growing to like it, but the liquid template language that is uses could do with some improvements.
+
+The existing blog content is nearly migrated, I'm just doing the final checks of the formatting (I've found a few issues). With any luck it should be up by the end to tomorrow. 
+
+Got feedback? Get in touch!
+
+
+
+
