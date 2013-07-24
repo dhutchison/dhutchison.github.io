@@ -1,16 +1,196 @@
+/* Font Definitions */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+
+
+
 /*
  * Variables 
  */
-@mainHeaderColour: #3C4756;
-@mainFontColour: #666666;
-@outerBackgroundColour: #CCCCCC;
+@mainHeaderColour: #475261;
+@mainFontColour: #333333;
+@outerBackgroundColour: #666666;
+@shadowColour: #333333;
 @backgroundColour: #FFFFFF;
 
 @lightBackgroundColour: #333333;
-@standardFontWeight: 400;
+
 
 @linkColour: @mainFontColour;
 @linkHoverColour: #AAAAAA;
+
+
+@headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@mainHeaderFontSize: 44px;
+@smallHeaderFontSize: 32px;
+@contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@contentFontSize: 18px;
+@contentFontWeight: 300;
+
+@categoryTagColour: #E82C0C;
+@tagColour: #0089e0;
+
+//@contentFontSize: 14px;
+
+/* Functions */
+.transitionDuration (@transition: .5s) {
+    -o-transition: @transition;
+    -ms-transition: @transition;
+    -moz-transition: @transition;
+    -webkit-transition: @transition;
+    /* ...and now for the proper property */
+    transition: @transition;
+}
+
+.sitePadding() {
+	padding: 1em 2em 1em 2em;
+}
+
+.leftRightGradient(@leftColour: #5D83C4, @rightColour: #FFFFFF) {
+	
+	/* Background */
+	background-color: @rightColour;
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(left, @leftColour 0%, @rightColour 100%);
+	
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(left, @leftColour 0%, @rightColour 100%);
+	
+	/* Opera */ 
+	background-image: -o-linear-gradient(left, @leftColour 0%, @rightColour 100%);
+	
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0, @leftColour), color-stop(1, @rightColour));
+	
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(left, @leftColour 0%, @rightColour 100%);
+	
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to right, @leftColour 0%, @rightColour 100%);
+	
+}
+
+.boxShadow(@hShadow: 0px, @vShadow: 2px, @blur: 4px, @spread: 0px, @colour: #888) {
+	-webkit-box-shadow: @hShadow @vShadow @blur @spread @colour;
+	-moz-box-shadow: @hShadow @vShadow @blur @spread @colour;
+	box-shadow: @hShadow @vShadow @blur @spread @colour;
+}
+
+.ribbon(@backgroundColour: #5D83C4) {
+	position: relative;
+	padding: 6px 20px 6px 70px;
+	margin: 30px 10px 10px -70px;
+	background-color: @backgroundColour;
+	text-shadow: 0px 1px 2px lighten(@mainFontColour, 30%);
+	.boxShadow(0px, 2px, 4px, #888);
+	
+	&:after {
+		content: ' ';
+		position: absolute;
+		width: 0;
+		height: 0;
+		left: 0px;
+		top: 100%;
+		border-width: 5px 10px;
+		border-style: solid;
+		border-color: darken(@backgroundColour, 20%) darken(@backgroundColour, 20%) transparent transparent;
+
+	}
+
+	&:before {
+		content: ' ';
+		position: absolute;
+		width: 30px;
+		height: 0;
+		left: -30px;
+		top: 12px;
+		border-width: 20px 10px;
+		border-style: solid;
+		border-color: @backgroundColour @backgroundColour @backgroundColour transparent;
+	}
+}
+
+.bottomRightRadius(@size: 4px){
+	-moz-border-radius-bottomright: @size;
+	-webkit-border-bottom-right-radius: @size;	
+	border-bottom-right-radius: @size;
+}
+
+.topRightRadius(@size: 4px){
+	-moz-border-radius-topright: @size;
+	-webkit-border-top-right-radius: @size;	
+	border-top-right-radius: @size;
+}
+
+.borderRadius(@size: 2px){
+	-moz-border-radius: @size;
+	-webkit-border-radius: @size;
+	border-radius: @size;
+}
+
+/**
+ * http://cssglobe.com/pure-css3-post-tags/
+ */
+.tagLinks(@backgroundColour: #0089e0, @foregroundColour: #FFFFFF, @height: @contentFontSize) {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: inline-block;
+	
+	li, a {
+		float: left;
+		height: @height;
+		line-height: @height;
+		position: relative;
+		font-size: 11px;
+	}
+	
+	a {
+		.transitionDuration(0s);
+		margin-left:20px;
+		padding:0 10px 0 12px;
+		background: @backgroundColour;
+		color: @foregroundColour;
+		text-decoration:none;
+		.bottomRightRadius;
+		.topRightRadius;	
+		
+		&:before {
+			content: "";
+			float:left;
+			position:absolute;
+			top:0;
+			left:-(@height/2);
+			width:0;
+			height:0;
+			border-color:transparent @backgroundColour transparent transparent;
+			border-style:solid;
+			border-width: (@height/2) (@height/2) (@height/2) 0;		
+		}
+	
+		&:after{
+			content:"";
+			position:absolute;
+			top: (@height/2)-2px;
+			left:0;
+			float:left;
+			width:4px;
+			height:4px;
+			.borderRadius(2px);
+			background: @foregroundColour;
+			-moz-box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
+			-webkit-box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
+			box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
+		}
+	
+	
+		&:hover{
+			background: darken(@foregroundColour, 50%);
+			&:before{
+				border-color:transparent darken(@foregroundColour, 50%) transparent transparent;}
+		}	
+	}
+}
+
 
 /*****************************************************************************/
 /*
@@ -27,13 +207,24 @@
 html, body { height: 100%; }
 
 body {
-	background-color: @outerBackgroundColour;
+//	background-color: @outerBackgroundColour;
 	color: @lightBackgroundColour;
-/*	font: 13.34px Helvetica, Arial, sans-serif;*/
-	font-family: 'Roboto', sans-serif;
-	font-weight: @standardFontWeight;
-	font-size: small;
+	font-family: @contentFonts;
+	font-weight: @contentFontWeight;
+	font-size: @contentFontSize;
 	text-align: center;
+	
+	/* Carbon fibre 
+	 * by Atle Mo (design), Lea Verou (code)
+	 * from http://lea.verou.me/css3patterns/#carbon-fibre */
+	background:
+		radial-gradient(black 15%, transparent 16%) 0 0,
+		radial-gradient(black 15%, transparent 16%) 8px 8px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+	background-color:#282828;
+	background-size:16px 16px;
+	
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -83,92 +274,177 @@ ul.posts span {
 /*
 /*****************************************************************************/
 
+.container{
+	font-size: @contentFontSize;
+	padding-bottom:  1.5em;
+}
+
 .site {
 	/*	background*/
 	background-color: @backgroundColour;
 	-moz-border-radius: 1em 4em 1em 4em;
 	border-radius: 1em 4em 1em 4em;
-	padding: 1em 4em 1em 4em;
 	
 	/* Shadow for background */
-	-moz-box-shadow: 1em 1em 1em @mainFontColour;
-	-webkit-box-shadow: 1em 1em 1em @mainFontColour;
-	box-shadow: 1em 1em 1em @mainFontColour;
+	-moz-box-shadow: 1em 1em 1em @shadowColour;
+	-webkit-box-shadow: 1em 1em 1em @shadowColour;
+	box-shadow: 1em 1em 1em @shadowColour;
 	
 	/* text */
-	font-size: 12pt;
+	font-size: @contentFontSize;
 	line-height: 1.5em;
 	text-align: left;
+	text-rendering: optimizelegibility;
+	font-weight: contentFontWeight;
 	
 	/* Sizing */
 	width: 60%;
 	margin: 2em auto 2em;
-	padding-right: 40px;
-	padding-left: 40px;
 	padding-bottom: 0px;
 
+	a {
+		color: @linkColour;
+		.transitionDuration;
+		text-decoration: underline;
+	}
+	
+	a:hover {
+//		color: @linkHoverColour;
+		color: transparent;
+		text-shadow: 0 0 1px @linkColour;
+		
+	}
+	
+	.tagCloud{
+		.tagLinks(@tagColour);
+	}
+	
+	.sidebar {
+		float:  right;
+		display: inline-block;
+		
+		li {
+			margin-left: 2em;
+		}
+	}
 
 	.header {
+		font-family: @headerFonts;
 		text-align: center;
 		height: 4em;
 		padding-top: 1em;
 	
 		border-bottom: 4px solid #eee;
 		
-	/*	background-color: #5D83C4;
-		/* IE10 Consumer Preview *!/ 
-		background-image: -ms-linear-gradient(left, #FFFFFF 0%, #5D83C4 100%);
-		
-		/* Mozilla Firefox *!/ 
-		background-image: -moz-linear-gradient(left, #FFFFFF 0%, #5D83C4 100%);
-		
-		/* Opera *!/ 
-		background-image: -o-linear-gradient(left, #FFFFFF 0%, #5D83C4 100%);
-		
-		/* Webkit (Safari/Chrome 10) *!/ 
-		background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #FFFFFF), color-stop(1, #5D83C4));
-		
-		/* Webkit (Chrome 11+) *!/ 
-		background-image: -webkit-linear-gradient(left, #FFFFFF 0%, #5D83C4 100%);
-		
-		/* W3C Markup, IE10 Release Preview *!/ 
-		background-image: linear-gradient(to right, #FFFFFF 0%, #5D83C4 100%);*/
-		
 		h1.title {
 			margin-bottom: 0.5em; 
 			color: @mainHeaderColour;
-			font-size: 200%;
+			font-size: @mainHeaderFontSize;
 		}
 		
 		.links {
+			width: 100%;
+			font-size: @mainHeaderFontSize/2;
 			text-align: left;
-			float: left;
-			display: block;
+			height: 1.5em;
+
+			.leftRightGradient;
 		
-			a {
-				color: @linkColour;
-				margin-right: 1em;
-				
-				font-weight: bold;
-				text-decoration: none;
-			}
-			
-			a:hover {
-				color: @linkHoverColour;
+			ul {
+				padding-left: 2em;
+				list-style-type: none;
+				li {
+					display: inline;
+					padding-right: 20px;
+					
+					a {
+						text-decoration: none;
+					}
+					
+					a:hover {
+						text-decoration: underline;
+					}
+					
+//					.active {
+//						background-color: @linkHoverColour;
+//					}
+				}
 			}
 		}
 	}
 	
-	.meta {
-		color: #aaa;
+	.mainContent {
+		.sitePadding;
+	}
+	
+	.post {
+		
+		text-align: left;		
+		
+		header {
+			
+			.ribbon;
+
+			h2 {
+				font-family: @headerFonts;
+				font-size: @smallHeaderFontSize;
+				font-weight: @contentFontWeight;
+				text-align: left;
+				
+//				.title {
+//					float: left;
+//				}
+			}
+		
+			.meta { 
+//				display: inline-block;
+				font-family: @headerFonts;
+				font-size: @contentFontSize;
+				font-weight: @contentFontWeight;
+				text-align: right;
+				border-color: @linkColour;
+				border-left: 1px;
+				float: right;
+			}
+			
+			
+		}
+		
+				
+		h3 {
+			font-family: @contentFonts;
+			text-decoration: underline;
+			font-size: (@smallHeaderFontSize - ((@smallHeaderFontSize - @contentFontSize)/2))
+		}
+		
+		blockquote {
+			background-color: darken(@backgroundColour, 10%);
+		}
+		
+		ul {
+			list-style-type: circle;
+			li {
+				padding-left: 2em;
+			}
+		}
+		
+		.inlineListTags {
+			.tagLinks(@tagColour, #FFFFFF);
+		}
+		
+		.inlineListCategories {
+			.tagLinks(@categoryTagColour, #FFFFFF);
+		}
+		
+	
 	}
 	
 	.footer {
 		font-size: 80%;
 		color: @mainFontColour;
 		border-top: 4px solid #eee;
-		margin-top: 2em;
 		overflow: hidden;
+		.sitePadding;
 		
 		img {
 			height: 16px;
@@ -203,128 +479,137 @@ ul.posts span {
 			}
 		}
 		
-		.gratitude {
+		.copy {
 			float: none;
+			width: 100%;
+			display: inline-block;
 			text-align: center;
-			margin-top: 7em;
+			p {
+				/* TODO: */
+			}
+		}
+	}
+	
+	/*****************************************************************************/
+	/*
+	/* Profile
+	/*
+	/*****************************************************************************/
+	
+	.profile {
+		@contentSpacing: 150px;
+		@headerFontWeight: 	@contentFontWeight * 2;
+		@h3FontSize: 24px;
+		@h4FontSize: 22px;
+		@h5FontSize: 14px;
+		
+		padding:0 0 40px;
+		
+		/* H1, H2 and ing used for profile heading */
+		img{
+			float: left;
+			margin-right: 25px;
+			background-color: @backgroundColour;
+			border:1px solid #dedede;
+			padding: 10px;
+			height: 100px;
+			margin-left: -@contentSpacing;
+		}
+		h1{
+			padding-left: @contentSpacing;
+			padding-top: 30px;
+			color: @mainHeaderColour;
+			font-size: @mainHeaderFontSize;
+			font-weight: @headerFontWeight;
+		}
+		h2{
+			padding-left: @contentSpacing;
+			margin-top: 10px;
+			padding-bottom: 30px;
+			color:@mainHeaderColour;
+			font-size: ((@mainHeaderFontSize * 3) / 4);
+			text-transform:uppercase;
+			font-weight: @headerFontWeight;
+		}
+	
+		 /* H3-5 used in main profile */
+		h3 {
+			display: block;
+			width: 100%;
+			font-style: italic;
+			float: left;
+			display: inline-block;
+			color: @mainHeaderColour;
+			font-size: @h3FontSize;
+			font-weight: @headerFontWeight;
+		}
+		
+		h4 {
+			color: #0066AA;
+			padding-left: @contentSpacing;
+			font-size: @h4FontSize;
+		}
+	
+		h5 {
+			padding-left: @contentSpacing;
+			color: #262625;
+			font-size: @h5FontSize;
+			font-style: italic;
+		}
+	
+		h6 {
+			/* H6 is used for the date section */
+			float: right;
+			font-size: 14px;
+			text-transform: uppercase;
+			margin-top: -(2 * @h3FontSize);
+		}
+	
+		p {
+	    	padding-left: @contentSpacing;
+		}
+	
+		ul {
+			padding-left: @contentSpacing+20px;
+			
+			li {
+				ul {
+					/* Need to switch back for nested lists to have less padding */
+					padding-left: 2em;
+				}
+			}
+		}
+	
+		hr {
+			/* Gradient c1 c2 c1. From http://css-tricks.com/examples/hrs/ */
+	    	border: 0;
+		    height: 1px;
+		    background: @lightBackgroundColour;
+		    background-image: -webkit-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
+		    background-image:    -moz-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
+		    background-image:     -ms-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
+		    background-image:      -o-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
+		    margin-top: 1em;
+		    margin-bottom: 1em; 
 		}
 	}
 }
 
-/*****************************************************************************/
-/*
-/* Profile
-/*
-/*****************************************************************************/
-
-.profile {
-	@contentSpacing: 200px;
-	@thinLetterSpacing: -1px;
-
-	margin:66px auto 0;
-	padding:0 0 40px;
-	
-	/* H1, H2 and ing used for profile heading */
-	img{
-		float:left;
-		margin-right:25px;
-		background-color: @backgroundColour;
-		border:1px solid #dedede;
-		padding:10px;
-	}
-	h1{
-		margin-top:20px;
-		width:100%;
-		margin-top:25px;
-		color:#475261;
-		font-size:48px;
-		font-weight:400;
-		letter-spacing:@thinLetterSpacing;
-	}
-	h2{
-		margin-top:20px;
-		width:100%;
-		color:#475261;
-		font-family:Arial, Helvetica, sans-serif;
-		font-size:20px;
-		font-weight: @standardFontWeight;
-		letter-spacing:-.7px;
-		text-transform:uppercase;
-	}
-
-	 /* H3-5 used in main profile */
-	h3 {
-		width:@contentSpacing;
-		font-style: italic;
-		float: left;
-		display: inline-block;
-		color: @mainHeaderColour;
-		font-size:24px;
-		font-weight: @standardFontWeight;
-		letter-spacing: @thinLetterSpacing;
-	}
-	
-	h4 {
-		color:#0066AA;
-		padding-left: @contentSpacing;
-		font-size:22px;
-		font-weight: @standardFontWeight;
-		letter-spacing: @thinLetterSpacing;
-	}
-
-	h5 {
-		padding-left: @contentSpacing;
-		color:#262625;
-		font-size:15px;
-		font-style:italic;
-		font-weight: @standardFontWeight;
-		padding-bottom: 1em;
-	}
-
-	.date {
-		float:right;
-		background-color:#eeeeee;
-		color:@lightBackgroundColour;
-		font-size:10px;
-		text-transform:uppercase;
-		margin-top: -6em;
-		padding:2px 10px;
-	}
-
-	.date:hover {
-		background-color:#000000;
-		color:#ffffff;
-	}
-
-	.section-content {
-    	padding-left: @contentSpacing;
-	}
-
-	ul {
-		padding-left: @contentSpacing+20px;
-		
-//		.nested {
-//			padding-left: 2em;
-//		}
-		
-		li {
-			ul {
-				padding-left: 2em;
-			}
-		}
-	}
-
-	hr {
-		/* Gradient c1 c2 c1. From http://css-tricks.com/examples/hrs/ */
-    	border: 0;
-	    height: 1px;
-	    background: @lightBackgroundColour;
-	    background-image: -webkit-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
-	    background-image:    -moz-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
-	    background-image:     -ms-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
-	    background-image:      -o-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
-	    margin-top: 1em;
-	    margin-bottom: 1em; 
+@media (max-device-width: 1024px) {
+	/*IPad portrait AND netbooks, AND anything with smaller screen*/
+	/*make the design flexible if possible */
+	/*Structure your code thinking about all devices that go below*/
+	.site {
+  		width: 80%;
+  	}
+}
+@media 
+	only screen and (max-device-width: 640px), 
+	only screen and (max-device-width: 540px), 
+	only screen and (max-device-width: 320px){
+	/*Iphone portrait and smaller*/
+	.site {
+		width: 95%;
 	}
 }
 
@@ -357,7 +642,7 @@ ul.posts span {
 	}
 	
 	ul {
-	margin-left: 1.35em;
+		margin-left: 1.35em;
 	}
 	
 	ol {

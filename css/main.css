@@ -1,5 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+/* Font Definitions */
 /*
  * Variables 
+ */
+/* Functions */
+/**
+ * http://cssglobe.com/pure-css3-post-tags/
  */
 /*****************************************************************************/
 /*
@@ -16,14 +22,18 @@ body {
   height: 100%;
 }
 body {
-  background-color: #cccccc;
   color: #333333;
-  /*	font: 13.34px Helvetica, Arial, sans-serif;*/
-
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: small;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
   text-align: center;
+  /* Carbon fibre 
+	 * by Atle Mo (design), Lea Verou (code)
+	 * from http://lea.verou.me/css3patterns/#carbon-fibre */
+
+  background: radial-gradient(#000000 15%, transparent 16%) 0 0, radial-gradient(#000000 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
 }
 h1,
 h2,
@@ -56,7 +66,7 @@ table {
 /*****************************************************************************/
 .home {
   text-align: center;
-  color: #666666;
+  color: #333333;
 }
 ul.posts {
   text-align: left;
@@ -77,84 +87,387 @@ ul.posts span {
 /* Site
 /*
 /*****************************************************************************/
+.container {
+  font-size: 18px;
+  padding-bottom: 1.5em;
+}
 .site {
   /*	background*/
 
   background-color: #ffffff;
   -moz-border-radius: 1em 4em 1em 4em;
   border-radius: 1em 4em 1em 4em;
-  padding: 1em 4em 1em 4em;
   /* Shadow for background */
 
-  -moz-box-shadow: 1em 1em 1em #666666;
-  -webkit-box-shadow: 1em 1em 1em #666666;
-  box-shadow: 1em 1em 1em #666666;
+  -moz-box-shadow: 1em 1em 1em #333333;
+  -webkit-box-shadow: 1em 1em 1em #333333;
+  box-shadow: 1em 1em 1em #333333;
   /* text */
 
-  font-size: 12pt;
+  font-size: 18px;
   line-height: 1.5em;
   text-align: left;
+  text-rendering: optimizelegibility;
+  font-weight: contentFontWeight;
   /* Sizing */
 
   width: 60%;
   margin: 2em auto 2em;
-  padding-right: 40px;
-  padding-left: 40px;
   padding-bottom: 0px;
+  /*****************************************************************************/
+
+  /*
+	/* Profile
+	/*
+	/*****************************************************************************/
+
+}
+.site a {
+  color: #333333;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  /* ...and now for the proper property */
+
+  transition: 0.5s;
+  text-decoration: underline;
+}
+.site a:hover {
+  color: transparent;
+  text-shadow: 0 0 1px #333333;
+}
+.site .tagCloud {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+.site .tagCloud li,
+.site .tagCloud a {
+  float: left;
+  height: 18px;
+  line-height: 18px;
+  position: relative;
+  font-size: 11px;
+}
+.site .tagCloud a {
+  -o-transition: 0s;
+  -ms-transition: 0s;
+  -moz-transition: 0s;
+  -webkit-transition: 0s;
+  /* ...and now for the proper property */
+
+  transition: 0s;
+  margin-left: 20px;
+  padding: 0 10px 0 12px;
+  background: #0089e0;
+  color: #ffffff;
+  text-decoration: none;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.site .tagCloud a:before {
+  content: "";
+  float: left;
+  position: absolute;
+  top: 0;
+  left: -9px;
+  width: 0;
+  height: 0;
+  border-color: transparent #0089e0 transparent transparent;
+  border-style: solid;
+  border-width: 9px 9px 9px 0;
+}
+.site .tagCloud a:after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  float: left;
+  width: 4px;
+  height: 4px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: #ffffff;
+  -moz-box-shadow: -1px -1px 2px #002b47;
+  -webkit-box-shadow: -1px -1px 2px #002b47;
+  box-shadow: -1px -1px 2px #002b47;
+}
+.site .tagCloud a:hover {
+  background: #808080;
+}
+.site .tagCloud a:hover:before {
+  border-color: transparent #808080 transparent transparent;
+}
+.site .sidebar {
+  float: right;
+  display: inline-block;
+}
+.site .sidebar li {
+  margin-left: 2em;
 }
 .site .header {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
   height: 4em;
   padding-top: 1em;
   border-bottom: 4px solid #eee;
-  /*	background-color: #5D83C4;
-		/* IE10 Consumer Preview *!/ 
-		background-image: -ms-linear-gradient(left, #FFFFFF 0%, #5D83C4 100%);
-		
-		/* Mozilla Firefox *!/ 
-		background-image: -moz-linear-gradient(left, #FFFFFF 0%, #5D83C4 100%);
-		
-		/* Opera *!/ 
-		background-image: -o-linear-gradient(left, #FFFFFF 0%, #5D83C4 100%);
-		
-		/* Webkit (Safari/Chrome 10) *!/ 
-		background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #FFFFFF), color-stop(1, #5D83C4));
-		
-		/* Webkit (Chrome 11+) *!/ 
-		background-image: -webkit-linear-gradient(left, #FFFFFF 0%, #5D83C4 100%);
-		
-		/* W3C Markup, IE10 Release Preview *!/ 
-		background-image: linear-gradient(to right, #FFFFFF 0%, #5D83C4 100%);*/
-
 }
 .site .header h1.title {
   margin-bottom: 0.5em;
-  color: #3c4756;
-  font-size: 200%;
+  color: #475261;
+  font-size: 44px;
 }
 .site .header .links {
+  width: 100%;
+  font-size: 22px;
   text-align: left;
-  float: left;
-  display: block;
+  height: 1.5em;
+  /* Background */
+
+  background-color: #ffffff;
+  /* IE10 Consumer Preview */
+  background-image: -ms-linear-gradient(left, #5d83c4 0%, #ffffff 100%);
+  /* Mozilla Firefox */
+  background-image: -moz-linear-gradient(left, #5d83c4 0%, #ffffff 100%);
+  /* Opera */
+  background-image: -o-linear-gradient(left, #5d83c4 0%, #ffffff 100%);
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #5d83c4), color-stop(1, #ffffff));
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-linear-gradient(left, #5d83c4 0%, #ffffff 100%);
+  /* W3C Markup, IE10 Release Preview */
+  background-image: linear-gradient(to right, #5d83c4 0%, #ffffff 100%);
 }
-.site .header .links a {
-  color: #666666;
-  margin-right: 1em;
-  font-weight: bold;
+.site .header .links ul {
+  padding-left: 2em;
+  list-style-type: none;
+}
+.site .header .links ul li {
+  display: inline;
+  padding-right: 20px;
+}
+.site .header .links ul li a {
   text-decoration: none;
 }
-.site .header .links a:hover {
-  color: #aaaaaa;
+.site .header .links ul li a:hover {
+  text-decoration: underline;
 }
-.site .meta {
-  color: #aaa;
+.site .mainContent {
+  padding: 1em 2em 1em 2em;
+}
+.site .post {
+  text-align: left;
+}
+.site .post header {
+  position: relative;
+  padding: 6px 20px 6px 70px;
+  margin: 30px 10px 10px -70px;
+  background-color: #5d83c4;
+  text-shadow: 0px 1px 2px #808080;
+  -webkit-box-shadow: 0px 2px 4px #888888 #888888;
+  -moz-box-shadow: 0px 2px 4px #888888 #888888;
+  box-shadow: 0px 2px 4px #888888 #888888;
+}
+.site .post header:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0px;
+  top: 100%;
+  border-width: 5px 10px;
+  border-style: solid;
+  border-color: #325289 #325289 transparent transparent;
+}
+.site .post header:before {
+  content: ' ';
+  position: absolute;
+  width: 30px;
+  height: 0;
+  left: -30px;
+  top: 12px;
+  border-width: 20px 10px;
+  border-style: solid;
+  border-color: #5d83c4 #5d83c4 #5d83c4 transparent;
+}
+.site .post header h2 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  text-align: left;
+}
+.site .post header .meta {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: right;
+  border-color: #333333;
+  border-left: 1px;
+  float: right;
+}
+.site .post h3 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-decoration: underline;
+  font-size: 25px;
+}
+.site .post blockquote {
+  background-color: #e6e6e6;
+}
+.site .post ul {
+  list-style-type: circle;
+}
+.site .post ul li {
+  padding-left: 2em;
+}
+.site .post .inlineListTags {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+.site .post .inlineListTags li,
+.site .post .inlineListTags a {
+  float: left;
+  height: 18px;
+  line-height: 18px;
+  position: relative;
+  font-size: 11px;
+}
+.site .post .inlineListTags a {
+  -o-transition: 0s;
+  -ms-transition: 0s;
+  -moz-transition: 0s;
+  -webkit-transition: 0s;
+  /* ...and now for the proper property */
+
+  transition: 0s;
+  margin-left: 20px;
+  padding: 0 10px 0 12px;
+  background: #0089e0;
+  color: #ffffff;
+  text-decoration: none;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.site .post .inlineListTags a:before {
+  content: "";
+  float: left;
+  position: absolute;
+  top: 0;
+  left: -9px;
+  width: 0;
+  height: 0;
+  border-color: transparent #0089e0 transparent transparent;
+  border-style: solid;
+  border-width: 9px 9px 9px 0;
+}
+.site .post .inlineListTags a:after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  float: left;
+  width: 4px;
+  height: 4px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: #ffffff;
+  -moz-box-shadow: -1px -1px 2px #002b47;
+  -webkit-box-shadow: -1px -1px 2px #002b47;
+  box-shadow: -1px -1px 2px #002b47;
+}
+.site .post .inlineListTags a:hover {
+  background: #808080;
+}
+.site .post .inlineListTags a:hover:before {
+  border-color: transparent #808080 transparent transparent;
+}
+.site .post .inlineListCategories {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+.site .post .inlineListCategories li,
+.site .post .inlineListCategories a {
+  float: left;
+  height: 18px;
+  line-height: 18px;
+  position: relative;
+  font-size: 11px;
+}
+.site .post .inlineListCategories a {
+  -o-transition: 0s;
+  -ms-transition: 0s;
+  -moz-transition: 0s;
+  -webkit-transition: 0s;
+  /* ...and now for the proper property */
+
+  transition: 0s;
+  margin-left: 20px;
+  padding: 0 10px 0 12px;
+  background: #e82c0c;
+  color: #ffffff;
+  text-decoration: none;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.site .post .inlineListCategories a:before {
+  content: "";
+  float: left;
+  position: absolute;
+  top: 0;
+  left: -9px;
+  width: 0;
+  height: 0;
+  border-color: transparent #e82c0c transparent transparent;
+  border-style: solid;
+  border-width: 9px 9px 9px 0;
+}
+.site .post .inlineListCategories a:after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  float: left;
+  width: 4px;
+  height: 4px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: #ffffff;
+  -moz-box-shadow: -1px -1px 2px #571004;
+  -webkit-box-shadow: -1px -1px 2px #571004;
+  box-shadow: -1px -1px 2px #571004;
+}
+.site .post .inlineListCategories a:hover {
+  background: #808080;
+}
+.site .post .inlineListCategories a:hover:before {
+  border-color: transparent #808080 transparent transparent;
 }
 .site .footer {
   font-size: 80%;
-  color: #666666;
+  color: #333333;
   border-top: 4px solid #eee;
-  margin-top: 2em;
   overflow: hidden;
+  padding: 1em 2em 1em 2em;
 }
 .site .footer img {
   height: 16px;
@@ -165,7 +478,7 @@ ul.posts span {
   margin-right: 3em;
 }
 .site .footer a {
-  color: #666666;
+  color: #333333;
 }
 .site .footer a:hover {
   color: #aaaaaa;
@@ -181,109 +494,114 @@ ul.posts span {
 .site .footer .rss img {
   border: 0;
 }
-.site .footer .gratitude {
+.site .footer .copy {
   float: none;
+  width: 100%;
+  display: inline-block;
   text-align: center;
-  margin-top: 7em;
 }
-/*****************************************************************************/
-/*
-/* Profile
-/*
-/*****************************************************************************/
-.profile {
-  margin: 66px auto 0;
+.site .footer .copy p {
+  /* TODO: */
+
+}
+.site .profile {
   padding: 0 0 40px;
   /* H1, H2 and ing used for profile heading */
 
   /* H3-5 used in main profile */
 
 }
-.profile img {
+.site .profile img {
   float: left;
   margin-right: 25px;
   background-color: #ffffff;
   border: 1px solid #dedede;
   padding: 10px;
+  height: 100px;
+  margin-left: -150px;
 }
-.profile h1 {
-  margin-top: 20px;
-  width: 100%;
-  margin-top: 25px;
+.site .profile h1 {
+  padding-left: 150px;
+  padding-top: 30px;
   color: #475261;
-  font-size: 48px;
-  font-weight: 400;
-  letter-spacing: -1px;
+  font-size: 44px;
+  font-weight: 600;
 }
-.profile h2 {
-  margin-top: 20px;
-  width: 100%;
+.site .profile h2 {
+  padding-left: 150px;
+  margin-top: 10px;
+  padding-bottom: 30px;
   color: #475261;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: -0.7px;
+  font-size: 33px;
   text-transform: uppercase;
+  font-weight: 600;
 }
-.profile h3 {
-  width: 200px;
+.site .profile h3 {
+  display: block;
+  width: 100%;
   font-style: italic;
   float: left;
   display: inline-block;
-  color: #3c4756;
+  color: #475261;
   font-size: 24px;
-  font-weight: 400;
-  letter-spacing: -1px;
+  font-weight: 600;
 }
-.profile h4 {
+.site .profile h4 {
   color: #0066AA;
-  padding-left: 200px;
+  padding-left: 150px;
   font-size: 22px;
-  font-weight: 400;
-  letter-spacing: -1px;
 }
-.profile h5 {
-  padding-left: 200px;
+.site .profile h5 {
+  padding-left: 150px;
   color: #262625;
-  font-size: 15px;
+  font-size: 14px;
   font-style: italic;
-  font-weight: 400;
-  padding-bottom: 1em;
 }
-.profile .date {
+.site .profile h6 {
+  /* H6 is used for the date section */
+
   float: right;
-  background-color: #eeeeee;
-  color: #333333;
-  font-size: 10px;
+  font-size: 14px;
   text-transform: uppercase;
-  margin-top: -6em;
-  padding: 2px 10px;
+  margin-top: -48px;
 }
-.profile .date:hover {
-  background-color: #000000;
-  color: #ffffff;
+.site .profile p {
+  padding-left: 150px;
 }
-.profile .section-content {
-  padding-left: 200px;
+.site .profile ul {
+  padding-left: 170px;
 }
-.profile ul {
-  padding-left: 220px;
-}
-.profile ul li ul {
+.site .profile ul li ul {
+  /* Need to switch back for nested lists to have less padding */
+
   padding-left: 2em;
 }
-.profile hr {
+.site .profile hr {
   /* Gradient c1 c2 c1. From http://css-tricks.com/examples/hrs/ */
 
   border: 0;
   height: 1px;
   background: #333333;
-  background-image: -webkit-linear-gradient(left, #cccccc, #333333, #cccccc);
-  background-image: -moz-linear-gradient(left, #cccccc, #333333, #cccccc);
-  background-image: -ms-linear-gradient(left, #cccccc, #333333, #cccccc);
-  background-image: -o-linear-gradient(left, #cccccc, #333333, #cccccc);
+  background-image: -webkit-linear-gradient(left, #666666, #333333, #666666);
+  background-image: -moz-linear-gradient(left, #666666, #333333, #666666);
+  background-image: -ms-linear-gradient(left, #666666, #333333, #666666);
+  background-image: -o-linear-gradient(left, #666666, #333333, #666666);
   margin-top: 1em;
   margin-bottom: 1em;
+}
+@media (max-device-width: 1024px) {
+  /*IPad portrait AND netbooks, AND anything with smaller screen*/
+  /*make the design flexible if possible */
+  /*Structure your code thinking about all devices that go below*/
+  .site {
+    width: 80%;
+  }
+}
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px) {
+  /*Iphone portrait and smaller*/
+  .site {
+    width: 95%;
+  }
 }
 /*****************************************************************************/
 /*

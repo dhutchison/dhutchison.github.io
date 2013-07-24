@@ -3,18 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
+        <title>{{ site.name }} | {{page.title}}</title>
         <meta name="viewport" content="width=device-width">
 
-		<!-- Webfonts -->
-		<script src="//use.edgefonts.net/lobster-two.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Roboto:100,400,400italic' rel='stylesheet' type='text/css'>
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/css/print.css" media="print">
+        <!--<link rel="stylesheet" href="/css/print.css" media="print">-->
         
         <!-- Analytics -->
         
@@ -30,30 +27,37 @@
         </script>
         
         <!--Make RSS feed discoverable -->
-        <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/blog/feed.xml">
+        <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+        
+        <!-- Make older versions of IE understand HTML5 tags -->
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
     </head>
     <body>
 
         <div class="container">
           <div class="site">
-            <div class="header">
+            <header class="header">
               <h1 class="title">{{ site.name }}</h1>
-              <div class="links">
-	            <a href="/">Home</a>
-	            <a href="/blog/">Blog</a>
-    	        <a href="/profile/">Profile</a>
-        	  </div>
-	        </div>
-
+              <nav class="links">
+	            <ul>
+	              {% assign pages_list = site.pages %}
+	              {% assign group = 'navigation' %}
+	              {% include pages_list %}
+	            </ul>
+        	  </nav>
+	        </header>
+	        <div class="mainContent">
                 {{ content }}
-
-            <div class="footer">
+			</div>
+            <footer class="footer">
               <div class="contact">
                 <p class="details">
                   David Hutchison<br />
                   {{ site.jobtitle }}, {{ site.location }}<br />
-                  {{ site.email }}
+                  <a href="mailto:{{ site.email }}">{{ site.email }}</a>
                 </p>
               </div>
               <div class="social">
@@ -63,13 +67,13 @@
 	              <a href="http://devwithimagination.wordpress.com/"><img src="/images/wpmini-blue.png" /> Dev With Imagination</a><br />
     	        </p>
               </div>
-              <div class="gratitude">
+              <div class="copy">
               	<p>
-              	  Powered by <a href="http://pages.github.com/">GitHub Pages</a>
+              	  &copy; David Hutchison 2013
               	</p>
               </div>
             </div>
-          </div>
+            </footer>
         </div> <!-- /container -->
 
     </body>

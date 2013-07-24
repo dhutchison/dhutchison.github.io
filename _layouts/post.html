@@ -1,9 +1,22 @@
 ---
 layout: main
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<article class="post">
+	{% assign post=page %}
+	<header>
+		<h2>
+			<a href="{{ post.url }}" class="title">{{ post.title }}</a>
+			<span class="meta">
+				<time datetime="{{ post.date | date_to_xmlschema }}" pubdate="" data-updated="true" title="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time>
+			</span>
+		</h2>
+	</header>
+	<article>
+		{{ content }}
+	</article>
+	<footer>
+		{% include widgets/postCategoryList.html %}
+		{% include widgets/postTagList.html %}
+	</footer>
 
-<div class="post">
-{{ content }}
-</div>
+</article>

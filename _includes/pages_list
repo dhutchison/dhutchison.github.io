@@ -1,0 +1,8 @@
+{% assign navPages = 'Blog' | split: "|" %}
+{% for navPage in navPages %}{% for node in pages_list %}{% if group == null or group == node.group %}{% if navPage == node.title %}
+				{% if page.url == node.url %}
+		      		<li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
+			    {% else %}
+					<li><a href="{{node.url}}">{{node.title}}</a></li>
+				{% endif %}
+{% endif %}{% endif %}{% endfor %}{% endfor %}{% assign pages_list = nil %}{% assign group = nil %}
