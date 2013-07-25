@@ -1,5 +1,6 @@
 {% comment %}
 	Inline tag list for posts
+	Modified to fit needs of site.
 	
 	Author: Sebastian Teumert (<http://www.teumert.net>, <http://www.github.com/NetzwergX>)
 	Licensed under the MIT license (see LICENSE file).
@@ -12,8 +13,10 @@
 	<div>Tagged with:
 		<ul class="inlineListTags">
 		{% for tag in post.tags %}
-			<li><a href="tags.html#{{tag | cgi_encode}}">{{ tag }}</a>
-			{% unless forloop.last %},{% endunless %}
+			<li>
+			    <a href="/tags/{{tag | downcase | cgi_encode}}">
+			        {{ tag }}
+			    </a>
 			</li>
 		{% endfor %}
 		</ul>

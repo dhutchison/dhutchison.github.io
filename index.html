@@ -5,25 +5,6 @@ group: "navigation"
 ---
 
 {% for post in site.posts %}
-	<article class="post">
-		<header>
-			<h2>
-				<a href="{{ post.url }}" class="title">{{ post.title }}</a>
-				<span class="meta">
-					<time datetime="{{ post.date | date_to_xmlschema }}" pubdate="" data-updated="true" title="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time>
-				</span>
-			</h2>
-		</header>
-		<article>
-			{% if post.content contains '<!--more-->' %}
-				{{ post.content | split:'<!--more-->' | first }}
-				<a href="{{ post.url }}" class="continue">&raquo; Continue reading</a>
-			{% else %}
-				{{ post.content }}
-			{% endif %}
-			{% include widgets/postCategoryList.html %}
-			{% include widgets/postTagList.html %}
-  		</article>
-  </article>
+	{% include post_preview %}
 {% endfor %}
 
