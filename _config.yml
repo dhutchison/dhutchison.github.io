@@ -9,4 +9,4 @@ email: david@devwithimagination.com
 pygments: true
 markdown: rdiscount
 timezone: Europe/London
-permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
