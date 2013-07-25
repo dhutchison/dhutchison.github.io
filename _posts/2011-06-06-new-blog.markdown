@@ -1,0 +1,24 @@
+---
+layout: post
+title: New Blog
+date: 2011-06-06 00:00:00
+categories: site
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _wpas_done_twitter: '1'
+  _wpas_done_fb: '1'
+---
+It has been a good year of more since I last attempted to keep any sort of regular stream up to date.
+
+Most recently, I gave up on keeping an active twitter feed going. I posted many times daily for months, but just one day lost interest in it. For the life of me I can't remember why. I still think it is a great service, and use it for keeping up to date on what is going on with various things (although mostly tech related).
+<!--more-->
+It has been a good few years since I last attempted to keep a blog up to date, and at that the previous one was largely forced. While in third year at Uni, part of our coursework was to develop a (very basic) blog site from scratch. Many of the early posts on this site (of which the content was never retained), were entered purely for test data. After the initial assessments of this project, I started writing on it more. I think I stopped writing on it during the long summer holidays that I miss from Uni, and never got back into it.
+
+Before all these attempts at sharing information, I ran a skating site (trash-shit) for many, many years. It's hard to remember a time when in order to upload new photos that I had to get them developed, before scanning them in. Then the amazing time when I got my first 2MP camera which meant the site could be updated the on the SAME DAY as the content was created. It is amazing to find that content from this site (in it's many iterations) is still floating about the internet. I don't even remember some of these videos! [Archive.org results](http://www.archive.org/search.php?query=creator%3A%22trashshit%22).
+
+But anyway, enough about the past. The main purpose of this blog is as a dumping ground of random developments, be it solutions or problems, which I encounter.
+
+Tomorrows task will be to post my little project from last night: my first ruby script! It is a little script which creates a task in [The Hit List](http://www.potionfactory.com/thehitlist/ "The Hit List") for each of a user's favourites on Twitter.
