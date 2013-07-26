@@ -1,0 +1,11 @@
+---
+layout: main
+title: Categories
+---
+
+<h2>Categories</h2>
+<ul class="categoryList">
+{% for category in site.categories %}
+	<li><a href="/categories/{{ category | first | cgi_escape}}">{{ category | first }} <span>({{ category | last | size }})</span></a></li>			
+{% endfor %}
+</ul>

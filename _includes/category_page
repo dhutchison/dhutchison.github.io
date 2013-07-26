@@ -1,0 +1,14 @@
+{% comment %}
+    Requires that "catName" is assigned prior to being called.
+{% endcomment %}
+
+<h2>Posts in category {{ catName }}</h2>
+{% capture downCatName %}{{ catName | downcase }}{% endcapture %}
+{% for post in site.posts %}
+    {% for cat in post.categories %}
+        {% capture checkCat %}{{ cat | downcase }}{% endcapture %} 
+        {% if checkCat == downCatName %}
+            {% include post_preview %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}

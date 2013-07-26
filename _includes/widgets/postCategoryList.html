@@ -1,5 +1,6 @@
 {% comment %}
 	Inline category list for posts
+	Modified to fit needs of site.
 	
 	Author: Sebastian Teumert (<http://www.teumert.net>, <http://www.github.com/NetzwergX>)
 	Licensed under the MIT license (see LICENSE file).
@@ -12,8 +13,10 @@
 	<div>Posted in
 		<ul class="inlineListCategories">
 			{% for category in post.categories %}
-				<li><a href="categories.html#{{ category | cgi_escape }}">{{ category }}</a>
-				{% unless forloop.last %},{% endunless %}
+				<li>
+				    <a href="/categories/{{ category | cgi_escape }}">
+				        {{ category }}
+				    </a>		    
 				</li>					
 			{% endfor %}
 		</ul>
