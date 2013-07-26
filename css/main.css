@@ -4,9 +4,6 @@
  * Variables 
  */
 /* Functions */
-/**
- * http://cssglobe.com/pure-css3-post-tags/
- */
 /*****************************************************************************/
 /*
 /* Common
@@ -138,20 +135,10 @@ ul.posts span {
   text-shadow: 0 0 1px #333333;
 }
 .site .tagCloud {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: inline-block;
-}
-.site .tagCloud li,
-.site .tagCloud a {
-  float: left;
-  height: 18px;
-  line-height: 18px;
-  position: relative;
-  font-size: 11px;
-}
-.site .tagCloud a {
+  /**
+ * http://cssglobe.com/pure-css3-post-tags/
+ */
+
   -o-transition: 0s;
   -ms-transition: 0s;
   -moz-transition: 0s;
@@ -171,7 +158,7 @@ ul.posts span {
   -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
 }
-.site .tagCloud a:before {
+.site .tagCloud:before {
   content: "";
   float: left;
   position: absolute;
@@ -183,7 +170,7 @@ ul.posts span {
   border-style: solid;
   border-width: 9px 9px 9px 0;
 }
-.site .tagCloud a:after {
+.site .tagCloud:after {
   content: "";
   position: absolute;
   top: 7px;
@@ -199,10 +186,10 @@ ul.posts span {
   -webkit-box-shadow: -1px -1px 2px #002b47;
   box-shadow: -1px -1px 2px #002b47;
 }
-.site .tagCloud a:hover {
+.site .tagCloud:hover {
   background: #808080;
 }
-.site .tagCloud a:hover:before {
+.site .tagCloud:hover:before {
   border-color: transparent #808080 transparent transparent;
 }
 .site .sidebar {
@@ -341,6 +328,10 @@ ul.posts span {
   font-size: 11px;
 }
 .site .post .inlineListTags a {
+  /**
+ * http://cssglobe.com/pure-css3-post-tags/
+ */
+
   -o-transition: 0s;
   -ms-transition: 0s;
   -moz-transition: 0s;
@@ -409,6 +400,10 @@ ul.posts span {
   font-size: 11px;
 }
 .site .post .inlineListCategories a {
+  /**
+ * http://cssglobe.com/pure-css3-post-tags/
+ */
+
   -o-transition: 0s;
   -ms-transition: 0s;
   -moz-transition: 0s;
@@ -595,12 +590,14 @@ ul.posts span {
   /*Structure your code thinking about all devices that go below*/
   .site {
     width: 80%;
+    margin: 1em auto 1em;
   }
 }
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px) {
   /*Iphone portrait and smaller*/
   .site {
     width: 95%;
+    margin: 10px auto 10px;
   }
 }
 /*****************************************************************************/
@@ -616,6 +613,16 @@ ul.posts span {
 }
 .post pre code {
   border: none;
+  /* Long line fix from http://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
+
+  -ms-word-break: break-all;
+  word-break: break-all;
+  /* Non standard for webkit */
+
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
 .post pre .terminal {
   border: 1px solid #000;

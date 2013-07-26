@@ -43,9 +43,9 @@
               <h1 class="title">{{ site.name }}</h1>
               <nav class="links">
 	            <ul>
-	              {% assign pages_list = site.pages %}
-	              {% assign group = 'navigation' %}
-	              {% include pages_list %}
+{% capture input %}{% assign pages_list = site.pages %}
+{% assign group = 'navigation' %}
+{% include pages_list %}{% endcapture %}{% include trim %}
 	            </ul>
         	  </nav>
 	        </header>
