@@ -1,0 +1,11 @@
+---
+layout: main
+title: Tags
+---
+
+<h2>Tags</h2>
+<ul class="tagList">
+{% for tag in site.tags %}
+	<li><a href="/tags/{{ tag | first | downcase | replace:' ','' | cgi_escape}}">{{ tag | first }} <span>({{ tag | last | size }})</span></a></li>			
+{% endfor %}
+</ul>

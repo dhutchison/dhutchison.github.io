@@ -2,7 +2,7 @@
     Requires that "tagName" is assigned prior to being called.
 {% endcomment %}
 
-<h2>Posts tagged {{ tagName }}</h2>
+<h2>Posts tagged <span class="tag">{{ tagName | capitalize }}</span></h2>
 {% capture downTagName %}{{ tagName | downcase }}{% endcapture %}
 {% for post in site.posts %}
     {% for tag in post.tags %}
