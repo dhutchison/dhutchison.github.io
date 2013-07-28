@@ -18,7 +18,10 @@
 			{% else %}
 				{{ post.content }}
 			{% endif %}
+		</article>
+		<footer>
 			{% include widgets/postCategoryList.html %}
 			{% include widgets/postTagList.html %}
-		</article>
+		</footer>
+		
 </article>
