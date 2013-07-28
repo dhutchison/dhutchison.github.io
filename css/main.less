@@ -127,10 +127,68 @@
 	border-radius: @size;
 }
 
+
+.tagLinks(@backgroundColour: #0089e0, @foregroundColour: #FFFFFF, @height: @contentFontSize) {
 /**
  * http://cssglobe.com/pure-css3-post-tags/
  */
-.tagLinks(@backgroundColour: #0089e0, @foregroundColour: #FFFFFF, @height: @contentFontSize) {
+
+	.transitionDuration(0s);
+	margin-left:20px;
+	padding:0 10px 0 12px;
+	background: @backgroundColour;
+	color: @foregroundColour;
+	text-decoration:none;
+	.bottomRightRadius;
+	.topRightRadius;	
+	
+	&:before {
+		content: "";
+		float:left;
+		position:absolute;
+		top:0;
+		left:-(@height/2);
+		width:0;
+		height:0;
+		border-color:transparent @backgroundColour transparent transparent;
+		border-style:solid;
+		border-width: (@height/2) (@height/2) (@height/2) 0;		
+	}
+
+	&:after{
+		content:"";
+		position:absolute;
+		top: (@height/2)-2px;
+		left:0;
+		float:left;
+		width:4px;
+		height:4px;
+		.borderRadius(2px);
+		background: @foregroundColour;
+		-moz-box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
+		-webkit-box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
+		box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
+	}
+
+
+	&:hover{
+		background: darken(@foregroundColour, 50%);
+		&:before{
+			border-color:transparent darken(@foregroundColour, 50%) transparent transparent;}
+	}	
+}
+
+.liImage(@image, @size: 16px) {
+    list-style: none;
+    background-image: @image;
+    background-size: @size; 
+    background-repeat: no-repeat;
+    background-position: 0px (@size / 4); 
+    padding-left: (@size + (@size / 4)); 
+}
+
+.tagLinkHorizontalList(@backgroundColour: #0089e0, @foregroundColour: #FFFFFF, @height: @contentFontSize) {
+
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -145,49 +203,7 @@
 	}
 	
 	a {
-		.transitionDuration(0s);
-		margin-left:20px;
-		padding:0 10px 0 12px;
-		background: @backgroundColour;
-		color: @foregroundColour;
-		text-decoration:none;
-		.bottomRightRadius;
-		.topRightRadius;	
-		
-		&:before {
-			content: "";
-			float:left;
-			position:absolute;
-			top:0;
-			left:-(@height/2);
-			width:0;
-			height:0;
-			border-color:transparent @backgroundColour transparent transparent;
-			border-style:solid;
-			border-width: (@height/2) (@height/2) (@height/2) 0;		
-		}
-	
-		&:after{
-			content:"";
-			position:absolute;
-			top: (@height/2)-2px;
-			left:0;
-			float:left;
-			width:4px;
-			height:4px;
-			.borderRadius(2px);
-			background: @foregroundColour;
-			-moz-box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
-			-webkit-box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
-			box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
-		}
-	
-	
-		&:hover{
-			background: darken(@foregroundColour, 50%);
-			&:before{
-				border-color:transparent darken(@foregroundColour, 50%) transparent transparent;}
-		}	
+		.tagLinks(@backgroundColour, @foregroundColour, @height)
 	}
 }
 
@@ -428,12 +444,27 @@ ul.posts span {
 			}
 		}
 		
-		.inlineListTags {
-			.tagLinks(@tagColour, #FFFFFF);
-		}
-		
-		.inlineListCategories {
-			.tagLinks(@categoryTagColour, #FFFFFF);
+		footer {
+    		.inlineListTags {
+    			.tagLinkHorizontalList(@tagColour, #FFFFFF);
+    		}
+    		
+    		.inlineListCategories {
+    			.tagLinkHorizontalList(@categoryTagColour, #FFFFFF);
+    		}
+    		
+    		.page-navigation {
+    		    padding-bottom: 2px;
+    		    margin-bottom: 2px;
+    		    .prev {
+
+    		    }
+    		    
+    		    .next {
+    		        float: right;
+    		    }
+    		
+    		}
 		}
 		
 	
@@ -455,6 +486,10 @@ ul.posts span {
 		.contact {
 			float: left;
 			margin-right: 3em;	
+			
+			.details {
+			    margin: 0px;
+			}
 		}
 		
 		a {
@@ -465,8 +500,16 @@ ul.posts span {
 			color:  @linkHoverColour;
 		}
 		
-		.social{
+		ul.social{
 			float: right;
+			
+			.github {
+			    .liImage(url('/images/GitHub-Mark-32px.png'), 16px);
+            }
+            
+            .twitter {
+                .liImage(url('/images/twitter-bird-16x16.png'), 16px);
+            }    
 		}
 		
 		.rss {
@@ -601,6 +644,7 @@ ul.posts span {
 	/*Structure your code thinking about all devices that go below*/
 	.site {
   		width: 80%;
+  		margin: 1em auto 1em;
   	}
 }
 @media 
@@ -610,6 +654,7 @@ ul.posts span {
 	/*Iphone portrait and smaller*/
 	.site {
 		width: 95%;
+		margin: 10px auto 10px;
 	}
 }
 
@@ -628,6 +673,17 @@ ul.posts span {
 		
 		code {
 			border: none;
+			
+			/* Long line fix from http://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
+			-ms-word-break: break-all;
+			 word-break: break-all;
+			
+			 /* Non standard for webkit */
+			 word-break: break-word;
+			
+			-webkit-hyphens: auto;
+			-moz-hyphens: auto;
+			hyphens: auto;
 		}
 		
 		.terminal {
