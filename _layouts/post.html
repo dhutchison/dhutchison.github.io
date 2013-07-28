@@ -17,6 +17,18 @@ layout: main
 	<footer>
 		{% include widgets/postCategoryList.html %}
 		{% include widgets/postTagList.html %}
+		
+		<nav class="page-navigation">
+			{% if post.previous.url %}
+			<span class="prev"><a href="{{ post.previous.url }}" title="{{ post.previous.title }}">&laquo; {{ post.previous.title }}</a></span>
+			{% endif %}
+			
+			
+			{% if post.next.url %}
+			<span class="next"><a href="{{ post.next.url }}" title="{{ post.next.title }}">{{ post.next.title }} &raquo;</a></span>
+			{% endif %}
+			
+		</nav>
 	</footer>
 
 </article>
