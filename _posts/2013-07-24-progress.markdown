@@ -1,11 +1,19 @@
 ---
 layout: post
-title:  "Progress"
-date:   2013-07-24 21:00:00
+title: Progress
+date: 2013-07-24 22:00:00.000000000 +01:00
 categories: site
 permalink: /site/2013/07/24/progress/
+keywords:
+- cascading style sheets
+- css
+- jekyll
+- github
+- php
+- data formats
+- style sheets
+- website
 ---
-
 While I've not had a huge amount of time to devote to building this site, I have got stuck down a few rabbit holes exploring some of the amazing improvements in web technologies and the power that CSS 2+ provides. This site uses many (and possibly too many) ideas and projects I've stumbled across in the last couple of weeks. As a side note, I have been deliberately avoiding using [Jekyll Bootstrap](http://jekyllbootstrap.com/) because I wanted to do the research and coding of the site myself. 
 
 <!--more-->
@@ -25,7 +33,3 @@ It is hosted on [GitHub Pages](http://pages.github.com) and is coded using [Jeky
 The existing blog content is nearly migrated, I'm just doing the final checks of the formatting (I've found a few issues). With any luck it should be up by the end to tomorrow. 
 
 Got feedback? Get in touch!
-
-
-
-
