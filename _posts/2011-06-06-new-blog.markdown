@@ -1,7 +1,7 @@
 ---
 layout: post
 title: New Blog
-date: 2011-06-06 00:00:00
+date: 2011-06-06 01:00:00.000000000 +01:00
 categories: site
 tags: []
 status: publish
@@ -10,6 +10,11 @@ published: true
 meta:
   _wpas_done_twitter: '1'
   _wpas_done_fb: '1'
+keywords:
+- twitter
+- blog
+- the hit list
+- website
 ---
 It has been a good year of more since I last attempted to keep any sort of regular stream up to date.
 

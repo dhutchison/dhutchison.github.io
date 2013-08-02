@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iPhoto -> Day One
-date: 2012-08-14 00:00:00
+date: 2012-08-14 01:00:00.000000000 +01:00
 categories: []
 tags:
 - AppleScript
@@ -13,6 +13,11 @@ published: true
 meta:
   _wpas_done_facebook: '1'
   _wpas_done_twitter: '1'
+keywords:
+- shell script
+- iphoto
+- dayone
+- applescript
 ---
 In version 1.8 of Day One they introduced the ability to add an image into the entry. This is a great feature, as a picture always brings back memories clearer than just words. However I was trying to add a photo from iPhoto last night, and at some point they have removed the "Show File" option, so I had to find it manually in the library package. Very annoying.
 
@@ -67,4 +72,3 @@ set theUDID to text theStart thru theEnd of theEntry
     
 do shell script "open dayone://edit?entryId='" & theUDID & "'"
 {% endhighlight %}
-

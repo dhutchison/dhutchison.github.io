@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ruby / Twitter woes
-date: 2012-10-17 00:00:00
+date: 2012-10-17 01:00:00.000000000 +01:00
 categories:
 - Productivity
 tags:
@@ -19,6 +19,11 @@ meta:
   _publicize_done_external: a:1:{s:8:"facebook";a:1:{i:1562110534;b:1;}}
   publicize_twitter_user: DavidHutchison
   _wpas_done_828427: '1'
+keywords:
+- twitter
+- oauth
+- reminders
+- ruby
 ---
 A while ago I made a modified version of the [Twitter Favourites to The Hit List](/2011/06/08/twitter-favourites-to-the-hit-list/ "Twitter Favourites to The Hit List") script to import in to the Reminders application that ships with Mountain Lion. I have completely moved away from The Hit List due to the lack of updates / support the application is getting. Currently I am using a combination of [Due](http://www.dueapp.com "Due") and Reminders for my workflow.
 

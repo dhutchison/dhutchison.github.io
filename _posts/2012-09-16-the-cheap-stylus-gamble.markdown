@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Cheap Stylus Gamble
-date: 2012-09-16 00:00:00
+date: 2012-09-16 01:00:00.000000000 +01:00
 categories:
 - Products
 tags:
@@ -13,6 +13,12 @@ published: true
 meta:
   _wpas_done_facebook: '1'
   _wpas_done_twitter: '1'
+keywords:
+- iphone
+- ipad
+- stylus
+- apple
+- review
 ---
 I decided shortly after writing the post "[Why it is impossible to get a 5 star review](/2012/08/22/why-it-is-impossible-to-get-a-5-star-review/ "Why it is impossible to get a 5 star review")  to go ahead and take the gamble and purchase the product. The product had mostly good reviews, except for the silly one detailed in the previous post, and for £2.28 I wouldn't really feel out of pocket if they did turn out to be rubbish.
 

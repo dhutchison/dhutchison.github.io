@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Twitter Favourites to The Hit List
-date: 2011-06-08 00:00:00
+date: 2011-06-08 01:00:00.000000000 +01:00
 categories:
 - Productivity
 tags:
@@ -17,6 +17,16 @@ meta:
     18:08:14";}
   _wpas_done_fb: '1'
   _wpas_done_twitter: '1'
+keywords:
+- applescript
+- twitter
+- github
+- geektool
+- macheist
+- application programming interface
+- oauth
+- the hit list
+- ruby
 ---
 For as long as I can remember, I have used twitter to keep up to date with events. When I see something that I want to action at a later date, I favourite the tweet as a reminder. The problem with this method is that I often forget to look at my favourites to remind myself what I have already forgotten to look at again!
 Then, last week after clearing about a month's worth of favourites, I had a brainwave! 

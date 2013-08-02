@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Calibre AutoUpdate
-date: 2013-07-08 00:00:00
+date: 2013-07-08 01:00:00.000000000 +01:00
 categories: []
 tags:
 - bash
@@ -13,6 +13,10 @@ meta:
   publicize_twitter_user: DavidHutchison
   _wpas_done_828427: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:20342569;b:1;}}
+keywords:
+- update script
+- calibre
+- dmg
 ---
 I use [Calibre](http://calibre-ebook.com/ "Calibre") for managing eBooks that I have got from outside the Amazon Kindle store, and for backing up the books I have bought from Amazon. It has always irritated me that it does not autoupdate, and the update process involves downloading a DMG and copying from there. I finally got annoyed enough with it to do something. 
 

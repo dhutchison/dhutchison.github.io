@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Embedded Font Support and ICEPdf
-date: 2013-03-10 00:00:00
+date: 2013-03-10 00:00:00.000000000 +00:00
 categories:
 - Development
 tags:
@@ -15,6 +15,13 @@ meta:
   publicize_twitter_user: DavidHutchison
   _wpas_done_828427: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:20342569;b:1;}}
+keywords:
+- open source
+- embedded font
+- icepdf
+- truetype
+- pdf
+- java
 ---
 From [Embedded Font Support and ICEPdf](http://www.icesoft.org/wiki/display/PDF/Embedded+Font+Support "Embedded Font Support and ICEPdf")
 

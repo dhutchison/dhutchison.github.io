@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Contractual
-date: 2013-01-29 00:00:00
+date: 2013-01-29 00:00:00.000000000 +00:00
 categories: Development
 tags:
 - ruby
@@ -14,6 +14,11 @@ meta:
   publicize_twitter_user: DavidHutchison
   _wpas_done_828427: '1'
   _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:20342569;b:1;}}
+keywords:
+- ruby
+- interface
+- programming
+- abstract class
 ---
 [Contractual](https://github.com/jweissman/contractual "Contractual")
 

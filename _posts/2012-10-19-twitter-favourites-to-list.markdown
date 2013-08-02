@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Twitter Favourites to List
-date: 2012-10-19 00:00:00
+date: 2012-10-19 01:00:00.000000000 +01:00
 categories:
 - Productivity
 tags:
@@ -20,6 +20,11 @@ meta:
   _publicize_done_external: a:1:{s:8:"facebook";a:1:{i:1562110534;b:1;}}
   publicize_twitter_user: DavidHutchison
   _wpas_done_828427: '1'
+keywords:
+- twitter
+- the hit list
+- ruby
+- reminders
 ---
 Along with updating to use the latest version of the Twitter Ruby Gem, which now requires authentication, I've merged the "Twitter Favourites to The Hit List" and "Twitter Favourites to Reminders" into a single script. This model is more manageable in the future and allows additional applications to be added as configuration options.
 

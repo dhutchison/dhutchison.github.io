@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why it is impossible to get a 5 star review
-date: 2012-08-22 00:00:00
+date: 2012-08-22 01:00:00.000000000 +01:00
 categories: Products
 tags: []
 status: publish
@@ -10,6 +10,14 @@ published: true
 meta:
   _wpas_done_facebook: '1'
   _wpas_done_twitter: '1'
+keywords:
+- xkcd
+- randall munroe
+- webcomic
+- comic
+- review
+- silly
+- stupid
 ---
 On a related note to [today's xkcd comic](http://xkcd.com/1098/) it is not possible to have multiple reviews, and still have a 5 star rating. 
 

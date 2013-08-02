@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Problem With Putting Things Off...
-date: 2012-07-30 00:00:00
+date: 2012-07-30 01:00:00.000000000 +01:00
 categories:
 - Productivity
 tags:
@@ -15,6 +15,16 @@ published: true
 meta:
   _wpas_done_facebook: '1'
   _wpas_done_twitter: '1'
+keywords:
+- the hit list
+- icloud
+- github
+- calendars
+- apple
+- reminders
+- applescript
+- due.app
+- os x mountain lion
 ---
 ...is remembering to do them again.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Create List From Task / AppleScript Woes
-date: 2011-06-13 00:00:00
+date: 2011-06-13 01:00:00.000000000 +01:00
 categories:
 - Productivity
 tags:
@@ -13,6 +13,15 @@ published: true
 meta:
   _wpas_done_fb: '1'
   _wpas_done_twitter: '1'
+keywords:
+- applescript
+- keyboard shortcut
+- github
+- snow leopard
+- omnifocus
+- the hit list
+- os x
+- macintosh
 ---
 Following a post from a previous user of OmniFocus in The Hit List mailing list, they missed the ability to hit a keyboard shortcut and create a list from a task. Basically (I think) with the purpose of creating a list of related tasks from a high level objective, in a situation where sub-tasks were not enough.
 
