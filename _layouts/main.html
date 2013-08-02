@@ -37,6 +37,21 @@
             {% endfor %}
         {% endif %}
         
+        <!-- Twitter Card Support -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@DavidHutchison">
+        <meta name="twitter:creator" content="@DavidHutchison">
+        <meta name="twitter:title" content="{{ page.title }} | {{ site.name }}">
+       {% if page.date %}
+            {% if page.content contains '<!--more-->' %}
+            	<meta name="twitter:description" content="{{ page.content | split:'<!--more-->' | first | markdownify | strip_html }}">
+            {% else %}
+            	<meta name="twitter:description" content="{{ page.content | markdownify | strip_html }}">
+            {% endif %}
+        {% else %}
+            <meta name="twitter:description" content="{{ site.description }}">
+        {% endif %}
+        
         <!-- Make older versions of IE understand HTML5 tags -->
         <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
