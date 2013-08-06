@@ -3,9 +3,9 @@ layout: main
 title: Categories
 ---
 
-<h2>Categories</h2>
-<ul class="categoryList">
-{% for category in site.categories %}
-	<li><a href="/categories/{{ category | first | downcase | cgi_escape}}">{{ category | first }} <span>({{ category | last | size }})</span></a></li>			
+<h2>Tags</h2>
+<ul class="catList">
+{% for cat in site.categories %}
+	<li><a href="/categories/{{ cat | first | downcase | replace:' ','' | replace:'&amp;','&'}}">{{ cat | first }} <span>({{ cat | last | size }})</span></a></li>			
 {% endfor %}
 </ul>

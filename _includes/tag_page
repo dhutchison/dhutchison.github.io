@@ -12,3 +12,5 @@
         {% endif %}
     {% endfor %}
 {% endfor %}
+
+<p class="archive">View more in the <a href="/archives" title="Archives - {{ site.title }}">archives</a>.</p>
