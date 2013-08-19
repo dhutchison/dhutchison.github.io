@@ -27,7 +27,7 @@
         </script>
         
         <!--Make RSS feed discoverable -->
-        <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+        <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
         
         <!-- Keywords -->
         {% if page.keywords %}
@@ -63,12 +63,15 @@
         <div class="container">
           <div class="site">
             <header class="header">
-              <h1 class="title">{{ site.name }}</h1>
+              <h1 class="title"><a href="/" title="Home">{{ site.name }}</a></h1>
               <nav class="links">
 	            <ul>
 {% capture input %}{% assign pages_list = site.pages %}
 {% assign group = 'navigation' %}
 {% include pages_list %}{% endcapture %}{% include trim %}
+                    <li>
+                        <a href="/feed.xml">Feed</a>
+                    </li>
 	            </ul>
         	  </nav>
 	        </header>

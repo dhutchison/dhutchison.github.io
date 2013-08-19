@@ -158,7 +158,28 @@ HTML
     puts 'Done.'
 end
 
+desc 'Build and send to dev server'
+task :build do
+    jekyll
+    upload
+    puts 'Done.'
+end
+
 def jekyll
-#   sh 'jekyll'
+  puts 'Building...'
   sh 'lessc css/main.less css/main.css'
+  sh 'jekyll build --drafts'
+  sh 'touch _site/.htaccess'
+  puts 'Build Complete'
+end
+
+task :upload do
+    upload
+end
+
+def upload
+    puts 'Sending to server...'
+    sh 'rsync -avz --delete _site/ david@dev-lamp.local:/home/wwwroot/dwi/'
+    puts 'Sent'
+
 end

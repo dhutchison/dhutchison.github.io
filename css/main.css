@@ -1,5 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 /* Font Definitions */
+/* Less Elements */
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
 /*
  * Variables 
  */
@@ -65,20 +72,6 @@ table {
   text-align: center;
   color: #333333;
 }
-ul.posts {
-  text-align: left;
-  list-style-type: none;
-  margin-top: 1em;
-  margin-bottom: 2em;
-}
-ul.posts li {
-  line-height: 1.75em;
-}
-ul.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
-}
 /*****************************************************************************/
 /*
 /* Site
@@ -88,77 +81,80 @@ ul.posts span {
   font-size: 18px;
   padding-bottom: 1.5em;
 }
-.site {
+.container .site {
   /*	background*/
 
   background-color: #ffffff;
-  -moz-border-radius: 1em 4em 1em 4em;
-  border-radius: 1em 4em 1em 4em;
-  /* Shadow for background */
-
-  -moz-box-shadow: 1em 1em 1em #333333;
-  -webkit-box-shadow: 1em 1em 1em #333333;
-  box-shadow: 1em 1em 1em #333333;
   /* text */
 
   font-size: 18px;
   line-height: 1.5em;
   text-align: left;
   text-rendering: optimizelegibility;
-  font-weight: contentFontWeight;
+  font-weight: 300;
   /* Sizing */
 
   width: 60%;
-  margin: 2em auto 2em;
+  margin-right: auto;
+  margin-left: auto;
   padding-bottom: 0px;
   /*****************************************************************************/
 
   /*
-	/* Profile
-	/*
-	/*****************************************************************************/
+    	/* Profile
+    	/*
+    	/*****************************************************************************/
 
 }
-.site a {
+.container .site a {
   color: #333333;
-  -o-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -webkit-transition: 0.5s;
-  /* ...and now for the proper property */
-
-  transition: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   text-decoration: underline;
 }
-.site a:hover {
+.container .site a:hover {
   color: transparent;
   text-shadow: 0 0 1px #333333;
 }
-.site .tagCloud {
+.container .site h2 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  text-align: left;
+}
+.container .site .tagCloud {
   /**
  * http://cssglobe.com/pure-css3-post-tags/
  */
 
-  -o-transition: 0s;
-  -ms-transition: 0s;
-  -moz-transition: 0s;
-  -webkit-transition: 0s;
-  /* ...and now for the proper property */
-
-  transition: 0s;
+  -moz-transition-duration: 0s;
+  -webkit-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
   margin-left: 20px;
   padding: 0 10px 0 12px;
   background: #0089e0;
   color: #ffffff;
   text-decoration: none;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
-.site .tagCloud:before {
+.container .site .tagCloud:before {
   content: "";
   float: left;
   position: absolute;
@@ -170,7 +166,7 @@ ul.posts span {
   border-style: solid;
   border-width: 9px 9px 9px 0;
 }
-.site .tagCloud:after {
+.container .site .tagCloud:after {
   content: "";
   position: absolute;
   top: 7px;
@@ -178,44 +174,36 @@ ul.posts span {
   float: left;
   width: 4px;
   height: 4px;
-  -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
   border-radius: 2px;
   background: #ffffff;
-  -moz-box-shadow: -1px -1px 2px #002b47;
-  -webkit-box-shadow: -1px -1px 2px #002b47;
-  box-shadow: -1px -1px 2px #002b47;
+  -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
 }
-.site .tagCloud:hover {
+.container .site .tagCloud:hover {
   background: #808080;
 }
-.site .tagCloud:hover:before {
+.container .site .tagCloud:hover:before {
   border-color: transparent #808080 transparent transparent;
 }
-.site .sidebar {
+.container .site .sidebar {
   float: right;
   display: inline-block;
 }
-.site .sidebar li {
+.container .site .sidebar li {
   margin-left: 2em;
 }
-.site .header {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  text-align: center;
-  height: 4em;
-  padding-top: 1em;
-  border-bottom: 4px solid #eee;
+.container .site hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
-.site .header h1.title {
-  margin-bottom: 0.5em;
-  color: #475261;
-  font-size: 44px;
-}
-.site .header .links {
-  width: 100%;
-  font-size: 22px;
-  text-align: left;
-  height: 1.5em;
+.container .site .header {
   /* Background */
 
   background-color: #ffffff;
@@ -231,38 +219,142 @@ ul.posts span {
   background-image: -webkit-linear-gradient(left, #5d83c4 0%, #ffffff 100%);
   /* W3C Markup, IE10 Release Preview */
   background-image: linear-gradient(to right, #5d83c4 0%, #ffffff 100%);
+  width: 60%;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
+  position: fixed;
+  top: 0px;
+  height: 3em;
+  padding-top: 1em;
+  z-index: 100000;
+  border-bottom: 4px solid #eee;
+  margin-bottom: 0.5em;
 }
-.site .header .links ul {
+.container .site .header h1.title {
+  display: inline-block;
+  float: left;
+  margin-left: 32px;
+  color: #475261;
+  font-size: 44px;
+}
+.container .site .header .links {
+  display: inline-block;
+  font-size: 22px;
+  text-align: left;
+  height: 1.5em;
+  margin-right: 32px;
+  text-align: right;
+  float: right !important;
+}
+.container .site .header .links ul {
   padding-left: 2em;
   list-style-type: none;
 }
-.site .header .links ul li {
+.container .site .header .links ul li.rss {
+  border: #000 2px solid;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  width: 6px;
+  height: 6px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  bottom: 1px;
+  left: 1px;
+}
+.container .site .header .links ul li.rss:before {
+  background-color: #000;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  bottom: 1px;
+  left: 1px;
+}
+.container .site .header .links ul li.rss:after {
+  border: #000 2px solid;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  width: 10px;
+  height: 10px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  bottom: 1px;
+  left: 1px;
+}
+.container .site .header .links ul li {
   display: inline;
   padding-right: 20px;
 }
-.site .header .links ul li a {
+.container .site .header .links ul li a {
   text-decoration: none;
 }
-.site .header .links ul li a:hover {
+.container .site .header .links ul li a:hover {
   text-decoration: underline;
 }
-.site .mainContent {
+.container .site .mainContent {
+  margin-top: 3.5em;
   padding: 1em 2em 1em 2em;
+  /* hide horizontal scrollbar*/
+
+  overflow: hidden;
 }
-.site .post {
+.container .site .mainContent .archives {
+  margin-top: 1em;
+  list-style: none;
+}
+.container .site .mainContent .archives li {
+  margin-bottom: 2px;
+}
+.container .site .mainContent .archives .year {
+  display: inline-block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  vertical-align: top;
+}
+.container .site .mainContent .archives .meta {
+  display: inline-block;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  width: 4em;
+  border-color: #333333;
+  border-right: 1px;
+  vertical-align: center;
+}
+.container .site .mainContent .archives .title {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+.container .site .mainContent .archives ul {
+  margin-left: 50px;
+  display: inline-block;
+  list-style: none;
+}
+.container .site .mainContent .pagination ul {
+  list-style: none;
+}
+.container .site .mainContent .pagination ul li {
+  float: left;
+}
+.container .site .post {
   text-align: left;
 }
-.site .post header {
+.container .site .post header {
   position: relative;
   padding: 6px 20px 6px 70px;
   margin: 30px 10px 10px -70px;
   background-color: #5d83c4;
   text-shadow: 0px 1px 2px #808080;
-  -webkit-box-shadow: 0px 2px 4px #888888 #888888;
-  -moz-box-shadow: 0px 2px 4px #888888 #888888;
-  box-shadow: 0px 2px 4px #888888 #888888;
+  -webkit-box-shadow: 0px 2px 4px #888888;
+  -moz-box-shadow: 0px 2px 4px #888888;
+  box-shadow: 0px 2px 4px #888888;
 }
-.site .post header:after {
+.container .site .post header:after {
   content: ' ';
   position: absolute;
   width: 0;
@@ -273,7 +365,7 @@ ul.posts span {
   border-style: solid;
   border-color: #325289 #325289 transparent transparent;
 }
-.site .post header:before {
+.container .site .post header:before {
   content: ' ';
   position: absolute;
   width: 30px;
@@ -284,13 +376,13 @@ ul.posts span {
   border-style: solid;
   border-color: #5d83c4 #5d83c4 #5d83c4 transparent;
 }
-.site .post header h2 {
+.container .site .post header h2 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 32px;
   font-weight: 300;
   text-align: left;
 }
-.site .post header .meta {
+.container .site .post header .meta {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -298,60 +390,68 @@ ul.posts span {
   border-color: #333333;
   border-left: 1px;
   float: right;
+  height: 100%;
+  display: block;
 }
-.site .post h3 {
+.container .site .post h3 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-decoration: underline;
   font-size: 25px;
 }
-.site .post blockquote {
+.container .site .post blockquote {
   background-color: #e6e6e6;
 }
-.site .post ul {
+.container .site .post ul {
   list-style-type: circle;
 }
-.site .post ul li {
+.container .site .post ul li {
   padding-left: 2em;
 }
-.site .post footer .inlineListTags {
+.container .site .post footer .inlineListTags {
   margin: 0;
   padding: 0;
   list-style: none;
   display: inline-block;
 }
-.site .post footer .inlineListTags li,
-.site .post footer .inlineListTags a {
+.container .site .post footer .inlineListTags li,
+.container .site .post footer .inlineListTags a {
   float: left;
   height: 18px;
   line-height: 18px;
   position: relative;
   font-size: 11px;
 }
-.site .post footer .inlineListTags a {
+.container .site .post footer .inlineListTags a {
   /**
  * http://cssglobe.com/pure-css3-post-tags/
  */
 
-  -o-transition: 0s;
-  -ms-transition: 0s;
-  -moz-transition: 0s;
-  -webkit-transition: 0s;
-  /* ...and now for the proper property */
-
-  transition: 0s;
+  -moz-transition-duration: 0s;
+  -webkit-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
   margin-left: 20px;
   padding: 0 10px 0 12px;
   background: #0089e0;
   color: #ffffff;
   text-decoration: none;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
-.site .post footer .inlineListTags a:before {
+.container .site .post footer .inlineListTags a:before {
   content: "";
   float: left;
   position: absolute;
@@ -363,7 +463,7 @@ ul.posts span {
   border-style: solid;
   border-width: 9px 9px 9px 0;
 }
-.site .post footer .inlineListTags a:after {
+.container .site .post footer .inlineListTags a:after {
   content: "";
   position: absolute;
   top: 7px;
@@ -371,59 +471,65 @@ ul.posts span {
   float: left;
   width: 4px;
   height: 4px;
-  -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
   border-radius: 2px;
   background: #ffffff;
-  -moz-box-shadow: -1px -1px 2px #002b47;
-  -webkit-box-shadow: -1px -1px 2px #002b47;
-  box-shadow: -1px -1px 2px #002b47;
+  -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
 }
-.site .post footer .inlineListTags a:hover {
+.container .site .post footer .inlineListTags a:hover {
   background: #808080;
 }
-.site .post footer .inlineListTags a:hover:before {
+.container .site .post footer .inlineListTags a:hover:before {
   border-color: transparent #808080 transparent transparent;
 }
-.site .post footer .inlineListCategories {
+.container .site .post footer .inlineListCategories {
   margin: 0;
   padding: 0;
   list-style: none;
   display: inline-block;
 }
-.site .post footer .inlineListCategories li,
-.site .post footer .inlineListCategories a {
+.container .site .post footer .inlineListCategories li,
+.container .site .post footer .inlineListCategories a {
   float: left;
   height: 18px;
   line-height: 18px;
   position: relative;
   font-size: 11px;
 }
-.site .post footer .inlineListCategories a {
+.container .site .post footer .inlineListCategories a {
   /**
  * http://cssglobe.com/pure-css3-post-tags/
  */
 
-  -o-transition: 0s;
-  -ms-transition: 0s;
-  -moz-transition: 0s;
-  -webkit-transition: 0s;
-  /* ...and now for the proper property */
-
-  transition: 0s;
+  -moz-transition-duration: 0s;
+  -webkit-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
   margin-left: 20px;
   padding: 0 10px 0 12px;
   background: #e82c0c;
   color: #ffffff;
   text-decoration: none;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
   border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
-.site .post footer .inlineListCategories a:before {
+.container .site .post footer .inlineListCategories a:before {
   content: "";
   float: left;
   position: absolute;
@@ -435,7 +541,7 @@ ul.posts span {
   border-style: solid;
   border-width: 9px 9px 9px 0;
 }
-.site .post footer .inlineListCategories a:after {
+.container .site .post footer .inlineListCategories a:after {
   content: "";
   position: absolute;
   top: 7px;
@@ -443,55 +549,55 @@ ul.posts span {
   float: left;
   width: 4px;
   height: 4px;
-  -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
   border-radius: 2px;
   background: #ffffff;
-  -moz-box-shadow: -1px -1px 2px #571004;
-  -webkit-box-shadow: -1px -1px 2px #571004;
-  box-shadow: -1px -1px 2px #571004;
+  -webkit-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
 }
-.site .post footer .inlineListCategories a:hover {
+.container .site .post footer .inlineListCategories a:hover {
   background: #808080;
 }
-.site .post footer .inlineListCategories a:hover:before {
+.container .site .post footer .inlineListCategories a:hover:before {
   border-color: transparent #808080 transparent transparent;
 }
-.site .post footer .page-navigation {
+.container .site .post footer .page-navigation {
   padding-bottom: 2px;
   margin-bottom: 2px;
 }
-.site .post footer .page-navigation .next {
+.container .site .post footer .page-navigation .next {
   float: right;
 }
-.site .footer {
+.container .site .footer {
   font-size: 80%;
   color: #333333;
   border-top: 4px solid #eee;
   overflow: hidden;
   padding: 1em 2em 1em 2em;
 }
-.site .footer img {
+.container .site .footer img {
   height: 16px;
   width: 16px;
 }
-.site .footer .contact {
+.container .site .footer .contact {
   float: left;
   margin-right: 3em;
 }
-.site .footer .contact .details {
+.container .site .footer .contact .details {
   margin: 0px;
 }
-.site .footer a {
+.container .site .footer a {
   color: #333333;
 }
-.site .footer a:hover {
+.container .site .footer a:hover {
   color: #aaaaaa;
 }
-.site .footer ul.social {
+.container .site .footer ul.social {
   float: right;
 }
-.site .footer ul.social .github {
+.container .site .footer ul.social .github {
   list-style: none;
   background-image: url('/images/GitHub-Mark-32px.png');
   background-size: 16px;
@@ -499,7 +605,7 @@ ul.posts span {
   background-position: 0px 4px;
   padding-left: 20px;
 }
-.site .footer ul.social .twitter {
+.container .site .footer ul.social .twitter {
   list-style: none;
   background-image: url('/images/twitter-bird-16x16.png');
   background-size: 16px;
@@ -507,32 +613,32 @@ ul.posts span {
   background-position: 0px 4px;
   padding-left: 20px;
 }
-.site .footer .rss {
+.container .site .footer .rss {
   margin-top: 1.1em;
   margin-right: -0.2em;
   float: right;
 }
-.site .footer .rss img {
+.container .site .footer .rss img {
   border: 0;
 }
-.site .footer .copy {
+.container .site .footer .copy {
   float: none;
   width: 100%;
   display: inline-block;
   text-align: center;
 }
-.site .footer .copy p {
+.container .site .footer .copy p {
   /* TODO: */
 
 }
-.site .profile {
+.container .site .profile {
   padding: 0 0 40px;
   /* H1, H2 and ing used for profile heading */
 
   /* H3-5 used in main profile */
 
 }
-.site .profile img {
+.container .site .profile img {
   float: left;
   margin-right: 25px;
   background-color: #ffffff;
@@ -541,14 +647,14 @@ ul.posts span {
   height: 100px;
   margin-left: -150px;
 }
-.site .profile h1 {
+.container .site .profile h1 {
   padding-left: 150px;
   padding-top: 30px;
   color: #475261;
   font-size: 44px;
   font-weight: 600;
 }
-.site .profile h2 {
+.container .site .profile h2 {
   padding-left: 150px;
   margin-top: 10px;
   padding-bottom: 30px;
@@ -557,7 +663,7 @@ ul.posts span {
   text-transform: uppercase;
   font-weight: 600;
 }
-.site .profile h3 {
+.container .site .profile h3 {
   display: block;
   width: 100%;
   font-style: italic;
@@ -567,18 +673,18 @@ ul.posts span {
   font-size: 24px;
   font-weight: 600;
 }
-.site .profile h4 {
+.container .site .profile h4 {
   color: #0066AA;
   padding-left: 150px;
   font-size: 22px;
 }
-.site .profile h5 {
+.container .site .profile h5 {
   padding-left: 150px;
   color: #262625;
   font-size: 14px;
   font-style: italic;
 }
-.site .profile h6 {
+.container .site .profile h6 {
   /* H6 is used for the date section */
 
   float: right;
@@ -586,44 +692,40 @@ ul.posts span {
   text-transform: uppercase;
   margin-top: -48px;
 }
-.site .profile p {
+.container .site .profile p {
   padding-left: 150px;
 }
-.site .profile ul {
+.container .site .profile ul {
   padding-left: 170px;
 }
-.site .profile ul li ul {
+.container .site .profile ul li ul {
   /* Need to switch back for nested lists to have less padding */
 
   padding-left: 2em;
-}
-.site .profile hr {
-  /* Gradient c1 c2 c1. From http://css-tricks.com/examples/hrs/ */
-
-  border: 0;
-  height: 1px;
-  background: #333333;
-  background-image: -webkit-linear-gradient(left, #666666, #333333, #666666);
-  background-image: -moz-linear-gradient(left, #666666, #333333, #666666);
-  background-image: -ms-linear-gradient(left, #666666, #333333, #666666);
-  background-image: -o-linear-gradient(left, #666666, #333333, #666666);
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 @media (max-device-width: 1024px) {
   /*IPad portrait AND netbooks, AND anything with smaller screen*/
   /*make the design flexible if possible */
   /*Structure your code thinking about all devices that go below*/
+  /* Redefine the sizes */
+  /* The CSS */
   .site {
     width: 80%;
-    margin: 1em auto 1em;
+  }
+  .site .header {
+    width: 80%;
+  }
+  .site .header h1.title {
+    font-size: 32px;
   }
 }
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px) {
   /*Iphone portrait and smaller*/
   .site {
     width: 95%;
-    margin: 10px auto 10px;
+  }
+  .site .header {
+    width: 95%;
   }
 }
 /*****************************************************************************/
@@ -633,9 +735,13 @@ ul.posts span {
 /*****************************************************************************/
 /* standard */
 .post pre {
+  margin: 1em;
   border: 1px solid #ddd;
   background-color: #eef;
-  padding: 0 .4em;
+  padding: 1em;
+  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
 }
 .post pre code {
   border: none;
@@ -649,14 +755,6 @@ ul.posts span {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   hyphens: auto;
-}
-.post pre .terminal {
-  border: 1px solid #000;
-  background-color: #333333;
-  color: #FFF;
-}
-.post pre .terminal code {
-  background-color: #333333;
 }
 .post ul {
   margin-left: 1.35em;

@@ -5,12 +5,13 @@
 <article class="post">
 		<header>
 			<h2>
-				<a href="{{ post.url }}" class="title">{{ post.title }}</a>
-				<span class="meta">
-					<time datetime="{{ post.date | date_to_xmlschema }}" pubdate="" data-updated="true" title="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time>
-				</span>
+			    <span class="meta">
+			    	<time datetime="{{ post.date | date_to_xmlschema }}" pubdate="" data-updated="true" title="{{ post.date | date_to_string }}">{% if hideYear == true %}{{ post.date | date:"%d %b" }}{% else %}{{ post.date | date_to_string }}{% endif %}</time>
+			    </span>
+				<a href="{{ post.url }}" {% if noPreview != true %}class="title"{% endif %}>{{ post.title }}</a>
 			</h2>
 		</header>
+		{% if noPreview != true %}
 		<article>
 			{% if post.content contains '<!--more-->' %}
 				{{ post.content | split:'<!--more-->' | first }}
@@ -23,5 +24,6 @@
 			{% include widgets/postCategoryList.html %}
 			{% include widgets/postTagList.html %}
 		</footer>
+		{% endif %}
 		
 </article>

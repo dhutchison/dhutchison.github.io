@@ -1,6 +1,9 @@
 /* Font Definitions */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 
+/* Less Elements */
+@import "dmitryf-elements/elements.less";
+
 
 
 /*
@@ -11,6 +14,8 @@
 @outerBackgroundColour: #666666;
 @shadowColour: #333333;
 @backgroundColour: #FFFFFF;
+
+@headerHeight: 3em;
 
 @lightBackgroundColour: #333333;
 
@@ -32,17 +37,53 @@
 //@contentFontSize: 14px;
 
 /* Functions */
-.transitionDuration (@transition: .5s) {
-    -o-transition: @transition;
-    -ms-transition: @transition;
-    -moz-transition: @transition;
-    -webkit-transition: @transition;
-    /* ...and now for the proper property */
-    transition: @transition;
-}
 
 .sitePadding() {
 	padding: 1em 2em 1em 2em;
+}
+
+.rssIcon() {
+
+    border: #000 2px solid;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+//    position: absolute;
+    bottom: 1px;
+    left: 1px;
+
+    &:before {
+    background-color: #000;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+//    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    }
+
+    
+    
+    &:after {
+    border: #000 2px solid;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    width: 10px;
+    height: 10px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+//    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    }
+        
 }
 
 .leftRightGradient(@leftColour: #5D83C4, @rightColour: #FFFFFF) {
@@ -69,19 +110,13 @@
 	
 }
 
-.boxShadow(@hShadow: 0px, @vShadow: 2px, @blur: 4px, @spread: 0px, @colour: #888) {
-	-webkit-box-shadow: @hShadow @vShadow @blur @spread @colour;
-	-moz-box-shadow: @hShadow @vShadow @blur @spread @colour;
-	box-shadow: @hShadow @vShadow @blur @spread @colour;
-}
-
 .ribbon(@backgroundColour: #5D83C4) {
 	position: relative;
 	padding: 6px 20px 6px 70px;
 	margin: 30px 10px 10px -70px;
 	background-color: @backgroundColour;
 	text-shadow: 0px 1px 2px lighten(@mainFontColour, 30%);
-	.boxShadow(0px, 2px, 4px, #888);
+	.box-shadow(0px 2px 4px #888);
 	
 	&:after {
 		content: ' ';
@@ -109,38 +144,19 @@
 	}
 }
 
-.bottomRightRadius(@size: 4px){
-	-moz-border-radius-bottomright: @size;
-	-webkit-border-bottom-right-radius: @size;	
-	border-bottom-right-radius: @size;
-}
-
-.topRightRadius(@size: 4px){
-	-moz-border-radius-topright: @size;
-	-webkit-border-top-right-radius: @size;	
-	border-top-right-radius: @size;
-}
-
-.borderRadius(@size: 2px){
-	-moz-border-radius: @size;
-	-webkit-border-radius: @size;
-	border-radius: @size;
-}
-
 
 .tagLinks(@backgroundColour: #0089e0, @foregroundColour: #FFFFFF, @height: @contentFontSize) {
 /**
  * http://cssglobe.com/pure-css3-post-tags/
  */
 
-	.transitionDuration(0s);
+	.transition-duration(0s);
 	margin-left:20px;
 	padding:0 10px 0 12px;
 	background: @backgroundColour;
 	color: @foregroundColour;
 	text-decoration:none;
-	.bottomRightRadius;
-	.topRightRadius;	
+	.border-radius(4px, 4px);	
 	
 	&:before {
 		content: "";
@@ -163,11 +179,9 @@
 		float:left;
 		width:4px;
 		height:4px;
-		.borderRadius(2px);
+		.rounded(2px);
 		background: @foregroundColour;
-		-moz-box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
-		-webkit-box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
-		box-shadow:-1px -1px 2px darken(@backgroundColour, 30%);
+		.drop-shadow(-1px -1px 2px darken(@backgroundColour, 30%));
 	}
 
 
@@ -203,7 +217,7 @@
 	}
 	
 	a {
-		.tagLinks(@backgroundColour, @foregroundColour, @height)
+		.tagLinks(@backgroundColour, @foregroundColour, @height);
 	}
 }
 
@@ -266,23 +280,6 @@ table {
 	text-align: center;
 	color: @mainFontColour;
 }
-ul.posts {
-	text-align: left;
-	list-style-type: none;
-	margin-top: 1em;
-	margin-bottom: 2em;
-	
-}
-
-ul.posts li {
-	line-height: 1.75em;
-}
-
-ul.posts span {
-	color: #aaa;
-	font-family: Monaco, "Courier New", monospace;
-	font-size: 80%;
-}
 
 /*****************************************************************************/
 /*
@@ -293,358 +290,502 @@ ul.posts span {
 .container{
 	font-size: @contentFontSize;
 	padding-bottom:  1.5em;
-}
 
-.site {
-	/*	background*/
-	background-color: @backgroundColour;
-	-moz-border-radius: 1em 4em 1em 4em;
-	border-radius: 1em 4em 1em 4em;
-	
-	/* Shadow for background */
-	-moz-box-shadow: 1em 1em 1em @shadowColour;
-	-webkit-box-shadow: 1em 1em 1em @shadowColour;
-	box-shadow: 1em 1em 1em @shadowColour;
-	
-	/* text */
-	font-size: @contentFontSize;
-	line-height: 1.5em;
-	text-align: left;
-	text-rendering: optimizelegibility;
-	font-weight: contentFontWeight;
-	
-	/* Sizing */
-	width: 60%;
-	margin: 2em auto 2em;
-	padding-bottom: 0px;
 
-	a {
-		color: @linkColour;
-		.transitionDuration;
-		text-decoration: underline;
-	}
-	
-	a:hover {
-//		color: @linkHoverColour;
-		color: transparent;
-		text-shadow: 0 0 1px @linkColour;
-		
-	}
-	
-	.tagCloud{
-		.tagLinks(@tagColour);
-	}
-	
-	.sidebar {
-		float:  right;
-		display: inline-block;
-		
-		li {
-			margin-left: 2em;
-		}
-	}
-
-	.header {
-		font-family: @headerFonts;
-		text-align: center;
-		height: 4em;
-		padding-top: 1em;
-	
-		border-bottom: 4px solid #eee;
-		
-		h1.title {
-			margin-bottom: 0.5em; 
-			color: @mainHeaderColour;
-			font-size: @mainHeaderFontSize;
-		}
-		
-		.links {
-			width: 100%;
-			font-size: @mainHeaderFontSize/2;
-			text-align: left;
-			height: 1.5em;
-
-			.leftRightGradient;
-		
-			ul {
-				padding-left: 2em;
-				list-style-type: none;
-				li {
-					display: inline;
-					padding-right: 20px;
-					
-					a {
-						text-decoration: none;
-					}
-					
-					a:hover {
-						text-decoration: underline;
-					}
-					
-//					.active {
-//						background-color: @linkHoverColour;
-//					}
-				}
-			}
-		}
-	}
-	
-	.mainContent {
-		.sitePadding;
-	}
-	
-	.post {
-		
-		text-align: left;		
-		
-		header {
-			
-			.ribbon;
-
-			h2 {
-				font-family: @headerFonts;
-				font-size: @smallHeaderFontSize;
-				font-weight: @contentFontWeight;
-				text-align: left;
-				
-//				.title {
-//					float: left;
-//				}
-			}
-		
-			.meta { 
-//				display: inline-block;
-				font-family: @headerFonts;
-				font-size: @contentFontSize;
-				font-weight: @contentFontWeight;
-				text-align: right;
-				border-color: @linkColour;
-				border-left: 1px;
-				float: right;
-			}
-			
-			
-		}
-		
-				
-		h3 {
-			font-family: @contentFonts;
-			text-decoration: underline;
-			font-size: (@smallHeaderFontSize - ((@smallHeaderFontSize - @contentFontSize)/2))
-		}
-		
-		blockquote {
-			background-color: darken(@backgroundColour, 10%);
-		}
-		
-		ul {
-			list-style-type: circle;
-			li {
-				padding-left: 2em;
-			}
-		}
-		
-		footer {
-    		.inlineListTags {
-    			.tagLinkHorizontalList(@tagColour, #FFFFFF);
+    .site {
+    	/*	background*/
+    	background-color: @backgroundColour;
+    	
+    	/* text */
+    	font-size: @contentFontSize;
+    	line-height: 1.5em;
+    	text-align: left;
+    	text-rendering: optimizelegibility;
+    	font-weight: @contentFontWeight;
+    	
+    	/* Sizing */
+    	width: 60%;
+    	margin-right: auto;
+    	margin-left: auto;
+    	padding-bottom: 0px;
+    
+    	a {
+    		color: @linkColour;
+    		.transition-duration(.5s);
+    		text-decoration: underline;
+    
+    	
+    	    &:hover {
+    		    color: transparent;
+    		    text-shadow: 0 0 1px @linkColour;
+    	    }
+        }
+        
+        h2 {
+    		font-family: @headerFonts;
+    		font-size: @smallHeaderFontSize;
+    		font-weight: @contentFontWeight;
+    		text-align: left;    
+        }
+    	
+    	.tagCloud{
+    		.tagLinks(@tagColour);
+    	}
+    	
+    	.sidebar {
+    		float:  right;
+    		display: inline-block;
+    		
+    		li {
+    			margin-left: 2em;
+    		}
+    	}
+    
+        hr {
+        	border: 0;
+        	height: 0;
+        	border-top: 1px solid rgba(0, 0, 0, 0.1);
+        	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        	margin-top: 1em;
+            margin-bottom: 1em; 
+        }
+    
+    	.header {
+            .leftRightGradient;
+            width: 60%;
+    		font-family: @headerFonts;
+    		text-align: center;
+            position: fixed;
+            top: 0px;
+    		height: @headerHeight;
+    		padding-top: 1em;
+            z-index: 100000;
+    	
+    		border-bottom: 4px solid #eee;
+            margin-bottom: 0.5em; 
+    		
+    		h1.title {
+                display: inline-block;
+                float: left;
+                margin-left: @smallHeaderFontSize;
+    			color: @mainHeaderColour;
+    			font-size: @mainHeaderFontSize;
     		}
     		
-    		.inlineListCategories {
-    			.tagLinkHorizontalList(@categoryTagColour, #FFFFFF);
+    		.links {
+                display: inline-block;
+    			font-size: @mainHeaderFontSize/2;
+    			text-align: left;
+    			height: 1.5em;
+                margin-right: @smallHeaderFontSize;
+                
+                text-align: right;
+                float: right !important;
+    
+    			ul {
+    				padding-left: 2em;
+    				list-style-type: none;
+    				
+    				li.rss {
+    
+    //				       float:right;
+    				    
+    //				    a {
+    //				       display:block;
+    //				       overflow:hidden;
+    //				       border:1px solid transparent;
+    //				       text-decoration:none;
+    //				       /* css3 */
+    //				       text-shadow:0 -1px 0 rgba(0,0,0,0.5);
+    //				       .rounded(5px);
+    //				    
+    //				    
+    //				        &:hover, &:focus, &:active {
+    //    				       opacity:0.8;
+    //	    			       border-color:#000;
+    //		    		    }
+    //				    }
+    				
+    				    .rssIcon();
+    				}
+    				
+    				li {
+    					display: inline;
+    					padding-right: 20px;
+    					
+    					a {
+    						text-decoration: none;
+    					}
+    					
+    					a:hover {
+    						text-decoration: underline;
+    					}
+    					
+    					
+    					
+    //					.active {
+    //						background-color: @linkHoverColour;
+    //					}
+    				}
+    			}
     		}
+    	}
+    	
+    	.mainContent {
+            margin-top: (@headerHeight + 0.5em);
+    		.sitePadding;
     		
-    		.page-navigation {
-    		    padding-bottom: 2px;
-    		    margin-bottom: 2px;
-    		    .prev {
-
+    		/* hide horizontal scrollbar*/
+    		overflow: hidden;
+    		
+    		.archives {
+                margin-top: 1em;
+    		    list-style: none;
+                
+                li {
+                    margin-bottom: 2px;    
+                }
+                
+    		    .year {
+    		        display: inline-block;
+                    font-family: @headerFonts;
+        			font-size: @contentFontSize;
+    				font-weight: @contentFontWeight;
+                    vertical-align: top;
     		    }
     		    
-    		    .next {
-    		        float: right;
+                .meta {
+                    display: inline-block;
+                    font-family: @headerFonts;
+    				font-size: @contentFontSize;
+    				font-weight: @contentFontWeight;
+    				width: 4em;
+    				border-color: @linkColour;
+    				border-right: 1px;
+                    vertical-align: center;
+                }
+                
+                .title {
+                    font-family: @headerFonts;
+                    font-size: @contentFontSize;  
+                    font-weight: @contentFontWeight;
+                }
+                
+    		    ul {
+    		        margin-left: 50px;
+                    display: inline-block;
+                    list-style: none;
     		    }
-    		
+    		   
     		}
-		}
-		
-	
-	}
-	
-	.footer {
-		font-size: 80%;
-		color: @mainFontColour;
-		border-top: 4px solid #eee;
-		overflow: hidden;
-		.sitePadding;
-		
-		img {
-			height: 16px;
-			width: 16px;
-			
-		}
-		
-		.contact {
-			float: left;
-			margin-right: 3em;	
-			
-			.details {
-			    margin: 0px;
-			}
-		}
-		
-		a {
-			color: @linkColour;
-		}
-		
-		a:hover {
-			color:  @linkHoverColour;
-		}
-		
-		ul.social{
-			float: right;
-			
-			.github {
-			    .liImage(url('/images/GitHub-Mark-32px.png'), 16px);
-            }
-            
-            .twitter {
-                .liImage(url('/images/twitter-bird-16x16.png'), 16px);
-            }    
-		}
-		
-		.rss {
-			margin-top: 1.1em;
-			margin-right: -.2em;
-			float: right;
-		
-			img {
-				border: 0;
-			}
-		}
-		
-		.copy {
-			float: none;
-			width: 100%;
-			display: inline-block;
-			text-align: center;
-			p {
-				/* TODO: */
-			}
-		}
-	}
-	
-	/*****************************************************************************/
-	/*
-	/* Profile
-	/*
-	/*****************************************************************************/
-	
-	.profile {
-		@contentSpacing: 150px;
-		@headerFontWeight: 	@contentFontWeight * 2;
-		@h3FontSize: 24px;
-		@h4FontSize: 22px;
-		@h5FontSize: 14px;
-		
-		padding:0 0 40px;
-		
-		/* H1, H2 and ing used for profile heading */
-		img{
-			float: left;
-			margin-right: 25px;
-			background-color: @backgroundColour;
-			border:1px solid #dedede;
-			padding: 10px;
-			height: 100px;
-			margin-left: -@contentSpacing;
-		}
-		h1{
-			padding-left: @contentSpacing;
-			padding-top: 30px;
-			color: @mainHeaderColour;
-			font-size: @mainHeaderFontSize;
-			font-weight: @headerFontWeight;
-		}
-		h2{
-			padding-left: @contentSpacing;
-			margin-top: 10px;
-			padding-bottom: 30px;
-			color:@mainHeaderColour;
-			font-size: ((@mainHeaderFontSize * 3) / 4);
-			text-transform:uppercase;
-			font-weight: @headerFontWeight;
-		}
-	
-		 /* H3-5 used in main profile */
-		h3 {
-			display: block;
-			width: 100%;
-			font-style: italic;
-			float: left;
-			display: inline-block;
-			color: @mainHeaderColour;
-			font-size: @h3FontSize;
-			font-weight: @headerFontWeight;
-		}
-		
-		h4 {
-			color: #0066AA;
-			padding-left: @contentSpacing;
-			font-size: @h4FontSize;
-		}
-	
-		h5 {
-			padding-left: @contentSpacing;
-			color: #262625;
-			font-size: @h5FontSize;
-			font-style: italic;
-		}
-	
-		h6 {
-			/* H6 is used for the date section */
-			float: right;
-			font-size: 14px;
-			text-transform: uppercase;
-			margin-top: -(2 * @h3FontSize);
-		}
-	
-		p {
-	    	padding-left: @contentSpacing;
-		}
-	
-		ul {
-			padding-left: @contentSpacing+20px;
-			
-			li {
-				ul {
-					/* Need to switch back for nested lists to have less padding */
-					padding-left: 2em;
-				}
-			}
-		}
-	
-		hr {
-			/* Gradient c1 c2 c1. From http://css-tricks.com/examples/hrs/ */
-	    	border: 0;
-		    height: 1px;
-		    background: @lightBackgroundColour;
-		    background-image: -webkit-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
-		    background-image:    -moz-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
-		    background-image:     -ms-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
-		    background-image:      -o-linear-gradient(left, @outerBackgroundColour, @lightBackgroundColour, @outerBackgroundColour); 
-		    margin-top: 1em;
-		    margin-bottom: 1em; 
-		}
-	}
+    		
+    		.pagination {
+    		    
+    		    
+    		    ul {
+    		        list-style:none; 
+        		    
+    	    	    
+    	    	    li{
+    	    	        float:left;
+    	    	    }
+    	    	    
+    	    	    .older {
+        		    }    		    
+        		    .archives {
+        		    }
+        		    .newer {
+        		    }
+    	    	    
+    	    	    
+    		    }
+    		    
+    		    
+    		
+    //		    ul, li {margin: 0; padding: 0;}
+    //		    ul {
+    //		        list-style: none; 
+    //		        display: table; 
+    //                margin: auto;
+    //                width: 70%;
+    //		        border-spacing: 5px; 
+    //		    }
+    //		    li {display: table-cell; background: #f7f7f7; border: 1px solid blue; }
+    //		    li a {padding: 0 30px;}
+    //		    ul {
+    //		        
+    //    		    li {
+    //    		        list-style: none;
+    //    		        display: inline-block;
+    //    		    }
+    //    		    
+    //    		    
+    //    		    .archives {
+    //    		        text-align: center;
+    //    		        width: 34%;
+    //    		    }
+    //    		    
+    //    		    .newer {
+    //    		        text-align: right;
+    //    		        width: 33%;
+    //    		    }
+    //		    }
+    		    
+    		}
+    	}
+    	
+    	
+    	.post {
+    		
+    		text-align: left;		
+    		
+    		header {
+    			
+    			.ribbon;
+    
+    			h2 {
+    				font-family: @headerFonts;
+    				font-size: @smallHeaderFontSize;
+    				font-weight: @contentFontWeight;
+    				text-align: left;
+    			}
+    		
+    			.meta { 
+    				font-family: @headerFonts;
+    				font-size: @contentFontSize;
+    				font-weight: @contentFontWeight;
+    				text-align: right;
+    				border-color: @linkColour;
+    				border-left: 1px;
+    				float: right;
+                    height: 100%;
+                    display: block;
+                    
+    			}
+    			
+    			
+    		}
+    		
+    				
+    		h3 {
+    			font-family: @contentFonts;
+    			text-decoration: underline;
+    			font-size: (@smallHeaderFontSize - ((@smallHeaderFontSize - @contentFontSize)/2))
+    		}
+    		
+    		blockquote {
+    			background-color: darken(@backgroundColour, 10%);
+    		}
+    		
+    		ul {
+    			list-style-type: circle;
+    			li {
+    				padding-left: 2em;
+    			}
+    		}
+    		
+    		footer {
+        		.inlineListTags {
+        			.tagLinkHorizontalList(@tagColour, #FFFFFF);
+        		}
+        		
+        		.inlineListCategories {
+        			.tagLinkHorizontalList(@categoryTagColour, #FFFFFF);
+        		}
+        		
+        		.page-navigation {
+        		    padding-bottom: 2px;
+        		    margin-bottom: 2px;
+        		    .prev {
+    
+        		    }
+        		    
+        		    .next {
+        		        float: right;
+        		    }
+        		
+        		}
+    		}
+    		
+    	
+    	}
+    	
+    	.footer {
+    		font-size: 80%;
+    		color: @mainFontColour;
+    		border-top: 4px solid #eee;
+    		overflow: hidden;
+    		.sitePadding;
+    		
+    		img {
+    			height: 16px;
+    			width: 16px;
+    			
+    		}
+    		
+    		.contact {
+    			float: left;
+    			margin-right: 3em;	
+    			
+    			.details {
+    			    margin: 0px;
+    			}
+    		}
+    		
+    		a {
+    			color: @linkColour;
+    		}
+    		
+    		a:hover {
+    			color:  @linkHoverColour;
+    		}
+    		
+    		ul.social{
+    			float: right;
+    			
+    			.github {
+    			    .liImage(url('/images/GitHub-Mark-32px.png'), 16px);
+                }
+                
+                .twitter {
+                    .liImage(url('/images/twitter-bird-16x16.png'), 16px);
+                }    
+    		}
+    		
+    		.rss {
+    			margin-top: 1.1em;
+    			margin-right: -.2em;
+    			float: right;
+    		
+    			img {
+    				border: 0;
+    			}
+    		}
+    		
+    		.copy {
+    			float: none;
+    			width: 100%;
+    			display: inline-block;
+    			text-align: center;
+    			p {
+    				/* TODO: */
+    			}
+    		}
+    	}
+    	
+    	/*****************************************************************************/
+    	/*
+    	/* Profile
+    	/*
+    	/*****************************************************************************/
+    	
+    	.profile {
+    		@contentSpacing: 150px;
+    		@headerFontWeight: 	@contentFontWeight * 2;
+    		@h3FontSize: 24px;
+    		@h4FontSize: 22px;
+    		@h5FontSize: 14px;
+    		
+    		padding:0 0 40px;
+    		
+    		/* H1, H2 and ing used for profile heading */
+    		img{
+    			float: left;
+    			margin-right: 25px;
+    			background-color: @backgroundColour;
+    			border:1px solid #dedede;
+    			padding: 10px;
+    			height: 100px;
+    			margin-left: -@contentSpacing;
+    		}
+    		h1{
+    			padding-left: @contentSpacing;
+    			padding-top: 30px;
+    			color: @mainHeaderColour;
+    			font-size: @mainHeaderFontSize;
+    			font-weight: @headerFontWeight;
+    		}
+    		h2{
+    			padding-left: @contentSpacing;
+    			margin-top: 10px;
+    			padding-bottom: 30px;
+    			color:@mainHeaderColour;
+    			font-size: ((@mainHeaderFontSize * 3) / 4);
+    			text-transform:uppercase;
+    			font-weight: @headerFontWeight;
+    		}
+    	
+    		 /* H3-5 used in main profile */
+    		h3 {
+    			display: block;
+    			width: 100%;
+    			font-style: italic;
+    			float: left;
+    			display: inline-block;
+    			color: @mainHeaderColour;
+    			font-size: @h3FontSize;
+    			font-weight: @headerFontWeight;
+    		}
+    		
+    		h4 {
+    			color: #0066AA;
+    			padding-left: @contentSpacing;
+    			font-size: @h4FontSize;
+    		}
+    	
+    		h5 {
+    			padding-left: @contentSpacing;
+    			color: #262625;
+    			font-size: @h5FontSize;
+    			font-style: italic;
+    		}
+    	
+    		h6 {
+    			/* H6 is used for the date section */
+    			float: right;
+    			font-size: 14px;
+    			text-transform: uppercase;
+    			margin-top: -(2 * @h3FontSize);
+    		}
+    	
+    		p {
+    	    	padding-left: @contentSpacing;
+    		}
+    	
+    		ul {
+    			padding-left: @contentSpacing+20px;
+    			
+    			li {
+    				ul {
+    					/* Need to switch back for nested lists to have less padding */
+    					padding-left: 2em;
+    				}
+    			}
+    		}
+    	}
+    }
 }
 
 @media (max-device-width: 1024px) {
 	/*IPad portrait AND netbooks, AND anything with smaller screen*/
 	/*make the design flexible if possible */
 	/*Structure your code thinking about all devices that go below*/
+    
+    /* Redefine the sizes */
+    @mainHeaderFontSize: 32px;
+    @smallHeaderFontSize: 24px;
+    @contentFontSize: 12px;
+    
+    /* The CSS */
 	.site {
   		width: 80%;
-  		margin: 1em auto 1em;
+        .header {
+            width: 80%;
+            
+                h1.title {
+			        font-size: @mainHeaderFontSize;
+                }
+        }
   	}
 }
 @media 
@@ -654,7 +795,9 @@ ul.posts span {
 	/*Iphone portrait and smaller*/
 	.site {
 		width: 95%;
-		margin: 10px auto 10px;
+        .header {
+            width: 95%;
+        }
 	}
 }
 
@@ -667,9 +810,11 @@ ul.posts span {
 /* standard */
 .post {
 	pre {
+	    margin: 1em;
 		border: 1px solid #ddd;
 		background-color: #eef;
-		padding: 0 .4em;
+		padding: 1em;
+		.box-shadow(5px 5px 7px rgba(33,33,33,.7));
 		
 		code {
 			border: none;
@@ -686,15 +831,6 @@ ul.posts span {
 			hyphens: auto;
 		}
 		
-		.terminal {
-			border: 1px solid #000;
-			background-color: @lightBackgroundColour;
-			color: #FFF;
-			
-			code {
-				background-color: @lightBackgroundColour;
-			}
-		}
 	}
 	
 	ul {
