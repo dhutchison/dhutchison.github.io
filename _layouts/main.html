@@ -13,6 +13,13 @@
         <link rel="stylesheet" href="/css/main.css">
         <!--<link rel="stylesheet" href="/css/print.css" media="print">-->
         
+        <!-- other includes from pages -->
+        {% if page.headIncludes %}
+            {% for inc in page.headIncludes %}
+                {{ inc }}
+            {% endfor %}
+        {% endif %}
+        
         <!-- Analytics -->
         
         <script>
