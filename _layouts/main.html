@@ -52,7 +52,7 @@
        {% if page.date %}
             {% if page.excerpt %}
                 <meta name="twitter:description" content="{{ page.excerpt }}">
-            {% elseif page.content contains '<!--more-->' %}
+            {% else if page.content contains '<!--more-->' %}
             	<meta name="twitter:description" content="{{ page.content | split:'<!--more-->' | first | markdownify | strip_html }}">
             {% else %}
             	<meta name="twitter:description" content="{{ page.content | markdownify | strip_html }}">
