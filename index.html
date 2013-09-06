@@ -19,11 +19,10 @@ title: Blog
         </li>
         <li class="newer">
     {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-        <a href="/">Newer →</a>
-      {% else %}
-        <a href="{{ paginator.previous_page_path }}">Newer →</a>
+      {% if paginator.previous_page == 1 %}<a href="/">Newer →</a>
+      {% else %}<a href="{{ paginator.previous_page_path }}">Newer →</a>
       {% endif %}
+    {% else %}Newer →
     {% endif %}
         </li>
     </ul>

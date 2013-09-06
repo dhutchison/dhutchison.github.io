@@ -168,8 +168,8 @@ end
 def jekyll
   puts 'Building...'
   sh 'lessc css/main.less css/main.css'
-  sh 'jekyll build --drafts'
-  sh 'touch _site/.htaccess'
+  sh 'jekyll build --drafts -d ../dwi_built_site'
+  sh 'touch ../dwi_built_site/.htaccess'
   puts 'Build Complete'
 end
 
@@ -179,7 +179,7 @@ end
 
 def upload
     puts 'Sending to server...'
-    sh 'rsync -avz --delete _site/ david@dev-lamp.local:/home/wwwroot/dwi/'
+    sh 'rsync -avz --delete ../dwi_built_site/ david@dev-lamp.local:/home/wwwroot/dwi/'
     puts 'Sent'
 
 end

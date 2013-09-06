@@ -15,7 +15,7 @@
 @shadowColour: #333333;
 @backgroundColour: #FFFFFF;
 
-@headerHeight: 3em;
+@headerHeight: 4em;
 
 @lightBackgroundColour: #333333;
 
@@ -39,7 +39,8 @@
 	padding: 1em 2em 1em 2em;
 }
 
-.leftRightGradient(@leftColour: #5D83C4, @rightColour: @backgroundColour) {
+
+.leftRightGradient(@leftColour: #5D83C4; @rightColour: @backgroundColour) {
 	
 	/* Background */
 	background-color: @rightColour;
@@ -60,6 +61,8 @@
 	
 	/* W3C Markup, IE10 Release Preview */ 
 	background-image: linear-gradient(to right, @leftColour 0%, @rightColour 100%);
+	
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@leftColour', endColorstr='#@rightColour',GradientType=0 );
 	
 }
 
@@ -157,7 +160,9 @@
 .tagLinkHorizontalList(@backgroundColour: #0089e0, @foregroundColour: #FFFFFF, @height: @contentFontSize) {
 
 	margin: 0;
-	padding: 0;
+	
+	padding-left: 0;
+	padding-right: 0;
 	list-style: none;
 	display: inline-block;
 	
@@ -225,7 +230,6 @@ a:visited { color: #a0a; }
 
 table {
 	font-size: inherit;
-	font: 100%;
 }
 
 /*****************************************************************************/
@@ -238,16 +242,21 @@ table {
 	color: @mainFontColour;
 }
 
-.siteMargin(@width) when (@width < 100%) {
-    margin-right: auto;
-    margin-left: auto;
-}
-
 .headerMargins(@size; @width) when (@width < 95%) {
     margin-left: @size;
 }
 
 .headerMargins(@size; @width) when (@width >= 95%) {
+    margin-left: 0px;
+}
+
+.siteMargin(@width) when (@width < 95%) {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.siteMargin(@width) when (@width >= 95%) {
+    margin-right: 0px;
     margin-left: 0px;
 }
 
@@ -279,9 +288,14 @@ table {
                 	font-size: @mainHeaderFontSize;
                 }
                 
+                #nav {
+                    ul {
+                        .headerMargins(@smallHeaderFontSize; @width);
+                    }
+                }
+                
                 .links {
                 	font-size: @mainHeaderFontSize/2;
-                    margin-right: @smallHeaderFontSize;
                 
                 	ul {
                 		
@@ -292,9 +306,16 @@ table {
                 }
     		}
 
-    		.mainContent {
+    		.content {
     		
         		.sitePadding(@width);
+
+                .archivesHeader {
+                	h2 {
+                		font-size: @smallHeaderFontSize;
+                	}
+                	
+                }
 
     			.archives {
     		        
@@ -350,6 +371,7 @@ table {
     		}
     		
     		.footer {
+    		    z-index: 1;
     		    .sitePadding(@width);
     		}
     		
@@ -414,6 +436,10 @@ table {
     	}
     	
     }
+}
+
+#toggle {
+    display: none;
 }
 
 /*****************************************************************************/
@@ -498,16 +524,21 @@ table {
     			color: @mainHeaderColour;
     		}
     		
+    		#nav {
+    		    li {
+    		        display: inline;
+    		    }
+    		}
+    		
     		.links {
+    		    width: 100%;
+    		
                 display: inline-block;
-    			text-align: left;
-    			height: 1.5em;
-                
-                text-align: right;
-                float: right !important;
+                text-align: left;
+                line-height: 3em;
+                height: 1.5em;
     
     			ul {
-    				padding-left: 2em;
     				list-style-type: none;
     				
     				li {
@@ -531,15 +562,24 @@ table {
     		}
     	}
     	
-    	.mainContent {
+    	.content {
             margin-top: (@headerHeight + 0.5em);
     		
-    		/* hide horizontal scrollbar*/
-    		overflow: hidden;
+    		.archivesHeader {	    			
+				.ribbon;
+	
+				h2 {
+					font-family: @headerFonts;
+					font-weight: @contentFontWeight;
+					text-align: left;
+				}
+				
+			}
     		
     		.archives {
                 margin-top: 1em;
     		    list-style: none;
+    		    
                 
                 li {
                     margin-bottom: 2px;    
@@ -575,14 +615,15 @@ table {
     		}
     		
     		.pagination {
-    		    
+    		    text-align: center;
     		    
     		    ul {
     		        list-style:none; 
         		    
     	    	    
     	    	    li{
-    	    	        float:left;
+                        display: inline-block;
+                        margin-right: 1em;
     	    	    }
     	    	    
     	    	    .older {
@@ -799,16 +840,22 @@ table {
 	only screen and (max-device-width: 540px), 
 	only screen and (max-device-width: 320px){
 	/*Iphone portrait and smaller*/
-	.sizedSite(12px; 100%, 2, 1.4);
+	.sizedSite(12px; 100%; 2; 1.4);
+}
+
+@media
+    only screen and (max-width: 640px) {
+    
+    .sizedSite(12px; 100%; 2; 1.4);    
 }
 
 /* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
-    .sizedSite(12px; 100%, 2, 1.4);
-}
+//@media
+//only screen and (-webkit-min-device-pixel-ratio : 1.5),
+//only screen and (min-device-pixel-ratio : 1.5) {
+///* Styles */
+//    .sizedSite(12px; 100%; 2; 1.4);
+//}
 
 /*****************************************************************************/
 /*
