@@ -50,8 +50,8 @@
         <meta name="twitter:creator" content="@DavidHutchison">
         <meta name="twitter:title" content="{{ page.title }} | {{ site.name }}">
        {% if page.date %}
-            {% if page.excerpt %}
-                <meta name="twitter:description" content="{{ page.excerpt }}">
+            {% if page.summary %}
+                <meta name="twitter:description" content="{{ page.summary | markdownify | strip_html }}">
             {% else if page.content contains '<!--more-->' %}
             	<meta name="twitter:description" content="{{ page.content | split:'<!--more-->' | first | markdownify | strip_html }}">
             {% else %}
