@@ -17,6 +17,10 @@
 
 @headerHeight: 4em;
 
+@lineHeightEM: 1.5em;
+/* Need to use the below when multiplying */
+@lineHeight: 1.5;
+
 @lightBackgroundColour: #333333;
 
 
@@ -120,6 +124,9 @@
 /**
  * http://cssglobe.com/pure-css3-post-tags/
  */
+    @totalHeight: ceil((@height * @lineHeight));
+    @borderHeight: ceil((@totalHeight / 2));
+    @dotSize: (@height / 4);
 
 	.transition-duration(0s);
 	margin-left: @height/2;
@@ -127,30 +134,30 @@
 	background: @backgroundColour;
 	color: @foregroundColour;
 	text-decoration:none;
-	.border-radius(4px, 4px);	
+	.border-radius(@dotSize, @dotSize);	
 	
 	&:before {
 		content: "";
 		float:left;
 		position:absolute;
 		top:0;
-		left:-(@height/2);
+		left:-@borderHeight;
 		width:0;
 		height:0;
 		border-color:transparent @backgroundColour transparent transparent;
 		border-style:solid;
-		border-width: (@height/2) (@height/2) (@height/2) 0;		
+		border-width: @borderHeight @borderHeight @borderHeight 0;		
 	}
 
 	&:after{
 		content:"";
 		position:absolute;
-		top: (@height/2)-2px;
+		top: (@borderHeight - (@dotSize / 2));
 		left:0;
 		float:left;
-		width:4px;
-		height:4px;
-		.rounded(2px);
+		width: @dotSize;
+		height: @dotSize;
+		.rounded(@dotSize/2);
 		background: @foregroundColour;
 		.drop-shadow(-1px -1px 2px darken(@backgroundColour, 30%));
 	}
@@ -187,8 +194,8 @@
 	
 	li, a {
 		float: left;
-		height: @height;
-		line-height: @height;
+		height: (@height * @lineHeight);
+		line-height: @lineHeightEM;
 		position: relative;
 		font-size: @height;
 	}
@@ -372,7 +379,8 @@ table {
                 }
                 
                 
-                footer {
+                footer { 
+                
                 	.inlineListTags {
                 		.tagLinkHorizontalList(@tagColour, #FFFFFF, @baseFontSize);
                 	}
@@ -477,7 +485,7 @@ table {
     	
     	/* text */
     	font-size: @contentFontSize;
-    	line-height: 1.5em;
+    	line-height: @lineHeightEM;
     	text-align: left;
     	text-rendering: optimizelegibility;
     	font-weight: @contentFontWeight;
@@ -554,8 +562,8 @@ table {
     		
                 display: inline-block;
                 text-align: left;
-                line-height: 3em;
-                height: 1.5em;
+                line-height: (@lineHeightEM * 2);
+                height: @lineHeightEM;
     
     			ul {
     				list-style-type: none;
@@ -661,6 +669,9 @@ table {
     		}
     	}
     	
+    	.tagListTitle {
+    	    display: inline-block;
+    	}
     	
     	.post {
     		

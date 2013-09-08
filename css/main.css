@@ -10,6 +10,7 @@
 /*
  * Variables 
  */
+/* Need to use the below when multiplying */
 /* Functions */
 /*****************************************************************************/
 /*
@@ -272,6 +273,9 @@ table {
   display: inline-block;
   margin-right: 1em;
 }
+.container .site .tagListTitle {
+  display: inline-block;
+}
 .container .site .post {
   text-align: left;
 }
@@ -525,8 +529,8 @@ table {
 .container .site .post footer .inlineListTags li,
 .container .site .post footer .inlineListTags a {
   float: left;
-  height: 18px;
-  line-height: 18px;
+  height: 27px;
+  line-height: 1.5em;
   position: relative;
   font-size: 18px;
 }
@@ -544,16 +548,16 @@ table {
   background: #0089e0;
   color: #ffffff;
   text-decoration: none;
-  -webkit-border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-top-right-radius: 4.5px;
+  -webkit-border-bottom-right-radius: 4.5px;
   -webkit-border-bottom-left-radius: 0;
   -webkit-border-top-left-radius: 0;
-  -moz-border-radius-topright: 4px;
-  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-topright: 4.5px;
+  -moz-border-radius-bottomright: 4.5px;
   -moz-border-radius-bottomleft: 0;
   -moz-border-radius-topleft: 0;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4.5px;
+  border-bottom-right-radius: 4.5px;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
   -moz-background-clip: padding-box;
@@ -565,24 +569,24 @@ table {
   float: left;
   position: absolute;
   top: 0;
-  left: -9px;
+  left: -14px;
   width: 0;
   height: 0;
   border-color: transparent #0089e0 transparent transparent;
   border-style: solid;
-  border-width: 9px 9px 9px 0;
+  border-width: 14px 14px 14px 0;
 }
 .container .site .post footer .inlineListTags a:after {
   content: "";
   position: absolute;
-  top: 7px;
+  top: 11.75px;
   left: 0;
   float: left;
-  width: 4px;
-  height: 4px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  width: 4.5px;
+  height: 4.5px;
+  -webkit-border-radius: 2.25px;
+  -moz-border-radius: 2.25px;
+  border-radius: 2.25px;
   background: #ffffff;
   -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
@@ -607,8 +611,8 @@ table {
 .container .site .post footer .inlineListCategories li,
 .container .site .post footer .inlineListCategories a {
   float: left;
-  height: 18px;
-  line-height: 18px;
+  height: 27px;
+  line-height: 1.5em;
   position: relative;
   font-size: 18px;
 }
@@ -626,16 +630,16 @@ table {
   background: #e82c0c;
   color: #ffffff;
   text-decoration: none;
-  -webkit-border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-top-right-radius: 4.5px;
+  -webkit-border-bottom-right-radius: 4.5px;
   -webkit-border-bottom-left-radius: 0;
   -webkit-border-top-left-radius: 0;
-  -moz-border-radius-topright: 4px;
-  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-topright: 4.5px;
+  -moz-border-radius-bottomright: 4.5px;
   -moz-border-radius-bottomleft: 0;
   -moz-border-radius-topleft: 0;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4.5px;
+  border-bottom-right-radius: 4.5px;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
   -moz-background-clip: padding-box;
@@ -647,24 +651,24 @@ table {
   float: left;
   position: absolute;
   top: 0;
-  left: -9px;
+  left: -14px;
   width: 0;
   height: 0;
   border-color: transparent #e82c0c transparent transparent;
   border-style: solid;
-  border-width: 9px 9px 9px 0;
+  border-width: 14px 14px 14px 0;
 }
 .container .site .post footer .inlineListCategories a:after {
   content: "";
   position: absolute;
-  top: 7px;
+  top: 11.75px;
   left: 0;
   float: left;
-  width: 4px;
-  height: 4px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  width: 4.5px;
+  height: 4.5px;
+  -webkit-border-radius: 2.25px;
+  -moz-border-radius: 2.25px;
+  border-radius: 2.25px;
   background: #ffffff;
   -webkit-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
@@ -806,8 +810,8 @@ table {
   .container .site .post footer .inlineListTags li,
   .container .site .post footer .inlineListTags a {
     float: left;
-    height: 12px;
-    line-height: 12px;
+    height: 18px;
+    line-height: 1.5em;
     position: relative;
     font-size: 12px;
   }
@@ -825,16 +829,16 @@ table {
     background: #0089e0;
     color: #ffffff;
     text-decoration: none;
-    -webkit-border-top-right-radius: 4px;
-    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
     -webkit-border-bottom-left-radius: 0;
     -webkit-border-top-left-radius: 0;
-    -moz-border-radius-topright: 4px;
-    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
     -moz-border-radius-bottomleft: 0;
     -moz-border-radius-topleft: 0;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     -moz-background-clip: padding-box;
@@ -846,24 +850,24 @@ table {
     float: left;
     position: absolute;
     top: 0;
-    left: -6px;
+    left: -9px;
     width: 0;
     height: 0;
     border-color: transparent #0089e0 transparent transparent;
     border-style: solid;
-    border-width: 6px 6px 6px 0;
+    border-width: 9px 9px 9px 0;
   }
   .container .site .post footer .inlineListTags a:after {
     content: "";
     position: absolute;
-    top: 4px;
+    top: 7.5px;
     left: 0;
     float: left;
-    width: 4px;
-    height: 4px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+    width: 3px;
+    height: 3px;
+    -webkit-border-radius: 1.5px;
+    -moz-border-radius: 1.5px;
+    border-radius: 1.5px;
     background: #ffffff;
     -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
@@ -888,8 +892,8 @@ table {
   .container .site .post footer .inlineListCategories li,
   .container .site .post footer .inlineListCategories a {
     float: left;
-    height: 12px;
-    line-height: 12px;
+    height: 18px;
+    line-height: 1.5em;
     position: relative;
     font-size: 12px;
   }
@@ -907,16 +911,16 @@ table {
     background: #e82c0c;
     color: #ffffff;
     text-decoration: none;
-    -webkit-border-top-right-radius: 4px;
-    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
     -webkit-border-bottom-left-radius: 0;
     -webkit-border-top-left-radius: 0;
-    -moz-border-radius-topright: 4px;
-    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
     -moz-border-radius-bottomleft: 0;
     -moz-border-radius-topleft: 0;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     -moz-background-clip: padding-box;
@@ -928,24 +932,24 @@ table {
     float: left;
     position: absolute;
     top: 0;
-    left: -6px;
+    left: -9px;
     width: 0;
     height: 0;
     border-color: transparent #e82c0c transparent transparent;
     border-style: solid;
-    border-width: 6px 6px 6px 0;
+    border-width: 9px 9px 9px 0;
   }
   .container .site .post footer .inlineListCategories a:after {
     content: "";
     position: absolute;
-    top: 4px;
+    top: 7.5px;
     left: 0;
     float: left;
-    width: 4px;
-    height: 4px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+    width: 3px;
+    height: 3px;
+    -webkit-border-radius: 1.5px;
+    -moz-border-radius: 1.5px;
+    border-radius: 1.5px;
     background: #ffffff;
     -webkit-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
@@ -1088,8 +1092,8 @@ table {
   .container .site .post footer .inlineListTags li,
   .container .site .post footer .inlineListTags a {
     float: left;
-    height: 16px;
-    line-height: 16px;
+    height: 24px;
+    line-height: 1.5em;
     position: relative;
     font-size: 16px;
   }
@@ -1128,17 +1132,17 @@ table {
     float: left;
     position: absolute;
     top: 0;
-    left: -8px;
+    left: -12px;
     width: 0;
     height: 0;
     border-color: transparent #0089e0 transparent transparent;
     border-style: solid;
-    border-width: 8px 8px 8px 0;
+    border-width: 12px 12px 12px 0;
   }
   .container .site .post footer .inlineListTags a:after {
     content: "";
     position: absolute;
-    top: 6px;
+    top: 10px;
     left: 0;
     float: left;
     width: 4px;
@@ -1170,8 +1174,8 @@ table {
   .container .site .post footer .inlineListCategories li,
   .container .site .post footer .inlineListCategories a {
     float: left;
-    height: 16px;
-    line-height: 16px;
+    height: 24px;
+    line-height: 1.5em;
     position: relative;
     font-size: 16px;
   }
@@ -1210,17 +1214,17 @@ table {
     float: left;
     position: absolute;
     top: 0;
-    left: -8px;
+    left: -12px;
     width: 0;
     height: 0;
     border-color: transparent #e82c0c transparent transparent;
     border-style: solid;
-    border-width: 8px 8px 8px 0;
+    border-width: 12px 12px 12px 0;
   }
   .container .site .post footer .inlineListCategories a:after {
     content: "";
     position: absolute;
-    top: 6px;
+    top: 10px;
     left: 0;
     float: left;
     width: 4px;
@@ -1365,8 +1369,8 @@ table {
   .container .site .post footer .inlineListTags li,
   .container .site .post footer .inlineListTags a {
     float: left;
-    height: 12px;
-    line-height: 12px;
+    height: 18px;
+    line-height: 1.5em;
     position: relative;
     font-size: 12px;
   }
@@ -1384,16 +1388,16 @@ table {
     background: #0089e0;
     color: #ffffff;
     text-decoration: none;
-    -webkit-border-top-right-radius: 4px;
-    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
     -webkit-border-bottom-left-radius: 0;
     -webkit-border-top-left-radius: 0;
-    -moz-border-radius-topright: 4px;
-    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
     -moz-border-radius-bottomleft: 0;
     -moz-border-radius-topleft: 0;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     -moz-background-clip: padding-box;
@@ -1405,24 +1409,24 @@ table {
     float: left;
     position: absolute;
     top: 0;
-    left: -6px;
+    left: -9px;
     width: 0;
     height: 0;
     border-color: transparent #0089e0 transparent transparent;
     border-style: solid;
-    border-width: 6px 6px 6px 0;
+    border-width: 9px 9px 9px 0;
   }
   .container .site .post footer .inlineListTags a:after {
     content: "";
     position: absolute;
-    top: 4px;
+    top: 7.5px;
     left: 0;
     float: left;
-    width: 4px;
-    height: 4px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+    width: 3px;
+    height: 3px;
+    -webkit-border-radius: 1.5px;
+    -moz-border-radius: 1.5px;
+    border-radius: 1.5px;
     background: #ffffff;
     -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
@@ -1447,8 +1451,8 @@ table {
   .container .site .post footer .inlineListCategories li,
   .container .site .post footer .inlineListCategories a {
     float: left;
-    height: 12px;
-    line-height: 12px;
+    height: 18px;
+    line-height: 1.5em;
     position: relative;
     font-size: 12px;
   }
@@ -1466,16 +1470,16 @@ table {
     background: #e82c0c;
     color: #ffffff;
     text-decoration: none;
-    -webkit-border-top-right-radius: 4px;
-    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
     -webkit-border-bottom-left-radius: 0;
     -webkit-border-top-left-radius: 0;
-    -moz-border-radius-topright: 4px;
-    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
     -moz-border-radius-bottomleft: 0;
     -moz-border-radius-topleft: 0;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     -moz-background-clip: padding-box;
@@ -1487,24 +1491,24 @@ table {
     float: left;
     position: absolute;
     top: 0;
-    left: -6px;
+    left: -9px;
     width: 0;
     height: 0;
     border-color: transparent #e82c0c transparent transparent;
     border-style: solid;
-    border-width: 6px 6px 6px 0;
+    border-width: 9px 9px 9px 0;
   }
   .container .site .post footer .inlineListCategories a:after {
     content: "";
     position: absolute;
-    top: 4px;
+    top: 7.5px;
     left: 0;
     float: left;
-    width: 4px;
-    height: 4px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+    width: 3px;
+    height: 3px;
+    -webkit-border-radius: 1.5px;
+    -moz-border-radius: 1.5px;
+    border-radius: 1.5px;
     background: #ffffff;
     -webkit-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
@@ -1641,8 +1645,8 @@ table {
   .container .site .post footer .inlineListTags li,
   .container .site .post footer .inlineListTags a {
     float: left;
-    height: 12px;
-    line-height: 12px;
+    height: 18px;
+    line-height: 1.5em;
     position: relative;
     font-size: 12px;
   }
@@ -1660,16 +1664,16 @@ table {
     background: #0089e0;
     color: #ffffff;
     text-decoration: none;
-    -webkit-border-top-right-radius: 4px;
-    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
     -webkit-border-bottom-left-radius: 0;
     -webkit-border-top-left-radius: 0;
-    -moz-border-radius-topright: 4px;
-    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
     -moz-border-radius-bottomleft: 0;
     -moz-border-radius-topleft: 0;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     -moz-background-clip: padding-box;
@@ -1681,24 +1685,24 @@ table {
     float: left;
     position: absolute;
     top: 0;
-    left: -6px;
+    left: -9px;
     width: 0;
     height: 0;
     border-color: transparent #0089e0 transparent transparent;
     border-style: solid;
-    border-width: 6px 6px 6px 0;
+    border-width: 9px 9px 9px 0;
   }
   .container .site .post footer .inlineListTags a:after {
     content: "";
     position: absolute;
-    top: 4px;
+    top: 7.5px;
     left: 0;
     float: left;
-    width: 4px;
-    height: 4px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+    width: 3px;
+    height: 3px;
+    -webkit-border-radius: 1.5px;
+    -moz-border-radius: 1.5px;
+    border-radius: 1.5px;
     background: #ffffff;
     -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
@@ -1723,8 +1727,8 @@ table {
   .container .site .post footer .inlineListCategories li,
   .container .site .post footer .inlineListCategories a {
     float: left;
-    height: 12px;
-    line-height: 12px;
+    height: 18px;
+    line-height: 1.5em;
     position: relative;
     font-size: 12px;
   }
@@ -1742,16 +1746,16 @@ table {
     background: #e82c0c;
     color: #ffffff;
     text-decoration: none;
-    -webkit-border-top-right-radius: 4px;
-    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
     -webkit-border-bottom-left-radius: 0;
     -webkit-border-top-left-radius: 0;
-    -moz-border-radius-topright: 4px;
-    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
     -moz-border-radius-bottomleft: 0;
     -moz-border-radius-topleft: 0;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     -moz-background-clip: padding-box;
@@ -1763,24 +1767,24 @@ table {
     float: left;
     position: absolute;
     top: 0;
-    left: -6px;
+    left: -9px;
     width: 0;
     height: 0;
     border-color: transparent #e82c0c transparent transparent;
     border-style: solid;
-    border-width: 6px 6px 6px 0;
+    border-width: 9px 9px 9px 0;
   }
   .container .site .post footer .inlineListCategories a:after {
     content: "";
     position: absolute;
-    top: 4px;
+    top: 7.5px;
     left: 0;
     float: left;
-    width: 4px;
-    height: 4px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+    width: 3px;
+    height: 3px;
+    -webkit-border-radius: 1.5px;
+    -moz-border-radius: 1.5px;
+    border-radius: 1.5px;
     background: #ffffff;
     -webkit-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
