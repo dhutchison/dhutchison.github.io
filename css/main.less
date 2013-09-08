@@ -39,6 +39,21 @@
 	padding: 1em 2em 1em 2em;
 }
 
+.siteLeftPadding(@width) when (@width < 95%) {
+	padding-left: 2em;
+}
+
+.siteLeftPadding(@width) when (@width >= 95%) {
+	padding-left: 0px;
+}
+
+.siteRightPadding(@width) when (@width < 95%) {
+	padding-right: 2em;
+}
+
+.siteRightPadding(@width) when (@width >= 95%) {
+	padding-right: 0px;
+}
 
 .leftRightGradient(@leftColour: #5D83C4; @rightColour: @backgroundColour) {
 	
@@ -372,7 +387,14 @@ table {
     		
     		.footer {
     		    z-index: 1;
-    		    .sitePadding(@width);
+
+                .contact {
+                    .siteLeftPadding(@width);
+                }
+
+                ul.social {
+                    .siteRightPadding(@width);
+                }
     		}
     		
     		.profile {
@@ -414,7 +436,6 @@ table {
     			h6 {
     				/* H6 is used for the date section */
     				font-size: @h5FontSize;
-    				margin-top: -(2 * @h3FontSize);
     			}
     		
     			p {
@@ -449,8 +470,6 @@ table {
 /*****************************************************************************/
 
 .container{
-	padding-bottom:  1.5em;
-
 
     .site {
     	/*	background*/
@@ -582,7 +601,8 @@ table {
     		    
                 
                 li {
-                    margin-bottom: 2px;    
+                    margin-bottom: 2px;
+                    overflow: hidden;
                 }
                 
     		    .year {
@@ -593,7 +613,8 @@ table {
     		    }
     		    
                 .meta {
-                    display: inline-block;
+//                    display: inline-block;
+                    float: left;
                     font-family: @headerFonts;
     				font-weight: @contentFontWeight;
     				width: 4em;
@@ -605,6 +626,8 @@ table {
                 .title {
                     font-family: @headerFonts;
                     font-weight: @contentFontWeight;
+                    overflow: hidden;
+                    padding-left: 4px;
                 }
                 
     		    ul {
@@ -696,6 +719,7 @@ table {
         		    
         		    .next {
         		        float: right;
+        		        white-space: nowrap;
         		    }
         		
         		}
@@ -709,6 +733,7 @@ table {
     		color: @mainFontColour;
     		border-top: 4px solid #eee;
     		overflow: hidden;
+    		width: 100%;
     		
     		img {
     			height: 16px;
@@ -816,6 +841,7 @@ table {
     		h5 {
     			color: #262625;
     			font-style: italic;
+                display: inline-block;
     		}
     	
     		h6 {
@@ -834,6 +860,13 @@ table {
 	/*make the design flexible if possible */
 	/*Structure your code thinking about all devices that go below*/
     .sizedSite(12px; 80%);
+}
+@media 
+    only screen and (max-width: 1024px) {
+	/*IPad portrait AND netbooks, AND anything with smaller screen*/
+	/*make the design flexible if possible */
+	/*Structure your code thinking about all devices that go below*/
+    .sizedSite(16px; 90%);
 }
 @media 
 	only screen and (max-device-width: 640px), 

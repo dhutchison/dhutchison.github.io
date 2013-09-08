@@ -79,9 +79,6 @@ table {
 /* Site
 /*
 /*****************************************************************************/
-.container {
-  padding-bottom: 1.5em;
-}
 .container .site {
   /*	background*/
 
@@ -238,6 +235,7 @@ table {
 }
 .container .site .content .archives li {
   margin-bottom: 2px;
+  overflow: hidden;
 }
 .container .site .content .archives .year {
   display: inline-block;
@@ -246,7 +244,7 @@ table {
   vertical-align: top;
 }
 .container .site .content .archives .meta {
-  display: inline-block;
+  float: left;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   width: 4em;
@@ -257,6 +255,8 @@ table {
 .container .site .content .archives .title {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
+  overflow: hidden;
+  padding-left: 4px;
 }
 .container .site .content .archives ul {
   display: inline-block;
@@ -341,12 +341,14 @@ table {
 }
 .container .site .post footer .page-navigation .next {
   float: right;
+  white-space: nowrap;
 }
 .container .site .footer {
   font-size: 80%;
   color: #333333;
   border-top: 4px solid #eee;
   overflow: hidden;
+  width: 100%;
 }
 .container .site .footer img {
   height: 16px;
@@ -443,6 +445,7 @@ table {
 .container .site .profile h5 {
   color: #262625;
   font-style: italic;
+  display: inline-block;
 }
 .container .site .profile h6 {
   /* H6 is used for the date section */
@@ -675,7 +678,12 @@ table {
 }
 .container .site .footer {
   z-index: 1;
-  padding: 1em 2em 1em 2em;
+}
+.container .site .footer .contact {
+  padding-left: 2em;
+}
+.container .site .footer ul.social {
+  padding-right: 2em;
 }
 .container .site .profile {
   /* H1, H2 and ing used for profile heading */
@@ -710,7 +718,6 @@ table {
   /* H6 is used for the date section */
 
   font-size: 13.5px;
-  margin-top: -47.88px;
 }
 .container .site .profile p {
   padding-left: 162px;
@@ -952,7 +959,12 @@ table {
   }
   .container .site .footer {
     z-index: 1;
-    padding: 1em 2em 1em 2em;
+  }
+  .container .site .footer .contact {
+    padding-left: 2em;
+  }
+  .container .site .footer ul.social {
+    padding-right: 2em;
   }
   .container .site .profile {
     /* H1, H2 and ing used for profile heading */
@@ -987,13 +999,294 @@ table {
     /* H6 is used for the date section */
   
     font-size: 9px;
-    margin-top: -31.92px;
   }
   .container .site .profile p {
     padding-left: 108px;
   }
   .container .site .profile ul {
     padding-left: 128px;
+  }
+  .container .site .profile ul li ul {
+    /* Need to switch back for nested lists to have less padding */
+  
+    padding-left: 2em;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  /*IPad portrait AND netbooks, AND anything with smaller screen*/
+  /*make the design flexible if possible */
+  /*Structure your code thinking about all devices that go below*/
+  .container {
+    font-size: 16px;
+  }
+  .container .site {
+    /* text */
+  
+    font-size: 16px;
+    /* Sizing */
+  
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .container .site h2 {
+    font-size: 28px;
+  }
+  .container .site .header {
+    width: 90%;
+  }
+  .container .site .header h1.title {
+    margin-left: 28px;
+    font-size: 38.4px;
+  }
+  .container .site .header #nav ul {
+    margin-left: 28px;
+  }
+  .container .site .header .links {
+    font-size: 19.2px;
+  }
+  .container .site .header .links ul li {
+    padding-right: 16px;
+  }
+  .container .site .content {
+    padding: 1em 2em 1em 2em;
+  }
+  .container .site .content .archivesHeader h2 {
+    font-size: 28px;
+  }
+  .container .site .content .archives .year {
+    font-size: 16px;
+  }
+  .container .site .content .archives .meta {
+    font-size: 16px;
+  }
+  .container .site .content .archives .title {
+    font-size: 16px;
+  }
+  .container .site .content .archives ul {
+    margin-left: 38.4px;
+  }
+  .container .site .post header h2 {
+    font-size: 28px;
+  }
+  .container .site .post header .meta {
+    font-size: 16px;
+  }
+  .container .site .post h3 {
+    font-size: 22px;
+  }
+  .container .site .post footer .inlineListTags {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    list-style: none;
+    display: inline-block;
+  }
+  .container .site .post footer .inlineListTags li {
+    padding-left: 1em;
+  }
+  .container .site .post footer .inlineListTags li,
+  .container .site .post footer .inlineListTags a {
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    position: relative;
+    font-size: 16px;
+  }
+  .container .site .post footer .inlineListTags a {
+    /**
+   * http://cssglobe.com/pure-css3-post-tags/
+   */
+  
+    -moz-transition-duration: 0s;
+    -webkit-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+    margin-left: 8px;
+    padding: 0 10px 0 12px;
+    background: #0089e0;
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-top-left-radius: 0;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 0;
+    -moz-border-radius-topleft: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+  .container .site .post footer .inlineListTags a:before {
+    content: "";
+    float: left;
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-color: transparent #0089e0 transparent transparent;
+    border-style: solid;
+    border-width: 8px 8px 8px 0;
+  }
+  .container .site .post footer .inlineListTags a:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    float: left;
+    width: 4px;
+    height: 4px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: #ffffff;
+    -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  .container .site .post footer .inlineListTags a:hover {
+    background: #808080;
+  }
+  .container .site .post footer .inlineListTags a:hover:before {
+    border-color: transparent #808080 transparent transparent;
+  }
+  .container .site .post footer .inlineListCategories {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    list-style: none;
+    display: inline-block;
+  }
+  .container .site .post footer .inlineListCategories li {
+    padding-left: 1em;
+  }
+  .container .site .post footer .inlineListCategories li,
+  .container .site .post footer .inlineListCategories a {
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    position: relative;
+    font-size: 16px;
+  }
+  .container .site .post footer .inlineListCategories a {
+    /**
+   * http://cssglobe.com/pure-css3-post-tags/
+   */
+  
+    -moz-transition-duration: 0s;
+    -webkit-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+    margin-left: 8px;
+    padding: 0 10px 0 12px;
+    background: #e82c0c;
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-top-left-radius: 0;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 0;
+    -moz-border-radius-topleft: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+  .container .site .post footer .inlineListCategories a:before {
+    content: "";
+    float: left;
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-color: transparent #e82c0c transparent transparent;
+    border-style: solid;
+    border-width: 8px 8px 8px 0;
+  }
+  .container .site .post footer .inlineListCategories a:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    float: left;
+    width: 4px;
+    height: 4px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: #ffffff;
+    -webkit-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  .container .site .post footer .inlineListCategories a:hover {
+    background: #808080;
+  }
+  .container .site .post footer .inlineListCategories a:hover:before {
+    border-color: transparent #808080 transparent transparent;
+  }
+  .container .site .footer {
+    z-index: 1;
+  }
+  .container .site .footer .contact {
+    padding-left: 2em;
+  }
+  .container .site .footer ul.social {
+    padding-right: 2em;
+  }
+  .container .site .profile {
+    /* H1, H2 and ing used for profile heading */
+  
+    /* H3-5 used in main profile */
+  
+  }
+  .container .site .profile img {
+    margin-right: 21.28px;
+    margin-left: -144px;
+  }
+  .container .site .profile h1 {
+    padding-left: 144px;
+    font-size: 38.4px;
+  }
+  .container .site .profile h2 {
+    padding-left: 144px;
+    font-size: 28.799999999999997px;
+  }
+  .container .site .profile h3 {
+    font-size: 21.28px;
+  }
+  .container .site .profile h4 {
+    padding-left: 144px;
+    font-size: 20px;
+  }
+  .container .site .profile h5 {
+    padding-left: 144px;
+    font-size: 12px;
+  }
+  .container .site .profile h6 {
+    /* H6 is used for the date section */
+  
+    font-size: 12px;
+  }
+  .container .site .profile p {
+    padding-left: 144px;
+  }
+  .container .site .profile ul {
+    padding-left: 164px;
   }
   .container .site .profile ul li ul {
     /* Need to switch back for nested lists to have less padding */
@@ -1226,6 +1519,12 @@ table {
   .container .site .footer {
     z-index: 1;
   }
+  .container .site .footer .contact {
+    padding-left: 0px;
+  }
+  .container .site .footer ul.social {
+    padding-right: 0px;
+  }
   .container .site .profile {
     /* H1, H2 and ing used for profile heading */
   
@@ -1259,7 +1558,6 @@ table {
     /* H6 is used for the date section */
   
     font-size: 9px;
-    margin-top: -31.92px;
   }
   .container .site .profile p {
     padding-left: 108px;
@@ -1497,6 +1795,12 @@ table {
   .container .site .footer {
     z-index: 1;
   }
+  .container .site .footer .contact {
+    padding-left: 0px;
+  }
+  .container .site .footer ul.social {
+    padding-right: 0px;
+  }
   .container .site .profile {
     /* H1, H2 and ing used for profile heading */
   
@@ -1530,7 +1834,6 @@ table {
     /* H6 is used for the date section */
   
     font-size: 9px;
-    margin-top: -31.92px;
   }
   .container .site .profile p {
     padding-left: 108px;
