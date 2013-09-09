@@ -1,8 +1,11 @@
 ---
+group: navigation
+keywords: [software developer, microsoft sql server, jasperreports, software development,
+  business, information technology, html, java, Glasgow, Lanarkshire, David Hutchison, J2EE, Swing]
+lastUpdated: 2013-09-09 21:48:31
 layout: profile
 title: Profile
-group: "navigation"
-lastUpdated: 2013-07-28 21:52:00
+summary: The Resume of David Hutchison.
 ---
 
 ![Me](/images/self_small.png)
