@@ -1,41 +1,8 @@
-/* Font Definitions */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
-
 /* Less Elements */
 @import "dmitryf-elements/elements.less";
+@import "commonStyle.less";
 
-
-
-/*
- * Variables 
- */
-@mainHeaderColour: #475261;
-@mainFontColour: #333333;
-@outerBackgroundColour: #666666;
-@shadowColour: #333333;
-@backgroundColour: #FFFFFF;
-
-@headerHeight: 4em;
-
-@lineHeightEM: 1.5em;
-/* Need to use the below when multiplying */
-@lineHeight: 1.5;
-
-@lightBackgroundColour: #333333;
-
-
-@linkColour: @mainFontColour;
-@linkHoverColour: #AAAAAA;
-
-
-@headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-@contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-@contentFontWeight: 300;
-
-@categoryTagColour: #E82C0C;
-@tagColour: #0089e0;
-
-//@contentFontSize: 14px;
+.fonts();
 
 /* Functions */
 
@@ -159,7 +126,7 @@
 		height: @dotSize;
 		.rounded(@dotSize/2);
 		background: @foregroundColour;
-		.drop-shadow(-1px -1px 2px darken(@backgroundColour, 30%));
+		.drop-shadow(-1px, -1px, 2px, 0.3);
 	}
 
 
@@ -213,15 +180,11 @@
 /*****************************************************************************/
 
 /* Global Reset */
-* {
-	margin: 0;
-	padding: 0;
-}
+.reset();
 
 html, body { height: 100%; }
 
 body {
-//	background-color: @outerBackgroundColour;
 	color: @lightBackgroundColour;
 	font-family: @contentFonts;
 	font-weight: @contentFontWeight;
@@ -252,16 +215,6 @@ a:visited { color: #a0a; }
 
 table {
 	font-size: inherit;
-}
-
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-.home {
-	text-align: center;
-	color: @mainFontColour;
 }
 
 .headerMargins(@size; @width) when (@width < 95%) {
@@ -467,10 +420,6 @@ table {
     }
 }
 
-#toggle {
-    display: none;
-}
-
 /*****************************************************************************/
 /*
 /* Site
@@ -621,14 +570,13 @@ table {
     		    }
     		    
                 .meta {
-//                    display: inline-block;
                     float: left;
                     font-family: @headerFonts;
     				font-weight: @contentFontWeight;
     				width: 4em;
     				border-color: @linkColour;
     				border-right: 1px;
-                    vertical-align: center;
+                    vertical-align: middle;
                 }
                 
                 .title {
@@ -828,10 +776,12 @@ table {
     		}
     		h2{
     			margin-top: 10px;
-    			padding-bottom: 30px;
     			color:@mainHeaderColour;
     			text-transform:uppercase;
     			font-weight: @headerFontWeight;
+    		}
+    		p:nth-of-type(2) {
+    		    margin: 0;
     		}
     	
     		 /* H3-5 used in main profile */
@@ -892,14 +842,6 @@ table {
     
     .sizedSite(12px; 100%; 2; 1.4);    
 }
-
-/* iPhone 4 ----------- */
-//@media
-//only screen and (-webkit-min-device-pixel-ratio : 1.5),
-//only screen and (min-device-pixel-ratio : 1.5) {
-///* Styles */
-//    .sizedSite(12px; 100%; 2; 1.4);
-//}
 
 /*****************************************************************************/
 /*

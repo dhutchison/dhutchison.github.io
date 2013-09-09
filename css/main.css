@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
-/* Font Definitions */
 /* Less Elements */
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -7,10 +6,13 @@
     A set of useful LESS mixins
     More info at: http://lesselements.com
   ---------------------------------------------------*/
+/* Common style information between print and screen */
 /*
  * Variables 
  */
 /* Need to use the below when multiplying */
+/* Common Mixins */
+/* Font Definitions */
 /* Functions */
 /*****************************************************************************/
 /*
@@ -62,18 +64,6 @@ a:visited {
 }
 table {
   font-size: inherit;
-}
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-.home {
-  text-align: center;
-  color: #333333;
-}
-#toggle {
-  display: none;
 }
 /*****************************************************************************/
 /*
@@ -251,7 +241,7 @@ table {
   width: 4em;
   border-color: #333333;
   border-right: 1px;
-  vertical-align: center;
+  vertical-align: middle;
 }
 .container .site .content .archives .title {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -429,10 +419,12 @@ table {
 }
 .container .site .profile h2 {
   margin-top: 10px;
-  padding-bottom: 30px;
   color: #475261;
   text-transform: uppercase;
   font-weight: 600;
+}
+.container .site .profile p:nth-of-type(2) {
+  margin: 0;
 }
 .container .site .profile h3 {
   display: block;
@@ -588,9 +580,9 @@ table {
   -moz-border-radius: 2.25px;
   border-radius: 2.25px;
   background: #ffffff;
-  -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
 }
 .container .site .post footer .inlineListTags a:hover {
   background: #808080;
@@ -670,9 +662,9 @@ table {
   -moz-border-radius: 2.25px;
   border-radius: 2.25px;
   background: #ffffff;
-  -webkit-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
 }
 .container .site .post footer .inlineListCategories a:hover {
   background: #808080;
@@ -869,9 +861,9 @@ table {
     -moz-border-radius: 1.5px;
     border-radius: 1.5px;
     background: #ffffff;
-    -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
   }
   .container .site .post footer .inlineListTags a:hover {
     background: #808080;
@@ -951,9 +943,9 @@ table {
     -moz-border-radius: 1.5px;
     border-radius: 1.5px;
     background: #ffffff;
-    -webkit-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
   }
   .container .site .post footer .inlineListCategories a:hover {
     background: #808080;
@@ -1151,9 +1143,9 @@ table {
     -moz-border-radius: 2px;
     border-radius: 2px;
     background: #ffffff;
-    -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
   }
   .container .site .post footer .inlineListTags a:hover {
     background: #808080;
@@ -1233,9 +1225,9 @@ table {
     -moz-border-radius: 2px;
     border-radius: 2px;
     background: #ffffff;
-    -webkit-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
   }
   .container .site .post footer .inlineListCategories a:hover {
     background: #808080;
@@ -1428,9 +1420,9 @@ table {
     -moz-border-radius: 1.5px;
     border-radius: 1.5px;
     background: #ffffff;
-    -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
   }
   .container .site .post footer .inlineListTags a:hover {
     background: #808080;
@@ -1510,9 +1502,9 @@ table {
     -moz-border-radius: 1.5px;
     border-radius: 1.5px;
     background: #ffffff;
-    -webkit-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
   }
   .container .site .post footer .inlineListCategories a:hover {
     background: #808080;
@@ -1704,9 +1696,9 @@ table {
     -moz-border-radius: 1.5px;
     border-radius: 1.5px;
     background: #ffffff;
-    -webkit-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: -1px -1px 2px #002b47 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
   }
   .container .site .post footer .inlineListTags a:hover {
     background: #808080;
@@ -1786,9 +1778,9 @@ table {
     -moz-border-radius: 1.5px;
     border-radius: 1.5px;
     background: #ffffff;
-    -webkit-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
-    box-shadow: -1px -1px 2px #571004 1px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.3);
   }
   .container .site .post footer .inlineListCategories a:hover {
     background: #808080;
@@ -1851,7 +1843,6 @@ table {
     padding-left: 2em;
   }
 }
-/* iPhone 4 ----------- */
 /*****************************************************************************/
 /*
 /* Posts

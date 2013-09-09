@@ -1,6 +1,6 @@
 ---
 group: navigation
-keywords: [software developer, microsoft sql server, jasperreports, software development,
+keywords: [Resume, software developer, microsoft sql server, jasperreports, software development,
   business, information technology, html, java, Glasgow, Lanarkshire, David Hutchison, J2EE, Swing]
 lastUpdated: 2013-09-09 21:48:31
 layout: profile
@@ -11,18 +11,19 @@ summary: The Resume of David Hutchison.
 ![Me](/images/self_small.png)
 # David Hutchison #
 ## Software Developer ##
+[David@DevWithImagination.com](mailto:David@DevWithImagination.com "Email Me")
 
 ---
 ### Profile #
 I am a software developer with 5 years professional experience delivering solutions using a range of different technologies. I am passionate about developing good user interfaces and robust, maintainable software. I thrive when working under pressure and enjoy learning new technologies and keeping up with industry developments. I am seeking a challenging position as a senior analyst programmer to continue to progress my skills.
 
 ---
-### Experience #
-#### Java Programmer ##
-##### The SEEMiS Group LLP, Hamilton ###
+### Experience ###
+#### Java Programmer ####
+##### The SEEMiS Group LLP, Hamilton #####
 ###### July 2008-Present ######
 
-##### (July 2008 - April 2012 Employed by Westbase Technology, working at SEEMiS) ###
+##### (July 2008 - April 2012 Employed by Westbase Technology, working at SEEMiS) #####
 
 This Role consists of developing and maintaining Information Management Systems used in the education sector by the majority of Scottish Councils. 
 

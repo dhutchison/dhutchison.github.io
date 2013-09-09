@@ -1,0 +1,42 @@
+/* Common style information between print and screen */
+/*
+ * Variables 
+ */
+@mainHeaderColour: #475261;
+@mainFontColour: #333333;
+@outerBackgroundColour: #666666;
+@shadowColour: #333333;
+@backgroundColour: #FFFFFF;
+
+@headerHeight: 4em;
+
+@lineHeightEM: 1.5em;
+/* Need to use the below when multiplying */
+@lineHeight: 1.5;
+
+@lightBackgroundColour: #333333;
+
+
+@linkColour: @mainFontColour;
+@linkHoverColour: #AAAAAA;
+
+
+@headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@contentFontWeight: 300;
+
+@categoryTagColour: #E82C0C;
+@tagColour: #0089e0;
+
+/* Common Mixins */
+.reset() {
+    * {
+    	margin: 0;
+    	padding: 0;
+    }
+}
+
+.fonts() {
+    /* Font Definitions */
+    @import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+}
