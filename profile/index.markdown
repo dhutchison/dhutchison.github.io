@@ -8,9 +8,8 @@ title: Profile
 summary: The Resume of David Hutchison.
 ---
 
-![Me](/images/self_small.png)
 # David Hutchison #
-## Software Developer ##
+![Me](/images/self_small.png)
 [David@DevWithImagination.com](mailto:David@DevWithImagination.com "Email Me")
 
 ---
@@ -22,8 +21,6 @@ I am a software developer with 5 years professional experience delivering soluti
 #### Java Programmer ####
 ##### The SEEMiS Group LLP, Hamilton #####
 ###### July 2008-Present ######
-
-##### (July 2008 - April 2012 Employed by Westbase Technology, working at SEEMiS) #####
 
 This Role consists of developing and maintaining Information Management Systems used in the education sector by the majority of Scottish Councils. 
 

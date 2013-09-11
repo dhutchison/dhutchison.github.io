@@ -399,23 +399,24 @@ table {
 
 }
 .container .site .profile {
-  padding: 0 0 40px;
+  padding-top: 40px;
   /* H1, H2 and ing used for profile heading */
 
   /* H3-5 used in main profile */
 
 }
 .container .site .profile img {
-  float: left;
   background-color: #ffffff;
   border: 1px solid #dedede;
   padding: 10px;
   height: 100px;
 }
 .container .site .profile h1 {
-  padding-top: 30px;
   color: #475261;
   font-weight: 600;
+  display: inline-block;
+  margin-top: 1em;
+  margin-left: 96px;
 }
 .container .site .profile h2 {
   margin-top: 10px;
@@ -423,8 +424,12 @@ table {
   text-transform: uppercase;
   font-weight: 600;
 }
-.container .site .profile p:nth-of-type(2) {
+.container .site .profile p:nth-of-type(1) {
   margin: 0;
+}
+.container .site .profile p:nth-of-type(1) a:nth-of-type(1) {
+  padding-left: 10px;
+  vertical-align: top;
 }
 .container .site .profile h3 {
   display: block;
@@ -435,12 +440,7 @@ table {
   color: #475261;
   font-weight: 600;
 }
-.container .site .profile h4 {
-  color: #0066AA;
-}
 .container .site .profile h5 {
-  color: #262625;
-  font-style: italic;
   display: inline-block;
 }
 .container .site .profile h6 {
@@ -463,20 +463,20 @@ table {
   margin-left: auto;
 }
 .container .site h2 {
-  font-size: 31.5px;
+  font-size: 32px;
 }
 .container .site .header {
   width: 60%;
 }
 .container .site .header h1.title {
-  margin-left: 31.5px;
-  font-size: 43.199999999999996px;
+  margin-left: 32px;
+  font-size: 44px;
 }
 .container .site .header #nav ul {
-  margin-left: 31.5px;
+  margin-left: 32px;
 }
 .container .site .header .links {
-  font-size: 21.599999999999998px;
+  font-size: 22px;
 }
 .container .site .header .links ul li {
   padding-right: 18px;
@@ -485,7 +485,7 @@ table {
   padding: 1em 2em 1em 2em;
 }
 .container .site .content .archivesHeader h2 {
-  font-size: 31.5px;
+  font-size: 32px;
 }
 .container .site .content .archives .year {
   font-size: 18px;
@@ -497,16 +497,16 @@ table {
   font-size: 18px;
 }
 .container .site .content .archives ul {
-  margin-left: 43.199999999999996px;
+  margin-left: 44px;
 }
 .container .site .post header h2 {
-  font-size: 31.5px;
+  font-size: 32px;
 }
 .container .site .post header .meta {
   font-size: 18px;
 }
 .container .site .post h3 {
-  font-size: 24.75px;
+  font-size: 25px;
 }
 .container .site .post footer .inlineListTags {
   margin: 0;
@@ -688,35 +688,36 @@ table {
 
 }
 .container .site .profile img {
-  margin-right: 23.94px;
-  margin-left: -162px;
+  margin-top: -81px;
 }
 .container .site .profile h1 {
-  padding-left: 162px;
-  font-size: 43.199999999999996px;
+  font-size: 44px;
 }
 .container .site .profile h2 {
   padding-left: 162px;
-  font-size: 32.4px;
+  font-size: 32px;
 }
 .container .site .profile h3 {
-  font-size: 23.94px;
+  font-size: 24px;
 }
 .container .site .profile h4 {
   padding-left: 162px;
-  font-size: 22.5px;
+  font-size: 24px;
 }
 .container .site .profile h5 {
   padding-left: 162px;
-  font-size: 13.5px;
+  font-size: 15px;
 }
 .container .site .profile h6 {
   /* H6 is used for the date section */
 
-  font-size: 13.5px;
+  font-size: 15px;
 }
 .container .site .profile p {
   padding-left: 162px;
+}
+.container .site .profile p:nth-of-type(1) {
+  padding-left: 0px;
 }
 .container .site .profile ul {
   padding-left: 182px;
@@ -751,13 +752,13 @@ table {
   }
   .container .site .header h1.title {
     margin-left: 21px;
-    font-size: 28.799999999999997px;
+    font-size: 29px;
   }
   .container .site .header #nav ul {
     margin-left: 21px;
   }
   .container .site .header .links {
-    font-size: 14.399999999999999px;
+    font-size: 14.5px;
   }
   .container .site .header .links ul li {
     padding-right: 12px;
@@ -778,7 +779,7 @@ table {
     font-size: 12px;
   }
   .container .site .content .archives ul {
-    margin-left: 28.799999999999997px;
+    margin-left: 29px;
   }
   .container .site .post header h2 {
     font-size: 21px;
@@ -969,35 +970,36 @@ table {
   
   }
   .container .site .profile img {
-    margin-right: 15.96px;
-    margin-left: -108px;
+    margin-top: -74px;
   }
   .container .site .profile h1 {
-    padding-left: 108px;
-    font-size: 28.799999999999997px;
+    font-size: 29px;
   }
   .container .site .profile h2 {
     padding-left: 108px;
-    font-size: 21.599999999999998px;
+    font-size: 21px;
   }
   .container .site .profile h3 {
-    font-size: 15.96px;
+    font-size: 16px;
   }
   .container .site .profile h4 {
     padding-left: 108px;
-    font-size: 15px;
+    font-size: 16px;
   }
   .container .site .profile h5 {
     padding-left: 108px;
-    font-size: 9px;
+    font-size: 10px;
   }
   .container .site .profile h6 {
     /* H6 is used for the date section */
   
-    font-size: 9px;
+    font-size: 10px;
   }
   .container .site .profile p {
     padding-left: 108px;
+  }
+  .container .site .profile p:nth-of-type(1) {
+    padding-left: 0px;
   }
   .container .site .profile ul {
     padding-left: 128px;
@@ -1033,13 +1035,13 @@ table {
   }
   .container .site .header h1.title {
     margin-left: 28px;
-    font-size: 38.4px;
+    font-size: 39px;
   }
   .container .site .header #nav ul {
     margin-left: 28px;
   }
   .container .site .header .links {
-    font-size: 19.2px;
+    font-size: 19.5px;
   }
   .container .site .header .links ul li {
     padding-right: 16px;
@@ -1060,7 +1062,7 @@ table {
     font-size: 16px;
   }
   .container .site .content .archives ul {
-    margin-left: 38.4px;
+    margin-left: 39px;
   }
   .container .site .post header h2 {
     font-size: 28px;
@@ -1251,35 +1253,36 @@ table {
   
   }
   .container .site .profile img {
-    margin-right: 21.28px;
-    margin-left: -144px;
+    margin-top: -79px;
   }
   .container .site .profile h1 {
-    padding-left: 144px;
-    font-size: 38.4px;
+    font-size: 39px;
   }
   .container .site .profile h2 {
     padding-left: 144px;
-    font-size: 28.799999999999997px;
+    font-size: 28px;
   }
   .container .site .profile h3 {
-    font-size: 21.28px;
+    font-size: 21px;
   }
   .container .site .profile h4 {
     padding-left: 144px;
-    font-size: 20px;
+    font-size: 21px;
   }
   .container .site .profile h5 {
     padding-left: 144px;
-    font-size: 12px;
+    font-size: 13px;
   }
   .container .site .profile h6 {
     /* H6 is used for the date section */
   
-    font-size: 12px;
+    font-size: 13px;
   }
   .container .site .profile p {
     padding-left: 144px;
+  }
+  .container .site .profile p:nth-of-type(1) {
+    padding-left: 0px;
   }
   .container .site .profile ul {
     padding-left: 164px;
@@ -1306,7 +1309,7 @@ table {
     margin-left: 0px;
   }
   .container .site h2 {
-    font-size: 16.799999999999997px;
+    font-size: 17px;
   }
   .container .site .header {
     width: 100%;
@@ -1325,7 +1328,7 @@ table {
     padding-right: 12px;
   }
   .container .site .content .archivesHeader h2 {
-    font-size: 16.799999999999997px;
+    font-size: 17px;
   }
   .container .site .content .archives .year {
     font-size: 12px;
@@ -1340,13 +1343,13 @@ table {
     margin-left: 24px;
   }
   .container .site .post header h2 {
-    font-size: 16.799999999999997px;
+    font-size: 17px;
   }
   .container .site .post header .meta {
     font-size: 12px;
   }
   .container .site .post h3 {
-    font-size: 14.399999999999999px;
+    font-size: 14.5px;
   }
   .container .site .post footer .inlineListTags {
     margin: 0;
@@ -1528,35 +1531,36 @@ table {
   
   }
   .container .site .profile img {
-    margin-right: 15.96px;
-    margin-left: -108px;
+    margin-top: -70px;
   }
   .container .site .profile h1 {
-    padding-left: 108px;
     font-size: 24px;
   }
   .container .site .profile h2 {
     padding-left: 108px;
-    font-size: 18px;
+    font-size: 17px;
   }
   .container .site .profile h3 {
-    font-size: 15.96px;
+    font-size: 16px;
   }
   .container .site .profile h4 {
     padding-left: 108px;
-    font-size: 15px;
+    font-size: 16px;
   }
   .container .site .profile h5 {
     padding-left: 108px;
-    font-size: 9px;
+    font-size: 10px;
   }
   .container .site .profile h6 {
     /* H6 is used for the date section */
   
-    font-size: 9px;
+    font-size: 10px;
   }
   .container .site .profile p {
     padding-left: 108px;
+  }
+  .container .site .profile p:nth-of-type(1) {
+    padding-left: 0px;
   }
   .container .site .profile ul {
     padding-left: 128px;
@@ -1582,7 +1586,7 @@ table {
     margin-left: 0px;
   }
   .container .site h2 {
-    font-size: 16.799999999999997px;
+    font-size: 17px;
   }
   .container .site .header {
     width: 100%;
@@ -1601,7 +1605,7 @@ table {
     padding-right: 12px;
   }
   .container .site .content .archivesHeader h2 {
-    font-size: 16.799999999999997px;
+    font-size: 17px;
   }
   .container .site .content .archives .year {
     font-size: 12px;
@@ -1616,13 +1620,13 @@ table {
     margin-left: 24px;
   }
   .container .site .post header h2 {
-    font-size: 16.799999999999997px;
+    font-size: 17px;
   }
   .container .site .post header .meta {
     font-size: 12px;
   }
   .container .site .post h3 {
-    font-size: 14.399999999999999px;
+    font-size: 14.5px;
   }
   .container .site .post footer .inlineListTags {
     margin: 0;
@@ -1804,35 +1808,36 @@ table {
   
   }
   .container .site .profile img {
-    margin-right: 15.96px;
-    margin-left: -108px;
+    margin-top: -70px;
   }
   .container .site .profile h1 {
-    padding-left: 108px;
     font-size: 24px;
   }
   .container .site .profile h2 {
     padding-left: 108px;
-    font-size: 18px;
+    font-size: 17px;
   }
   .container .site .profile h3 {
-    font-size: 15.96px;
+    font-size: 16px;
   }
   .container .site .profile h4 {
     padding-left: 108px;
-    font-size: 15px;
+    font-size: 16px;
   }
   .container .site .profile h5 {
     padding-left: 108px;
-    font-size: 9px;
+    font-size: 10px;
   }
   .container .site .profile h6 {
     /* H6 is used for the date section */
   
-    font-size: 9px;
+    font-size: 10px;
   }
   .container .site .profile p {
     padding-left: 108px;
+  }
+  .container .site .profile p:nth-of-type(1) {
+    padding-left: 0px;
   }
   .container .site .profile ul {
     padding-left: 128px;
@@ -1841,6 +1846,33 @@ table {
     /* Need to switch back for nested lists to have less padding */
   
     padding-left: 2em;
+  }
+}
+@media only print {
+  @page  {
+    margin: 0.5cm;
+  }
+  body {
+    background: none;
+    background-color: #FFFFFF;
+  }
+  .container .site {
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .container .site .header {
+    display: none;
+  }
+  .container .site .footer {
+    display: none;
+  }
+  .container .site .content {
+    margin-top: 0px;
+  }
+  .container .site a {
+    text-decoration: none;
+    color: #475261;
   }
 }
 /*****************************************************************************/
