@@ -14,3 +14,7 @@ gh-pages/
 site/_site/
 coverage
 .ruby-version
+/nbproject/private/
+nbproject/project.xml
+
+nbproject/project.properties
