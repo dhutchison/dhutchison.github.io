@@ -265,6 +265,7 @@ table {
 }
 .container .site .tagListTitle {
   display: inline-block;
+  vertical-align: top;
 }
 .container .site .post {
   text-align: left;
@@ -416,7 +417,6 @@ table {
   font-weight: 600;
   display: inline-block;
   margin-top: 1em;
-  margin-left: 96px;
 }
 .container .site .profile h2 {
   margin-top: 10px;
@@ -428,7 +428,6 @@ table {
   margin: 0;
 }
 .container .site .profile p:nth-of-type(1) a:nth-of-type(1) {
-  padding-left: 10px;
   vertical-align: top;
 }
 .container .site .profile h3 {
@@ -446,7 +445,6 @@ table {
 .container .site .profile h6 {
   /* H6 is used for the date section */
 
-  float: right;
   text-transform: uppercase;
 }
 .container {
@@ -692,6 +690,7 @@ table {
 }
 .container .site .profile h1 {
   font-size: 44px;
+  margin-left: 86px;
 }
 .container .site .profile h2 {
   padding-left: 162px;
@@ -711,6 +710,7 @@ table {
 .container .site .profile h6 {
   /* H6 is used for the date section */
 
+  padding-left: 162px;
   font-size: 15px;
 }
 .container .site .profile p {
@@ -974,6 +974,7 @@ table {
   }
   .container .site .profile h1 {
     font-size: 29px;
+    margin-left: 86px;
   }
   .container .site .profile h2 {
     padding-left: 108px;
@@ -993,6 +994,7 @@ table {
   .container .site .profile h6 {
     /* H6 is used for the date section */
   
+    padding-left: 108px;
     font-size: 10px;
   }
   .container .site .profile p {
@@ -1257,6 +1259,7 @@ table {
   }
   .container .site .profile h1 {
     font-size: 39px;
+    margin-left: 86px;
   }
   .container .site .profile h2 {
     padding-left: 144px;
@@ -1276,6 +1279,7 @@ table {
   .container .site .profile h6 {
     /* H6 is used for the date section */
   
+    padding-left: 144px;
     font-size: 13px;
   }
   .container .site .profile p {
@@ -1535,6 +1539,7 @@ table {
   }
   .container .site .profile h1 {
     font-size: 24px;
+    margin-left: 86px;
   }
   .container .site .profile h2 {
     padding-left: 108px;
@@ -1554,6 +1559,7 @@ table {
   .container .site .profile h6 {
     /* H6 is used for the date section */
   
+    padding-left: 108px;
     font-size: 10px;
   }
   .container .site .profile p {
@@ -1812,6 +1818,7 @@ table {
   }
   .container .site .profile h1 {
     font-size: 24px;
+    margin-left: 86px;
   }
   .container .site .profile h2 {
     padding-left: 108px;
@@ -1831,6 +1838,7 @@ table {
   .container .site .profile h6 {
     /* H6 is used for the date section */
   
+    padding-left: 108px;
     font-size: 10px;
   }
   .container .site .profile p {
