@@ -51,6 +51,10 @@ end
  
 desc 'Build tags pages'
 task :build_with_tags do
+    build_with_tags
+end
+
+def build_with_tags
 #     sh 'rm -rf _site'
     
     puts "Generating tags..."
@@ -106,7 +110,10 @@ end
 
 desc 'Build category pages'
 task :build_with_categories do
-    
+    build_with_categories
+end
+
+def build_with_categories
     puts "Generating categories..."
 
     include Jekyll::Filters
@@ -159,7 +166,18 @@ HTML
 end
 
 desc 'Build and send to dev server'
-task :build do
+task :build, :opt do |t, args|
+    
+    
+    opt = args[:opt]
+    if opt then
+    puts opt
+        if ("full".casecmp opt) == 0 then
+            build_with_tags
+            build_with_categories
+        end
+    end
+    
     jekyll
     upload
     puts 'Done.'
