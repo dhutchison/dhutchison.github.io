@@ -321,6 +321,9 @@ table {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-decoration: underline;
 }
+.container .site .post img {
+  max-width: 100%;
+}
 .container .site .post blockquote {
   background-color: #e6e6e6;
 }
