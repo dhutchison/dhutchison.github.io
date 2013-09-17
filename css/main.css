@@ -141,7 +141,7 @@ table {
   background-image: -webkit-linear-gradient(left, #5d83c4 0%, #ffffff 100%);
   /* W3C Markup, IE10 Release Preview */
   background-image: linear-gradient(to right, #5d83c4 0%, #ffffff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@leftColour', endColorstr='#@rightColour', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#5d83c4, endColorstr=#ffffff, GradientType=1);
   width: 60%;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
