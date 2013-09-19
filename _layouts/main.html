@@ -60,7 +60,7 @@
             <meta name="twitter:description" content="{{ site.description }}" />
         {% endif %}
         {% if page.image %}
-            <meta name="twitter:image" content="{{ page.image }}" />
+            <meta name="twitter:image" content="{{ site.url }}{{ page.image }}" />
         {% endif %}
         
         <!-- Open Graph Support -->
@@ -69,7 +69,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
         {% if page.image %}
-            <meta property="og:image" content="{{ page.image }}" />
+            <meta property="og:image" content="{{ site.url}}{{ page.image }}" />
         {% endif %}
         {% if page.summary %}
             <meta property="og:description" content="{{ page.summary }}" />
