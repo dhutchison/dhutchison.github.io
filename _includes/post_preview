@@ -15,7 +15,7 @@
 		<article>
 			{% if post.content contains '<!--more-->' %}
 				{{ post.content | split:'<!--more-->' | first }}
-				<a href="{{ post.url }}" class="continue">&raquo; Continue reading</a>
+				<p><a href="{{ post.url }}" class="continue">&raquo; Continue reading</a></p>
 			{% else %}
 				{{ post.content }}
 			{% endif %}
