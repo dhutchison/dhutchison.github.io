@@ -98,7 +98,7 @@ layout: main
 title: Tagged #{tag}
 permalink: /tags/#{tag_slug}/
 ---
-{% assign tagName='#{tag_slug}' %}
+{% assign tagName='#{tag_slug}' %}{% assign tagDisplay='#{tag}' %}
 {% include tag_page %}
 HTML
       File.open("tags/#{tag_slug}.html", 'w+') do |file|

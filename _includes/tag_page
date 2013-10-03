@@ -2,7 +2,7 @@
     Requires that "tagName" is assigned prior to being called.
 {% endcomment %}
 
-<h2>Posts tagged <span class="tag">{{ tagName | capitalize }}</span></h2>
+<h2>Posts tagged <span class="tag">{{ tagDisplay }}</span></h2>
 {% capture downTagName %}{{ tagName | downcase }}{% endcapture %}
 {% for post in site.posts %}
     {% for tag in post.tags %}
@@ -12,5 +12,3 @@
         {% endif %}
     {% endfor %}
 {% endfor %}
-
-<p class="archive">View more in the <a href="/archives" title="Archives - {{ site.title }}">archives</a>.</p>
