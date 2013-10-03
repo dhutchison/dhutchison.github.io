@@ -323,6 +323,9 @@ table {
 }
 .container .site .post img {
   max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .container .site .post blockquote {
   background-color: #e6e6e6;
