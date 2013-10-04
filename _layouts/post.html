@@ -5,10 +5,10 @@ layout: main
 	{% assign post=page %}
 	<header>
 		<h2>
-			<a href="{{ post.url }}" class="title">{{ post.title }}</a>
 			<span class="meta">
 				<time datetime="{{ post.date | date_to_xmlschema }}" pubdate="" data-updated="true" title="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time>
 			</span>
+			<a href="{{ post.url }}" class="title">{{ post.title }}</a>
 		</h2>
 	</header>
 	<article>
