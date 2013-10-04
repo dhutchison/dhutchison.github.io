@@ -1,15 +1,16 @@
 ---
-title: Editorial – First Impressions, and a Workflow
-layout: post
-summary: Editorial — Best text editor on iPad?
-image: /images/editorial_first_look/appIcon.jpg
 categories: Products
-tags:
-- iPad
-- Software
 date: 2013-10-03 21:56
+lastUpdated: 2013-10-04 21:35:49
+image: /images/editorial_first_look/appIcon.jpg
+keywords: [ipad, python, federico viticci, zemanta, workflow, ibook, ios, mac]
+layout: post
 slug: editorial-first-impressions-and-a-workflow
+summary: "Editorial – Best text editor on iPad?"
+tags: [iPad, Software]
+title: "Editorial – First Impressions, and a Workflow"
 ---
+
 I have been playing with [Editorial](http://omz-software.com/editorial/index.html "Editorial for iPad") for a couple of days now and had my first experiment with the workflow features. I must say, I do like it a lot!
 
 <!--more-->
@@ -32,6 +33,8 @@ In a [previous post](/2013/08/06/a-blogging-workflow/ "A Blogging Workflow | Dev
 This required using the "Run Python Script" action to call the Zemanta API. I have never written anything in Python before but with the help of a quick start tutorial, the Zemanta [code snippet](http://developer.zemanta.com/wiki/helloworld/python/ "Python code sample") and [API documentation](http://developer.zemanta.com/docs/suggest/ "zemanta.suggest") I was able to pick up the basics required for this simple task. The bit I actually found most difficult was getting the regex right that is used to determine the range of the document to replace! This workflow works by identifying the YAML front matter at the start of the document, loading the keyword suggestions for the body of the document, then updating the YAML header with this information.
 
 Editorial allows you to share workflows that you have created, so this is available [here](http://editorial-app.appspot.com/workflow/5136686396735488/zgbeHU5QcX8 "Editorial Workflow — Insert Keywords"). As I said, I'm only just starting with Python and workflows so it may not be the optimal way to achieve the task, but it is working for me. **Note:** this requires an API key that is freely available from [their developer site](http://developer.zemanta.com/docs/ "Zemanta Documentation") to be added as the value to the first parameter in the workflow. I've added a conditional to warn if this is missing. 
+
+**Update:** I have noticed this will mess up any Unicode characters in the front mater, turning them in to their respective codes. Not sure at this point how to resolve this issue. [Tweet me](https://twitter.com/davidhutchison "Twitter") suggestions!
 
 The workflow that I'm using the most just now is from the review/book above. It deals with inserting a markdown formatted link for the current selected text, using the web page that is currently open in Editorial's web browser. It is available [here](http://editorial-app.appspot.com/workflow/6258007868440576/-PjiU8b7VOw "Editorial Workflow — Links"). 
 
