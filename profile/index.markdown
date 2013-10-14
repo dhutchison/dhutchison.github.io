@@ -1,8 +1,8 @@
 ---
 group: navigation
 keywords: [Resume, software developer, microsoft sql server, jasperreports, software development,
-  business, information technology, html, java, Glasgow, Lanarkshire, David Hutchison, J2EE, Swing]
-lastUpdated: 2013-09-09 21:48:31
+  business, information technology, html, java, Glasgow, Lanarkshire, David Hutchison, J2EE, Swing, Strathclyde University, SEEMiS, SEEMiS Group]
+lastUpdated: 2013-10-12 13:22:34
 layout: profile
 title: Profile
 summary: The Resume of David Hutchison.
@@ -53,4 +53,4 @@ My main responsibilities include :
 Through my time doing professional, academic, and hobbyist software development I have worked with a wide selection of software technologies. I enjoy learning new technologies as required to meet requirements and try to keep up to date with both new technology and industry developments.
 
 I have experience using:  
-Eclipse, Ant, Hudson, JAX-WS, JAX-B, Java EE 5/6, Glassfish, Microsoft SQL Server, Swing, MySQL, JUnit, JasperReports, iText 2, Axis 1.4 (with WSS4J), JSP, PHP, HTML, CSS, Jekyll and Ruby.
+Eclipse, Ant, Hudson, JAX-WS, JAX-B, Java EE 5/6, Glassfish, Microsoft SQL Server, Swing, MySQL, JUnit, JasperReports, iText 2, ApacheDS, Axis 1.4 (with WSS4J), JSP, PHP, HTML, CSS, Jekyll and Ruby.
