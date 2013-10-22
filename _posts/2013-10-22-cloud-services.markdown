@@ -1,10 +1,12 @@
 ---
-layout: post
-title: Cloud Services
-summary: Can I get away with storing photos and music in the cloud?
 date: 2013-10-22 21:58
+keywords: [iphoto, iphone, flickr, apple, itunes, itunes match, icloud, applescript]
+layout: post
 slug: cloud-services
+summary: Can I get away with storing photos and music in the cloud?
+title: Cloud Services
 ---
+
 I was certain that I was going to buy a 32GB iPhone 5s after seeing how much space free I still had on my 16GB iPhone 4, but then I got thinking: how much of the stuff I have on this phone really needs to be on the device and not just accessible somehow?
 
 <!--more-->
