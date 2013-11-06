@@ -43,39 +43,8 @@
             {% endfor %}
         {% endif %}
         
-        <!-- Twitter Card Support -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@DavidHutchison" />
-        <meta name="twitter:creator" content="@DavidHutchison" />
-        <meta name="twitter:title" content="{{ page.title }} | {{ site.name }}" />
-       {% if page.date or page.summary %}
-            {% if page.summary %}
-                <meta name="twitter:description" content="{{ page.summary | markdownify | strip_html }}">
-            {% else if page.content contains '<!--more-->' %}
-            	<meta name="twitter:description" content="{{ page.content | split:'<!--more-->' | first | markdownify | strip_html }}" />
-            {% else %}
-            	<meta name="twitter:description" content="{{ page.content | markdownify | strip_html }}">
-            {% endif %}
-        {% else %}
-            <meta name="twitter:description" content="{{ site.description }}" />
-        {% endif %}
-        {% if page.image %}
-            <meta name="twitter:image" content="{{ site.url }}{{ page.image }}" />
-        {% endif %}
-        
-        <!-- Open Graph Support -->
-        <meta property="og:title" content="{{ page.title }}" />
-        <meta property="og:site_name" content="{{ site.name }}" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-        {% if page.image %}
-            <meta property="og:image" content="{{ site.url}}{{ page.image }}" />
-        {% endif %}
-        {% if page.summary %}
-            <meta property="og:description" content="{{ page.summary }}" />
-        {% else if page.date == null %}
-            <meta property="og:description" content="{{ site.description }}" />
-        {% endif %}
+        <!-- Markup for Twitter Cards / Open Meta -->
+        {% include share_support %}
         
         
         <!-- Make older versions of IE understand HTML5 tags -->
@@ -120,7 +89,7 @@
 	            <li class="github">
     	          <a href="http://github.com/dhutchison/">/dhutchison</a></li>
     	        <li class="twitter">
-                  <a href="http://twitter.com/DavidHutchison/">@DavidHutchison</a></li>
+                  <a href="http://twitter.com/{{ site.twitter }}/">@{{ site.twitter }}</a></li>
     	        </p>
               </ul>
               <div class="copy">
