@@ -188,7 +188,6 @@ def jekyll
   puts 'Building...'
   sh 'lessc assets/less/main.less css/main.css'
   sh 'jekyll build --drafts -d ../dwi_built_site'
-  sh 'touch ../dwi_built_site/.htaccess'
   puts 'Build Complete'
 end
 
