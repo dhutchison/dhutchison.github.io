@@ -13,8 +13,8 @@
 		</header>
 		{% if noPreview != true %}
 		<article>
-			{% if post.content contains '<!--more-->' %}
-				{{ post.content | split:'<!--more-->' | first }}
+			{% if post.content contains site.excerpt_separator %}
+				{{ post.excerpt }}
 				<p><a href="{{ post.url }}" class="continue">&raquo; Continue reading</a></p>
 			{% else %}
 				{{ post.content }}
