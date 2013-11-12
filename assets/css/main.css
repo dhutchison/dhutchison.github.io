@@ -1,4 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+@import url(normalize.css);
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
+/* CSS Normalisation */
 /* Less Elements */
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -12,6 +15,108 @@
  */
 /* Need to use the below when multiplying */
 /* Common Mixins */
+/*
+ * Based on the Kasper theme:  
+ */
+/* ==========================================================================
+    1. Icons - Sets up the icon font and respective classes
+    ========================================================================== */
+/* Import the font file with the icons in it */
+@font-face {
+  font-family: 'icons';
+  src: url('../fonts/icons.eot');
+  src: url('../fonts/icons.eot?#iefix') format('embedded-opentype'), url('../fonts/icons.woff') format('woff'), url('../fonts/icons.ttf') format('truetype'), url('../fonts/icons.svg#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Apply these base styles to all icons */
+.icon-ghost:before,
+.icon-feed:before,
+.icon-twitter:before,
+.icon-google-plus:before,
+.icon-facebook:before {
+  font-family: 'icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+}
+/* Each icon is created by inserting the corret character into the 
+    content of the :before pseudo element. Like a boss. */
+.icon-ghost:before {
+  content: "\e000";
+}
+.icon-feed:before {
+  content: "\e001";
+}
+.icon-twitter:before {
+  content: "\e002";
+  font-size: 1.1em;
+}
+.icon-google-plus:before {
+  content: "\e003";
+}
+.icon-facebook:before {
+  content: "\e004";
+}
+/* General styling */
+.share {
+  display: inline-block;
+  position: absolute;
+  width: 140px;
+  right: 0px;
+}
+.share a {
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.share a:hover {
+  text-decoration: none;
+}
+/* ==========================================================================
+    3. Utilities - These things get used a lot
+    ========================================================================== */
+/* Hides shit */
+.hidden {
+  text-indent: -9999px;
+  visibility: hidden;
+  display: none;
+}
+/* Creates a responsive wrapper that makes our content scale nicely */
+.inner {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+/* Centres vertically yo. (IE8+) */
+.vertical {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* Author styling */
+.author {
+  margin-bottom: 1em;
+}
+.author header {
+  float: left;
+  width: 80px;
+}
+.author article {
+  margin-left: 80px;
+  min-height: 80px;
+  padding-left: 20px;
+}
+img.profile {
+  width: 80px;
+  height: auto;
+  border-radius: 50px;
+}
 /* Font Definitions */
 /* Functions */
 /*****************************************************************************/
@@ -42,6 +147,14 @@ body {
   background-color: #282828;
   background-size: 16px 16px;
 }
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-weight: 700;
+}
 h1,
 h2,
 h3,
@@ -54,13 +167,16 @@ p {
   margin: 1em 0;
 }
 a {
-  color: #00a;
+  color: #333333;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  text-decoration: underline;
 }
 a:hover {
-  color: #000;
-}
-a:visited {
-  color: #a0a;
+  color: transparent;
+  text-shadow: 0 0 1px #333333;
 }
 table {
   font-size: inherit;
@@ -92,18 +208,6 @@ table {
     	/*
     	/*****************************************************************************/
 
-}
-.container .site a {
-  color: #333333;
-  -moz-transition-duration: 0.5s;
-  -webkit-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  text-decoration: underline;
-}
-.container .site a:hover {
-  color: transparent;
-  text-shadow: 0 0 1px #333333;
 }
 .container .site h2 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -147,15 +251,14 @@ table {
   text-align: center;
   position: fixed;
   top: 0px;
-  height: 4em;
-  padding-top: 1em;
+  height: 6em;
   z-index: 100000;
   border-bottom: 4px solid #eee;
-  margin-bottom: 0.5em;
 }
 .container .site .header h1.title {
   display: inline-block;
   float: left;
+  margin-bottom: 0.25em;
   color: #475261;
 }
 .container .site .header #nav li {
@@ -163,10 +266,9 @@ table {
 }
 .container .site .header .links {
   width: 100%;
+  font-weight: 300;
   display: inline-block;
   text-align: left;
-  line-height: 3em;
-  height: 1.5em;
 }
 .container .site .header .links ul {
   list-style-type: none;
@@ -181,7 +283,7 @@ table {
   text-decoration: underline;
 }
 .container .site .content {
-  margin-top: 4.5em;
+  margin-top: 6em;
 }
 .container .site .content .archivesHeader {
   position: relative;
@@ -1921,4 +2023,10 @@ table {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .2em;
+}
+.post-footer {
+  position: relative;
+}
+.post-org {
+  display: inline-block;
 }

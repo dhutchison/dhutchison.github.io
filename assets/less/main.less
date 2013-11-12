@@ -1,6 +1,11 @@
+/* CSS Normalisation */
+@import url(normalize.css);
+
 /* Less Elements */
 @import "dmitryf-elements/elements.less";
 @import "commonStyle.less";
+@import "social.less";
+@import "author.less";
 
 .fonts();
 
@@ -190,6 +195,10 @@ body {
 	font-size: @contentFontSize;
 	text-align: center;
 	
+	h1, h2, h3, h4, h5, h6 {
+	    font-weight: @headerFontWeight;
+	}
+	
 	/* Carbon fibre 
 	 * by Atle Mo (design), Lea Verou (code)
 	 * from http://lea.verou.me/css3patterns/#carbon-fibre */
@@ -208,9 +217,17 @@ h1, h2, h3, h4, h5, h6 {
 
 p { margin: 1em 0; }
 
-a { color: #00a; }
-a:hover	 { color: #000; }
-a:visited { color: #a0a; }
+a { 
+    color: @linkColour;
+	.transition-duration(.5s);
+	text-decoration: underline;
+
+	
+	&:hover {
+	    color: transparent;
+		text-shadow: 0 0 1px @linkColour;
+	}
+}
 
 table {
 	font-size: inherit;
@@ -457,18 +474,6 @@ table {
     	/* Sizing */
     	width: 60%;
     	padding-bottom: 0px;
-    
-    	a {
-    		color: @linkColour;
-    		.transition-duration(.5s);
-    		text-decoration: underline;
-    
-    	
-    	    &:hover {
-    		    color: transparent;
-    		    text-shadow: 0 0 1px @linkColour;
-    	    }
-        }
         
         h2 {
     		font-family: @headerFonts;
@@ -503,15 +508,14 @@ table {
             position: fixed;
             top: 0px;
     		height: @headerHeight;
-    		padding-top: 1em;
             z-index: 100000;
     	
     		border-bottom: 4px solid #eee;
-            margin-bottom: 0.5em; 
     		
     		h1.title {
                 display: inline-block;
                 float: left;
+                margin-bottom: 0.25em;
     			color: @mainHeaderColour;
     		}
     		
@@ -523,11 +527,10 @@ table {
     		
     		.links {
     		    width: 100%;
+    		    font-weight: @contentFontWeight;
     		
                 display: inline-block;
                 text-align: left;
-                line-height: (@lineHeightEM * 2);
-                height: @lineHeightEM;
     
     			ul {
     				list-style-type: none;
@@ -554,7 +557,7 @@ table {
     	}
     	
     	.content {
-            margin-top: (@headerHeight + 0.5em);
+            margin-top: @headerHeight;
     		
     		.archivesHeader {	    			
 				.ribbon;
@@ -922,6 +925,7 @@ table {
 
 /* standard */
 .post {
+
 	pre {
 	    margin: 1em;
 		border: 1px solid #ddd;
@@ -954,4 +958,12 @@ table {
 		background-color: #eef;
 		padding: 0 .2em;
 	}
+}
+
+.post-footer {
+    position: relative;
+}
+
+.post-org {
+    display: inline-block;
 }

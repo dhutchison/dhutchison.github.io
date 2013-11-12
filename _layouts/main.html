@@ -7,10 +7,10 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="/assets/css/syntax.css">
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/assets/css/main.css">
         
         <!-- other includes from pages -->
         {% if page.headIncludes %}
@@ -78,7 +78,21 @@
                 {{ content }}
 			</div>
             <footer class="footer">
-              <div class="contact">
+            <!-- If we want to display author's name and bio -->
+            {% if site.data.author %}
+                <section class="author">
+                	<header> <a href="{{ site.data.author.profile_url }}"> <img class="profile" src="{{ site.data.author.pic_small }}"></a></header>
+                	<article>
+                		<!-- Author Name -->
+                    	<h4> {{ site.data.author.name }} </h4>
+                    	<!-- Author Bio -->
+                    	<p> 
+                    		{{ site.data.author.bio }}
+                    	</p>
+                    </article>
+                </section>                
+            {% endif %}
+              <!--<div class="contact">
                 <p class="details">
                   David Hutchison<br />
                   {{ site.jobtitle }}, {{ site.location }}<br />
@@ -97,7 +111,7 @@
               	  &copy; David Hutchison 2013
               	</p>
               </div>
-            </div>
+            </div>-->
             </footer>
         </div> <!-- /container -->
     </body>
