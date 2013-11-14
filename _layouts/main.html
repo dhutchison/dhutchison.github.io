@@ -81,37 +81,41 @@
             <!-- If we want to display author's name and bio -->
             {% if site.data.author %}
                 <section class="author">
-                	<header> <a href="{{ site.data.author.profile_url }}"> <img class="profile" src="{{ site.data.author.pic_small }}"></a></header>
-                	<article>
+                	<header> 
+                	    <a href="{{ site.data.author.profile_url }}"> <img class="profile-image" src="{{ site.data.author.pic_small }}"></a>
+                	</header>
+                	<article class="author-details">
                 		<!-- Author Name -->
-                    	<h4> {{ site.data.author.name }} </h4>
+                    	<h4 class="author-name"> {{ site.data.author.name }} </h4>
                     	<!-- Author Bio -->
-                    	<p> 
+                    	<p class="author-bio"> 
                     		{{ site.data.author.bio }}
                     	</p>
                     </article>
+                	<!-- Links -->
+                	<aside class="author-links">
+                        <ul class="fa-ul social">
+                	        {% if site.data.author.github %}<li>
+                                <a href="http://github.com/{{ site.data.author.github }}/"><i class="fa-li fa fa-github fa-lg fa-fw"></i>/{{ site.data.author.github }}</a>
+                            </li>{% endif %}
+                	        {% if site.data.author.twitter %}<li>
+                    	      <a href="http://twitter.com/{{ site.data.author.twitter }}/"><i class="fa-li fa fa-twitter fa-lg fa-fw"></i>@{{ site.data.author.twitter }}</a>
+                    	    </li>{% endif %}
+                    	    {% if site.data.author.email %}<li><a href="mailto:{{ site.data.author.email }}"><i class="fa-li fa fa-envelope fa-lg fa-fw"></i>{{ site.data.author.email }}</a>
+                            </li>{% endif %}
+                	    </p>
+                	  </ul>
+                	</aside>
+
                 </section>                
             {% endif %}
-              <!--<div class="contact">
-                <p class="details">
-                  David Hutchison<br />
-                  {{ site.jobtitle }}, {{ site.location }}<br />
-                  <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-                </p>
-              </div>
-              <ul class="social">
-	            <li class="github">
-    	          <a href="http://github.com/dhutchison/">/dhutchison</a></li>
-    	        <li class="twitter">
-                  <a href="http://twitter.com/{{ site.twitter }}/">@{{ site.twitter }}</a></li>
-    	        </p>
-              </ul>
-              <div class="copy">
+              <section class="copy">
               	<p>
               	  &copy; David Hutchison 2013
+              	  --Site Build Details--
               	</p>
-              </div>
-            </div>-->
+              </section>
+            </div>
             </footer>
         </div> <!-- /container -->
     </body>

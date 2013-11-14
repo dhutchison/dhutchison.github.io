@@ -1,16 +1,70 @@
 /* Author styling */
-.author {margin-bottom:1em;}
-.author header{
+.author {
+    margin-bottom:1em;
+    position: relative;
+}
+.author header {
 	float:left;
 	width: 80px;
 }
-.author article{
-	margin-left:80px;
-	min-height: 80px;
+.author article {
 	padding-left:20px;
 }
-img.profile {
+img.profile-image {
 	width:80px;
 	height:auto;
   	border-radius: 50px;
+}
+
+.author-links {
+    display: inline-block;
+    position: absolute;
+    width: auto;
+    right: 0px;
+    vertical-align: top;
+}
+
+.author-details {
+    display: inline-block;
+}
+
+.author-sized(@width) {
+
+    .author {
+        .siteLeftPadding(@width);
+    }
+
+    .author-links {
+        .siteRightPadding(@width);
+    }
+}
+
+.author-iPhone() {
+
+    img.profile-image {
+    	width: 40px;
+      	border-radius: 25px;
+    }
+    
+    .author header {
+    	width: 40px;
+    }
+
+    .author-links {
+        display: block;
+        position: relative;
+        width: auto;
+        right: auto;
+        vertical-align: top;
+        text-align: center;
+    
+        ul.social {
+            display: inline;
+            margin-left: 0px;
+            li {
+                display: inline;
+                margin-left: 2em;
+            }
+        }
+    }
 }

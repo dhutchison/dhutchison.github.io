@@ -6,30 +6,12 @@
 @import "commonStyle.less";
 @import "social.less";
 @import "author.less";
+@import "profile.less";
+@import "font-awesome/font-awesome.less";
 
 .fonts();
 
 /* Functions */
-
-.sitePadding(@width) when (@width < 95%) {
-	padding: 1em 2em 1em 2em;
-}
-
-.siteLeftPadding(@width) when (@width < 95%) {
-	padding-left: 2em;
-}
-
-.siteLeftPadding(@width) when (@width >= 95%) {
-	padding-left: 0px;
-}
-
-.siteRightPadding(@width) when (@width < 95%) {
-	padding-right: 2em;
-}
-
-.siteRightPadding(@width) when (@width >= 95%) {
-	padding-right: 0px;
-}
 
 .leftRightGradient(@leftColour: @mainHeaderLeftGradient; @rightColour: @backgroundColour) {
 	
@@ -141,15 +123,6 @@
 	}	
 }
 
-.liImage(@image, @size: 16px) {
-    list-style: none;
-    background-image: @image;
-    background-size: @size; 
-    background-repeat: no-repeat;
-    background-position: 0px (@size / 4); 
-    padding-left: (@size + (@size / 4)); 
-}
-
 .tagLinkHorizontalList(@backgroundColour: #0089e0, @foregroundColour: #FFFFFF, @height: @contentFontSize) {
 
 	margin: 0;
@@ -224,8 +197,9 @@ a {
 
 	
 	&:hover {
-	    color: transparent;
-		text-shadow: 0 0 1px @linkColour;
+	    color: @linkHoverColour;
+//	    color: transparent;
+//		text-shadow: 0 0 1px @linkColour;
 	}
 }
 
@@ -255,6 +229,11 @@ table {
     @mainHeaderFontSize: ceil(@mainHeaderRatio * @baseFontSize);
     @smallHeaderFontSize: ceil(@smallHeaderRatio * @baseFontSize);
     @contentFontSize: @baseFontSize;
+    @footerFontSize: ceil(@contentFontSize * @smallestFontRatio);
+    
+    .sizedProfile(@baseFontSize; @width; @mainHeaderRatio; @smallHeaderRatio; @smallerFontRatio; @smallestFontRatio; @mainHeaderFontSize; @smallHeaderFontSize; @contentFontSize);
+    
+    .author-sized(@width);
     
     .container{
     	font-size: @contentFontSize;
@@ -372,79 +351,7 @@ table {
     		
     		.footer {
     		    z-index: 1;
-
-                .contact {
-                    .siteLeftPadding(@width);
-                }
-
-                ul.social {
-                    .siteRightPadding(@width);
-                }
-    		}
-    		
-    		.profile {
-    			@contentSpacing: (9 * @baseFontSize);
-    			
-    			@smallerHeaderFontSize: ceil(@smallerFontRatio * @baseFontSize);
-    			@smallestHeaderFontSize: ceil(@smallestFontRatio * @baseFontSize);
-    			
-    			/* H1, H2 and ing used for profile heading */
-    			img{
-    			    @h1Height: (@lineHeight * @mainHeaderFontSize);
-    			    @totalTextHeight: @h1Height + (@lineHeight * @baseFontSize);
-    			    @diff: ceil(((122px - @totalTextHeight) / 2) + @h1Height);
-    			
-                    margin-top: -@diff;
-    			}
-    			h1{
-    				font-size: @mainHeaderFontSize;
-    				margin-left: 86px;
-    			}
-    			h2{
-    				padding-left: @contentSpacing;
-    				font-size: @smallHeaderFontSize;
-    			}
-    		
-    			 /* H3-5 used in main profile */
-    			h3 {
-    				font-size: @smallerHeaderFontSize;
-    			}
-    			
-    			h4 {
-    				padding-left: @contentSpacing;
-    				font-size: @smallerHeaderFontSize;
-    			}
-    		
-    			h5 {
-    				padding-left: @contentSpacing;
-    				font-size: @smallestHeaderFontSize;
-    			}
-    		
-    			h6 {
-    				/* H6 is used for the date section */
-       				padding-left: @contentSpacing;
-    				font-size: @smallestHeaderFontSize;
-    			}
-    		
-    			p {
-    		    	padding-left: @contentSpacing;
-    		    	&:nth-of-type(1) {
-    		    	    padding-left: 0px;    
-    		    	}
-    			}
-    			
-    			
-    		
-    			ul {
-    				padding-left: @contentSpacing+20px;
-    				
-    				li {
-    					ul {
-    						/* Need to switch back for nested lists to have less padding */
-    						padding-left: 2em;
-    					}
-    				}
-    			}
+    		    font-size: @footerFontSize;
     		}
     		
     	}
@@ -718,56 +625,11 @@ table {
     	}
     	
     	.footer {
-    		font-size: 80%;
     		color: @mainFontColour;
     		border-top: 4px solid #eee;
     		overflow: hidden;
     		width: 100%;
-    		
-    		img {
-    			height: 16px;
-    			width: 16px;
-    			
-    		}
-    		
-    		.contact {
-    			float: left;
-    			margin-right: 3em;	
-    			
-    			.details {
-    			    margin: 0px;
-    			}
-    		}
-    		
-    		a {
-    			color: @linkColour;
-    		}
-    		
-    		a:hover {
-    			color:  @linkHoverColour;
-    		}
-    		
-    		ul.social{
-    			float: right;
-    			
-    			.github {
-    			    .liImage(url('/images/GitHub-Mark-32px.png'), 16px);
-                }
-                
-                .twitter {
-                    .liImage(url('/images/twitter-bird-16x16.png'), 16px);
-                }    
-    		}
-    		
-    		.rss {
-    			margin-top: 1.1em;
-    			margin-right: -.2em;
-    			float: right;
-    		
-    			img {
-    				border: 0;
-    			}
-    		}
+    		padding-top: 1em;
     		
     		.copy {
     			float: none;
@@ -777,74 +639,6 @@ table {
     			p {
     				/* TODO: */
     			}
-    		}
-    	}
-    	
-    	/*****************************************************************************/
-    	/*
-    	/* Profile
-    	/*
-    	/*****************************************************************************/
-    	
-    	.profile {
-    		@headerFontWeight: 	@contentFontWeight * 2;
-    		@imageHeight: 100px;
-    		
-    		padding-top: 40px;
-    		
-    		/* H1, H2 and ing used for profile heading */
-    		img {
-    			background-color: @backgroundColour;
-    			border:1px solid #dedede;
-    			padding: 10px;
-    			height: @imageHeight;
-    		}
-    		h1 {
-    			color: @mainHeaderColour;
-    			font-weight: @headerFontWeight;
-    			display: inline-block;
-    			margin-top: 1em;
-    		}
-    		h2{
-    			margin-top: 10px;
-    			color:@mainHeaderColour;
-    			text-transform:uppercase;
-    			font-weight: @headerFontWeight;
-    		}
-    		p {
-    		    &:nth-of-type(1) {
-    		        margin: 0;
-    		        
-    		        a {
-    		            &:nth-of-type(1) {
-    		                vertical-align: top;
-    		            }
-    		        }
-        		}
-        	}
-    	
-    		 /* H3-5 used in main profile */
-    		h3 {
-    			display: block;
-    			width: 100%;
-                font-style: italic;
-    			float: left;
-    			display: inline-block;
-    			color: @mainHeaderColour;
-    			font-weight: @headerFontWeight;
-    		}
-    		
-    		h4 {
-
-    		}
-    	
-    		h5 {
-                display: inline-block;
-    		}
-    	
-    		h6 {
-    			/* H6 is used for the date section */
-    			text-transform: uppercase;
     		}
     	}
     }
@@ -867,16 +661,21 @@ table {
 }
 @media 
 	only screen and (max-device-width: 640px), 
-	only screen and (max-device-width: 540px), 
+	only screen and (max-device-width: 568px), 
+    only screen and (max-device-width: 540px), 
 	only screen and (max-device-width: 320px){
 	/*Iphone portrait and smaller*/
 	.sizedSite(12px; 100%; 2; 1.4);
+    .share-iPhone();
+    .author-iPhone();
 }
 
 @media
     only screen and (max-width: 640px) {
     
     .sizedSite(12px; 100%; 2; 1.4);    
+    .share-iPhone();
+    .author-iPhone();
 }
 
 @media
@@ -947,6 +746,10 @@ table {
 	
 	ul {
 		margin-left: 1.35em;
+	}
+	
+	.tagListTitle {
+	    display: inline-block;
 	}
 	
 	ol {

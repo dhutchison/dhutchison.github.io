@@ -10,7 +10,7 @@
 	For more Jekyll widgets, see <http://www.github.com/NetzwergX/jekyll-template-toolkit>.
 {% endcomment %}
 {% if post.tags.size > 0 %}
-	<div><span class="tagListTitle">Tagged with: </span>
+	<div><h4 class="tagListTitle">Tagged with: </h4>
 		<ul class="inlineListTags">
 		{% for tag in post.tags %}
 			<li>

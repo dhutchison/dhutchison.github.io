@@ -21,8 +21,8 @@
 			{% endif %}
 		</article>
 		<footer>
-			{% include widgets/postCategoryList.html %}
-			{% include widgets/postTagList.html %}
+			{% include post_category_list %}
+			{% include post_tag_list %}
 		</footer>
 		{% endif %}
 		
