@@ -186,7 +186,7 @@ end
 
 def jekyll
   puts 'Building...'
-  sh 'lessc assets/less/main.less assets/css/main.css'
+  sh 'lessc --yui-compress assets/less/main.less assets/css/main.css'
   sh 'jekyll build --drafts -d ../dwi_built_site'
   puts 'Build Complete'
 end
