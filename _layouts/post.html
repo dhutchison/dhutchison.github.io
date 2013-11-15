@@ -15,11 +15,14 @@ layout: main
 		{{ content }}
 	</article>
 	<footer class="post-footer">
-	    <section class="post-org">
-    		{% include post_category_list %}
-	    	{% include post_tag_list %}
-		</section>
-		{% include share_box %}
+	    <section class="footer-top">
+    	    <section class="post-org">
+        		{% include post_category_list %}
+    	    	{% include post_tag_list %}
+    		</section>
+    		{% include share_box %}
+    		<div class="clear"></div>
+    	</section>
 		
 		<nav class="page-navigation">
 			{% if post.previous.url %}
