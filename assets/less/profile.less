@@ -6,124 +6,88 @@
 /*****************************************************************************/
 
 .profile {
-	@headerFontWeight: 	@contentFontWeight * 2;
-	@imageHeight: 100px;
-	
-	padding-top: 40px;
-	
-	/* H1, H2 and ing used for profile heading */
-	img {
-		background-color: @backgroundColour;
-		border:1px solid #dedede;
-		padding: 10px;
-		height: @imageHeight;
-	}
-	h1 {
-		color: @mainHeaderColour;
-		font-weight: @headerFontWeight;
-		display: inline-block;
-		margin-top: 1em;
-	}
-	h2{
-		margin-top: 10px;
-		color:@mainHeaderColour;
-		text-transform:uppercase;
-		font-weight: @headerFontWeight;
-	}
-	p {
-	    &:nth-of-type(1) {
-	        margin: 0;
-	        
-	        a {
-	            &:nth-of-type(1) {
-	                vertical-align: top;
-	            }
-	        }
-		}
-	}
 
-	 /* H3-5 used in main profile */
-	h3 {
-		display: block;
-		width: 100%;
-        font-style: italic;
+	 /* H2-4 used in main profile */
+	h2 {
 		float: left;
 		display: inline-block;
-		color: @mainHeaderColour;
-		font-weight: @headerFontWeight;
+        font-weight: @headerFontWeight;
+	}
+	
+	h3, h4, h5 {
+        color: @mainHeaderColour;
+        font-weight: @contentFontWeight;
 	}
 	
 	h4 {
-
-	}
-
-	h5 {
         display: inline-block;
 	}
 
-	h6 {
-		/* H6 is used for the date section */
+	h5 {
+		/* H5 is used for the date section */
 		text-transform: uppercase;
+	}
+	
+	hr:nth-of-type(1) {
+	    margin-top: -1em;
 	}
 }
 
+.profileLeftPadding(@width; @extra: 0px) when (@width < 95%) {
+    padding-left: @contentSpacing + @extra;
+}
+
+.profileLeftPadding(@width; @extra: 0px) when (@width >= 95%) {
+    padding-left: 0px + @extra;    
+}
+
+.h2Width(@width) when (@width < 95%) {
+    width: auto;
+}
+
+.h2Width(@width) when (@width >= 95%) {
+    width: 100%;
+}
+
+
 .sizedProfile(@baseFontSize; @width; @mainHeaderRatio; @smallHeaderRatio; @smallerFontRatio; @smallestFontRatio; @mainHeaderFontSize; @smallHeaderFontSize; @contentFontSize) {
     
+   	@contentSpacing: (10 * @baseFontSize);
+    
+    .profile-author {
+        margin-left: -2em;
+    }
+    
+    .profile-author-bio {
+        margin-left: @contentSpacing - 100px;
+    }
+    
     .profile {
-    	@contentSpacing: (9 * @baseFontSize);
     	
     	@smallerHeaderFontSize: ceil(@smallerFontRatio * @baseFontSize);
     	@smallestHeaderFontSize: ceil(@smallestFontRatio * @baseFontSize);
-    	
-    	/* H1, H2 and ing used for profile heading */
-    	img{
-    	    @h1Height: (@lineHeight * @mainHeaderFontSize);
-    	    @totalTextHeight: @h1Height + (@lineHeight * @baseFontSize);
-    	    @diff: ceil(((122px - @totalTextHeight) / 2) + @h1Height);
-    	
-            margin-top: -@diff;
-    	}
-    	h1{
-    		font-size: @mainHeaderFontSize;
-    		margin-left: 86px;
-    	}
-    	h2{
-    		padding-left: @contentSpacing;
-    		font-size: @smallHeaderFontSize;
-    	}
     
-    	 /* H3-5 used in main profile */
-    	h3 {
-    		font-size: @smallerHeaderFontSize;
+    	 /* H2-4 used in main profile */
+    	h2 {
+            .h2Width(@width);
+        }
+    	
+    	h3, h4, h5, p {
+           	.profileLeftPadding(@width);
     	}
     	
-    	h4 {
-    		padding-left: @contentSpacing;
+    	h2, h3 {
     		font-size: @smallerHeaderFontSize;
     	}
     
-    	h5 {
-    		padding-left: @contentSpacing;
+    	h4, h5 {
+    		/* H5 is used for the date section */
     		font-size: @smallestHeaderFontSize;
     	}
-    
-    	h6 {
-    		/* H6 is used for the date section */
-    			padding-left: @contentSpacing;
-    		font-size: @smallestHeaderFontSize;
-    	}
-    
-    	p {
-        	padding-left: @contentSpacing;
-        	&:nth-of-type(1) {
-        	    padding-left: 0px;    
-        	}
-    	}
-    	
     	
     
     	ul {
-    		padding-left: @contentSpacing+20px;
+        	.profileLeftPadding(@width; 20px);
     		
     		li {
     			ul {

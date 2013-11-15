@@ -8,19 +8,15 @@ title: Profile
 summary: The Resume of David Hutchison.
 ---
 
-# David Hutchison #
-![Me](/images/self_small.png)
-[David@DevWithImagination.com](mailto:David@DevWithImagination.com "Email Me")
-
 ---
-### Profile #
+## Profile ##
 I am a software developer with 5 years professional experience delivering solutions using a range of different technologies. I am passionate about developing good user interfaces and robust, maintainable software. I thrive when working under pressure and enjoy learning new technologies and keeping up with industry developments. I am seeking a challenging position as a senior analyst programmer to continue to progress my skills.
 
 ---
-### Experience ###
-#### Java Programmer ####
-##### The SEEMiS Group LLP, Hamilton #####
-###### July 2008-Present ######
+## Experience ##
+### Java Programmer ###
+#### The SEEMiS Group LLP, Hamilton ####
+##### July 2008-Present #####
 
 This Role consists of developing and maintaining Information Management Systems used in the education sector by the majority of Scottish Councils. 
 
@@ -40,16 +36,16 @@ My main responsibilities include :
 - Production of technically focused documentation for new and existing systems.
 
 ---
-### Education #
-#### Oracle Certified Professional ##
-##### Java SE 6 Programmer, 2012 ###
+## Education ##
+### Oracle Certified Professional ###
+#### Java SE 6 Programmer, 2012 ####
   
   
-#### University of Strathclyde, Glasgow ##
-##### 2.1 BSc. Hons. Computer Science, 2008 ##
+### University of Strathclyde, Glasgow ###
+#### 2.1 BSc. Hons. Computer Science, 2008 ####
 
 ---
-### Skills #
+## Skills ##
 Through my time doing professional, academic, and hobbyist software development I have worked with a wide selection of software technologies. I enjoy learning new technologies as required to meet requirements and try to keep up to date with both new technology and industry developments.
 
 I have experience using:  

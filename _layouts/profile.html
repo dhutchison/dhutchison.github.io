@@ -1,6 +1,19 @@
 ---
 layout: main
 ---
-<div class="profile">
+<section class="author profile-author">
+	<header> 
+	    <img class="profile-image" src="{{ site.data.author.pic_small }}">
+	</header>
+	<article class="author-details profile-author-bio">
+		<!-- Author Name -->
+    	<h1 class="author-name"> {{ site.data.author.name }} </h4>
+    	<!-- Author Bio -->
+    	<p class="author-bio"> 
+    		<a href="mailto:{{ site.data.author.email }}" title="Email Me">{{ site.data.author.email }}</a>
+    	</p>
+    </article>
+</section>
+<article class="profile">
 {{ content }}
-</div>
+</article>

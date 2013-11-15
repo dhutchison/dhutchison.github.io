@@ -235,27 +235,33 @@ table {
     
     .author-sized(@width);
     
+    body {
+        /* text */
+        font-size: @contentFontSize;
+        
+        h1 {
+            font-size: @mainHeaderFontSize;
+        }
+        
+        h2 {
+        	font-size: @smallHeaderFontSize;
+        }
+    }
+    
     .container{
-    	font-size: @contentFontSize;
     	
     	.site {
-    		/* text */
-    		font-size: @contentFontSize;
     		
     		/* Sizing */
+    		font-size: @contentFontSize;
     		width: @width;
     		.siteMargin(@width);
-    		
-    		h2 {
-    			font-size: @smallHeaderFontSize;
-    		}
     		
     		.header {
                 width: @width;
                 
                 h1.title {
                     .headerMargins(@smallHeaderFontSize; @width);
-                	font-size: @mainHeaderFontSize;
                 }
                 
                 #nav {
@@ -280,54 +286,15 @@ table {
     		
         		.sitePadding(@width);
 
-                .archivesHeader {
-                	h2 {
-                		font-size: @smallHeaderFontSize;
-                	}
-                	
-                }
-
     			.archives {
-    		        
-    			    .year {
-    					font-size: @contentFontSize;
-    			    }
-    			    
-    		        .meta {
-    					font-size: @contentFontSize;
-    		        }
-    		        
-    		        .title {
-    		            font-size: @contentFontSize;  
-    		        }
     		        
     			    ul {
     			        margin-left: @mainHeaderFontSize;
     			    }
     			   
     			}
-    			
-//    			.tag {
-//    				.tagLinks(@tagColour, #FFFFFF, @baseFontSize);
-//    			}
-//    			
-//    			.category {
-//    				.tagLinks(@categoryTagColour, #FFFFFF, @baseFontSize);
-//    			}
     		}
     		.post {
-    				
-                header {
-                	h2 {
-                		font-size: @smallHeaderFontSize;
-                	}
-                
-                	.meta { 
-                		font-size: @contentFontSize;    		                
-                	}
-                	
-                	
-                }
     				
     						
                 h3 {
@@ -384,7 +351,6 @@ table {
         
         h2 {
     		font-family: @headerFonts;
-    		font-weight: @contentFontWeight;
     	
     		text-align: left;    
         }
@@ -452,12 +418,6 @@ table {
     					a:hover {
     						text-decoration: underline;
     					}
-    					
-    					
-    					
-    //					.active {
-    //						background-color: @linkHoverColour;
-    //					}
     				}
     			}
     		}
