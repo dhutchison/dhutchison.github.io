@@ -1,48 +1,7 @@
 require 'yaml'
 require 'rubygems'
 require 'jekyll'
-require 'zemanta' # gem install zemanta
 require 'stringex' # gem install stringex
- 
-def get_zemanta_terms(content)
-  $stderr.puts "Querying Zemanta..."
-  zemanta = Zemanta.new "lmwsm9styjveqhycabofusyk"
-  suggests = zemanta.suggest(content)
-  res = []
-  suggests['keywords'].each {|k|
-    res << k['name'].downcase.gsub(/\s*\(.*?\)/,'').strip if k['confidence'] > 0.02
-  }
-  res
-end
- 
-desc "Add Zemanta keywords to post YAML"
-task :add_keywords, :post do |t, args|
-  file = args.post
-  if File.exists?(file)
-    # Split the post by --- to extract YAML headers
-    contents = IO.read(file).split(/^---\s*$/)
-    headers = YAML::load("---\n"+contents[1])
-    content = contents[2].strip
-    # skip adding keywords if it's already been done
-    unless headers['keywords'] && headers['keywords'] != []
-      begin
-        $stderr.puts "getting terms for #{file}"
-        # retrieve the suggested keywords
-        keywords = get_zemanta_terms(content)
-        # insert them in the YAML array
-        headers['keywords'] = keywords
-        # Dump the headers and contents back to the post
-        File.open(file,'w+') {|file| file.puts YAML::dump(headers) + "---\n" + content + "\n"}
-      rescue
-        $stderr.puts "ERROR: #{file}"
-      end
-    else
-      puts "Skipped: post already has keywords header"
-    end
-  else
-    puts "No such file."
-  end
-end
 
 # https://gist.github.com/stammy/790778
 # Using multi-word tags support from http://tesoriere.com/2010/08/25/automatically-generated-tags-and-tag-clouds-with-jekyll--multiple-word-tags-allowed-/
