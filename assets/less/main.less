@@ -2,8 +2,8 @@
 @import url(normalize.css);
 
 /* Less Elements */
-@import "dmitryf-elements/elements.less";
-@import "commonStyle.less";
+@import (reference) "dmitryf-elements/elements.less";
+@import (reference) "commonStyle.less";
 @import "social.less";
 @import "author.less";
 @import "profile.less";
@@ -198,8 +198,6 @@ a {
 	
 	&:hover {
 	    color: @linkHoverColour;
-//	    color: transparent;
-//		text-shadow: 0 0 1px @linkColour;
 	}
 }
 
@@ -591,20 +589,14 @@ table {
     	}
     	
     	.footer {
-    		color: @mainFontColour;
     		border-top: 4px solid #eee;
     		overflow: hidden;
     		width: 100%;
     		padding-top: 1em;
     		
     		.copy {
-    			float: none;
     			width: 100%;
-    			display: inline-block;
     			text-align: center;
-    			p {
-    				/* TODO: */
-    			}
     		}
     	}
     }
@@ -612,36 +604,31 @@ table {
 
 .sizedSite(18px; 60%);
 
-@media (max-device-width: 1024px) {
+@media @mq-iPadPortrait {
 	/*IPad portrait AND netbooks, AND anything with smaller screen*/
 	/*make the design flexible if possible */
 	/*Structure your code thinking about all devices that go below*/
     .sizedSite(12px; 80%);
 }
-@media 
-    only screen and (max-width: 1024px) {
+@media @mq-iPadPortraitSized {
 	/*IPad portrait AND netbooks, AND anything with smaller screen*/
 	/*make the design flexible if possible */
 	/*Structure your code thinking about all devices that go below*/
     .sizedSite(16px; 90%);
 }
-@media 
-	only screen and (max-device-width: 640px), 
-	only screen and (max-device-width: 568px), 
-    only screen and (max-device-width: 540px), 
-	only screen and (max-device-width: 320px){
+//@media 
+//	only screen and (max-device-width: 640px), 
+//	only screen and (max-device-width: 568px), 
+//    only screen and (max-device-width: 540px), 
+//	only screen and (max-device-width: 320px){
+@media @mq-iPhone {
 	/*Iphone portrait and smaller*/
 	.sizedSite(12px; 100%; 2; 1.4);
-    .share-iPhone();
-    .author-iPhone();
 }
 
-@media
-    only screen and (max-width: 640px) {
+@media @mq-iPhoneSized {
     
-    .sizedSite(12px; 100%; 2; 1.4);    
-    .share-iPhone();
-    .author-iPhone();
+    .sizedSite(16px; 100%; 2; 1.4);    
 }
 
 @media

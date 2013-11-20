@@ -1,4 +1,4 @@
-@import "commonStyle.less";
+@import (reference) "commonStyle.less";
 /*
  * Some elements based on the Kasper theme:  
  */
@@ -10,34 +10,33 @@
     width: 140px;
     right: 0px;
     
+    @media @mq-iPhone, @mq-iPhoneSized {
+        display: block;
+        right: auto;
+        width: auto;
+        position: inherit;
+    }
+    
      
      a {
          text-decoration: none;
          position: relative;
          margin-left: 2em;
          padding-right: 10px;
+         
+         @media @mq-iPhone, @mq-iPhoneSized {
+             padding-top: 1px;
+         }
      
          &:hover {
              text-decoration: none;     
          }
      }
- }
- 
- .share-iPhone() {
-     .share {
-         display: block;
-         right: auto;
-         width: auto;
-         position: inherit;
-         
-         a {
-             padding-top: 1px;
+     
+     h4 {
+         @media @mq-iPhone, @mq-iPhoneSized {
+            display: inline-block;
          }
-         
-         h4 { 
-             display: inline-block;
-         }
-         
      }
  }
  

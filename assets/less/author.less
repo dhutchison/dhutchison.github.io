@@ -1,24 +1,53 @@
+@import (reference) "commonStyle.less";
+
 /* Author styling */
 .author {
     margin-bottom:1em;
     position: relative;
-}
-.author header {
-	float:left;
-	width: 80px;
+    
+    header {
+	    float:left;
+    	width: 80px;
+    	
+        @media @mq-iPhone{
+            width: 40px;
+        }
+    }
+    
+    .author-details {
+        display: inline-block;
+        padding-left: 20px;
+        
+        @media @mq-iPhone, @mq-iPhoneSized {
+            display: block;
+        }
+        
+        @media @mq-iPhone {
+            padding-left: 60px;
+        }
+        
+        @media @mq-iPhoneSized {
+            padding-left: 100px;
+        }
+    }
+    
 }
 .author-name {
     margin-top: 0.25em;
     margin-bottom: 0px;
 }
-.author article {
-	padding-left:20px;
-}
-img.profile-image {
+
+.profile-image {
 	width:80px;
 	height:auto;
   	border-radius: 50px;
+  	
+  	@media @mq-iPhone {
+  	    width: 40px;
+  	    border-radius: 25px;
+  	}
 }
+
 
 .author-links {
     display: inline-block;
@@ -26,10 +55,22 @@ img.profile-image {
     width: auto;
     right: 0px;
     vertical-align: top;
-}
-
-.author-details {
-    display: inline-block;
+    
+    @media @mq-iPhone, @mq-iPhoneSized {
+        position: initial;
+        width: 100%;
+        vertical-align: top;
+        text-align: center;
+    
+        ul {
+            display: inline;
+            margin-left: 0px;
+            li {
+                display: inline;
+                margin-left: 2em;
+            }
+        }
+    }
 }
 
 .author-sized(@width) {
@@ -40,35 +81,5 @@ img.profile-image {
 
     .author-links {
         .siteRightPadding(@width);
-    }
-}
-
-.author-iPhone() {
-
-    img.profile-image {
-    	width: 40px;
-      	border-radius: 25px;
-    }
-    
-    .author header {
-    	width: 40px;
-    }
-
-    .author-links {
-        display: block;
-        position: relative;
-        width: auto;
-        right: auto;
-        vertical-align: top;
-        text-align: center;
-    
-        ul.social {
-            display: inline;
-            margin-left: 0px;
-            li {
-                display: inline;
-                margin-left: 2em;
-            }
-        }
     }
 }
