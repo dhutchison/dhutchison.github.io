@@ -5,9 +5,9 @@ layout: main
 	{% assign post=page %}
 	<header>
 		<h2>
-			<span class="meta">
+			{% if post.date %}<span class="meta">
 				<time datetime="{{ post.date | date_to_xmlschema }}" pubdate="" data-updated="true" title="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time>
-			</span>
+			</span>{% endif%}
 			<a href="{{ post.url }}" class="title">{{ post.title }}</a>
 		</h2>
 	</header>
