@@ -6,9 +6,9 @@ categories:
 - Productivity
 tags:
 - Reminders
-- ruby
+- Ruby
 - The Hit List
-- twitter
+- Twitter
 status: publish
 type: post
 published: true

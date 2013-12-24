@@ -5,10 +5,10 @@ date: 2011-06-08 01:00:00.000000000 +01:00
 categories:
 - Productivity
 tags:
-- ruby
-- scripting
+- Ruby
+- Scripting
 - The Hit List
-- twitter
+- Twitter
 status: publish
 type: post
 published: true

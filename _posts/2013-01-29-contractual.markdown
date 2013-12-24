@@ -4,7 +4,7 @@ title: Contractual
 date: 2013-01-29 00:00:00.000000000 +00:00
 categories: Development
 tags:
-- ruby
+- Ruby
 status: publish
 type: post
 published: true

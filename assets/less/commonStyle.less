@@ -1,4 +1,8 @@
 /* Common style information between print and screen */
+
+/* Less Elements */
+@import (reference) "dmitryf-elements/elements.less";
+
 /* Media query values */
 @mq-iPhone: ~"only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px)";
 @mq-iPhoneSized: ~"only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px)";
@@ -34,12 +38,50 @@
 @categoryTagColour: #E82C0C;
 @tagColour: #0089e0;
 
+@fontSizeStandard: 18px;
+@fontSizeSmaller: 16px;
+@fontSizeSmallest: 12px;
+
 /* Common Mixins */
 .reset() {
     * {
     	margin: 0;
     	padding: 0;
     }
+}
+
+.ribbon(@backgroundColour: #5D83C4) {
+	position: relative;
+	padding: 6px 20px 6px 70px;
+	margin: 30px 10px 10px -70px;
+	background-color: @backgroundColour;
+	text-shadow: 0px 1px 2px lighten(@mainFontColour, 30%);
+	.box-shadow(0px 2px 4px #888);
+	
+	&:after {
+		content: ' ';
+		position: absolute;
+		width: 0;
+		height: 0;
+		left: 0px;
+		top: 100%;
+		border-width: 5px 10px;
+		border-style: solid;
+		border-color: darken(@backgroundColour, 20%) darken(@backgroundColour, 20%) transparent transparent;
+
+	}
+
+	&:before {
+		content: ' ';
+		position: absolute;
+		width: 30px;
+		height: 0;
+		left: -30px;
+		top: 12px;
+		border-width: 20px 10px;
+		border-style: solid;
+		border-color: @backgroundColour @backgroundColour @backgroundColour transparent;
+	}
 }
 
 .fonts() {
@@ -56,41 +98,43 @@
     padding-left: (@size + (@size / 4)); 
 }
 
-.sitePadding(@width) when (@width < 95%) {
+.sitePadding() {
 	padding: 1em 2em 1em 2em;
+	
+	@media @mq-iPhone, @mq-iPhoneSized {
+	    padding: 0;
+	}
 }
 
-.siteLeftPadding(@width) when (@width < 95%) {
+.siteLeftPadding() {
 	padding-left: 2em;
+    @media @mq-iPhone, @mq-iPhoneSized {
+	    padding-left: 0;
+	}
 }
 
-.siteLeftPadding(@width) when (@width >= 95%) {
-	padding-left: 0px;
-}
-
-.siteRightPadding(@width) when (@width < 95%) {
+.siteRightPadding() {
 	padding-right: 2em;
+    @media @mq-iPhone, @mq-iPhoneSized {
+	    padding-right: 0;
+	}
 }
 
-.siteRightPadding(@width) when (@width >= 95%) {
-	padding-right: 0px;
-}
-
-.siteLeftMargin(@width) when (@width < 95%) {
+.siteLeftMargin() {
 	margin-left: 2em;
+    
+    @media @mq-iPhone, @mq-iPhoneSized {
+	    margin-left: 0px;
+	}
 }
 
-.siteLeftMargin(@width) when (@width >= 95%) {
-	margin-left: 0px;
-}
-
-.siteRightMargin(@width) when (@width < 95%) {
+.siteRightMargin() {
 	margin-right: 2em;
-}
-
-.siteRightMargin(@width) when (@width >= 95%) {
-	margin-right: 0px;
-}
+	
+	@media @mq-iPhone, @mq-iPhoneSized {
+	    margin-right: 0px;
+	}
+}    
 
 .clear {
     clear: both;

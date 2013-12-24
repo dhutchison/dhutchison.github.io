@@ -1,0 +1,58 @@
+/**
+ * Less that powers the style of the Archive page.
+ */
+ @import (reference) "commonStyle.less";
+ 
+ .archivesHeader {	    			
+    .ribbon();
+    
+    h2 {
+    	font-family: @headerFonts;
+    	font-weight: @contentFontWeight;
+    	text-align: left;
+    }
+
+}
+
+.archives {
+    margin-top: 1em;
+    list-style: none;
+    
+    
+    li {
+     margin-bottom: 2px;
+     overflow: hidden;
+    }
+    
+    .year {
+        display: inline-block;
+        font-family: @headerFonts;
+    	font-weight: @contentFontWeight;
+        vertical-align: top;
+    }
+    
+    .meta {
+        float: left;
+        font-family: @headerFonts;
+    	font-weight: @contentFontWeight;
+    	width: 4em;
+    	border-color: @linkColour;
+    	border-right: 1px;
+        vertical-align: middle;
+    }
+    
+    .title {
+        font-family: @headerFonts;
+        font-weight: @contentFontWeight;
+        overflow: hidden;
+        padding-left: 4px;
+    }
+    
+    ul {
+        display: inline-block;
+        list-style: none;
+    }
+
+}
+ 
+ 

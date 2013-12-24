@@ -6,7 +6,9 @@
 @import (reference) "commonStyle.less";
 @import "social.less";
 @import "author.less";
+@import "archives.less";
 @import "profile.less";
+@import "tags.less";
 @import "font-awesome/font-awesome.less";
 
 .fonts();
@@ -36,117 +38,6 @@
 	background-image: linear-gradient(to right, @leftColour 0%, @rightColour 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@leftColour, endColorstr=@rightColour,GradientType=1 );
 	
-}
-
-.ribbon(@backgroundColour: #5D83C4) {
-	position: relative;
-	padding: 6px 20px 6px 70px;
-	margin: 30px 10px 10px -70px;
-	background-color: @backgroundColour;
-	text-shadow: 0px 1px 2px lighten(@mainFontColour, 30%);
-	.box-shadow(0px 2px 4px #888);
-	
-	&:after {
-		content: ' ';
-		position: absolute;
-		width: 0;
-		height: 0;
-		left: 0px;
-		top: 100%;
-		border-width: 5px 10px;
-		border-style: solid;
-		border-color: darken(@backgroundColour, 20%) darken(@backgroundColour, 20%) transparent transparent;
-
-	}
-
-	&:before {
-		content: ' ';
-		position: absolute;
-		width: 30px;
-		height: 0;
-		left: -30px;
-		top: 12px;
-		border-width: 20px 10px;
-		border-style: solid;
-		border-color: @backgroundColour @backgroundColour @backgroundColour transparent;
-	}
-}
-
-
-.tagLinks(@backgroundColour: #0089e0, @foregroundColour: #FFFFFF, @height) {
-/**
- * http://cssglobe.com/pure-css3-post-tags/
- */
-    @totalHeight: ceil((@height * @lineHeight));
-    @borderHeight: ceil((@totalHeight / 2));
-    @dotSize: (@height / 4);
-
-	.transition-duration(0s);
-	margin-left: @height/2;
-	padding:0 10px 0 12px;
-	background: @backgroundColour;
-	color: @foregroundColour;
-	text-decoration:none;
-	.border-radius(@dotSize, @dotSize);	
-	
-	&:before {
-		content: "";
-		float:left;
-		position:absolute;
-		top:0;
-		left:-@borderHeight;
-		width:0;
-		height:0;
-		border-color:transparent @backgroundColour transparent transparent;
-		border-style:solid;
-		border-width: @borderHeight @borderHeight @borderHeight 0;		
-	}
-
-	&:after{
-		content:"";
-		position:absolute;
-		top: (@borderHeight - (@dotSize / 2));
-		left:0;
-		float:left;
-		width: @dotSize;
-		height: @dotSize;
-		.rounded(@dotSize/2);
-		background: @foregroundColour;
-		.drop-shadow(-1px, -1px, 2px, 0.3);
-	}
-
-
-	&:hover{
-		background: darken(@foregroundColour, 50%);
-		&:before{
-			border-color:transparent darken(@foregroundColour, 50%) transparent transparent;}
-	}	
-}
-
-.tagLinkHorizontalList(@backgroundColour: #0089e0, @foregroundColour: #FFFFFF, @height: @contentFontSize) {
-
-	margin: 0;
-	
-	padding-left: 0;
-	padding-right: 0;
-	list-style: none;
-	display: inline-block;
-	
-	li {
-	    padding-left: 1em;
-	}
-	
-	li, a {
-		float: left;
-		height: (@height * @lineHeight);
-		line-height: @lineHeightEM;
-		position: relative;
-		font-size: @height;
-	}
-	
-	a {
-		.tagLinks(@backgroundColour, @foregroundColour, @height);
-	}
 }
 
 
@@ -205,33 +96,30 @@ table {
 	font-size: inherit;
 }
 
-.headerMargins(@size; @width) when (@width < 95%) {
+.headerMargins(@size) {
     margin-left: @size;
+    
+    @media @mq-iPhone, @mq-iPhoneSized {
+        margin-left: 0px;
+    }
 }
 
-.headerMargins(@size; @width) when (@width >= 95%) {
-    margin-left: 0px;
-}
-
-.siteMargin(@width) when (@width < 95%) {
+.siteMargin() {
     margin-right: auto;
     margin-left: auto;
+
+    @media @mq-iPhone, @mq-iPhoneSized {
+        margin-right: 0;
+        margin-left: 0;
+    }
 }
 
-.siteMargin(@width) when (@width >= 95%) {
-    margin-right: 0px;
-    margin-left: 0px;
-}
-
-.sizedSite(@baseFontSize; @width; @mainHeaderRatio: 2.4; @smallHeaderRatio: 1.75; @smallerFontRatio: 1.3; @smallestFontRatio: 0.8) {
+.sizedSite(@baseFontSize; @width; @mainHeaderRatio: 2.4; @smallHeaderRatio: 1.75; @smallerFontRatio: 1.3) {
     @mainHeaderFontSize: ceil(@mainHeaderRatio * @baseFontSize);
     @smallHeaderFontSize: ceil(@smallHeaderRatio * @baseFontSize);
     @contentFontSize: @baseFontSize;
-    @footerFontSize: ceil(@contentFontSize * @smallestFontRatio);
     
-    .sizedProfile(@baseFontSize; @width; @mainHeaderRatio; @smallHeaderRatio; @smallerFontRatio; @smallestFontRatio; @mainHeaderFontSize; @smallHeaderFontSize; @contentFontSize);
-    
-    .author-sized(@width);
+    .sizedProfile(@baseFontSize; @width; @mainHeaderRatio; @smallHeaderRatio; @smallerFontRatio; @mainHeaderFontSize; @smallHeaderFontSize; @contentFontSize);
     
     body {
         /* text */
@@ -253,18 +141,17 @@ table {
     		/* Sizing */
     		font-size: @contentFontSize;
     		width: @width;
-    		.siteMargin(@width);
     		
     		.header {
                 width: @width;
                 
                 h1.title {
-                    .headerMargins(@smallHeaderFontSize; @width);
+                    .headerMargins(@smallHeaderFontSize);
                 }
                 
                 #nav {
                     ul {
-                        .headerMargins(@smallHeaderFontSize; @width);
+                        .headerMargins(@smallHeaderFontSize);
                     }
                 }
                 
@@ -281,8 +168,6 @@ table {
     		        }
     		    }
     		
-        		.sitePadding(@width);
-
     			.archives {
     		        
     			    ul {
@@ -296,26 +181,8 @@ table {
     						
                 h3 {
                 	font-size: (@smallHeaderFontSize - ((@smallHeaderFontSize - @contentFontSize)/2))
-                }
-                
-                
-                footer { 
-                
-                	.inlineListTags {
-                		.tagLinkHorizontalList(@tagColour, #FFFFFF, @baseFontSize);
-                	}
-                	
-                	.inlineListCategories {
-                		.tagLinkHorizontalList(@categoryTagColour, #FFFFFF, @baseFontSize);
-                	}
-                }
-    				
+                }    				
     			
-    		}
-    		
-    		.footer {
-    		    z-index: 1;
-    		    font-size: @footerFontSize;
     		}
     		
     	}
@@ -345,6 +212,7 @@ table {
     	/* Sizing */
     	width: 60%;
     	padding-bottom: 0px;
+   		.siteMargin();
         
         h2 {
     		font-family: @headerFonts;
@@ -423,58 +291,8 @@ table {
     	
     	.content {
             margin-top: @headerHeight;
-    		
-    		.archivesHeader {	    			
-				.ribbon;
-	
-				h2 {
-					font-family: @headerFonts;
-					font-weight: @contentFontWeight;
-					text-align: left;
-				}
-				
-			}
-    		
-    		.archives {
-                margin-top: 1em;
-    		    list-style: none;
-    		    
-                
-                li {
-                    margin-bottom: 2px;
-                    overflow: hidden;
-                }
-                
-    		    .year {
-    		        display: inline-block;
-                    font-family: @headerFonts;
-    				font-weight: @contentFontWeight;
-                    vertical-align: top;
-    		    }
-    		    
-                .meta {
-                    float: left;
-                    font-family: @headerFonts;
-    				font-weight: @contentFontWeight;
-    				width: 4em;
-    				border-color: @linkColour;
-    				border-right: 1px;
-                    vertical-align: middle;
-                }
-                
-                .title {
-                    font-family: @headerFonts;
-                    font-weight: @contentFontWeight;
-                    overflow: hidden;
-                    padding-left: 4px;
-                }
-                
-    		    ul {
-                    display: inline-block;
-                    list-style: none;
-    		    }
-    		   
-    		}
+            .sitePadding();
+            
     		
     		.pagination {
     		    text-align: center;
@@ -498,11 +316,6 @@ table {
     	    	    
     		    }    		    
     		}
-    	}
-    	
-    	.tagListTitle {
-    	    display: inline-block;
-    	    vertical-align: top;
     	}
     	
     	.post {
@@ -564,6 +377,15 @@ table {
     		
     		footer {
         		
+    			.inlineListTags {
+    				.tagLinkHorizontalList(@tagColour, #FFFFFF);
+    			}
+    			
+    			.inlineListCategories {
+    				.tagLinkHorizontalList(@categoryTagColour, #FFFFFF);
+    			}
+        		
+        		
         		.page-navigation {
         		    padding-bottom: 2px;
         		    margin-bottom: 2px;
@@ -583,10 +405,14 @@ table {
     	}
     	
     	.footer {
+    	    	        
+   	        font-size: 0.8em;
+    	
     		border-top: 4px solid #eee;
     		overflow: hidden;
     		width: 100%;
     		padding-top: 1em;
+    		z-index: 1;
     		
     		.copy {
     			width: 100%;
@@ -641,7 +467,8 @@ table {
             .site {
                 
                 width: 100%;
-                .siteMargin(100%);
+                margin-left: 0;
+                margin-right: 0;
             
                 .header {
                     display: none;
@@ -693,10 +520,6 @@ table {
 	
 	ul {
 		margin-left: 1.35em;
-	}
-	
-	.tagListTitle {
-	    display: inline-block;
 	}
 	
 	ol {

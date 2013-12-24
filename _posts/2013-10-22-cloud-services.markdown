@@ -8,7 +8,7 @@ summary: Can I get away with storing photos and music in the cloud?
 title: Cloud Services
 category: Products
 tags: 
-- software
+- Software
 ---
 
 I was certain that I was going to buy a 32GB iPhone 5s after seeing how much space free I still had on my 16GB iPhone 4, but then I got thinking: how much of the stuff I have on this phone really needs to be on the device and not just accessible somehow?

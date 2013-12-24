@@ -12,11 +12,22 @@
 		float: left;
 		display: inline-block;
         font-weight: @headerFontWeight;
+        
+        width: auto;
+        
+        @media mq-iPhone, mq-iPhoneSized {
+            width: 100%;
+        }
 	}
 	
 	h3, h4, h5 {
         color: @mainHeaderColour;
         font-weight: @contentFontWeight;
+	}
+	
+	h4, h5 {
+		/* H5 is used for the date section */
+		font-size: 0.8em;
 	}
 	
 	h4 {
@@ -41,16 +52,8 @@
     padding-left: 0px + @extra;    
 }
 
-.h2Width(@width) when (@width < 95%) {
-    width: auto;
-}
 
-.h2Width(@width) when (@width >= 95%) {
-    width: 100%;
-}
-
-
-.sizedProfile(@baseFontSize; @width; @mainHeaderRatio; @smallHeaderRatio; @smallerFontRatio; @smallestFontRatio; @mainHeaderFontSize; @smallHeaderFontSize; @contentFontSize) {
+.sizedProfile(@baseFontSize; @width; @mainHeaderRatio; @smallHeaderRatio; @smallerFontRatio; @mainHeaderFontSize; @smallHeaderFontSize; @contentFontSize) {
     
    	@contentSpacing: (10 * @baseFontSize);
     
@@ -65,12 +68,8 @@
     .profile {
     	
     	@smallerHeaderFontSize: ceil(@smallerFontRatio * @baseFontSize);
-    	@smallestHeaderFontSize: ceil(@smallestFontRatio * @baseFontSize);
     
     	 /* H2-4 used in main profile */
-    	h2 {
-            .h2Width(@width);
-        }
     	
     	h3, h4, h5, p {
            	.profileLeftPadding(@width);
@@ -78,11 +77,6 @@
     	
     	h2, h3 {
     		font-size: @smallerHeaderFontSize;
-    	}
-    
-    	h4, h5 {
-    		/* H5 is used for the date section */
-    		font-size: @smallestHeaderFontSize;
     	}
     	
     

@@ -1,0 +1,169 @@
+/* Less Elements */
+@import (reference) "commonStyle.less";
+@import (reference) "dmitryf-elements/elements.less";
+
+.tagLinks(@backgroundColour: #0089e0, @foregroundColour: #FFFFFF, @height) {
+/**
+ * http://cssglobe.com/pure-css3-post-tags/
+ */
+    @totalHeight: ceil((@height * @lineHeight));
+    @borderHeight: ceil((@totalHeight / 2));
+    @dotSize: (@height / 4);
+
+	.transition-duration(0s);
+	margin-left: @height/2;
+	padding:0 10px 0 12px;
+	background: @backgroundColour;
+	color: @foregroundColour;
+	text-decoration:none;
+	.border-radius(@dotSize, @dotSize);	
+	
+	&:before {
+		content: "";
+		float:left;
+		position:absolute;
+		top:0;
+		left:-@borderHeight;
+		width:0;
+		height:0;
+		border-color:transparent @backgroundColour transparent transparent;
+		border-style:solid;
+		border-width: @borderHeight @borderHeight @borderHeight 0;		
+	}
+
+	&:after{
+		content:"";
+		position:absolute;
+		top: (@borderHeight - (@dotSize / 2));
+		left:0;
+		float:left;
+		width: @dotSize;
+		height: @dotSize;
+		.rounded(@dotSize/2);
+		background: @foregroundColour;
+		.drop-shadow(-1px, -1px, 2px, 0.3);
+	}
+
+
+	&:hover{
+		background: darken(@foregroundColour, 50%);
+		&:before{
+			border-color:transparent darken(@foregroundColour, 50%) transparent transparent;}
+	}	
+}
+
+.tagLinkHorizontalList(@backgroundColour: #0089e0, @foregroundColour: #FFFFFF) {
+
+	margin: 0;
+	
+	padding-left: 0;
+	padding-right: 0;
+	list-style: none;
+	
+	li {
+//	    float: left;
+        display: inline-block;
+	    padding-left: 0;
+	    .tag-box(@backgroundColour; @foregroundColour);
+	}
+//	
+//	li, a {
+//		float: left;
+//		height: (@height * @lineHeight);
+//		line-height: @lineHeightEM;
+//		position: relative;
+//		font-size: @height;
+//	}
+//	
+//	a {
+//		.tagLinks(@backgroundColour, @foregroundColour, @height);
+//	}
+}
+
+.tag-box(@backgroundColour: #0089e0; @foregroundColour: #FFFFFF) {
+        
+    a {
+        text-decoration: none;
+      	.transition-duration(0s);
+      	
+      	padding: 3px 3px;
+  	    margin: 2px;
+  	
+  	    .rounded(4px);
+  	
+  	    font-size: 0.8em;
+  	
+  	    background-color: @backgroundColour;    
+  	    color: @foregroundColour;
+      	
+      	&:hover {
+      		background: darken(@foregroundColour, 50%);
+      	}
+    }
+    
+    span {
+        vertical-align: super;
+//        font-size: 10px;
+        font-size: 0.625rem;
+    }
+}
+
+.tagListTitle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.tagList {
+    .tagLinkHorizontalList(@tagColour, #FFFFFF);
+}
+
+.tagsWithPosts {
+
+    .clear();
+
+    margin-top: 1em;
+    list-style: none;
+
+    li {
+        margin-bottom: 2px;
+        overflow: hidden;
+        
+        h3:before { 
+            /* Padding fix for anchor links: http://css-tricks.com/hash-tag-links-padding/ */
+            display: block; 
+            content: " "; 
+            margin-top: -@headerHeight; 
+            height: @headerHeight; 
+            visibility: hidden; 
+        }
+    }
+    
+    .meta {
+        float: left;
+        font-family: @headerFonts;
+    	font-weight: @contentFontWeight;
+    	width: 10em;
+    	border-color: @linkColour;
+    	border-right: 1px;
+        vertical-align: middle;
+    }
+    
+    .title {
+        font-family: @headerFonts;
+        font-weight: @contentFontWeight;
+        overflow: hidden;
+        padding-left: 4px;
+    }
+    
+    ul {
+        display: inline-block;
+        list-style: none;
+    }
+
+}
+
+.tags {
+    h2 {
+        .ribbon();
+    }
+}

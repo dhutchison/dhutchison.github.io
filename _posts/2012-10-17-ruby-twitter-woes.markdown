@@ -6,8 +6,8 @@ categories:
 - Productivity
 tags:
 - OAUTH
-- ruby
-- twitter
+- Ruby
+- Twitter
 status: publish
 type: post
 published: true

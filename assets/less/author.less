@@ -5,6 +5,8 @@
     margin-bottom:1em;
     position: relative;
     
+    .siteLeftPadding();
+    
     header {
 	    float:left;
     	width: 80px;
@@ -56,6 +58,8 @@
     right: 0px;
     vertical-align: top;
     
+    .siteRightPadding();
+    
     @media @mq-iPhone, @mq-iPhoneSized {
         position: initial;
         width: 100%;
@@ -70,16 +74,5 @@
                 margin-left: 2em;
             }
         }
-    }
-}
-
-.author-sized(@width) {
-
-    .author {
-        .siteLeftPadding(@width);
-    }
-
-    .author-links {
-        .siteRightPadding(@width);
     }
 }
