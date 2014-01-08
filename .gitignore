@@ -20,3 +20,7 @@ _drafts
 nbproject/project.xml
 
 nbproject/project.properties
+
+*.sublime-project
+
+*.sublime-workspace
