@@ -1,0 +1,36 @@
+// Less elements
+@import (reference) "commonStyle.less";
+
+
+// Styling for the 404 page.
+.not-found {
+
+	.next-greatest-thing {
+		background: #000000;
+		color: #6C59D1;
+		padding: 1em;
+
+		overflow: hidden;
+	
+		h1 {
+			text-align: center;
+		  animation: blinker 1.7s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+		}
+
+		.underc {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.bkslide {
+			display: block;
+			margin: 0 auto;
+		}
+
+	}
+
+	@keyframes blinker {  
+	  from { opacity: 1; }
+	  to { opacity: 0; }
+	}
+}
