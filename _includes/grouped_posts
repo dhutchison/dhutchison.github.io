@@ -1,0 +1,43 @@
+{% comment %}
+Include for adding a categorised list.
+Requires 3 variables to be set:
+- groupings- The hash that contains the grouping items to use. e.g. site.tags
+- title - The title for the page
+- groupingClass - The css class to use when displaying the grouping list items.
+{% endcomment %}
+{% capture grouping_items %}{% for grouping in groupings %}{{ grouping | first | downcase }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+<!-- grouping_items: {{ grouping_items }} -->
+{% capture num_words %}
+  {{ grouping_items | split:',' | size }}
+{% endcapture %}
+<!-- num_words: {{ num_words }} -->
+{% assign grouping_words = grouping_items | split:',' | sort %}
+<!-- grouping_words: {{ grouping_words }} -->
+
+<header id="groupingHeader" class="archivesHeader">
+  <h2>{{ title }}</h2>
+</header>
+
+<article>
+
+    <ul class="groupingList">{% for item in (0..num_words) %}{% unless forloop.last %}{% capture this_word %}{{ grouping_words[item] | strip_newlines }}{% endcapture %}{% for grouping in groupings %}{% capture lower_grouping %}{{ grouping | first | downcase }}{% endcapture %}{% capture display_grouping %}{{ grouping | first }}{% endcapture %}{% if this_word == lower_grouping %}
+        <li class="{{ groupingClass }}"><a href="#{{ this_word | cgi_escape }}">{{ display_grouping }} <span>{{ groupings[display_grouping].size }}</span></a></li>
+        {% endif %} {% endfor %}{% endunless %}{% endfor %}
+    </ul>
+
+    <ul class="groupedPosts">{% for item in (0..num_words) %}{% unless forloop.last %}{% capture this_word %}{{ grouping_words[item] | strip_newlines }}{% endcapture %}{% for grouping in groupings %}{% capture lower_grouping %}{{ grouping | first | downcase }}{% endcapture %}{% capture display_grouping %}{{ grouping | first }}{% endcapture %}{% if this_word == lower_grouping %}
+        <li>
+            <h3 class="{{ groupingClass }}" id="{{ this_word | downcase | cgi_escape }}">{{ display_grouping }}</h3>
+            <ul class="posts">{% for post in groupings[display_grouping] %}{% if post.title != null %}
+                <li itemscope>
+                    <div class="meta">
+                        <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%d %b, %Y" }}</time>
+                    </div>
+                    <div class="title">
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </div>
+                </li>{% endif %}{% endfor %}
+            </ul>
+        </li>{% endif %} {% endfor %}{% endunless %}{% endfor %}
+    </ul>
+</article>

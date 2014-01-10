@@ -14,7 +14,7 @@
 		<ul class="inlineListCategories">
 			{% for category in post.categories %}
 				<li>
-				    <a href="/categories/{{ category | cgi_escape }}">
+				    <a href="/categories/#{{ category | downcase | cgi_escape }}">
 				        {{ category }}
 				    </a>		    
 				</li>					

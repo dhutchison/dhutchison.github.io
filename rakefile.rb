@@ -205,7 +205,8 @@ task :publish, :filename do |t, args|
   mv file, target
   puts %Q{Published "#{headers['title']}" to #{target}}
   # deploy the site, full build
-  Rake::Task[:build].invoke('full')
+  #Rake::Task[:build].invoke('full')
+  Rake::Task[:build].invoke()
 end
 
 # Creates a user selection menu from directory listing

@@ -2,10 +2,5 @@
 layout: main
 title: Categories
 ---
-
-<h2>Tags</h2>
-<ul class="catList">
-{% for cat in site.categories %}
-	<li><a href="/categories/{{ cat | first | downcase | replace:' ','' | replace:'&amp;','&'}}">{{ cat | first }} <span>({{ cat | last | size }})</span></a></li>			
-{% endfor %}
-</ul>
+{% assign groupings=site.categories %}{% assign title='Categories' %}{% assign groupingClass='category' %}
+{% include grouped_posts %}
