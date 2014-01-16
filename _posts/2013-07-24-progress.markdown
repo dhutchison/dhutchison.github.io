@@ -2,7 +2,7 @@
 layout: post
 title: Progress
 date: 2013-07-24 22:00:00.000000000 +01:00
-categories: site
+categories: Site
 permalink: /site/2013/07/24/progress/
 keywords:
 - cascading style sheets

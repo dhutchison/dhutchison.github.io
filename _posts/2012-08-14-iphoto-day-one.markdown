@@ -2,7 +2,8 @@
 layout: post
 title: iPhoto -> Day One
 date: 2012-08-14 01:00:00.000000000 +01:00
-categories: []
+categories: 
+- Miscellaneous
 tags:
 - AppleScript
 - Day One

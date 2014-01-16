@@ -2,7 +2,7 @@
 layout: post
 title: Jekyll Generated HTML
 date: 2013-07-26 23:37:00.000000000 +01:00
-categories: development
+categories: Development
 summary: Jekyll generated  pages can contain a lot of whitespace. There IS a solution without using plugins!
 tags: jekyll
 keywords:
