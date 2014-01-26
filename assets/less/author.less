@@ -23,17 +23,19 @@
         @media @mq-iPhone, @mq-iPhoneSized {
             display: block;
         }
-        
-        @media @mq-iPhone {
-            padding-left: 60px;
-        }
-        
-        @media @mq-iPhoneSized {
-            padding-left: 100px;
-        }
     }
     
 }
+
+@media @mq-iPhone, @mq-iPhoneSized {
+    .footer .author .author-details {
+        padding-left: 9em;
+    }
+}
+.footer .author header {
+    margin-right: 0.5em;
+}
+
 .author-name {
     margin-top: 0.25em;
     margin-bottom: 0px;
@@ -44,8 +46,7 @@
 	height:auto;
   	border-radius: 50px;
   	
-  	@media @mq-iPhone {
-  	    width: 40px;
+  	@media @mq-iPhone, @mq-iPhoneSized {
   	    border-radius: 25px;
   	}
 }
@@ -53,10 +54,16 @@
 
 .author-links {
     display: inline-block;
-    position: absolute;
     width: auto;
     right: 0px;
     vertical-align: top;
+
+    position: absolute;
+
+    @media @mq-iPad, @mq-iPadSized {
+        position: inherit;
+        padding-left: 1em;
+    }
     
     .siteRightPadding();
     

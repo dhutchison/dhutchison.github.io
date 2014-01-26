@@ -6,6 +6,7 @@ lastUpdated: 2013-10-12 13:22:34
 layout: profile
 title: Profile
 summary: The Resume of David Hutchison.
+person: david
 ---
 
 ---

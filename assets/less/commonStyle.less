@@ -3,11 +3,28 @@
 /* Less Elements */
 @import (reference) "dmitryf-elements/elements.less";
 
-/* Media query values */
+// Media query values ************************/
+//Reference: http://stephen.io/mediaqueries/
+@mq-iPhone5: ~"only screen and (min-device-width : 320px) and (max-device-width : 568px) ";
+@mq-iPhone5Landscape: ~"@{mq-iPhone5} and (orientation : landscape) ";
+@mq-iPhone5Portrait: ~"@{mq-iPhone5} and (orientation : portrait) ";
+ 
+@mq-iPhone234: ~"only screen and (min-device-width : 320px) and (max-device-width : 480px) ";
+@mq-iPhone234Landscape: ~"@{mq-iPhone234} and (orientation : landscape) ";
+@mq-iPhone234Portrait: ~"@{mq-iPhone234} and (orientation : portrait) ";
+ 
+//@mq-iPhone: ~"@{mq-iPhone5}, @{mq-iPhone234}";
+//@mq-iPhoneSized: ~"only screen and (min-width: 320px) and (max-width: 568px), only screen and (min-width: 320px) and (max-width : 480px)";
 @mq-iPhone: ~"only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px)";
 @mq-iPhoneSized: ~"only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px)";
-@mq-iPadPortrait: ~"(max-device-width: 1024px)";
-@mq-iPadPortraitSized: ~"(max-width: 1024px)";
+ 
+@mq-iPad: ~"only screen and (min-device-width : 768px) and (max-device-width : 1024px) ";
+@mq-iPadSized: ~"only screen and (min-width : 768px) and (max-width : 1024px) ";
+
+@mq-iPadLandscape: ~"@{mq-iPad} and (orientation : landscape) ";
+@mq-iPadPortrait: ~"@{mq-iPad} and (orientation : portrait) ";
+//Retina add rule and (-webkit-min-device-pixel-ratio: 2)
+//Non-Retina add rule and (-webkit-min-device-pixel-ratio: 1)
 
 /*
  * Variables 
@@ -41,6 +58,11 @@
 @fontSizeStandard: 18px;
 @fontSizeSmaller: 16px;
 @fontSizeSmallest: 12px;
+
+@widthStandard: 60%;
+@widthSmaller: 80%;
+@widthSmallest: 100%;
+
 
 /* Common Mixins */
 .reset() {
@@ -89,6 +111,60 @@
     @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
 }
 
+// REM based sizing. 
+.padding-left(@sizeValue; @iPadSizeValue: @sizeValue; @iPhoneSizeValue: @sizeValue) {
+    @remValue: @sizeValue;
+    @pxValue: round((@sizeValue * unit(@fontSizeStandard)));
+    padding-left: ~"@{pxValue}px"; 
+    
+    @media @mq-iPadPortrait, @mq-iPadSized {
+        @pxValue: round((@iPadSizeValue * unit(@fontSizeSmaller)));
+        padding-left: ~"@{pxValue}px"; 
+    }
+    @media @mq-iPhone, @mq-iPhoneSized {
+        @pxValue: round((@iPhoneSizeValue * unit(@fontSizeSmallest)));
+        padding-left: ~"@{pxValue}px"; 
+    }
+    
+    padding-left: ~"@{remValue}rem";
+}
+
+// REM based sizing. 
+.margin-left(@sizeValue; @iPadSizeValue: @sizeValue; @iPhoneSizeValue: @sizeValue) {
+    @remValue: @sizeValue;
+    @pxValue: round((@sizeValue * unit(@fontSizeStandard)));
+    margin-left: ~"@{pxValue}px"; 
+    
+    @media @mq-iPadPortrait, @mq-iPadSized {
+        @pxValue: round((@iPadSizeValue * unit(@fontSizeSmaller)));
+        margin-left: ~"@{pxValue}px"; 
+    }
+    @media @mq-iPhone, @mq-iPhoneSized {
+        @pxValue: round((@iPhoneSizeValue * unit(@fontSizeSmallest)));
+        margin-left: ~"@{pxValue}px"; 
+    }
+    
+    margin-left: ~"@{remValue}rem";
+}
+
+// REM based sizing. Based on http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/ 
+.font-size(@sizeValue; @iPadSizeValue: @sizeValue; @iPhoneSizeValue: @sizeValue) {
+    @remValue: @sizeValue;
+    @pxValue: round((@sizeValue * unit(@fontSizeStandard)));
+    font-size: ~"@{pxValue}px"; 
+    
+    @media @mq-iPadPortrait, @mq-iPadSized {
+        @pxValue: round((@iPadSizeValue * unit(@fontSizeSmaller)));
+        font-size: ~"@{pxValue}px"; 
+    }
+    @media @mq-iPhone, @mq-iPhoneSized {
+        @pxValue: round((@iPhoneSizeValue * unit(@fontSizeSmallest)));
+        font-size: ~"@{pxValue}px"; 
+    }
+    
+    font-size: ~"@{remValue}rem";
+}
+
 .liImage(@image, @size: 16px) {
     list-style: none;
     background-image: @image;
@@ -102,7 +178,7 @@
 	padding: 1em 2em 1em 2em;
 	
 	@media @mq-iPhone, @mq-iPhoneSized {
-	    padding: 0;
+	    padding: 1em;
 	}
 }
 

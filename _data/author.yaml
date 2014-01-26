@@ -1,8 +1,9 @@
-name: David Hutchison
-bio: I am a Software Developer based in Carluke, Scotland.
-twitter: DavidHutchison
-github: dhutchison
-email: david@devwithimagination.com
-pic: /images/self_square.jpg
-pic_small: /images/self_square.jpg
-profile_url: /profile
+david:
+  name: David Hutchison
+  bio: I am a Software Developer based in Carluke, Scotland.
+  twitter: DavidHutchison
+  github: dhutchison
+  email: david@devwithimagination.com
+  pic: /images/self_square.jpg
+  pic_small: /images/self_square.jpg
+  profile_url: /profile

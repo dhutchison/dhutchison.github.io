@@ -3,14 +3,14 @@ layout: main
 ---
 <section class="author profile-author">
 	<header> 
-	    <img class="profile-image" src="{{ site.data.author.pic_small }}">
+	    <img class="profile-image" src="{{ site.data.author[page.person].pic_small }}">
 	</header>
 	<article class="author-details profile-author-bio">
 		<!-- Author Name -->
-    	<h1 class="author-name"> {{ site.data.author.name }} </h4>
+    	<h1 class="author-name"> {{ site.data.author[page.person].name }} </h4>
     	<!-- Author Bio -->
     	<p class="author-bio"> 
-    		<a href="mailto:{{ site.data.author.email }}" title="Email Me">{{ site.data.author.email }}</a>
+    		<a href="mailto:{{ site.data.author[page.person].email }}" title="Email Me">{{ site.data.author[page.person].email }}</a>
     	</p>
     </article>
 </section>

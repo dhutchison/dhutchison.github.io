@@ -63,12 +63,12 @@
               <h1 class="title"><a href="/" title="Home">{{ site.name }}</a></h1>
               <div class="links">
                   <nav id="nav">
-      	            <ul>
+      	            <ul class="fa-ul">
       {% capture input %}{% assign pages_list = site.pages %}
       {% assign group = 'navigation' %}
       {% include pages_list %}{% endcapture %}{% include trim %}
                           <li>
-                              <a href="/feed.xml">Feed</a>
+                              <a href="/feed.xml"><i class="fa-li fa fa-rss fa-lg fa-fw rss"></i></a>
                           </li>
       	            </ul>
                   </nav>
@@ -80,30 +80,30 @@
 			</div>
             <footer class="footer">
             <!-- If we want to display author's name and bio -->
-            {% if site.data.author %}
+            {% if site.data.author.david %}
                 <section class="author">
                 	<header> 
-                	    <a href="{{ site.data.author.profile_url }}"> <img class="profile-image" src="{{ site.data.author.pic_small }}"></a>
+                	    <a href="{{ site.data.author.david.profile_url }}"> <img class="profile-image" src="{{ site.data.author.david.pic_small }}"></a>
                 	</header>
                 	<article class="author-details">
                 		<!-- Author Name -->
-                    	<h4 class="author-name"> {{ site.data.author.name }} </h4>
+                    	<h4 class="author-name"> {{ site.data.author.david.name }} </h4>
                     	<!-- Author Bio -->
                     	<p class="author-bio"> 
-                    		{{ site.data.author.bio }}
+                    		{{ site.data.author.david.bio }}
                     	</p>
                     </article>
                      
                 	<!-- Links -->
                 	<aside class="author-links">
                         <ul class="fa-ul social">
-                	        {% if site.data.author.github %}<li>
-                                <a href="http://github.com/{{ site.data.author.github }}/"><i class="fa-li fa fa-github fa-lg fa-fw"></i>/{{ site.data.author.github }}</a>
+                	        {% if site.data.author.david.github %}<li>
+                                <a href="http://github.com/{{ site.data.author.david.github }}/"><i class="fa-li fa fa-github fa-lg fa-fw"></i>/{{ site.data.author.david.github }}</a>
                             </li>{% endif %}
-                	        {% if site.data.author.twitter %}<li>
-                    	      <a href="http://twitter.com/{{ site.data.author.twitter }}/"><i class="fa-li fa fa-twitter fa-lg fa-fw"></i>@{{ site.data.author.twitter }}</a>
+                	        {% if site.data.author.david.twitter %}<li>
+                    	      <a href="http://twitter.com/{{ site.data.author.david.twitter }}/"><i class="fa-li fa fa-twitter fa-lg fa-fw"></i>@{{ site.data.author.david.twitter }}</a>
                     	    </li>{% endif %}
-                    	    {% if site.data.author.email %}<li><a href="mailto:{{ site.data.author.email }}"><i class="fa-li fa fa-envelope fa-lg fa-fw"></i>{{ site.data.author.email }}</a>
+                    	    {% if site.data.author.david.email %}<li><a href="mailto:{{ site.data.author.david.email }}"><i class="fa-li fa fa-envelope fa-lg fa-fw"></i>{{ site.data.author.david.email }}</a>
                             </li>{% endif %}
                 	    </p>
                 	  </ul>
