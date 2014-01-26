@@ -146,7 +146,7 @@ end
 def jekyll
   puts 'Building...'
   sh 'lessc --clean-css assets/less/main.less assets/css/main.css'
-  sh 'jekyll build --drafts -d ../dwi_built_site'
+  sh 'bundle exec jekyll build --drafts -d ../dwi_built_site'
   puts 'Build Complete'
 end
 
