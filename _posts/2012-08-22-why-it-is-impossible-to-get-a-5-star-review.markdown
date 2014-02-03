@@ -27,4 +27,7 @@ This comment on Amazon says it all:
 ![Review](/images/20120822-213619.jpg "Review")
 </a>
 
-The product it was for was [this set of stylii](http://www.amazon.co.uk/dp/B007LNE6GI). At less than £3 for them with free delivery they surely must be worth a gamble!
+The product it was for was [this set of stylii][stylii]. At less than £3 for them with free delivery they surely must be worth a gamble!
+
+[stylii]: http://www.amazon.co.uk/gp/product/B007LNE6GI/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B007LNE6GI&linkCode=as2&tag=devwithimag-21 "8 x Universal Capacitive Stylus Pen for ipad 1 & 2, iPhone 4, HTC, Tablet pc, Asus Tablets, Advent, Samsung Galaxy, Mobile Phones, PC, Blackberry Play"
+

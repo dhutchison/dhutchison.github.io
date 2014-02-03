@@ -20,7 +20,7 @@ keywords:
 - apple
 - review
 ---
-I decided shortly after writing the post "[Why it is impossible to get a 5 star review](/2012/08/22/why-it-is-impossible-to-get-a-5-star-review/ "Why it is impossible to get a 5 star review")  to go ahead and take the gamble and purchase the product. The product had mostly good reviews, except for the silly one detailed in the previous post, and for £2.28 I wouldn't really feel out of pocket if they did turn out to be rubbish.
+I decided shortly after writing the post "[Why it is impossible to get a 5 star review](/2012/08/22/why-it-is-impossible-to-get-a-5-star-review/ "Why it is impossible to get a 5 star review")  to go ahead and take the gamble and purchase [the product][stylii]. The product had mostly good reviews, except for the silly one detailed in the previous post, and for £2.28 I wouldn't really feel out of pocket if they did turn out to be rubbish.
 
 <!--more-->
 
@@ -39,3 +39,5 @@ It appears that by shear luck, the stylus I pulled out to test was a good qualit
 ### Final Thoughts ###
 
 While this is only a review these styluses being used lightly over the space of a week, so far they look to be lasting. The one I have been primarily using is showing no real signs of wear so far. I had been hesitant about purchasing a more expensive (in the £15-£20 range) stylus after all of the ones I had seen having multiple reviews stating that the rubber tip had disintegrated and split within a few weeks, with (where available) tips costing around £4 each. These were clearly a gamble, and to be honest I expected them to be rubbish and go straight in the bin. So far they have appeared to be well worth the gamble, although the two and a half weeks from dispatch to arrival takes some patience. Unfortunately they have not cured my chronic inability to draw, but it is nice to have something usable to sketch ideas with.
+
+[stylii]: http://www.amazon.co.uk/gp/product/B007LNE6GI/ref=as_li_ss_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B007LNE6GI&linkCode=as2&tag=devwithimag-21 "8 x Universal Capacitive Stylus Pen for ipad 1 & 2, iPhone 4, HTC, Tablet pc, Asus Tablets, Advent, Samsung Galaxy, Mobile Phones, PC, Blackberry Play"

@@ -31,6 +31,11 @@ I had created a rake based setup that would create a separate page containing th
 ### [CSS3 Patterns Gallery][css3 patterns] 
 When viewing this site on a compatible desktop browser, the background uses the "Carbon" texture from this site. On browsers that do not support the radial gradients, it degrades gracefully to a solid background colour.
 
+### Affiliates
+Affiliate links are used where applicable when referring to products. This in no way affects the content of this site. I do not have that nasty marketing gene.
+
+ - DevWithImagination is a participant in the Amazon EU Associates Programme, an affiliate advertising programme designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.co.uk.
+
 [jekyll tags]: http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html "Alphabetizing Jekyll Page Tags In Pure Liquid (Without Plugins) &#8211; Michael Lanyon's Blog"
 [font awesome]: http://fortawesome.github.io/Font-Awesome/ "Font Awesome - The Iconic Font Designed for Bootstrap"
 [kasper]: http://rosario.io/2013/11/10/kasper-theme-for-jekyll.html "Rosario's Blog - Coding, startups and ideas."
