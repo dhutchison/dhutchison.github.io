@@ -5,6 +5,7 @@ test/dest
 *.gem
 pkg/
 node_modules/
+assets/temp/
 *.swp
 *~
 _site/
