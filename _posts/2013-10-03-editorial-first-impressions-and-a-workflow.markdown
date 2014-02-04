@@ -14,7 +14,7 @@ title: "Editorial – First Impressions, and a Workflow"
 I have been playing with [Editorial](http://omz-software.com/editorial/index.html "Editorial for iPad") for a couple of days now and had my first experiment with the workflow features. I must say, I do like it a lot!
 
 <!--more-->
-![Image](/images/editorial_first_look/appIcon.jpg "Editorial Icon")
+[![Image](/images/editorial_first_look/appIcon.jpg "Editorial Icon")][itunes]
 
 When Editorial was first released there was a lot of hype for the application by the tech community (at least from the people I follow on Twitter). There is a true monster of a review for this application (and a must read to discover the true power of it) that I was only part way through when I decided I would just spend the £2.99 and try it for myself. it definitely lives up to the hype. The review In question is by Federico Viticci of Macstories and is available here: [Reinventing iOS Automation: Editorial Review](http://www.macstories.net/stories/editorial-for-ipad-review/ "Reinventing iOS Automation: Editorial Review"). He has produced an extended version of this review along with more example workflows which is [available as an iBook](https://itunes.apple.com/us/book/writing-on-ipad-text-automation/id697865620?mt=11&uo=4&at=10l6nh&ct=ms_editorial_announcement "Writing On The iPad: Text Automation with Editorial"). I am still to finish reading this, as I keep taking breaks to try out the application and come up with my own workflows based on the ideas presented in the book. It is definitely worth reading if you want/need more than just a basic text editor to write. I am not even going to try going in to any depth of the features available, everything you could ever need to know about the application is contained in the above links.
 
@@ -42,3 +42,8 @@ The workflow that I'm using the most just now is from the review/book above. It 
 This workflow is a good first step in the direction of being able to publish posts from my iPad, but it only forms one step of the process involved between writing and posting. The main step that I am still missing is a way to commit finished post files to GitHub. Once I have a solution to this there will be nothing I need to do on the computer to create and publish a new post. At the moment a copy of my Git repository for the site is held in my Dropbox so I can access it in Editorial, and this is synced back to the computer prior to doing a commit.
 
 This should not be as impossible as it sounds, the Python engine in this application appears to very functionally similar to the Author's other application: [Pythonista.](http://omz-software.com/pythonista/ "Pythonista") There exists [sample code](http://omz-software.com/pythonista/forums/discussion/30/access-your-github-account-from-pythonista/p1 "Access your Github Account from Pythonista - Pythonista Forums") that shows how to access files in Github from Pythonista. I have tried this in Editorial and got as far as a file listing, I should just need to figure out how to perform a commit using this Python Github API. if I get this working it will be the subject of a future post, in the mean time I will be trying it on a dummy repository that doesn't rebuild my site on commit!
+
+[![Download on the App Store][appstore]][itunes]
+
+[appstore]: /images/download-on-app-store.png "Download on the App Store"
+[itunes]: https://itunes.apple.com/gb/app/editorial/id673907758?mt=8&uo=4&at=10lsY7 "Editorial on the app store"
