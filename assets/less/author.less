@@ -38,7 +38,7 @@
 
 .author-name {
     margin-top: 0.25em;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .profile-image {
@@ -55,7 +55,7 @@
 .author-links {
     display: inline-block;
     width: auto;
-    right: 0px;
+    right: 0;
     vertical-align: top;
 
     position: absolute;
@@ -68,14 +68,14 @@
     .siteRightPadding();
     
     @media @mq-iPhone, @mq-iPhoneSized {
-        position: initial;
+        position: inherit;
         width: 100%;
         vertical-align: top;
         text-align: center;
     
         ul {
             display: inline;
-            margin-left: 0px;
+            margin-left: 0;
             li {
                 display: inline;
                 margin-left: 2em;

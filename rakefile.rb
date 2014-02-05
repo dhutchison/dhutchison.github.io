@@ -145,12 +145,13 @@ end
 
 def jekyll
   puts 'Building...'
-  sh 'lessc --clean-css assets/less/main.less assets/css/main.css'
-  sh 'bundle exec jekyll build --drafts -d ../dwi_built_site'
+  # sh 'lessc --clean-css assets/less/main.less assets/css/main.css'
+  sh 'grunt build'
+  sh 'bundle exec jekyll build -d ../dwi_built_site'
   puts 'Build Complete'
 end
 
-task :upload do
+task :deploy-dev do
     upload
 end
 
