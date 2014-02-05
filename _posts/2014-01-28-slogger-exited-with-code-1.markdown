@@ -10,6 +10,7 @@ layout: post
 title: ! 'Slogger Exited with code: 1'
 date: 2014-01-28 22:47
 slug: slogger-exited-with-code-1
+comments: true
 ---
 I used to use Brett Terpstra's [Slogger][slogger] for logging various activities in to [Day One][dayone]. Probably around 6 months ago I stopped using Day One, just out of lazyness, but now I am trying to write down my thoughts and experiences more. Part of this is driven just by my poor memory.
 
