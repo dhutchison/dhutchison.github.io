@@ -15,5 +15,6 @@ relative_permalinks: false
 paginate: 5
 
 excerpt_separator: <!--more-->
+drop_caps: false
 
 exclude: [node_modules, assets/less]

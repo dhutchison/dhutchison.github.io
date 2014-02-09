@@ -791,6 +791,18 @@ table {
   font-size: inherit;
 }
 
+.drop-cap {
+  float: left;
+  color: #5d83c4;
+  font-size: 76px;
+  font-size: 4.2rem;
+  line-height: 59px;
+  line-height: 3.3rem;
+  padding-right: 9px;
+  padding-right: 0.5rem;
+  font-family: Georgia;
+}
+
 /*****************************************************************************/
 
 /*

@@ -17,12 +17,12 @@ tags:
 - Hazel
 layout: post
 title: PDF Filing With Hazel
+header_image: "![Hazel Logo](/images/hazel_pdftotext/hazel-icon.png \"Hazel Logo\")"
 image: /images/hazel_pdftotext/hazel-icon.png
 summary: How I got Hazel filing my bank statements
 date: 2014-01-16 23:05
 slug: pdf-filing-with-hazel
 ---
-![Hazel Logo][hazel_logo]
 
 I've started using [Hazel][hazel] to automate some repetitive tasks, like filing PDF bills and financial documents that I download. Hazel is a fantastic timesaver of a tool that I should have bought a long time ago. Once the rules are set up correctly I don't need to worry about dealing with things in my Downloads folder, Hazel does that for me! One of the first things I set up was a rule to periodically clean out that pesky [iPod Photo Cache][ipod_photo_cache] that was causing my iPhoto library to unnessecarily grow!
 
@@ -106,6 +106,5 @@ Hopefully this helps someone apart from me, as this took quite a while to get co
 [brew]: http://brew.sh/ "Homebrew — MacPorts driving you to drink? Try Homebrew!"
 [auto_filing]: http://technosavvy.org/2012/09/07/automated-bank-statement-filing-with-hazel/ "Automated bank statement filing with Hazel | The Savvy Technologist"
 [ipod_photo_cache]: http://support.apple.com/kb/ts1314 "iTunes: Understanding the iPod Photo Cache folder - Support - Apple"
-[hazel_logo]: /images/hazel_pdftotext/hazel-icon.png "Hazel Logo"
 [finished_rule]: /images/hazel_pdftotext/hazel_rule.png "Finished Rule"
 [hazel_tokens]: /images/hazel_pdftotext/hazel_custom_tokens.png "Hazel Custom Tokens"
