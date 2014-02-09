@@ -132,26 +132,33 @@ task :build, :opt do |t, args|
     opt = args[:opt]
     if opt then
     puts opt
-        if ("full".casecmp opt) == 0 then
-            build_with_tags
-            build_with_categories
+        if ("all".casecmp opt) == 0 then
+            css
+            jekyll
+        elsif("css".casecmp opt) == 0 then
+          css
+        elsif("jekyll".casecmp opt) == 0 then
+          jekyll
         end
     end
     
-    jekyll
     upload
     puts 'Done.'
 end
 
 def jekyll
-  puts 'Building...'
-  # sh 'lessc --clean-css assets/less/main.less assets/css/main.css'
-  sh 'grunt build'
+  puts 'Building Jekyll pages...'
   sh 'bundle exec jekyll build -d ../dwi_built_site'
-  puts 'Build Complete'
+  puts 'Jekyll page build complete.'
 end
 
-task :deploy-dev do
+def css
+  puts 'Building CSS...'
+  sh 'grunt build'
+  puts 'CSS build complete.'
+end
+
+task :deploy_dev do
     upload
 end
 
