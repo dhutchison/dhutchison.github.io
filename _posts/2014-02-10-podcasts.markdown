@@ -1,0 +1,91 @@
+---
+category: Miscellaneous
+date: 2014-02-10 21:53
+keywords:
+- bbc radio 4 comedy
+- marco arment
+- podcast
+- myke hurley
+- pragmatic
+- systematic
+- "cmd+space"
+- quit
+- the prompt
+- security now
+- Brett terpstra
+layout: post
+slug: podcasts
+summary: My podcast picks.
+tags:
+- Podcasts
+title: Podcasts
+---
+
+Since I [shared][pragmatic_post] the newest podcast that I've started listening to, I figured it would be worthwhile listing the shows I regularly listen to. 
+
+<!--more-->
+
+## [Systematic][systematic] ([iTunes link][systematic-itunes])
+A weekly interview show hosted by Brett Terpstra. I can't remember how I came across this show, or Brett's work in general, but the variety of guests he has on makes for an interesting discussion. Some of the productivity and workflows that are discussed are way above my level of obsession, but listening to another person's process can often improve your own.
+
+While most, if not all, of the guests have a background using technology, it is their other passions which give the show diversity and make it interesting.
+
+## [Quit!][quit] ([iTunes link][quit-itunes])
+>Ever quit a job? Ever redefined yourself within one? Ever started something and won big ... or failed? QUIT! is a call-in show helping people sort out their lives, reevaluate their options, kick their crummy jobs, and start something awesome.
+
+The background to me beginning to listen to this show, and my thoughts on it, were covered by [a previous post][quit_post], but to summarise: it promotes thought.
+
+## [CMD+Space][cmdspace] ([iTunes link][cmdspace-itunes])
+A weekly interview show hosted by Myke Hurley. The first episode I listened to had Marco Arment as a guest, just after the launch of [The Magazine][the_magazine][^mag]. This was episode 25, when the show was still part of his own 70Decibels network, before it merged with 5by5.
+
+Myke is a great interviewer, and the variety of guests makes no two similar.
+
+## [The Prompt][theprompt] ([iTunes link][theprompt-itunes])
+>The Prompt is a weekly panel discussion on technology, and the culture surrounding Apple and related companies.
+
+I started listening to this when it launched and it has been a great replacement to attempting to keep up with Apple news. One show is enough to fill me in with anything that I may have missed. Recently the guys did [an episode][theprompt_30] to mark the 7th anniversary of the original iPhone announcement which was facinating. It didn't feel like it had been that long, but they did a good job of providing context on how the technology industry was then, and how much of a revolution this device really was.
+
+## [Friday Night Comedy from BBC Radio 4][fri_comedy] ([iTunes link][fri_comedy-itunes])
+>Bringing you a satirical take on the week's news with The News Quiz and The Now Show from BBC Radio 4. Enjoy a satirical take on the week’s news with the cream of UK comedy talent.
+
+I have been listening to this for years. Usually more south of the country focused, this keeps me up to date with some aspects of the news that I have missed during the week through the medium of comedy. You have to laugh at life, it's the only way to keep on going!
+
+## [Security Now][sn] ([iTunes link][sn-itunes])
+I used to listen to a lot of TWiT network shows, beginning with the original TWiT show, adding the mac show they had and then Security Now. As the name implies it is a show on computer security. I have been listening to this show since the beginning, back in August '05. The show was full of useful content, with overviews of how various technologies worked. 
+
+Over the last few months I have found myself not enjoying the show as much as I used to, and I'm very close to removing it completely from my list. I am currently sitting with a months worth of unplayed shows, and I feel no pressing need to catch up. 
+
+I now feel that much of the content needs to be taken with a pinch of salt; I have noticed more and more errors in the content with the issues rarely corrected. There has also been an ongoing inability to stick on topic, with the planned topic for the show often getting 10 minutes at the end of the roughly two hour long show. This has became particularly annoying when large chunks of the show are going in to a problem Steve Gibson claims to have solved in a way that no-one has ever thought of before. The most recent of these was the whole [SQRL][sqrl] protocol debacle which "solves internet login"[^sqrl]. 
+
+## [Pragmatic][pragmatic] ([iTunes link][pragmatic-itunes])
+To end on a high note, the show that I had previously wrote about. I am nearly caught up with the episodes and there had not even been an average one, they are all very detailed and interesting. 
+
+I had been listening to [episode 9][pragmatic_9] today and they have started trialing a great solution to the follow up problem. In future, and they have released one to date, if there is follow up for a show it will be released as it's own seperate mini-show, numbered appropriately to refer back to the original episode. For the type of content that this show is filled with this is ideal. Keeping an episode to a single topic allows for easily going back and finding previous episodes relating to a subject, without having to listen to half of another show to get the follow up and/or corrections. (My previous post also got a shout out on this episode!)
+
+[^mag]: I subscribed to the magazine for the first year, but then I started getting bored of the focus of the articles, they were drifting away from my area of interest.
+[^sqrl]: I had made notes on why this sounded such a badly conceived idea at the time, and while many of these issues have been addressed as result of a community effort, the final product does not provide the ultimate solution. All authentication techniques have their pros and cons. It sounded like it could have had a conveinience factor, but it had a few fatal flaws in my eyes:
+    
+    1. Master key based, all site keys based on a single master key
+    2. If control of this key was lost there was no revocation ability
+    3. While this part has changed, the original concept was to authenticate using a different device (smartphone), but there was no way except a visual check to determine if the site you were authenticating with was the correct site. I can see scenario where user asked to sign in to a site like PaypaI then, for security, asked to "relink" to their existing account. Many people, like myself, rely on a tool such as 1Password which will not fill a login for a site it does not know as visually checking the URL is expected is open to user error.
+
+[sqrl]: https://www.grc.com/sqrl/sqrl.htm "GRC's | SQRL Secure Quick Reliable Login  "
+[quit]: http://5by5.tv/quit "5by5 | Quit!"
+[quit_post]: /2014/02/09/the-past-the-present-and-the-future/ "The Past, The Present and The Future | Dev With Imagination "
+[quit-itunes]: https://itunes.apple.com/gb/podcast/quit!/id581627214?mt=2&uo=4&at=10lsY7 "Quit! on iTunes"
+[systematic]: http://5by5.tv/systematic "5by5 | Systematic"
+[systematic-itunes]: https://itunes.apple.com/gb/podcast/systematic/id545735766?mt=2&uo=4&at=10lsY7 "Systematic on iTunes"
+[the_magazine]: http://the-magazine.org/ "The Magazine "
+[theprompt]:  http://5by5.tv/prompt "5by5 | The Prompt"
+[theprompt_30]: http://5by5.tv/prompt/30 "5by5 | The Prompt #30: The Internet in Your Pocket "
+[theprompt-itunes]: https://itunes.apple.com/gb/podcast/the-prompt/id504337181?mt=2&uo=4&at=10lsY7 "The Prompt on iTunes"
+[cmdspace]:  http://5by5.tv/cmdspace "5by5 | CMD+Space"
+[cmdspace-itunes]: https://itunes.apple.com/gb/podcast/cmd+space/id364995753?mt=2&uo=4&at=10lsY7 "CMD+Space on iTunes"
+[sn]: http://twit.tv/sn "Security Now | TWiT.TV"
+[sn-itunes]: https://itunes.apple.com/gb/podcast/security-now-mp3/id79016499?mt=2&uo=4&at=10lsY7 "Security Now on iTunes"
+[pragmatic_post]: /2014/01/09/pragmatic/ "Pragmatic"
+[pragmatic]: http://www.fiatlux.fm/pragmatic "Pragmatic "
+[pragmatic_9]: http://www.fiatlux.fm/pragmatic/9 "Episode 9: The Internet Makes It Even Better "
+[pragmatic-itunes]: https://itunes.apple.com/gb/podcast/pragmatic/id765842433?mt=2&uo=4&at=10lsY7 "Pragmatic on iTunes"
+[fri_comedy]: http://www.bbc.co.uk/podcasts/series/fricomedy "BBC - Podcasts and Downloads - Friday Night Comedy from BBC Radio 4 "
+[fri_comedy-itunes]: https://itunes.apple.com/gb/podcast/friday-night-comedy-from-bbc/id265307784?mt=2&uo=4&at=10lsY7 "Friday Night Comedy from BBC Radio 4 on iTunes"
