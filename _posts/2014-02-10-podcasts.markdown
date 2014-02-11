@@ -51,7 +51,7 @@ I started listening to this when it launched and it has been a great replacement
 I have been listening to this for years. Usually more south of the country focused, this keeps me up to date with some aspects of the news that I have missed during the week through the medium of comedy. You have to laugh at life, it's the only way to keep on going!
 
 ## [Security Now][sn] ([iTunes link][sn-itunes])
-I used to listen to a lot of TWiT network shows, beginning with the original TWiT show, adding the mac show they had and then Security Now. As the name implies it is a show on computer security. I have been listening to this show since the beginning, back in August '05. The show was full of useful content, with overviews of how various technologies worked. 
+I used to listen to a lot of TWiT network shows, beginning with the original TWiT show, adding MacBreak Weekly and then Security Now. As the name implies it is a show on computer security. I have been listening to this show since the beginning, back in August '05. The show was full of useful content, with overviews of how various technologies worked. 
 
 Over the last few months I have found myself not enjoying the show as much as I used to, and I'm very close to removing it completely from my list. I am currently sitting with a months worth of unplayed shows, and I feel no pressing need to catch up. 
 
@@ -69,7 +69,7 @@ I had been listening to [episode 9][pragmatic_9] today and they have started tri
     2. If control of this key was lost there was no revocation ability
     3. While this part has changed, the original concept was to authenticate using a different device (smartphone), but there was no way except a visual check to determine if the site you were authenticating with was the correct site. I can see scenario where user asked to sign in to a site like PaypaI then, for security, asked to "relink" to their existing account. Many people, like myself, rely on a tool such as 1Password which will not fill a login for a site it does not know as visually checking the URL is expected is open to user error.
 
-[sqrl]: https://www.grc.com/sqrl/sqrl.htm "GRC's | SQRL Secure Quick Reliable Login  "
+[sqrl]: https://www.grc.com/sqrl/sqrl.htm "GRC's | SQRL Secure Quick Reliable Login  "
 [quit]: http://5by5.tv/quit "5by5 | Quit!"
 [quit_post]: /2014/02/09/the-past-the-present-and-the-future/ "The Past, The Present and The Future | Dev With Imagination "
 [quit-itunes]: https://itunes.apple.com/gb/podcast/quit!/id581627214?mt=2&uo=4&at=10lsY7 "Quit! on iTunes"
