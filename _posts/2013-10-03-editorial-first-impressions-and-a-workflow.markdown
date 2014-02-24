@@ -1,7 +1,6 @@
 ---
 categories: Products
 date: 2013-10-03 21:56
-lastUpdated: 2013-10-04 21:35:49
 image: /images/editorial_first_look/appIcon.jpg
 keywords: [ipad, python, federico viticci, zemanta, workflow, ibook, ios, mac]
 layout: post
@@ -9,6 +8,8 @@ slug: editorial-first-impressions-and-a-workflow
 summary: "Editorial – Best text editor on iPad?"
 tags: [iPad, Software]
 title: "Editorial – First Impressions, and a Workflow"
+sitemap: 
+  lastmod: 2013-10-04 21:35:49
 ---
 
 I have been playing with [Editorial](http://omz-software.com/editorial/index.html "Editorial for iPad") for a couple of days now and had my first experiment with the workflow features. I must say, I do like it a lot!
