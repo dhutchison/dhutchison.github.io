@@ -1,0 +1,9 @@
+{% comment %}
+Include that provides a pretty accurate word count for a supplied "post" variable. 
+Based on: http://blog.jupo.org/2013/05/05/sandboxed-jekyll-hacks
+Params:
+- "Post": the post to create a word count of
+Returns: 
+- Sets a variable "post_words" with the value.
+{% endcomment %}
+{% assign post_words = 0 %}{% assign lines = post.content|split:'pre>' %}{% for line in lines %}{% assign mod = forloop.index|modulo:2 %}{% assign line_words = line|strip_html|number_of_words|times:mod %}{% assign post_words = post_words|plus:line_words %}{% endfor %}
