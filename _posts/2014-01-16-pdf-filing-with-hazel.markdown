@@ -21,7 +21,9 @@ header_image: "![Hazel Logo](/images/hazel_pdftotext/hazel-icon.png \"Hazel Logo
 image: /images/hazel_pdftotext/hazel-icon.png
 summary: How I got Hazel filing my bank statements
 date: 2014-01-16 23:05
+lastmod: 2014-02-26 22:13:13
 slug: pdf-filing-with-hazel
+comments: true
 ---
 
 I've started using [Hazel][hazel] to automate some repetitive tasks, like filing PDF bills and financial documents that I download. Hazel is a fantastic timesaver of a tool that I should have bought a long time ago. Once the rules are set up correctly I don't need to worry about dealing with things in my Downloads folder, Hazel does that for me! One of the first things I set up was a rule to periodically clean out that pesky [iPod Photo Cache][ipod_photo_cache] that was causing my iPhoto library to unnessecarily grow!
@@ -100,6 +102,14 @@ So there it is, success!
 ![Final Rule][finished_rule]
 
 Hopefully this helps someone apart from me, as this took quite a while to get completely right.
+
+### Update
+This month (February 2014) the format of the date used in my statements changed to just ```24 February 2014
+```. This of course broke my existing script. In order to handle both formats the second line of the AppleScript required a small change. This modification adds an extra group that can appear zero or one times to capture the "th" type part of the old date format.
+{% highlight applescript %}
+set theCommand to "/usr/local/bin/pdftotext " & itemPath & " - | perl -ne '/([0-9]{2})([a-z]{2})? ([A-Z]{1}[a-z]*) ([0-9]{4})/ && print $1.\" \".$3.\" \".$4.\"\\n\"' | head -n 1"
+{% endhighlight %}
+
 
 
 [hazel]: http://www.noodlesoft.com/hazel.php "Noodlesoft | Hazel"
