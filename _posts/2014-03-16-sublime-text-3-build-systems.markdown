@@ -69,6 +69,7 @@ To save having to configure the path that Sublime Text uses, I set up a symlink 
 As previouly mentioned, these targets just call the command line so the rake file itself remains simple to understand. 
 
 {% highlight ruby %}
+
 require 'yaml'
 require 'rubygems'
 require 'stringex'
@@ -76,26 +77,25 @@ require 'stringex'
 desc 'Build and send to dev server'
 task :build, :opt do |t, args|
     
-    
-    opt = args[:opt]
-    if !opt then
-      opt = "all"
-    end
+  opt = args[:opt]
+  if !opt then
+    opt = "all"
+  end
 
-    puts sprintf("Building %s\n", opt)
-    if ("all".casecmp opt) == 0 then
-        css
-        jekyll
-    elsif("css".casecmp opt) == 0 then
-      css
-      # need to copy to the built site prior to deployment
-      FileUtils.cp_r(Dir['assets/css/*'],'../dwi_built_site/assets/css')
-    elsif("jekyll".casecmp opt) == 0 then
-      jekyll
-    end
-    
-    upload
-    puts 'Done.'
+  puts sprintf("Building %s\n", opt)
+  if ("all".casecmp opt) == 0 then
+    css
+    jekyll
+  elsif("css".casecmp opt) == 0 then
+    css
+    # need to copy to the built site prior to deployment
+    FileUtils.cp_r(Dir['assets/css/*'],'../dwi_built_site/assets/css')
+  elsif("jekyll".casecmp opt) == 0 then
+    jekyll
+  end
+  
+  upload
+  puts 'Done.'
 end
 
 def jekyll
@@ -111,16 +111,17 @@ def css
 end
 
 task :deploy_dev do
-    upload
+  upload
 end
 
 def upload
-    puts 'Sending to server...'
-    sh 'rsync -avz --delete ../dwi_built_site/ david@dev-lamp.local:/home/wwwroot/dwi/'
-    puts 'Sent'
+  puts 'Sending to server...'
+  sh 'rsync -avz --delete ../dwi_built_site/ david@dev-lamp.local:/home/wwwroot/dwi/'
+  puts 'Sent'
 
 end
 {% endhighlight %}
+
 
 ## In Conclusion
 
