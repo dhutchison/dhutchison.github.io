@@ -95,6 +95,9 @@
                 	        {% if site.data.author.david.github %}<li>
                                 <a href="http://github.com/{{ site.data.author.david.github }}/"><i class="fa-li fa fa-github fa-lg fa-fw"></i>/{{ site.data.author.david.github }}</a>
                             </li>{% endif %}
+                          {% if site.data.author.david.stackoverflow %}<li>
+                            <a href="http://stackoverflow.com/users/{{ site.data.author.david.stackoverflow }}/"><i class="fa-li fa fa-stack-overflow fa-lg fa-fw"></i>{{ site.data.author.david.stackoverflow }}</a>
+                          </li>{% endif %}
                 	        {% if site.data.author.david.twitter %}<li>
                     	      <a href="http://twitter.com/{{ site.data.author.david.twitter }}/"><i class="fa-li fa fa-twitter fa-lg fa-fw"></i>@{{ site.data.author.david.twitter }}</a>
                     	    </li>{% endif %}

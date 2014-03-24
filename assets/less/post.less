@@ -1,0 +1,128 @@
+/* Styles for a post */
+@import (reference) "commonStyle.less";
+
+.post {
+
+    text-align: left;		
+
+    header {
+
+        .ribbon();
+
+        h2 {
+            font-family: @headerFonts;
+            font-weight: @contentFontWeight;
+            text-align: left;
+            margin-top: 0;
+        }
+
+        .meta { 
+            font-family: @headerFonts;
+            font-weight: @contentFontWeight;
+
+            text-align: right;
+            border-color: @linkColour;
+            border-left: 1px;
+            float: right;
+            height: 100%;
+            display: block;
+
+        }
+
+
+    }
+
+
+    h3 {
+        font-family: @contentFonts;
+        text-decoration: underline;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    blockquote {
+        background-color: darken(@backgroundColour, 10%);
+    }
+
+    ul {
+        list-style-type: circle;
+        li {
+            padding-left: 2em;
+        }
+    }
+
+
+    footer {
+
+        .page-navigation {
+            width: 100%;
+
+            padding-bottom: 2px;
+            margin-bottom: 2px;
+            
+            .prev {
+                max-width: 50%;
+                display: inline-block;
+            }
+
+            .next {
+                max-width: 50%;
+                display: inline-block;
+
+                float: right;
+                white-space: nowrap;
+            }
+
+        }
+    }
+
+}
+
+.post {
+
+    pre {
+        border: 1px solid #ddd;
+        background-color: #eef;
+        padding: 1em;
+
+        margin-left: -2em;
+        margin-right: -2em;
+        
+        code {
+            border: none;
+            
+            word-wrap: break-word;  
+            
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
+        }
+        
+    }
+    
+    ul {
+        margin-left: 1.35em;
+    }
+    
+    ol {
+        margin-left: 1.35em;
+    }
+    
+    code {
+        border: 1px solid #ddd;
+        background-color: #eef;
+    }
+}
+
+.post-footer {
+    position: relative;
+}
+
+.post-org {
+    display: inline-block;
+}

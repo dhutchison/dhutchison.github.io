@@ -2,55 +2,107 @@
  * Less that powers the style of the Archive page.
  */
  @import (reference) "commonStyle.less";
+ @import (reference) "tags.less";
+
+ @archiveLinkColour: #CBB393;
  
  .archivesHeader {	    			
-    .ribbon();
     
+    .ribbon();
+
+    height: 1.5em;
+    @media @mq-iPhone, @mq-iPhoneSized {
+        height: auto;
+    }
+
     h2 {
     	font-family: @headerFonts;
     	font-weight: @contentFontWeight;
     	text-align: left;
+        margin-top: 0;
+
+        float: left;
+        @media @mq-iPhone, @mq-iPhoneSized {
+            float: none;
+        }
+    }
+
+    .archiveLinks {
+        &:extend(.groupingList all);
+        
+
+        float: right;
+        @media @mq-iPhone, @mq-iPhoneSized {
+            float: none;
+        }
+
+        li {
+            &:extend(.tag-box all);
+            background-color: @mainHeaderLeftGradient;
+
+            &.active {
+                background-color: @archiveLinkColour;
+            }
+
+            a {
+                position: relative;
+            }
+        }
     }
 
 }
 
 .archives {
+
     margin-top: 1em;
-    list-style: none;
-    
-    
-    li {
-     margin-bottom: 2px;
-     overflow: hidden;
+
+    .groupingList, .groupedPosts {
+        margin-left: 0;
+
+        ul {
+            .remSize(margin-left, 2);
+        }
     }
-    
-    .year {
-        display: inline-block;
-        font-family: @headerFonts;
-    	font-weight: @contentFontWeight;
-        vertical-align: top;
-    }
-    
-    .meta {
-        float: left;
-        font-family: @headerFonts;
-    	font-weight: @contentFontWeight;
-    	width: 4em;
-    	border-color: @linkColour;
-    	border-right: 1px;
-        vertical-align: middle;
-    }
-    
-    .title {
-        font-family: @headerFonts;
-        font-weight: @contentFontWeight;
-        overflow: hidden;
-        padding-left: 4px;
-    }
-    
+
     ul {
-        display: inline-block;
+        
         list-style: none;
+        
+        li {
+         margin-bottom: 2px;
+         overflow: hidden;
+        }
+        
+        .year {
+            display: inline-block;
+            font-family: @headerFonts;
+        	font-weight: @contentFontWeight;
+            vertical-align: top;
+        }
+        
+        .meta {
+            float: left;
+            font-family: @headerFonts;
+        	font-weight: @contentFontWeight;
+        	border-color: @linkColour;
+        	border-right: 1px;
+            vertical-align: middle;
+
+            width: 6em;
+            .remSize(margin-right, 2);
+        }
+        
+        .title {
+            font-family: @headerFonts;
+            font-weight: @contentFontWeight;
+            overflow: hidden;
+            padding-left: 4px;
+        }
+        
+        ul {
+            display: inline-block;
+            list-style: none;
+        }
     }
 
 }

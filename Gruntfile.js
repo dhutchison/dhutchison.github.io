@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     uncss: {
       dist: {
         files: {
-          'assets/temp/fontawesome.css': ['_layouts/main.html','_layouts/post.html','_includes/share_box.html']
+          'assets/temp/fontawesome.css': ['_layouts/main.html','_layouts/archive.html','_layouts/post.html','_includes/share_box.html']
         }
       },
       options: {

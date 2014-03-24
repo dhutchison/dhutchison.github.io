@@ -181,22 +181,42 @@
     line-height: ~"@{remValue}rem";
 }
 
-// REM based sizing. Based on http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/ 
+
 .font-size(@sizeValue; @iPadSizeValue: @sizeValue; @iPhoneSizeValue: @sizeValue) {
+    // @remValue: @sizeValue;
+    // @pxValue: round((@sizeValue * unit(@fontSizeStandard)));
+    // font-size: ~"@{pxValue}px"; 
+    
+    // @media @mq-iPadPortrait, @mq-iPadSized {
+    //     @pxValue: round((@iPadSizeValue * unit(@fontSizeSmaller)));
+    //     font-size: ~"@{pxValue}px"; 
+    // }
+    // @media @mq-iPhone, @mq-iPhoneSized {
+    //     @pxValue: round((@iPhoneSizeValue * unit(@fontSizeSmallest)));
+    //     font-size: ~"@{pxValue}px"; 
+    // }
+    
+    // font-size: ~"@{remValue}rem";
+    .remSize(font-size, @sizeValue, @iPadSizeValue, @iPhoneSizeValue);
+}
+
+// REM based sizing. Based on http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/ 
+.remSize(@property; @sizeValue; @iPadSizeValue: @sizeValue; @iPhoneSizeValue: @sizeValue) {
+    
     @remValue: @sizeValue;
     @pxValue: round((@sizeValue * unit(@fontSizeStandard)));
-    font-size: ~"@{pxValue}px"; 
+    @{property}: ~"@{pxValue}px"; 
     
     @media @mq-iPadPortrait, @mq-iPadSized {
         @pxValue: round((@iPadSizeValue * unit(@fontSizeSmaller)));
-        font-size: ~"@{pxValue}px"; 
+        @{property}: ~"@{pxValue}px"; 
     }
     @media @mq-iPhone, @mq-iPhoneSized {
         @pxValue: round((@iPhoneSizeValue * unit(@fontSizeSmallest)));
-        font-size: ~"@{pxValue}px"; 
+        @{property}: ~"@{pxValue}px"; 
     }
     
-    font-size: ~"@{remValue}rem";
+    @{property}: ~"@{remValue}rem";
 }
 
 .liImage(@image, @size: 16px) {

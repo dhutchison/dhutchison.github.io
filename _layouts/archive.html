@@ -1,0 +1,17 @@
+---
+layout: main
+---
+
+<header class="archivesHeader">
+    <h2>Archives</h2>
+
+    <nav class="archiveLinks">
+    	<li {% if page.url == "/archives/" %} class="active" {% endif %}><a href="/archives/"><i class="fa fa-calendar fa-lg fa-fw"></i>Date</a></li>
+    	<li {% if page.url == "/archives/tags/" %} class="active" {% endif %}><a href="/archives/tags/"><i class="fa fa-tags fa-lg fa-fw"></i>Tags</a></li>
+    	<li {% if page.url == "/archives/categories/" %} class="active" {% endif %}><a href="/archives/categories/"><i class="fa fa-bookmark fa-lg fa-fw"></i>Categories</a></li>
+    </nav>
+</header>
+
+<section class="archives">
+{{ content }}
+</section>

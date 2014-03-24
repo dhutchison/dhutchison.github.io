@@ -1,16 +1,13 @@
 ---
-layout: main
-title: Archive
+layout: archive
+title: Archives
 group: "navigation"
+permalink: /archives/
 ---
-
-<header class="archivesHeader">
-    <h2>Archives</h2>
-</header>
 
 {% assign noPreview = true %}
 {% assign hideYear = true %}
-<ul class="archives">
+<ul class="groupedPosts">
   {% for post in site.posts %}
 
     {% unless post.next %}

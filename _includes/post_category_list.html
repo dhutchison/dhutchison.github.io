@@ -11,10 +11,10 @@
 {% endcomment %}
 {% if post.categories.size > 0 %}
 	<div><h4 class="tagListTitle">Posted in: </h4>
-		<ul class="inlineListCategories">
+		<ul class="groupingList">
 			{% for category in post.categories %}
-				<li>
-				    <a href="/categories/#{{ category | downcase | cgi_escape }}">
+				<li class="category">
+				    <a href="/archives/categories/#{{ category | downcase | cgi_escape }}">
 				        {{ category }}
 				    </a>		    
 				</li>					
