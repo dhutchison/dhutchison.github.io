@@ -1,145 +1,26 @@
 require 'yaml'
 require 'rubygems'
-require 'jekyll'
-require 'stringex' # gem install stringex
-
-# https://gist.github.com/stammy/790778
-# Using multi-word tags support from http://tesoriere.com/2010/08/25/automatically-generated-tags-and-tag-clouds-with-jekyll--multiple-word-tags-allowed-/
-# If using with jekyll gem, remove bits loop and site.read_bits('') and add require 'rubygems' and require 'jekyll'
-# Using full HTML instead of layout include to manually set different page title (tag, not tag_slug) and canonical URL in header
- 
- 
-desc 'Build tags pages'
-task :build_with_tags do
-    build_with_tags
-end
-
-def build_with_tags
-#     sh 'rm -rf _site'
-    
-    puts "Generating tags..."
-
-    include Jekyll::Filters
- 
-    options = Jekyll.configuration({})
-    site = Jekyll::Site.new(options)
-    site.read_posts('')
- 
-    # nuke old tags pages, recreate
-    FileUtils.rm_rf("tags")
-    FileUtils.mkdir_p("tags")
-    
-    #Regenerate the index page
-    html = <<-HTML
----
-layout: main
-title: Tags
----
-
-<h2>Tags</h2>
-<ul class="tagList">
-{% for tag in site.tags %}
-	<li><a href="/tags/{{ tag | first | downcase | replace:' ','' | replace:'&amp;','&'}}">{{ tag | first }} <span>({{ tag | last | size }})</span></a></li>			
-{% endfor %}
-</ul>
-HTML
-    File.open("tags/index.html", 'w+') do |file|
-        file.puts html
-    end
- 
-    site.tags.sort.each do |tag, posts|
-	  # generate slug-friendly tag
-      tag_slug = tag.gsub(' ','').gsub('&amp;', '&').downcase 
- 
-      html = <<-HTML
----
-layout: main
-title: Tagged #{tag}
-permalink: /tags/#{tag_slug}/
----
-{% assign tagName='#{tag_slug}' %}{% assign tagDisplay='#{tag}' %}
-{% include tag_page %}
-HTML
-      File.open("tags/#{tag_slug}.html", 'w+') do |file|
-        file.puts html
-      end
-    end
- 
-    puts 'Done.'
-end
-
-desc 'Build category pages'
-task :build_with_categories do
-    build_with_categories
-end
-
-def build_with_categories
-    puts "Generating categories..."
-
-    include Jekyll::Filters
- 
-    options = Jekyll.configuration({})
-    site = Jekyll::Site.new(options)
-    site.read_posts('')
- 
-    # nuke old pages, recreate
-    FileUtils.rm_rf("categories")
-    FileUtils.mkdir_p("categories")
-    
-    #Regenerate the index page
-    html = <<-HTML
----
-layout: main
-title: Categories
----
-
-<h2>Tags</h2>
-<ul class="catList">
-{% for cat in site.categories %}
-	<li><a href="/categories/{{ cat | first | downcase | replace:' ','' | replace:'&amp;','&'}}">{{ cat | first }} <span>({{ cat | last | size }})</span></a></li>			
-{% endfor %}
-</ul>
-HTML
-    File.open("categories/index.html", 'w+') do |file|
-        file.puts html
-    end
- 
-    site.categories.sort.each do |cat, posts|
-	  # generate slug-friendly category
-      cat_slug = cat.gsub(' ','').gsub('&amp;', '&').downcase 
- 
-      html = <<-HTML
----
-layout: main
-title: In Category #{cat}
-permalink: /categories/#{cat_slug}/
----
-{% assign catName='#{cat_slug}' %}
-{% include category_page %}
-HTML
-      File.open("categories/#{cat_slug}.html", 'w+') do |file|
-        file.puts html
-      end
-    end
- 
-    puts 'Done.'
-end
+require 'stringex'
 
 desc 'Build and send to dev server'
 task :build, :opt do |t, args|
     
     
     opt = args[:opt]
-    if opt then
-    puts opt
-        if ("all".casecmp opt) == 0 then
-            css
-            jekyll
-        elsif("css".casecmp opt) == 0 then
-          css
-        elsif("jekyll".casecmp opt) == 0 then
-          jekyll
-        end
+    if !opt then
+      opt = "all"
+    end
+
+    puts sprintf("Building %s\n", opt)
+    if ("all".casecmp opt) == 0 then
+        css
+        jekyll
+    elsif("css".casecmp opt) == 0 then
+      css
+      # need to copy to the built site prior to deployment
+      FileUtils.cp_r(Dir['assets/css/*'],'../dwi_built_site/assets/css')
+    elsif("jekyll".casecmp opt) == 0 then
+      jekyll
     end
     
     upload
@@ -154,7 +35,7 @@ end
 
 def css
   puts 'Building CSS...'
-  sh 'grunt build'
+  sh '/usr/local/bin/grunt build'
   puts 'CSS build complete.'
 end
 
