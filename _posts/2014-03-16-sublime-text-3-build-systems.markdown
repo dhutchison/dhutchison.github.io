@@ -10,10 +10,10 @@ keywords:
 layout: post
 slug: sublime-text-3-build-systems
 tags:
-- software
+- Software
 - Sublime Text
 - Scripting
-- jekyll
+- Jekyll
 title: Sublime Text 3 Build Systems
 ---
 

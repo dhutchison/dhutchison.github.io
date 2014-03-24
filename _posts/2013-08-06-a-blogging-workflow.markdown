@@ -3,7 +3,7 @@ layout: post
 title: A Blogging Workflow
 date: 2013-08-06 23:08:00.000000000 +01:00
 categories: Site
-tags: jekyll
+tags: Jekyll
 keywords:
 - twitter
 - zemanta
