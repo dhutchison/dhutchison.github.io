@@ -2,10 +2,10 @@
 layout: post
 title: Calibre AutoUpdate
 date: 2013-07-08 01:00:00.000000000 +01:00
-categories: []
+categories: miscellaneous
 tags:
 - bash
-- calibre
+- Calibre
 status: publish
 type: post
 published: true
