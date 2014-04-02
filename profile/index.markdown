@@ -19,7 +19,7 @@ I am a software developer with 5 years professional experience delivering soluti
 
 ## Experience
 
-### Java Programmer
+### Software Developer
 
 #### The SEEMiS Group LLP, Hamilton
 
