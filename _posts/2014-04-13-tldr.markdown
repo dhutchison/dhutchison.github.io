@@ -1,0 +1,19 @@
+---
+layout: post
+title: tldr
+keywords:
+- tldr
+- command line
+tags:
+- Software
+categories:
+- miscellaneous
+date: 2014-04-13 22:39
+slug: tldr
+---
+[TLDR][tldr] is a great little command line utility that can be used as a replacement for `man` if you only need a reminder of how to do something. TLDR provides a quick summary of the command and the common usages.
+
+![TLDR example][tldr_example]
+
+[tldr]: https://github.com/rprieto/tldr "rprieto/tldr "
+[tldr_example]: /images/tldr_example.png "TLDR example"
