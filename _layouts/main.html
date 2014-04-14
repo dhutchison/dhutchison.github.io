@@ -59,9 +59,7 @@
               <div class="links">
                   <nav id="nav">
       	            <ul class="fa-ul">
-      {% capture input %}{% assign pages_list = site.pages %}
-      {% assign group = 'navigation' %}
-      {% include pages_list %}{% endcapture %}{% include trim %}
+                      {% include pages_list.html pages_list = site.pages group = 'navigation'%}
                           <li>
                               <a href="/feed.xml"><i class="fa-li fa fa-rss fa-lg fa-fw rss"></i></a>
                           </li>
