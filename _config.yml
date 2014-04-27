@@ -16,6 +16,7 @@ relative_permalinks: false
 paginate: 5
 gems:
 - jekyll-redirect-from
+- jekyll-sitemap
 
 excerpt_separator: <!--more-->
 drop_caps: false
