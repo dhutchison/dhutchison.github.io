@@ -1,7 +1,0 @@
-{% comment %}
-Include that will use the supplied "input" variable and output it, minus duplicated newlines.
-{% endcomment %}
-{% capture nl2 %}
-
-{% endcapture %}{% capture nl1 %}
-{% endcapture %}{% capture existingSize %}{{input | size}}{% endcapture %}{% capture input %}{{ input | replace:nl2, nl1 }}{% endcapture %}{% capture newSize %}{{ input | size }}{% endcapture %}{% if existingSize == newSize %}{{ input }}{% else %}{% include trim %}{% endif %}
