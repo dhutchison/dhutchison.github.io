@@ -297,7 +297,7 @@ def process_folder(client, dropbox_dir, file_details):
               download_file = False
 
               #delete the dropbox copy
-              client.file_delete[file['path']]
+              client.file_delete(file['path'])
               file_details.remove(dropbox_path)
 
           else:
@@ -496,7 +496,9 @@ def main():
 
 
 if __name__ == "__main__":
+  print 'Begin Dropbox sync'
   main()
+  print 'Dropbox sync done!'
 
 {% endhighlight %}
 
