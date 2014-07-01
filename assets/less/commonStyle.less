@@ -44,8 +44,8 @@
 @linkColour: @mainFontColour;
 @linkHoverColour: #8A230F;
 
-
-@headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@os-font-path: '/assets/fonts/ostrich-sans';
+@headerFonts: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @headerFontWeight: 700;
 @contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @contentFontWeight: 300;
@@ -107,6 +107,18 @@
 .fonts() {
     /* Font Definitions */
     @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
+
+    @font-face {
+
+        font-family: 'Ostrich-Sans';
+        src: url('@{os-font-path}/ostrich-sans-inline-regular.eot');
+        src: url('@{os-font-path}/ostrich-sans-inline-regular.eot') format('embedded-opentype'),
+             url('@{os-font-path}/ostrich-sans-inline-regular.woff') format('woff'),
+             url('@{os-font-path}/ostrich-sans-inline-regular.ttf') format('truetype'),
+             url('@{os-font-path}/ostrich-sans-inline-regular.svg') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
 }
 
 // REM based sizing. 

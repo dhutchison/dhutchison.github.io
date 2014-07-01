@@ -372,7 +372,7 @@
 }
 
 .archivesHeader h2 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-align: left;
   margin-top: 0;
@@ -452,14 +452,14 @@
 
 .archives ul .year {
   display: inline-block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   vertical-align: top;
 }
 
 .archives ul .meta {
   float: left;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   border-color: #333333;
   border-right: 1px;
@@ -482,7 +482,7 @@
 }
 
 .archives ul .title {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   overflow: hidden;
   padding-left: 4px;
@@ -733,6 +733,22 @@
 .archivesHeader .archiveLinks li {
   display: inline-block;
   padding-left: 0 !important;
+  margin-right: 9px;
+  margin-right: 0.5rem;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
+  .groupingList li,
+  .archivesHeader .archiveLinks li {
+    margin-right: 8px;
+  }
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .groupingList li,
+  .archivesHeader .archiveLinks li {
+    margin-right: 6px;
+  }
 }
 
 .groupingList li.tag,
@@ -767,7 +783,7 @@
 
 .groupedPosts .meta {
   float: left;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   width: 10em;
   border-color: #333333;
@@ -776,7 +792,7 @@
 }
 
 .groupedPosts .title {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   overflow: hidden;
   padding-left: 4px;
@@ -828,14 +844,14 @@
 }
 
 .post header h2 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-align: left;
   margin-top: 0;
 }
 
 .post header .meta {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-align: right;
   border-color: #333333;
@@ -896,6 +912,7 @@
 }
 
 .post pre code {
+  font-size: 0.8em;
   border: none;
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -1131,7 +1148,7 @@ table {
 }
 
 .container .site h2 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: left;
 }
 
@@ -1158,7 +1175,7 @@ table {
   background-image: -webkit-gradient(linear, left top, right top, from(#5d83c4), to(#ffffff));
   background-image: linear-gradient(to right, #5d83c4 0%, #ffffff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#5d83c4, endColorstr=#ffffff, GradientType=1);
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
   position: inherit;
   height: auto;
