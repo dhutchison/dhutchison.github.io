@@ -30,11 +30,14 @@ The icons used in the social sharing section as well as the links to my profiles
 ### [Alphabetizing Jekyll Page Tags In Pure Liquid (Without Plugins)][jekyll tags] 
 I had created a rake based setup that would create a separate page containing the posts for a given tag. After stumbling across this on Twitter I have came to realise that the number of posts this site contains does not warrant that level of granularity. This previous setup also had the downside that every time a new tag was used I had to remember to run this rake task or the site would contain a broken link. I have made a tweak to the liquid code used ([Original](https://github.com/LanyonM/lanyonm.github.io/blob/master/tags.html "lanyonm.github.io / tags.html")) so the sort is case-insensitive. My updated version is available [here](https://github.com/dhutchison/dhutchison.github.io/blob/master/tags/index.html " dhutchison.github.io / tags / index.html").
 
-### [Building a Better Sitemap.xml with Jekyll][sitemap]
-The [sitemap][site_sitemap] for this site is now using this template. Previously this used a modified version of his old template.
+### [Jekyll-sitemap Plugin][sitemap]
+The [sitemap][site_sitemap] for this site is now produced by this plugin, thanks to Github pages [now supporting][sitemap_ghpages] it. 
 
 ### [CSS3 Patterns Gallery][css3 patterns] 
 When viewing this site on a compatible desktop browser, the background uses the "Carbon" texture from this site. On browsers that do not support the radial gradients, it degrades gracefully to a solid background colour.
+
+### [jekyll-compress - A pure Liquid way to compress HTML][jekyll_compress]
+This is a layout for Jekyll which removes all whitespace between block level elements. This reduces the size of the file that is to be served, and has other benefits. I [wrote a post][jekyll-compress_post] about this.
 
 ### Affiliates
 Affiliate links are used where applicable when referring to products. This in no way affects the content of this site. I do not have that nasty marketing gene.
@@ -47,8 +50,11 @@ Affiliate links are used where applicable when referring to products. This in no
 [jekyll]: http://jekyllrb.com/ "Jekyll • Simple, blog-aware, static sites"
 [github pages]: http://pages.github.com/ "GitHub Pages"
 [css3 patterns]: http://lea.verou.me/css3patterns/ "CSS3 Patterns Gallery"
-[sitemap]: http://davidensinger.com/2013/11/building-a-better-sitemap-xml-with-jekyll/ "Building a Better Sitemap.xml with Jekyll – Development, design, and more by David Ensinger "
+[sitemap]: https://github.com/jekyll/jekyll-sitemap "jekyll/jekyll-sitemap "
+[sitemap_ghpages]: https://help.github.com/articles/sitemaps-for-github-pages "Sitemaps for GitHub Pages · GitHub Help "
 [site_sitemap]: /sitemap.xml "The sitemap for this site"
+[jekyll_compress]: https://github.com/penibelst/jekyll-compress-html "penibelst/jekyll-compress-html "
+[jekyll-compress_post]: /2014/06/12/jekyll-compress-a-pure-liquid-way-to-compress-html/ "jekyll-compress - A pure Liquid way to compress HTML"
 
 
 
