@@ -5,12 +5,22 @@ layout: main
 	{% assign post=page %}
 	<header>
 		<h2>
-			{% if post.date %}<span class="meta">
-				<time datetime="{{ post.date | date_to_xmlschema }}" pubdate="" data-updated="true" title="{{ post.date | date_to_string }}">{{ post.date | date_to_string }}</time>
-			</span>{% endif%}
 			<a href="{{ post.url }}" class="title">{{ post.title }}</a>
 		</h2>
-		{% if post.author %}<p>By {{ site.data.author[post.author].name }}</p>{% endif %}
+		{% if post.date || post.author %}<p class="meta">{% endif %}
+		{% if post.date %}
+				<time datetime="{{ post.date | date_to_xmlschema }}" pubdate="" data-updated="true" title="{{ post.date | date_to_string }}">
+					{% assign d = page.date | date: "%-d"  %}
+					{% case d %}
+  						{% when '1' or '21' or '31' %}{{ d }}st
+  						{% when '2' or '22' %}{{ d }}nd
+  						{% when '3' or '23' %}{{ d }}rd
+  						{% else %}{{ d }}th
+  					{% endcase %} of {{ page.date | date: "%B" }}, {{ page.date | date: "%Y" }}</time>
+				{% if post.author %},&nbsp;{% endif %}
+		{% endif%}
+		{% if post.author %}By {{ site.data.author[post.author].name }}{% endif %}
+		{% if post.date || post.author %}</p>{% endif %}
 	</header>
 	<article>
 		{% if post.header_image %} {{ post.header_image | markdownify }}{% endif %}

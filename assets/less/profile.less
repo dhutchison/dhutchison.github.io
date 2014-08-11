@@ -6,14 +6,13 @@
 /*****************************************************************************/
 
 .profile-author {
-    margin-left: -2em;
-}
-
-.profile-author-bio {
-    .margin-left(4);
+    text-align: center;
+    padding: 1em !important;
 }
 
 .profile {
+
+    .sitePadding();
 
 	 /* H2-4 used in main profile */
 	h2 {
@@ -65,7 +64,7 @@
 	}
     
     h3, h4, h5, p {
-        .padding-left(10);
+        .remSize(padding-left, 10);
 
         @media @mq-iPhone, @mq-iPhoneSized {
             padding-left: 0;
@@ -74,7 +73,7 @@
     
     
     ul {
-        .padding-left(11.5);
+        .remSize(padding-left, 11.5);
 
         @media @mq-iPhone, @mq-iPhoneSized {
             padding-left: 1.5em;

@@ -7,8 +7,6 @@
 
     header {
 
-        .ribbon();
-
         h2 {
             font-family: @headerFonts;
             font-weight: @contentFontWeight;
@@ -19,19 +17,14 @@
         .meta { 
             font-family: @headerFonts;
             font-weight: @contentFontWeight;
-
-            text-align: right;
-            border-color: @linkColour;
-            border-left: 1px;
-            float: right;
-            height: 100%;
-            display: block;
-
         }
 
 
     }
 
+    .groupingList {
+        margin: 0;
+    }
 
     h3 {
         font-family: @contentFonts;
@@ -84,6 +77,10 @@
 }
 
 .post {
+
+    article, footer {
+        .sitePadding();
+    }
 
     pre {
         border: 1px solid #ddd;

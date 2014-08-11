@@ -7,34 +7,27 @@
  @archiveLinkColour: #CBB393;
  
  .archivesHeader {	    			
-    
-    .ribbon();
-
-    height: 1.5em;
-    @media @mq-iPhone, @mq-iPhoneSized {
-        height: auto;
-    }
 
     h2 {
     	font-family: @headerFonts;
     	font-weight: @contentFontWeight;
     	text-align: left;
+
         margin-top: 0;
 
-        float: left;
-        @media @mq-iPhone, @mq-iPhoneSized {
-            float: none;
-        }
+        display: inline-block;
     }
 
-    .archiveLinks {
+}
+
+.archiveLinks {
         &:extend(.groupingList all);
         
 
-        float: right;
-        @media @mq-iPhone, @mq-iPhoneSized {
-            float: none;
-        }
+        // float: right;
+        // @media @mq-iPhone, @mq-iPhoneSized {
+        //     float: none;
+        // }
 
         li {
             &:extend(.tag-box all);
@@ -50,9 +43,9 @@
         }
     }
 
-}
-
 .archives {
+
+    .sitePadding();
 
     margin-top: 1em;
 
@@ -71,7 +64,6 @@
         li {
          margin-bottom: 2px;
          overflow: hidden;
-         margin-left: 4px;
         }
         
         .year {

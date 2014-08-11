@@ -1,0 +1,71 @@
+.leftRightGradient(@leftColour: @mainHeaderLeftGradient; @rightColour: @backgroundColour) {
+	
+	/* Background */
+	background-color: @rightColour;
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(left, @leftColour 0%, @rightColour 100%);
+	
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(left, @leftColour 0%, @rightColour 100%);
+	
+	/* Opera */ 
+	background-image: -o-linear-gradient(left, @leftColour 0%, @rightColour 100%);
+	
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0, @leftColour), color-stop(1, @rightColour));
+	
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(left, @leftColour 0%, @rightColour 100%);
+	
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to right, @leftColour 0%, @rightColour 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@leftColour, endColorstr=@rightColour,GradientType=1 );
+	
+}
+
+.carbonFiber {
+	/* Carbon fibre 
+	 * by Atle Mo (design), Lea Verou (code)
+	 * from http://lea.verou.me/css3patterns/#carbon-fibre */
+	background:
+		radial-gradient(black 15%, transparent 16%) 0 0,
+		radial-gradient(black 15%, transparent 16%) 8px 8px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+	background-color:#282828;
+	background-size:16px 16px;
+}
+
+.ribbon(@backgroundColour: #5D83C4) {
+	position: relative;
+	padding: 6px 20px 6px 70px;
+	margin: 30px 10px 10px -70px;
+	background-color: @backgroundColour;
+	text-shadow: 0 1px 2px lighten(@mainFontColour, 30%);
+	box-shadow: 0 2px 4px #888;
+	
+	&:after {
+		content: ' ';
+		position: absolute;
+		width: 0;
+		height: 0;
+		left: 0;
+		top: 100%;
+		border-width: 5px 10px;
+		border-style: solid;
+		border-color: darken(@backgroundColour, 20%) darken(@backgroundColour, 20%) transparent transparent;
+
+	}
+
+	&:before {
+		content: ' ';
+		position: absolute;
+		width: 30px;
+		height: 0;
+		left: -30px;
+		top: 12px;
+		border-width: 20px 10px;
+		border-style: solid;
+		border-color: @backgroundColour @backgroundColour @backgroundColour transparent;
+	}
+}

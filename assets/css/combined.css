@@ -43,10 +43,6 @@
   list-style-type: none;
 }
 
-.fa-ul > li {
-  position: relative;
-}
-
 .fa-li {
   position: absolute;
   left: -2.14285714em;
@@ -154,6 +150,8 @@
 
 @import url(normalize.css);
 
+@import url('/assets/fonts/ostrich-sans/ostrich-sans.css');
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
 
 /* CSS Normalisation */
@@ -205,62 +203,22 @@
   }
 }
 
-/* ==========================================================================
-    3. Utilities - These things get used a lot
-    ========================================================================== */
-
-/* Hides shit */
-
-.hidden {
-  text-indent: -9999px;
-  direction: ltr;
-  visibility: hidden;
-  display: none;
-}
-
-/* Creates a responsive wrapper that makes our content scale nicely */
-
-.inner {
-  position: relative;
-  width: 80%;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* Centres vertically yo. (IE8+) */
-
-.vertical {
-  display: table-cell;
-  vertical-align: middle;
-}
-
 /* Author styling */
 
-.author {
-  margin-bottom: 1em;
-  position: relative;
-  padding-left: 2em;
-}
-
-.author header {
+.author a.profile-image {
   float: left;
   width: 80px;
 }
 
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px) {
-  .author header {
+  .author a.profile-image {
     width: 40px;
   }
 }
 
-.author .author-details {
-  display: inline-block;
-  padding-left: 20px;
-}
-
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
   .author .author-details {
-    display: block;
+    width: 50px;
   }
 }
 
@@ -279,49 +237,45 @@
   margin-bottom: 0;
 }
 
-.profile-image {
+img.profile-image {
   width: 80px;
   height: auto;
   border-radius: 50px;
 }
 
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .profile-image {
+  img.profile-image {
     border-radius: 25px;
   }
 }
 
 .author-links {
-  display: inline-block;
-  width: auto;
-  right: 0;
-  vertical-align: top;
-  position: absolute;
-  padding-right: 2em;
+  width: 100%;
+  text-align: center;
+  padding-top: 1em;
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) , only screen and (min-width : 768px) and (max-width : 1024px) {
   .author-links {
-    position: inherit;
     padding-left: 1em;
   }
 }
 
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .author-links {
-    position: inherit;
-    width: 100%;
-    vertical-align: top;
-    text-align: center;
-  }
+.author-links ul,
+.author-links li {
+  display: inline-block;
+}
 
+.author-links li {
+  padding-right: 1em;
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
   .author-links ul {
-    display: inline;
     margin-left: 0;
   }
 
   .author-links ul li {
-    display: inline;
     margin-left: 2em;
   }
 }
@@ -330,96 +284,40 @@
  * Less that powers the style of the Archive page.
  */
 
-.archivesHeader {
-  position: relative;
-  padding: 6px 20px 6px 70px;
-  margin: 30px 10px 10px -70px;
-  background-color: #5d83c4;
-  text-shadow: 0 1px 2px #808080;
-  -webkit-box-shadow: 0 2px 4px #888;
-  box-shadow: 0 2px 4px #888;
-  height: 1.5em;
-}
-
-.archivesHeader:after {
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0;
-  top: 100%;
-  border-width: 5px 10px;
-  border-style: solid;
-  border-color: #325289 #325289 transparent transparent;
-}
-
-.archivesHeader:before {
-  content: ' ';
-  position: absolute;
-  width: 30px;
-  height: 0;
-  left: -30px;
-  top: 12px;
-  border-width: 20px 10px;
-  border-style: solid;
-  border-color: #5d83c4 #5d83c4 #5d83c4 transparent;
-}
-
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .archivesHeader {
-    height: auto;
-  }
-}
-
 .archivesHeader h2 {
-  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-align: left;
   margin-top: 0;
-  float: left;
+  display: inline-block;
 }
 
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .archivesHeader h2 {
-    float: none;
-  }
-}
-
-.archivesHeader .archiveLinks {
-  float: right;
-}
-
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .archivesHeader .archiveLinks {
-    float: none;
-  }
-}
-
-.archivesHeader .archiveLinks li {
+.archiveLinks li {
   background-color: #5d83c4;
 }
 
-.archivesHeader .archiveLinks li.active {
+.archiveLinks li.active {
   background-color: #cbb393;
 }
 
-.archivesHeader .archiveLinks li a {
+.archiveLinks li a {
   position: relative;
 }
 
 .archives {
+  padding: 1em 2em 1em 2em;
   margin-top: 1em;
 }
 
 .archives .groupingList,
 .archives .groupedPosts,
-.archives .archivesHeader .archiveLinks {
+.archives .archiveLinks {
   margin-left: 0;
 }
 
 .archives .groupingList ul,
 .archives .groupedPosts ul,
-.archives .archivesHeader .archiveLinks ul {
+.archives .archiveLinks ul {
   margin-left: 36px;
   margin-left: 2rem;
 }
@@ -427,7 +325,7 @@
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
   .archives .groupingList ul,
   .archives .groupedPosts ul,
-  .archives .archivesHeader .archiveLinks ul {
+  .archives .archiveLinks ul {
     margin-left: 32px;
   }
 }
@@ -435,7 +333,7 @@
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
   .archives .groupingList ul,
   .archives .groupedPosts ul,
-  .archives .archivesHeader .archiveLinks ul {
+  .archives .archiveLinks ul {
     margin-left: 24px;
   }
 }
@@ -447,19 +345,18 @@
 .archives ul li {
   margin-bottom: 2px;
   overflow: hidden;
-  margin-left: 4px;
 }
 
 .archives ul .year {
   display: inline-block;
-  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   vertical-align: top;
 }
 
 .archives ul .meta {
   float: left;
-  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   border-color: #333333;
   border-right: 1px;
@@ -482,7 +379,7 @@
 }
 
 .archives ul .title {
-  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   overflow: hidden;
   padding-left: 4px;
@@ -501,15 +398,12 @@
 /*****************************************************************************/
 
 .profile-author {
-  margin-left: -2em;
-}
-
-.profile-author-bio {
-  margin-left: 72px;
-  margin-left: 4rem;
+  text-align: center;
+  padding: 1em !important;
 }
 
 .profile {
+  padding: 1em 2em 1em 2em;
   /* H2-4 used in main profile */
 }
 
@@ -647,20 +541,20 @@
 /* Less Elements */
 
 .tag-box,
-.archivesHeader .archiveLinks li,
+.archiveLinks li,
 .groupingList li.tag,
 .groupingList li.category,
-.archivesHeader .archiveLinks li.tag,
-.archivesHeader .archiveLinks li.category {
+.archiveLinks li.tag,
+.archiveLinks li.category {
   border-radius: 4px;
 }
 
 .tag-box a,
-.archivesHeader .archiveLinks li a,
+.archiveLinks li a,
 .groupingList li.tag a,
 .groupingList li.category a,
-.archivesHeader .archiveLinks li.tag a,
-.archivesHeader .archiveLinks li.category a {
+.archiveLinks li.tag a,
+.archiveLinks li.category a {
   text-decoration: none;
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
@@ -671,29 +565,29 @@
 }
 
 .tag-box a:hover,
-.archivesHeader .archiveLinks li a:hover,
+.archiveLinks li a:hover,
 .groupingList li.tag a:hover,
 .groupingList li.category a:hover,
-.archivesHeader .archiveLinks li.tag a:hover,
-.archivesHeader .archiveLinks li.category a:hover {
+.archiveLinks li.tag a:hover,
+.archiveLinks li.category a:hover {
   background: #808080;
 }
 
 .tag-box:hover,
-.archivesHeader .archiveLinks li:hover,
+.archiveLinks li:hover,
 .groupingList li.tag:hover,
 .groupingList li.category:hover,
-.archivesHeader .archiveLinks li.tag:hover,
-.archivesHeader .archiveLinks li.category:hover {
+.archiveLinks li.tag:hover,
+.archiveLinks li.category:hover {
   background: #808080;
 }
 
 .tag-box span,
-.archivesHeader .archiveLinks li span,
+.archiveLinks li span,
 .groupingList li.tag span,
 .groupingList li.category span,
-.archivesHeader .archiveLinks li.tag span,
-.archivesHeader .archiveLinks li.category span {
+.archiveLinks li.tag span,
+.archiveLinks li.category span {
   vertical-align: super;
   font-size: 11px;
   font-size: 0.625rem;
@@ -701,36 +595,36 @@
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
   .tag-box span,
-  .archivesHeader .archiveLinks li span,
+  .archiveLinks li span,
   .groupingList li.tag span,
   .groupingList li.category span,
-  .archivesHeader .archiveLinks li.tag span,
-  .archivesHeader .archiveLinks li.category span {
+  .archiveLinks li.tag span,
+  .archiveLinks li.category span {
     font-size: 10px;
   }
 }
 
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
   .tag-box span,
-  .archivesHeader .archiveLinks li span,
+  .archiveLinks li span,
   .groupingList li.tag span,
   .groupingList li.category span,
-  .archivesHeader .archiveLinks li.tag span,
-  .archivesHeader .archiveLinks li.category span {
+  .archiveLinks li.tag span,
+  .archiveLinks li.category span {
     font-size: 8px;
   }
 }
 
 .groupingList,
-.archivesHeader .archiveLinks {
-  margin: 0;
+.archiveLinks {
+  margin: 1em 0 0 0;
   padding-left: 0;
   padding-right: 0;
   list-style: none;
 }
 
 .groupingList li,
-.archivesHeader .archiveLinks li {
+.archiveLinks li {
   display: inline-block;
   padding-left: 0 !important;
   margin-right: 9px;
@@ -739,25 +633,25 @@
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
   .groupingList li,
-  .archivesHeader .archiveLinks li {
+  .archiveLinks li {
     margin-right: 8px;
   }
 }
 
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
   .groupingList li,
-  .archivesHeader .archiveLinks li {
+  .archiveLinks li {
     margin-right: 6px;
   }
 }
 
 .groupingList li.tag,
-.archivesHeader .archiveLinks li.tag {
+.archiveLinks li.tag {
   background-color: #0089e0;
 }
 
 .groupingList li.category,
-.archivesHeader .archiveLinks li.category {
+.archiveLinks li.category {
   background-color: #e82c0c;
 }
 
@@ -783,7 +677,7 @@
 
 .groupedPosts .meta {
   float: left;
-  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   width: 10em;
   border-color: #333333;
@@ -792,7 +686,7 @@
 }
 
 .groupedPosts .title {
-  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   overflow: hidden;
   padding-left: 4px;
@@ -809,56 +703,21 @@
   text-align: left;
 }
 
-.post header {
-  position: relative;
-  padding: 6px 20px 6px 70px;
-  margin: 30px 10px 10px -70px;
-  background-color: #5d83c4;
-  text-shadow: 0 1px 2px #808080;
-  -webkit-box-shadow: 0 2px 4px #888;
-  box-shadow: 0 2px 4px #888;
-}
-
-.post header:after {
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0;
-  top: 100%;
-  border-width: 5px 10px;
-  border-style: solid;
-  border-color: #325289 #325289 transparent transparent;
-}
-
-.post header:before {
-  content: ' ';
-  position: absolute;
-  width: 30px;
-  height: 0;
-  left: -30px;
-  top: 12px;
-  border-width: 20px 10px;
-  border-style: solid;
-  border-color: #5d83c4 #5d83c4 #5d83c4 transparent;
-}
-
 .post header h2 {
-  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-align: left;
   margin-top: 0;
 }
 
 .post header .meta {
-  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
-  text-align: right;
-  border-color: #333333;
-  border-left: 1px;
-  float: right;
-  height: 100%;
-  display: block;
+}
+
+.post .groupingList,
+.post .archiveLinks {
+  margin: 0;
 }
 
 .post h3 {
@@ -901,6 +760,18 @@
   display: inline-block;
   float: right;
   white-space: nowrap;
+}
+
+.post article,
+.post footer {
+  padding: 1em 2em 1em 2em;
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .post article,
+  .post footer {
+    padding: 1em;
+  }
 }
 
 .post pre {
@@ -985,6 +856,16 @@
   }
 }
 
+/* Ostrich Sans Inline */
+
+@font-face {
+  font-family: 'Ostrich Sans Inline';
+  src: url('/assets/fonts/ostrich-sans/ostrich-sans-inline-regular.eot');
+  src: local('☺'), url('/assets/fonts/ostrich-sans/ostrich-sans-inline-regular.woff') format('woff'), url('/assets/fonts/ostrich-sans/ostrich-sans-inline-regular.ttf') format('truetype'), url('/assets/fonts/ostrich-sans/ostrich-sans-inline-regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Font Definitions */
 
 /* Functions */
@@ -1015,8 +896,8 @@ body {
   font-size: 18px;
   text-align: center;
   /* Carbon fibre 
-	 * by Atle Mo (design), Lea Verou (code)
-	 * from http://lea.verou.me/css3patterns/#carbon-fibre */
+     * by Atle Mo (design), Lea Verou (code)
+     * from http://lea.verou.me/css3patterns/#carbon-fibre */
   background: -webkit-radial-gradient(#000000 15%, transparent 16%) 0 0, -webkit-radial-gradient(#000000 15%, transparent 16%) 8px 8px, -webkit-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, -webkit-radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
   background: radial-gradient(#000000 15%, transparent 16%) 0 0, radial-gradient(#000000 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
   background-color: #282828;
@@ -1113,6 +994,48 @@ table {
 /*
 /*****************************************************************************/
 
+.heading,
+.archivesHeader,
+.post header,
+.profile-author,
+.footer {
+  background-color: #212e45;
+  padding: 1em 1em 1em 2em;
+  min-height: 4em;
+  color: #dddddd;
+}
+
+.heading a,
+.archivesHeader a,
+.post header a,
+.profile-author a,
+.footer a {
+  color: #dddddd;
+}
+
+.heading p,
+.archivesHeader p,
+.post header p,
+.profile-author p,
+.footer p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .heading,
+  .archivesHeader,
+  .post header,
+  .profile-author,
+  .footer {
+    height: auto;
+  }
+}
+
+.rss {
+  text-align: center;
+}
+
 .container .site {
   /*	background*/
   background-color: #ffffff;
@@ -1148,7 +1071,7 @@ table {
 }
 
 .container .site h2 {
-  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: left;
 }
 
@@ -1156,37 +1079,41 @@ table {
   border: 0;
   height: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(93, 131, 196, 0.6);
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
 .container .site .header {
-  /* Background */
   background-color: #ffffff;
-  /* IE10 Consumer Preview */
-  /* Mozilla Firefox */
-  /* Opera */
-  /* Webkit (Safari/Chrome 10) */
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #5d83c4), color-stop(1, #ffffff));
-  /* Webkit (Chrome 11+) */
-  background-image: -webkit-linear-gradient(left, #5d83c4 0%, #ffffff 100%);
-  /* W3C Markup, IE10 Release Preview */
-  background-image: -webkit-gradient(linear, left top, right top, from(#5d83c4), to(#ffffff));
-  background-image: linear-gradient(to right, #5d83c4 0%, #ffffff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#5d83c4, endColorstr=#ffffff, GradientType=1);
-  font-family: 'Ostrich Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
   position: inherit;
   height: auto;
   top: 0;
   z-index: 100000;
-  border-bottom: 4px solid #eee;
+  padding-bottom: 18px;
+  padding-bottom: 1rem;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
+  .container .site .header {
+    padding-bottom: 16px;
+  }
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .container .site .header {
+    padding-bottom: 12px;
+  }
 }
 
 .container .site .header h1.title {
   margin-bottom: 0.25em;
   color: #475261;
+  font-size: 4em;
+  font-family: 'Ostrich Sans Inline', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
   margin-top: 0;
 }
 
@@ -1242,19 +1169,6 @@ table {
 
 .container .site .content {
   margin-top: 0;
-  padding: 1em 2em 1em 2em;
-}
-
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .container .site .content {
-    padding: 1em;
-  }
-}
-
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .container .site .content {
-    padding-top: 0;
-  }
 }
 
 .container .site .content h2 .meta {
@@ -1289,15 +1203,13 @@ table {
 
 .container .site .footer {
   font-size: 0.8em;
-  border-top: 4px solid #eee;
-  overflow: hidden;
-  width: 100%;
   padding-top: 1em;
   z-index: 1;
 }
 
 .container .site .footer .copy {
   width: 100%;
+  padding-top: 1em;
   text-align: center;
 }
 
@@ -1317,10 +1229,7 @@ table {
     margin-right: 0;
   }
 
-  .container .site .header {
-    display: none;
-  }
-
+  .container .site .header,
   .container .site .footer {
     display: none;
   }
@@ -1333,6 +1242,35 @@ table {
     text-decoration: none;
     color: #475261;
   }
+}
+
+/* ==========================================================================
+    3. Utilities - These things get used a lot
+    ========================================================================== */
+
+/* Hides shit */
+
+.hidden {
+  text-indent: -9999px;
+  direction: ltr;
+  visibility: hidden;
+  display: none;
+}
+
+/* Creates a responsive wrapper that makes our content scale nicely */
+
+.inner {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Centres vertically yo. (IE8+) */
+
+.vertical {
+  display: table-cell;
+  vertical-align: middle;
 }
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 
