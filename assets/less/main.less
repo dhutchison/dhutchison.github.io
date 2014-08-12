@@ -11,7 +11,7 @@
 @import "post.less";
 @import "404.less";
 
-@import "ostrich-sans.less";
+@import "league-gothic.less";
 .fonts();
 
 /* Functions */
@@ -200,7 +200,7 @@ table {
 
     		font-family: @headerFonts;
     		text-align: center;
-            
+
             position: inherit;
             height: auto;
 
@@ -212,10 +212,16 @@ table {
     		h1.title {
                 margin-bottom: 0.25em;
     			color: @mainHeaderColour;
+                text-shadow: 2px 2px @dividerColour;
 
                 font-size: @fontSizeTitle;
                 font-family: @titleFonts;
                 font-weight: @titleFontWeight;
+
+                a:hover {
+                    color: @dividerColour;
+                    text-shadow: 2px 2px @mainHeaderColour;
+                }
 
 
                 margin-top: 0;

@@ -48,10 +48,11 @@
 @lineHeight: 1.5;
 
 @linkColour: @mainFontColour;
-@linkHoverColour: #8A230F;
+//@linkHoverColour: #8A230F;
+@linkHoverColour: @dividerColour;
 
-@os-font-path: '/assets/fonts/ostrich-sans';
-@titleFonts: 'Ostrich Sans Inline', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+@titleFonts: 'League Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @titleFontWeight: normal;
 @headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @headerFontWeight: 700;
@@ -61,7 +62,7 @@
 @categoryTagColour: #E82C0C;
 @tagColour: #0089e0;
 
-@fontSizeTitle: 4em;
+@fontSizeTitle: 8em;
 @fontSizeStandard: 18px;
 @fontSizeSmaller: 16px;
 @fontSizeSmallest: 12px;
@@ -83,7 +84,6 @@
 
 .fonts() {
     /* Font Definitions */
-    @import url('@{os-font-path}/ostrich-sans.css');
     @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
 }
 

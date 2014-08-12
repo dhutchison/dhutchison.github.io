@@ -150,8 +150,6 @@
 
 @import url(normalize.css);
 
-@import url('/assets/fonts/ostrich-sans/ostrich-sans.css');
-
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
 
 /* CSS Normalisation */
@@ -213,12 +211,6 @@
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px) {
   .author a.profile-image {
     width: 40px;
-  }
-}
-
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .author .author-details {
-    width: 50px;
   }
 }
 
@@ -859,9 +851,9 @@ img.profile-image {
 /* Ostrich Sans Inline */
 
 @font-face {
-  font-family: 'Ostrich Sans Inline';
-  src: url('/assets/fonts/ostrich-sans/ostrich-sans-inline-regular.eot');
-  src: local('☺'), url('/assets/fonts/ostrich-sans/ostrich-sans-inline-regular.woff') format('woff'), url('/assets/fonts/ostrich-sans/ostrich-sans-inline-regular.ttf') format('truetype'), url('/assets/fonts/ostrich-sans/ostrich-sans-inline-regular.svg') format('svg');
+  font-family: 'League Gothic';
+  src: url('/assets/fonts/league-gothic/leaguegothic-condensed-regular-webfont.eot');
+  src: local('☺'), url('/assets/fonts/league-gothic/leaguegothic-condensed-regular-webfont.woff') format('woff'), url('/assets/fonts/league-gothic/leaguegothic-condensed-regular-webfont.ttf') format('truetype'), url('/assets/fonts/league-gothic/leaguegothic-condensed-regular-webfont.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -963,7 +955,7 @@ a {
 }
 
 a:hover {
-  color: #8a230f;
+  color: #5d83c4;
 }
 
 table {
@@ -1111,10 +1103,16 @@ table {
 .container .site .header h1.title {
   margin-bottom: 0.25em;
   color: #475261;
-  font-size: 4em;
-  font-family: 'Ostrich Sans Inline', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-shadow: 2px 2px #5d83c4;
+  font-size: 8em;
+  font-family: 'League Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: normal;
   margin-top: 0;
+}
+
+.container .site .header h1.title a:hover {
+  color: #5d83c4;
+  text-shadow: 2px 2px #475261;
 }
 
 .container .site .header #nav ul {
