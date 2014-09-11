@@ -60,7 +60,7 @@ layout: compress
           <div class="site" id="container">
               
             <header class="header">
-              <h1 class="title"><a href="/" title="Home">{{ site.name }}</a></h1>
+              <h1 class="title"><a href="/" title="Home">{{ site.data.author.david.name }}</a></h1>
               <div class="links">
                   <nav id="nav">
       	            <ul class="fa-ul">
@@ -78,28 +78,22 @@ layout: compress
             {% if site.data.author.david %}
                 <section class="author">
                 	<article>
-                      <a href="{{ site.data.author.david.profile_url }}" class="profile-image"> <img class="profile-image" src="{{ site.data.author.david.pic_small }}"></a>
                       <div class="author-details">
-                		    <!-- Author Name -->
-                    	  <h4 class="author-name"> {{ site.data.author.david.name }} </h4>
-                        <!-- Author Bio -->
-                        <p class="author-bio"> 
-                    		  {{ site.data.author.david.bio }}
-                        </p>
                         <!-- Links -->
                         <aside class="author-links">
                               <ul class="social">
                                 {% if site.data.author.david.github %}<li>
-                                      <a href="http://github.com/{{ site.data.author.david.github }}/"><i class="fa fa-github fa-lg fa-fw"></i>/{{ site.data.author.david.github }}</a>
+                                      <a href="http://github.com/{{ site.data.author.david.github }}/"><i class="fa fa-github fa-lg fa-fw"></i></a>
                                   </li>{% endif %}
                                 {% if site.data.author.david.stackoverflow %}<li>
-                                  <a href="http://stackoverflow.com/users/{{ site.data.author.david.stackoverflow }}/"><i class="fa fa-stack-overflow fa-lg fa-fw"></i>{{ site.data.author.david.stackoverflow }}</a>
+                                  <a href="http://stackoverflow.com/users/{{ site.data.author.david.stackoverflow }}/"><i class="fa fa-stack-overflow fa-lg fa-fw"></i></a>
                                 </li>{% endif %}
                                 {% if site.data.author.david.twitter %}<li>
-                                  <a href="http://twitter.com/{{ site.data.author.david.twitter }}/"><i class="fa fa-twitter fa-lg fa-fw"></i>@{{ site.data.author.david.twitter }}</a>
+                                  <a href="http://twitter.com/{{ site.data.author.david.twitter }}/"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
                                 </li>{% endif %}
-                                {% if site.data.author.david.email %}<li><a href="mailto:{{ site.data.author.david.email }}"><i class="fa fa-envelope fa-lg fa-fw"></i>{{ site.data.author.david.email }}</a>
+                                {% if site.data.author.david.email %}<li><a href="mailto:{{ site.data.author.david.email }}"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
                                   </li>{% endif %}
+                                <li><a href="/feed.xml"><i class="fa fa-rss fa-lg fa-fw"></i></a></li>  
                             </p>
                           </ul>
                         </aside>
@@ -113,10 +107,6 @@ layout: compress
               	<p>
               	  &copy; David Hutchison 2013-2014, <a href="/thanks">with thanks.</a>
               	</p>
-              </section>
-
-              <section class="rss">
-                <a href="/feed.xml"><i class="fa fa-rss fa-lg fa-fw rss"></i> RSS</a>
               </section>
             </div>
             </footer>

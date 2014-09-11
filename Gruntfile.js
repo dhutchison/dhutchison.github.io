@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         },
         files: {
           "assets/temp/build.css": "assets/less/main.less",
-          "assets/temp/build-fontawesome.css": "assets/less/font-awesome/font-awesome.less"
+          "assets/temp/build-fontawesome.css": "assets/less/font-awesome-4.2.0/font-awesome.less"
         }
       }
     },
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     uncss: {
       dist: {
         files: {
-          'assets/temp/fontawesome.css': ['_layouts/main.html','_layouts/archive.html','_layouts/post.html','_includes/share_box.html']
+          'assets/temp/fontawesome.css': ['_layouts/main.html','_layouts/archive.html','_layouts/post.html','_layouts/profile.html','_includes/share_box.html']
         }
       },
       options: {

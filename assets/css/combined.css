@@ -1,5 +1,5 @@
 /*!
- *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 
@@ -8,18 +8,17 @@
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/font-awesome/fontawesome-webfont.eot?v=4.0.3');
-  src: url('../fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../fonts/font-awesome/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../fonts/font-awesome/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../fonts/font-awesome/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+  src: url('../fonts/font-awesome-4.2.0/fontawesome-webfont.eot?v=4.2.0');
+  src: url('../fonts/font-awesome-4.2.0/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../fonts/font-awesome-4.2.0/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../fonts/font-awesome-4.2.0/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../fonts/font-awesome-4.2.0/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 .fa {
   display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -55,58 +54,69 @@
   left: -1.85714286em;
 }
 
-@-moz-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-  }
-
-  100% {
-    -moz-transform: rotate(359deg);
-  }
-}
-
-@-webkit-keyframes spin {
+@-webkit-keyframes fa-spin {
   0% {
     -webkit-transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(359deg);
-  }
-}
-
-@-o-keyframes spin {
-  0% {
-    -o-transform: rotate(0deg);
-  }
-
-  100% {
-    -o-transform: rotate(359deg);
-  }
-}
-
-@-ms-keyframes spin {
-  0% {
-    -ms-transform: rotate(0deg);
-  }
-
-  100% {
-    -ms-transform: rotate(359deg);
-  }
-}
-
-@keyframes spin {
-  0% {
     transform: rotate(0deg);
   }
 
   100% {
+    -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.fa-stack-1x {
+  line-height: inherit;
+}
+
+.fa-stack-2x {
+  font-size: 2em;
+}
+
+.fa-inverse {
+  color: #ffffff;
+}
+
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
+
+.fa-envelope-o:before {
+  content: "\f003";
+}
+
+.fa-user:before {
+  content: "\f007";
+}
 
 .fa-tags:before {
   content: "\f02c";
@@ -124,6 +134,10 @@
   content: "\f082";
 }
 
+.fa-phone:before {
+  content: "\f095";
+}
+
 .fa-twitter:before {
   content: "\f099";
 }
@@ -136,6 +150,10 @@
   content: "\f09e";
 }
 
+.fa-link:before {
+  content: "\f0c1";
+}
+
 .fa-google-plus-square:before {
   content: "\f0d4";
 }
@@ -144,8 +162,28 @@
   content: "\f0e0";
 }
 
+.fa-circle:before {
+  content: "\f111";
+}
+
+.fa-smile-o:before {
+  content: "\f118";
+}
+
+.fa-code:before {
+  content: "\f121";
+}
+
 .fa-stack-overflow:before {
   content: "\f16c";
+}
+
+.fa-mortar-board:before {
+  content: "\f19d";
+}
+
+.fa-line-chart:before {
+  content: "\f201";
 }
 
 @import url(normalize.css);
@@ -214,14 +252,12 @@
   }
 }
 
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .footer .author .author-details {
-    padding-left: 9em;
-  }
-}
-
 .footer .author header {
   margin-right: 0.5em;
+}
+
+.footer .author {
+  text-align: center;
 }
 
 .author-name {
@@ -244,13 +280,6 @@ img.profile-image {
 .author-links {
   width: 100%;
   text-align: center;
-  padding-top: 1em;
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) , only screen and (min-width : 768px) and (max-width : 1024px) {
-  .author-links {
-    padding-left: 1em;
-  }
 }
 
 .author-links ul,
@@ -258,18 +287,8 @@ img.profile-image {
   display: inline-block;
 }
 
-.author-links li {
-  padding-right: 1em;
-}
-
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .author-links ul {
-    margin-left: 0;
-  }
-
-  .author-links ul li {
-    margin-left: 2em;
-  }
+.author-links li + li {
+  margin-left: 4em;
 }
 
 /**
@@ -297,8 +316,7 @@ img.profile-image {
 }
 
 .archives {
-  padding: 1em 2em 1em 2em;
-  margin-top: 1em;
+  padding: 1em 2em;
 }
 
 .archives .groupingList,
@@ -319,6 +337,7 @@ img.profile-image {
   .archives .groupedPosts ul,
   .archives .archiveLinks ul {
     margin-left: 32px;
+    margin-left: 2rem;
   }
 }
 
@@ -327,6 +346,7 @@ img.profile-image {
   .archives .groupedPosts ul,
   .archives .archiveLinks ul {
     margin-left: 24px;
+    margin-left: 2rem;
   }
 }
 
@@ -353,20 +373,37 @@ img.profile-image {
   border-color: #333333;
   border-right: 1px;
   vertical-align: middle;
-  width: 6em;
   margin-right: 36px;
   margin-right: 2rem;
+  width: 108px;
+  width: 6rem;
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
   .archives ul .meta {
     margin-right: 32px;
+    margin-right: 2rem;
   }
 }
 
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
   .archives ul .meta {
-    margin-right: 24px;
+    margin-right: 0px;
+    margin-right: 0rem;
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
+  .archives ul .meta {
+    width: 96px;
+    width: 6rem;
+  }
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .archives ul .meta {
+    width: 36px;
+    width: 3rem;
   }
 }
 
@@ -389,145 +426,393 @@ img.profile-image {
 /*
 /*****************************************************************************/
 
+.profile-container {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.profile-section-header {
+  overflow: hidden;
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-bottom: 1em;
+}
+
+.profile-section-name {
+  display: inline-block;
+  float: left;
+  min-width: 396px;
+  min-width: 22rem;
+}
+
+.profile-section-details {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+}
+
+.profile-section-content ul:last-child {
+  margin-bottom: 1em;
+}
+
+.profile-section-title {
+  display: block;
+  height: 60px;
+  position: relative;
+  line-height: 59px;
+  text-align: center;
+  width: 135px;
+  color: #ffffff;
+}
+
+.profile-section-title span {
+  z-index: 1;
+}
+
+.profile-section-title i {
+  position: absolute;
+  top: 0;
+  left: -1.9em;
+  width: 1.5em;
+  background-color: inherit;
+  text-align: left;
+  height: 100%;
+  vertical-align: middle;
+  z-index: 0;
+  padding-left: 0.5em;
+}
+
+.profile-section-title .fa-lg {
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+.profile-field {
+  display: none;
+}
+
+.profile-information .profile-section-title {
+  background: #7e9cd0;
+}
+
+.profile-information .profile-icon {
+  color: #7e9cd0;
+}
+
+.profile-information .profile-name {
+  font-size: 47px;
+  font-size: 2.6rem;
+  width: 504px;
+  width: 28rem;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
+  .profile-information .profile-name {
+    font-size: 42px;
+    font-size: 2.6rem;
+  }
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .profile-information .profile-name {
+    font-size: 31px;
+    font-size: 2.6rem;
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
+  .profile-information .profile-name {
+    width: 448px;
+    width: 28rem;
+  }
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .profile-information .profile-name {
+    width: 336px;
+    width: 28rem;
+  }
+}
+
+.profile-information .profile-name:first-letter {
+  margin-left: -0.07em;
+}
+
+.profile-information .profile-section-details {
+  font-size: 14px;
+  font-size: 0.8rem;
+  line-height: 18px;
+  line-height: 1rem;
+  float: right;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
+  .profile-information .profile-section-details {
+    font-size: 13px;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .profile-information .profile-section-details {
+    font-size: 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
+  .profile-information .profile-section-details {
+    line-height: 16px;
+    line-height: 1rem;
+  }
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .profile-information .profile-section-details {
+    line-height: 12px;
+    line-height: 1rem;
+  }
+}
+
+.profile-information .profile-image {
+  float: left;
+  border-radius: 0;
+  margin-right: 18px;
+  margin-right: 1rem;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
+  .profile-information .profile-image {
+    margin-right: 16px;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .profile-information .profile-image {
+    margin-right: 12px;
+    margin-right: 1rem;
+  }
+}
+
+.profile-employment .profile-section-title {
+  background: #BE43E8;
+}
+
+.profile-education .profile-section-title {
+  background: #FF5E3D;
+}
+
+.profile-skills .profile-section-title {
+  background: #E8B943;
+}
+
 .profile-author {
   text-align: center;
   padding: 1em !important;
 }
 
-.profile {
-  padding: 1em 2em 1em 2em;
-  /* H2-4 used in main profile */
+.profile-section-content {
+  margin: 0 2em;
 }
 
-.profile h2 {
-  float: left;
-  display: inline-block;
-  font-weight: 700;
-  margin-top: 0;
-  width: auto;
+.profile-section-content li {
+  margin-left: 2em;
 }
 
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .profile h2 {
-    width: 100%;
-    display: block;
-    float: none;
+@media only print {
+  .profile-section-title {
+    width: auto;
+    height: auto;
+    line-height: inherit;
+    /* http://css-tricks.com/line-on-sides-headers/ */
+    text-align: center;
+  }
+
+  .profile-section-title span {
+    display: inline-block;
+    position: relative;
+  }
+
+  .profile-section-title span:before,
+  .profile-section-title span:after {
+    content: "";
+    position: absolute;
+    height: 5px;
+    border-top: 1px solid black;
+    top: 0.65em;
+    width: 600px;
+  }
+
+  .profile-section-title span:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+
+  .profile-section-title span:after {
+    left: 100%;
+    margin-left: 15px;
+  }
+
+  .fa-circle {
+    display: none;
+  }
+
+  .fa-stack-2x {
+    font-size: 1em;
+  }
+
+  .fa-inverse {
+    color: #333;
+  }
+
+  .profile-information .profile-section-title,
+  .profile-education .profile-section-title,
+  .profile-employment .profile-section-title {
+    background-color: #FFFFFF;
+    color: inherit;
+  }
+
+  .profile-information .profile-section-title {
+    display: none;
+  }
+
+  .profile-information .profile-name {
+    width: auto;
+    font-size: 72px;
+    font-size: 4rem;
+    line-height: 72px;
+    line-height: 4rem;
+  }
+
+  .profile-information .profile-position {
+    font-size: 36px;
+    font-size: 2rem;
+    line-height: 54px;
+    line-height: 3rem;
+  }
+
+  .profile-information .profile-section-header {
+    padding-top: 0;
+    margin-bottom: 72px;
+    margin-bottom: 4rem;
+  }
+
+  .profile-information .profile-section-details {
+    border-left: 2px solid #333333;
+    line-height: 1.5em;
+    margin-top: 0.5em;
+    font-size: inherit;
+  }
+
+  .profile-information .profile-phone,
+  .profile-information .profile-email,
+  .profile-information .profile-www {
+    margin-right: 1em;
+  }
+
+  .profile-information .profile-field {
+    width: 4em;
+    font-weight: bold;
+    display: inline-block;
+    text-align: right;
+    padding-right: 5px;
+    padding-right: 0.25rem;
+  }
+
+  .profile-information .profile-icon {
+    display: none;
+  }
+
+  .profile-information .profile-image {
+    display: none;
+    margin: 0;
   }
 }
 
-.profile h2,
-.profile h3 {
-  font-size: 23px;
-  font-size: 1.3rem;
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
-  .profile h2,
-  .profile h3 {
-    font-size: 21px;
+@media only print and only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only print and only screen and (min-width : 768px) and (max-width : 1024px) {
+  .profile-information .profile-name {
+    font-size: 64px;
+    font-size: 4rem;
   }
 }
 
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .profile h2,
-  .profile h3 {
-    font-size: 16px;
+@media only print and only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only print and only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .profile-information .profile-name {
+    font-size: 48px;
+    font-size: 4rem;
   }
 }
 
-.profile h3,
-.profile h4,
-.profile h5 {
-  color: #475261;
-  font-weight: 300;
-}
-
-.profile h4,
-.profile h5 {
-  /* H5 is used for the date section */
-  font-size: 0.8em;
-}
-
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .profile h3 {
-    margin-top: 1em;
+@media only print and only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only print and only screen and (min-width : 768px) and (max-width : 1024px) {
+  .profile-information .profile-name {
+    line-height: 64px;
+    line-height: 4rem;
   }
 }
 
-.profile h4 {
-  display: inline-block;
-}
-
-.profile h5 {
-  /* H5 is used for the date section */
-  text-transform: uppercase;
-}
-
-.profile hr:nth-of-type(1) {
-  margin-top: -1em;
-}
-
-.profile h3,
-.profile h4,
-.profile h5,
-.profile p {
-  padding-left: 180px;
-  padding-left: 10rem;
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
-  .profile h3,
-  .profile h4,
-  .profile h5,
-  .profile p {
-    padding-left: 160px;
+@media only print and only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only print and only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .profile-information .profile-name {
+    line-height: 48px;
+    line-height: 4rem;
   }
 }
 
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .profile h3,
-  .profile h4,
-  .profile h5,
-  .profile p {
-    padding-left: 120px;
+@media only print and only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only print and only screen and (min-width : 768px) and (max-width : 1024px) {
+  .profile-information .profile-position {
+    font-size: 32px;
+    font-size: 2rem;
   }
 }
 
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .profile h3,
-  .profile h4,
-  .profile h5,
-  .profile p {
-    padding-left: 0;
+@media only print and only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only print and only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .profile-information .profile-position {
+    font-size: 24px;
+    font-size: 2rem;
   }
 }
 
-.profile ul {
-  padding-left: 207px;
-  padding-left: 11.5rem;
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
-  .profile ul {
-    padding-left: 184px;
+@media only print and only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only print and only screen and (min-width : 768px) and (max-width : 1024px) {
+  .profile-information .profile-position {
+    line-height: 48px;
+    line-height: 3rem;
   }
 }
 
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .profile ul {
-    padding-left: 138px;
+@media only print and only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only print and only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .profile-information .profile-position {
+    line-height: 36px;
+    line-height: 3rem;
   }
 }
 
-@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
-  .profile ul {
-    padding-left: 1.5em;
+@media only print and only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only print and only screen and (min-width : 768px) and (max-width : 1024px) {
+  .profile-information .profile-section-header {
+    margin-bottom: 64px;
+    margin-bottom: 4rem;
   }
 }
 
-.profile ul li ul {
-  /* Need to switch back for nested lists to have less padding */
-  padding-left: 2em;
+@media only print and only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only print and only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .profile-information .profile-section-header {
+    margin-bottom: 48px;
+    margin-bottom: 4rem;
+  }
+}
+
+@media only print and only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only print and only screen and (min-width : 768px) and (max-width : 1024px) {
+  .profile-information .profile-field {
+    padding-right: 4px;
+    padding-right: 0.25rem;
+  }
+}
+
+@media only print and only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only print and only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .profile-information .profile-field {
+    padding-right: 3px;
+    padding-right: 0.25rem;
+  }
 }
 
 /* Less Elements */
@@ -593,6 +878,7 @@ img.profile-image {
   .archiveLinks li.tag span,
   .archiveLinks li.category span {
     font-size: 10px;
+    font-size: 0.625rem;
   }
 }
 
@@ -604,6 +890,7 @@ img.profile-image {
   .archiveLinks li.tag span,
   .archiveLinks li.category span {
     font-size: 8px;
+    font-size: 0.625rem;
   }
 }
 
@@ -627,6 +914,7 @@ img.profile-image {
   .groupingList li,
   .archiveLinks li {
     margin-right: 8px;
+    margin-right: 0.5rem;
   }
 }
 
@@ -634,6 +922,7 @@ img.profile-image {
   .groupingList li,
   .archiveLinks li {
     margin-right: 6px;
+    margin-right: 0.5rem;
   }
 }
 
@@ -756,7 +1045,7 @@ img.profile-image {
 
 .post article,
 .post footer {
-  padding: 1em 2em 1em 2em;
+  padding: 1em 2em;
 }
 
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
@@ -1005,6 +1294,16 @@ table {
   color: #dddddd;
 }
 
+.heading a:hover,
+.archivesHeader a:hover,
+.post header a:hover,
+.profile-author a:hover,
+.footer a:hover {
+  color: #5d83c4;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
 .heading p,
 .archivesHeader p,
 .post header p,
@@ -1091,12 +1390,14 @@ table {
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
   .container .site .header {
     padding-bottom: 16px;
+    padding-bottom: 1rem;
   }
 }
 
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
   .container .site .header {
     padding-bottom: 12px;
+    padding-bottom: 1rem;
   }
 }
 
@@ -1104,15 +1405,28 @@ table {
   margin-bottom: 0.25em;
   color: #475261;
   text-shadow: 2px 2px #5d83c4;
-  font-size: 8em;
   font-family: 'League Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: normal;
+  font-size: 6em;
   margin-top: 0;
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .container .site .header h1.title {
+    font-size: 5em;
+    text-shadow: 0 0;
+  }
 }
 
 .container .site .header h1.title a:hover {
   color: #5d83c4;
   text-shadow: 2px 2px #475261;
+}
+
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
+  .container .site .header h1.title a:hover {
+    text-shadow: 0 0;
+  }
 }
 
 .container .site .header #nav ul {
@@ -1139,12 +1453,14 @@ table {
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
   .container .site .header .links {
     font-size: 19px;
+    font-size: 1.2rem;
   }
 }
 
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
   .container .site .header .links {
     font-size: 14px;
+    font-size: 1.2rem;
   }
 }
 
@@ -1154,7 +1470,6 @@ table {
 
 .container .site .header .links ul li {
   display: inline;
-  padding-right: 1em;
 }
 
 .container .site .header .links ul li a {
@@ -1163,6 +1478,11 @@ table {
 
 .container .site .header .links ul li a:hover {
   text-decoration: underline;
+}
+
+.container .site .header .links ul li + li:before {
+  content: " | ";
+  padding: 0 10px;
 }
 
 .container .site .content {
@@ -1177,12 +1497,14 @@ table {
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
   .container .site .content h2 .meta {
     font-size: 16px;
+    font-size: 1rem;
   }
 }
 
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
   .container .site .content h2 .meta {
     font-size: 12px;
+    font-size: 1rem;
   }
 }
 
@@ -1214,6 +1536,7 @@ table {
 @media only print {
 @page {
     margin: 0.5cm;
+    size: A4;
 }
 
   body {
@@ -1239,6 +1562,16 @@ table {
   .container .site a {
     text-decoration: none;
     color: #475261;
+  }
+
+  .post-footer .share,
+  #disqus_thread,
+  .page-navigation {
+    display: none;
+  }
+
+  .author-links {
+    display: none;
   }
 }
 

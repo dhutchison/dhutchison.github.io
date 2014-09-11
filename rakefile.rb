@@ -29,7 +29,7 @@ end
 
 def jekyll
   puts 'Building Jekyll pages...'
-  sh 'bundle exec jekyll build -d ../dwi_built_site'
+  sh 'bundle exec jekyll build -d ../dwi_built_site --trace'
   puts 'Jekyll page build complete.'
 end
 

@@ -138,6 +138,11 @@ table {
 
     a {
         color: @headerFontColour;
+
+        &:hover{
+            color: @headerLinkHoverColour;
+            transition: .5s;
+        }
     }
 
     p {
@@ -214,13 +219,22 @@ table {
     			color: @mainHeaderColour;
                 text-shadow: 2px 2px @dividerColour;
 
-                font-size: @fontSizeTitle;
                 font-family: @titleFonts;
                 font-weight: @titleFontWeight;
+
+                font-size: @fontSizeTitle;
+                @media @mq-iPhone, @mq-iPhoneSized {
+                   font-size: @fontSizeTitleMobile;
+                   text-shadow: 0 0;
+                }
 
                 a:hover {
                     color: @dividerColour;
                     text-shadow: 2px 2px @mainHeaderColour;
+
+                    @media @mq-iPhone, @mq-iPhoneSized {
+                        text-shadow: 0 0;
+                    }
                 }
 
 
@@ -253,7 +267,6 @@ table {
     				
     				li {
     					display: inline;
-    					padding-right: 1em;
     					
     					a {
     						text-decoration: none;
@@ -263,6 +276,11 @@ table {
     						text-decoration: underline;
     					}
     				}
+
+                    li + li:before {
+                        content: " | ";
+                        padding: 0 10px;
+                    }
     			}
     		}
     	}
@@ -314,6 +332,7 @@ table {
     
         @page {
             margin: 0.5cm;
+            size: A4;
         }
         
         body {
@@ -341,6 +360,14 @@ table {
                     color: @mainHeaderColour;
                 }
             }
+        }
+
+        .post-footer .share, #disqus_thread, .page-navigation {
+            display: none;
+        }
+
+        .author-links {
+            display: none;
         }
         
 }

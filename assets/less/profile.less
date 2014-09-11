@@ -4,94 +4,262 @@
 /* Profile
 /*
 /*****************************************************************************/
+@profileFontColour: @mainFontColour;
+@profileBackgroundColour: @backgroundColour;
+
+.profile-container {
+    background-color: @profileBackgroundColour;
+    color: @profileFontColour;
+}
+
+.profile-section-header {
+    overflow: hidden;
+    // max-width: 425px;
+    
+    padding-top: @verticalSpacing;
+    padding-left: @horizontalSpacing;
+    padding-right: @horizontalSpacing;
+    margin-bottom: @verticalSpacing;
+}
+
+.profile-section-name {
+    display: inline-block;
+
+    float: left;
+
+    .remSize(min-width, 22);
+}
+
+.profile-section-details {
+    display: inline-block;
+    vertical-align: top;
+    // margin-left: @horizontalSpacing;
+    float: right;
+}
+
+.profile-section-content {
+    ul:last-child {
+        margin-bottom: @verticalSpacing;
+    }
+}
+
+.profile-section-title {
+    display: block;
+    height: 60px;
+    position: relative;
+    line-height: 59px;
+    text-align: center;
+    width: 135px;
+
+    color: @profileBackgroundColour;
+
+    span {
+        z-index: 1;
+    }
+
+    @iconFontSize: @horizontalSpacing;
+    i {
+        position: absolute;
+        top: 0;
+        left: -(@iconFontSize * 0.95);
+        width: 1.5em;
+        background-color: inherit;
+        text-align: left;
+        height: 100%;
+        vertical-align: middle;
+        z-index: 0;
+        padding-left: 0.5em;
+    }
+
+    .fa-lg {
+        font-size: @iconFontSize;
+        line-height: (0.75 * @iconFontSize);
+
+    }
+}
+
+.profile-field {
+    display: none;
+}
+
+.profile-information {
+
+    @labelColour: #7E9CD0;
+
+    .profile-section-title {
+        background: @labelColour;
+    }
+
+    .profile-icon {
+        color: @labelColour;
+    }
+
+    .profile-name {
+        .remSize(font-size, 2.6);
+        .remSize(width, 28);
+
+        &:first-letter { 
+            margin-left: -0.07em; 
+        }
+    }
+
+    .profile-section-details {
+        .remSize(font-size, 0.8);
+        .remSize(line-height, 1);
+        float: right;
+    }
+
+    .profile-image {
+        float: left;
+        border-radius: 0;
+        .remSize(margin-right, 1);
+    }
+}
+
+.profile-employment {
+    .profile-section-title {
+        background: #BE43E8;
+    }
+}
+
+.profile-education {
+    .profile-section-title {
+        background: #FF5E3D;
+    }
+}
+
+.profile-skills {
+    .profile-section-title {
+        background: #E8B943;
+    }
+
+}
 
 .profile-author {
     text-align: center;
     padding: 1em !important;
 }
 
-.profile {
+.profile-section-content {
+    margin: 0 @horizontalSpacing;
 
-    .sitePadding();
+    li {
+        margin-left: @horizontalSpacing
+    }
+}
 
-	 /* H2-4 used in main profile */
-	h2 {
-		float: left;
-		display: inline-block;
-        font-weight: @headerFontWeight;
-        margin-top: 0;
-        
+@media only print {
+
+    .profile-section-title {
         width: auto;
-        
-        @media @mq-iPhone, @mq-iPhoneSized {
-            width: 100%;
-            display: block;
-            float: none;
-        }
-	}
+        height: auto;
+        line-height: inherit;
 
-    h2, h3 {
-        .font-size(1.3);
-    }
-	
-	h3, h4, h5 {
-        color: @mainHeaderColour;
-        font-weight: @contentFontWeight;
-	}
-	
-	h4, h5 {
-		/* H5 is used for the date section */
-		font-size: 0.8em;
-	}
+        /* http://css-tricks.com/line-on-sides-headers/ */
+        // line-height: 0.5;
+        text-align: center;
 
-    @media @mq-iPhone, @mq-iPhoneSized {
-        h3 {
-            margin-top: 1em;
-        }
-    }
-	
-	h4 {
-        display: inline-block;
-	}
+        span {
+            display: inline-block;
+            position: relative;  
 
-	h5 {
-		/* H5 is used for the date section */
-		text-transform: uppercase;
-	}
-	
-	hr:nth-of-type(1) {
-	    margin-top: -1em;
-	}
-    
-    h3, h4, h5, p {
-        .remSize(padding-left, 10);
-
-        @media @mq-iPhone, @mq-iPhoneSized {
-            padding-left: 0;
-        }
-    }
-    
-    
-    ul {
-        .remSize(padding-left, 11.5);
-
-        @media @mq-iPhone, @mq-iPhoneSized {
-            padding-left: 1.5em;
-        }
-        
-        li {
-            ul {
-                /* Need to switch back for nested lists to have less padding */
-                padding-left: 2em;
+            &:before, &:after {
+                content: "";
+                position: absolute;
+                height: 5px;
+                border-top: 1px solid black;
+                top: 0.65em;
+                width: 600px;
+            }
+            &:before {
+                right: 100%;
+                margin-right: 15px;
+            }
+            &:after {
+                left: 100%;
+                margin-left: 15px;
             }
         }
     }
-}
 
-.profileLeftPadding(@width; @extra: 0px) when (@width < 95%) {
-    padding-left: @contentSpacing + @extra;
-}
+    .fa-circle {
+        display: none;
+    }
+    .fa-stack-2x {
+        font-size: 1em;
+    }
+    .fa-inverse {
+        color: #333;
+    }
 
-.profileLeftPadding(@width; @extra: 0px) when (@width >= 95%) {
-    padding-left: 0px + @extra;    
+    .profile-information, .profile-education, .profile-employment {
+        .profile-section-title {
+            background-color: #FFFFFF;
+            color: inherit;
+        }
+    }
+
+    .profile-information {
+        .profile-section-title {
+            display: none;
+        }
+
+        @printNameFontSize: 4;
+
+        .profile-name {
+             width: auto;
+
+            .remSize(font-size, @printNameFontSize);
+            .remSize(line-height, @printNameFontSize);
+        }
+
+        .profile-position {
+            .remSize(font-size, @printNameFontSize/2);
+            .remSize(line-height, round(2*(@printNameFontSize/3)));
+        }
+
+        .profile-section-header {
+            // text-align: center;
+            padding-top: 0;
+            .remSize(margin-bottom, @printNameFontSize);
+        }
+
+        .profile-section-name {
+            // display: block;
+            // float: none;
+        }
+
+        .profile-section-details {
+            border-left: 2px solid @mainFontColour;
+            line-height: 1.5em;
+            margin-top: 0.5em;
+            // display: block;
+            // float: none;
+            font-size: inherit;
+        }
+
+        .profile-phone, .profile-email, .profile-www {
+            margin-right: 1em;
+            // display: inline-block;
+        }
+
+        .profile-field {
+            width: 4em;
+            font-weight: bold;
+            display: inline-block;
+    
+            text-align: right;
+            .remSize(padding-right, 0.25);
+        }
+
+        .profile-icon {
+            display: none;
+        }
+
+        .profile-image {
+            display: none;
+            margin: 0;
+        }
+
+    }
 }

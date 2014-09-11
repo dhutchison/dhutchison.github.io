@@ -29,7 +29,7 @@ This script performs four main steps:
 
 I don't write a lot of scripts, so there may be better ways to achieve this, but it works.
 
-{% highlight bash %}
+{% highlight bash linenos %}
 #!/bin/bash
 # Script to check for updates, and download updates for VirtualBox  (http://virtualbox.org/)
 # Author: David Hutchison

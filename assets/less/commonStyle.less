@@ -32,6 +32,7 @@
 
 @headerBackgroundDarkBlue: #212E45; 
 @headerFontColour: #DDDDDD;
+@headerLinkHoverColour: @backgroundBlue;
 
 @mainHeaderColour: #475261;
 @mainFontColour: #333333;
@@ -62,7 +63,8 @@
 @categoryTagColour: #E82C0C;
 @tagColour: #0089e0;
 
-@fontSizeTitle: 8em;
+@fontSizeTitle: 6em;
+@fontSizeTitleMobile: 5em;
 @fontSizeStandard: 18px;
 @fontSizeSmaller: 16px;
 @fontSizeSmallest: 12px;
@@ -70,6 +72,9 @@
 @widthStandard: 60%;
 @widthSmaller: 80%;
 @widthSmallest: 100%;
+
+@verticalSpacing: 1em;
+@horizontalSpacing: 2em;
 
 
 /* Common Mixins */
@@ -94,20 +99,21 @@
 // REM based sizing. Based on http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/ 
 .remSize(@property; @sizeValue; @iPadSizeValue: @sizeValue; @iPhoneSizeValue: @sizeValue) {
     
-    @remValue: @sizeValue;
     @pxValue: round((@sizeValue * unit(@fontSizeStandard)));
-    @{property}: ~"@{pxValue}px"; 
+    @{property}: ~"@{pxValue}px";
+    @{property}: ~"@{sizeValue}rem"; 
     
     @media @mq-iPadPortrait, @mq-iPadSized {
         @pxValue: round((@iPadSizeValue * unit(@fontSizeSmaller)));
         @{property}: ~"@{pxValue}px"; 
+        @{property}: ~"@{iPadSizeValue}rem";
     }
     @media @mq-iPhone, @mq-iPhoneSized {
         @pxValue: round((@iPhoneSizeValue * unit(@fontSizeSmallest)));
         @{property}: ~"@{pxValue}px"; 
+        @{property}: ~"@{iPhoneSizeValue}rem";
     }
     
-    @{property}: ~"@{remValue}rem";
 }
 
 .liImage(@image, @size: 16px) {
@@ -120,29 +126,29 @@
 }
 
 .sitePadding() {
-	padding: 1em 2em 1em 2em;
+	padding: @verticalSpacing @horizontalSpacing;
 	
 	@media @mq-iPhone, @mq-iPhoneSized {
-	    padding: 1em;
+	    padding: @verticalSpacing;
 	}
 }
 
 .siteLeftPadding() {
-	padding-left: 2em;
+	padding-left: @horizontalSpacing;
     @media @mq-iPhone, @mq-iPhoneSized {
 	    padding-left: 0;
 	}
 }
 
 .siteRightPadding() {
-	padding-right: 2em;
+	padding-right: @horizontalSpacing;
     @media @mq-iPhone, @mq-iPhoneSized {
 	    padding-right: 0;
 	}
 }
 
 .siteLeftMargin() {
-	margin-left: 2em;
+	margin-left: @horizontalSpacing;
     
     @media @mq-iPhone, @mq-iPhoneSized {
 	    margin-left: 0px;
@@ -150,7 +156,7 @@
 }
 
 .siteRightMargin() {
-	margin-right: 2em;
+	margin-right: @horizontalSpacing;
 	
 	@media @mq-iPhone, @mq-iPhoneSized {
 	    margin-right: 0px;

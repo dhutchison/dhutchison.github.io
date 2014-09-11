@@ -1,0 +1,13 @@
+[
+	{
+		location : "Oracle Certified Professional",
+		qualification : "Java SE 6 Programmer",
+		when : "2012"
+	}, 
+	{
+		location : "University of Strathclyde, Glasgow",
+		qualification : "2.1 BSc. Hons. Computer Science",
+		when_from : "2004",
+		when_to : "2008"
+	}
+]
