@@ -27,7 +27,7 @@
 
     float: left;
 
-    .remSize(min-width, 22);
+    .remSize(min-width, 16);
 }
 
 .profile-section-details {
@@ -35,6 +35,14 @@
     vertical-align: top;
     // margin-left: @horizontalSpacing;
     float: right;
+}
+
+.profile-section-name, .profile-section-details {
+    @media @mq-iPhone, @mq-iPhoneSized {
+        float: none;
+        display: block;
+        text-align: center;
+    }
 }
 
 .profile-section-content {
@@ -51,6 +59,11 @@
     text-align: center;
     width: 135px;
 
+    .iPhoneMQ({
+        width: auto;
+        height: auto;
+    });
+
     color: @profileBackgroundColour;
 
     span {
@@ -62,6 +75,16 @@
         position: absolute;
         top: 0;
         left: -(@iconFontSize * 0.95);
+
+        .iPhoneMQ({
+            position: inherit;
+            display: block;
+            text-align: center;
+            width: 100%;
+            left: 0;
+            padding: 0;
+        });
+
         width: 1.5em;
         background-color: inherit;
         text-align: left;
@@ -74,6 +97,11 @@
     .fa-lg {
         font-size: @iconFontSize;
         line-height: (0.75 * @iconFontSize);
+
+        .iPhoneMQ({
+            line-height: 0.75em;
+            padding-top: 0.5em;
+        });
 
     }
 }
@@ -94,9 +122,18 @@
         color: @labelColour;
     }
 
+    .profile-section-name {
+        @media @mq-iPad, @mq-iPadSized {
+            float: none;
+            display: block;
+            text-align: center;
+        }
+    }
+
     .profile-name {
         .remSize(font-size, 2.6);
-        .remSize(width, 28);
+        line-height: 1em;
+        .remSize(width, 28, 28, auto);
 
         &:first-letter { 
             margin-left: -0.07em; 
@@ -107,12 +144,21 @@
         .remSize(font-size, 0.8);
         .remSize(line-height, 1);
         float: right;
+
+        @media @mq-iPhone, @mq-iPhoneSized {
+            float: none;
+        }
     }
 
     .profile-image {
         float: left;
         border-radius: 0;
-        .remSize(margin-right, 1);
+        .remSize(margin-right, 1, 1, 0);
+
+        @media @mq-iPhone, @mq-iPhoneSized {
+            float: none;
+            border-radius: 25px;
+        }
     }
 }
 
@@ -209,19 +255,24 @@
         .profile-name {
              width: auto;
 
-            .remSize(font-size, @printNameFontSize);
-            .remSize(line-height, @printNameFontSize);
+            font-size: (@printNameFontSize)em;
+            line-height: (@printNameFontSize)em;
         }
 
         .profile-position {
-            .remSize(font-size, @printNameFontSize/2);
-            .remSize(line-height, round(2*(@printNameFontSize/3)));
+            font-size: (@printNameFontSize/2)em;
+            line-height: round(2*(@printNameFontSize/3))em;
+
+            .iPhoneMQ({
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+            });
         }
 
         .profile-section-header {
             // text-align: center;
             padding-top: 0;
-            .remSize(margin-bottom, @printNameFontSize);
+            .remSize(margin-bottom, @printNameFontSize, @printNameFontSize, @printNameFontSize/2);
         }
 
         .profile-section-name {
@@ -249,7 +300,8 @@
             display: inline-block;
     
             text-align: right;
-            .remSize(padding-right, 0.25);
+            // .remSize(padding-right, 0.25);
+            padding-right: 0.25em;
         }
 
         .profile-icon {

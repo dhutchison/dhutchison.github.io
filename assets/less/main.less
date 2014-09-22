@@ -62,18 +62,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    .font-size(2.4, 2.4, 1.6);
+    .remSize(font-size, 2.4, 2.4, 1.6);
     line-height: 1em;
 }
 
 h2 {
-    .font-size(1.75, 1.75, 1.4);
+    .remSize(font-size, 1.75, 1.75, 1.4);
     line-height: 1em;
     .remSize(margin-top, 1);
 }
 
 h3 {
-    .font-size(1.3);
+    .remSize(font-size, 1.3);
 }
 
 h4, h5, h6 {
@@ -112,14 +112,14 @@ table {
 .drop-cap { 
     float: left; 
     color: @mainHeaderLeftGradient; 
-    .font-size(4.2);
+    .remSize(font-size, 4.2);
     .remSize(line-height, 3.3);  
     .remSize(padding-right, 0.5);
     font-family: Georgia; 
 }
 
 .footnotes {
-    .font-size(0.8);
+    .remSize(font-size, 0.8);
 }
 
 /*****************************************************************************/
@@ -257,7 +257,7 @@ table {
     		.links {
     		    width: 100%;
     		    font-weight: @contentFontWeight;
-                .font-size(1.2);
+                .remSize(font-size, 1.2);
     		
                 display: inline-block;
                 text-align: center;
@@ -290,7 +290,7 @@ table {
 
             h2 {
                 .meta {
-                    .font-size(1);
+                    .remSize(font-size, 1);
                 }
             }
 

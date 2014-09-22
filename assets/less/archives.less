@@ -23,11 +23,9 @@
 .archiveLinks {
         &:extend(.groupingList all);
         
-
-        // float: right;
-        // @media @mq-iPhone, @mq-iPhoneSized {
-        //     float: none;
-        // }
+        @media @mq-iPhone, @mq-iPhoneSized {
+             text-align: center;
+        }
 
         li {
             &:extend(.tag-box all);
@@ -51,7 +49,11 @@
         margin-left: 0;
 
         ul {
-            .remSize(margin-left, 2);
+            .remSize(margin-left, 2, 2, 0);
+
+            @media @mq-iPhone, @mq-iPhoneSized {
+                width: 100%;
+            }
         }
     }
 
@@ -60,18 +62,58 @@
         list-style: none;
         
         li {
-         margin-bottom: 2px;
-         overflow: hidden;
+            margin-bottom: 2px;
+            overflow: hidden;
+            text-align: left;
+
+            @media @mq-iPhone, @mq-iPhoneSized {
+                text-align: center;
+                ul {
+                    text-align: left;
+                    margin-left: 0;
+
+                    li {
+                        text-align: left;
+                    }
+                }
+            }
         }
         
-        .year {
-            display: inline-block;
+        h3.year, h3.tag, h3.category {
             font-family: @headerFonts;
         	font-weight: @contentFontWeight;
             vertical-align: top;
+
+            @media @mq-iPhone, @mq-iPhoneSized {
+                display: inline-block;
+                line-height: 1.5em;
+                position: relative;  
+
+                &:before, &:after {
+                    content: "";
+                    position: absolute;
+                    height: 5px;
+                    border-top: 1px solid black;
+                    top: 0.65em;
+                    width: 100px;
+                }
+                &:before {
+                    right: 100%;
+                    margin-right: 15px;
+                }
+                &:after {
+                    left: 100%;
+                    margin-left: 15px;
+                }
+        
+            }
+        }
+
+        .year {
+            display: inline-block;
         }
         
-        .meta {
+        .meta, .meta_year {
             float: left;
             font-family: @headerFonts;
         	font-weight: @contentFontWeight;
@@ -79,8 +121,15 @@
         	border-right: 1px;
             vertical-align: middle;
 
-            .remSize(margin-right, 2, 2, 0);
-            .remSize(width, 6, 6, 3);
+            .remSize(margin-right, 2, 0, 0);
+        }
+
+        .meta {
+            .remSize(width, 7, 4, 3);
+        }
+
+        .meta_year {
+            .remSize(width, 7, 7, 6);
         }
         
         .title {
