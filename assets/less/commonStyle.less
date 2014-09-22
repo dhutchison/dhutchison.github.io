@@ -67,7 +67,7 @@
 @fontSizeTitleMobile: 5em;
 @fontSizeStandard: 18px;
 @fontSizeSmaller: 16px;
-@fontSizeSmallest: 12px;
+@fontSizeSmallest: 14px;
 
 @widthStandard: 60%;
 @widthSmaller: 80%;
@@ -92,28 +92,66 @@
     @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700);
 }
 
-.font-size(@sizeValue; @iPadSizeValue: @sizeValue; @iPhoneSizeValue: @sizeValue) {
-    .remSize(font-size, @sizeValue, @iPadSizeValue, @iPhoneSizeValue);
+.iPhoneMQ(@rules) {
+    @media @mq-iPhone, @mq-iPhoneSized { @rules(); }
+}
+
+.iPadMQ(@rules) {
+    @media @mq-iPadPortrait, @mq-iPadSized { @rules(); }
+}
+
+//Function just for doing mobile sizing. If number and no unit, remsize. otherwise use supplied value
+.mobileSize(@property; @sizeValue; @iPadSizeValue: @sizeValue; @iPhoneSizeValue: @sizeValue) {
+    
+    .remSizeStandard(@property; @sizeValue);
+    .remSizeiPad(@property; @iPadSizeValue; @sizeValue);
+    .remSizeiPhone(@property; @iPhoneSizeValue; @sizeValue);
 }
 
 // REM based sizing. Based on http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/ 
 .remSize(@property; @sizeValue; @iPadSizeValue: @sizeValue; @iPhoneSizeValue: @sizeValue) {
     
+    .remSizeStandard(@property; @sizeValue);
+    .remSizeiPad(@property; @iPadSizeValue; @sizeValue);
+    .remSizeiPhone(@property; @iPhoneSizeValue; @sizeValue);
+}
+
+.remSizeStandard(@property; @sizeValue) when (isnumber(@sizeValue)) and (get-unit(@sizeValue) = ~'') {
     @pxValue: round((@sizeValue * unit(@fontSizeStandard)));
     @{property}: ~"@{pxValue}px";
     @{property}: ~"@{sizeValue}rem"; 
-    
-    @media @mq-iPadPortrait, @mq-iPadSized {
+}
+
+.remSizeStandard(@property; @sizeValue) when (default()) {
+    @{property}: @sizeValue;
+}
+
+.remSizeiPad(@property; @iPadSizeValue; @baseSize) when (isnumber(@iPadSizeValue)) and (get-unit(@iPadSizeValue) = ~'') {
+    .iPadMQ({
         @pxValue: round((@iPadSizeValue * unit(@fontSizeSmaller)));
         @{property}: ~"@{pxValue}px"; 
         @{property}: ~"@{iPadSizeValue}rem";
-    }
-    @media @mq-iPhone, @mq-iPhoneSized {
+    });
+}
+
+.remSizeiPad(@property; @iPadSizeValue; @baseSize) when (default()) and not (@iPadSizeValue = @baseSize) {
+    .iPadMQ({
+        @{property}: @iPadSizeValue;
+    });
+}
+
+.remSizeiPhone(@property; @iPhoneSizeValue; @baseSize) when (isnumber(@iPhoneSizeValue)) and (get-unit(@iPhoneSizeValue) = ~'') {
+    .iPhoneMQ({
         @pxValue: round((@iPhoneSizeValue * unit(@fontSizeSmallest)));
         @{property}: ~"@{pxValue}px"; 
         @{property}: ~"@{iPhoneSizeValue}rem";
-    }
-    
+    });
+}
+
+.remSizeiPhone(@property; @iPhoneSizeValue; @baseSize) when (default()) and not (@iPhoneSizeValue = @baseSize) {
+    .iPhoneMQ({
+        @{property}: @iPhoneSizeValue;
+    });
 }
 
 .liImage(@image, @size: 16px) {
