@@ -25,7 +25,7 @@ Requires 3 variables to be set:
             <h3 class="{{ include.groupingClass }}" id="{{ this_word | downcase | cgi_escape }}">{{ display_grouping }}</h3>
             <ul class="posts">{% for post in include.groupings[display_grouping] %}{% if post.title != null %}
                 <li itemscope>
-                    <div class="meta">
+                    <div class="meta_year">
                         <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%d %b, %Y" }}</time>
                     </div>
                     <div class="title">
