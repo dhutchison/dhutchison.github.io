@@ -7,7 +7,7 @@ location: Scotland
 email: david@devwithimagination.com
 twitter: DavidHutchison
 
-pygments: true
+highlighter: pygments
 #markdown: rdiscount
 markdown: kramdown
 timezone: Europe/London

@@ -26,3 +26,5 @@ nbproject/project.properties
 *.sublime-project
 
 *.sublime-workspace
+
+_data/dev.yaml
