@@ -7,9 +7,9 @@
 	    float:left;
     	width: 80px;
     	
-        @media @mq-iPhone{
+        .iPhoneMQ({
             width: 40px;
-        }
+        });
     }
 }
 
@@ -31,19 +31,15 @@ img.profile-image {
 	height:auto;
   	border-radius: 50px;
   	
-  	@media @mq-iPhone, @mq-iPhoneSized {
+  	.iPhoneMQ({
   	    border-radius: 25px;
-  	}
+  	});
 }
 
 
 .author-links {
     width: 100%;
     text-align: center;
-
-    // @media @mq-iPad, @mq-iPadSized {
-    //     padding-left: 1em;
-    // }
 
     ul ,li {
         display: inline-block;
@@ -52,18 +48,5 @@ img.profile-image {
     li + li {
         margin-left: 4em;
     }
-
-    // .fa-twitter {
-
-
-    //     &:hover:after {
-    //         content: "@DavidHutchison";
-    //         position: relative;
-    //         top: 1em;
-    //         .remSize(left, -3);
-    //         .remSize(font-size, 0.6);
-    //     }
-    // }
-
 
 }

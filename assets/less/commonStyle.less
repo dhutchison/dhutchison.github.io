@@ -69,6 +69,10 @@
 @fontSizeSmaller: 16px;
 @fontSizeSmallest: 14px;
 
+@fontSizeTitlePrint: 32pt;
+@fontSizeLargePrint: 16pt;
+@fontSizeStandardPrint: 12pt;
+
 @widthStandard: 60%;
 @widthSmaller: 80%;
 @widthSmallest: 100%;
@@ -98,6 +102,10 @@
 
 .iPadMQ(@rules) {
     @media @mq-iPadPortrait, @mq-iPadSized { @rules(); }
+}
+
+.iPadPortraitMQ(@rules) {
+    @media @mq-iPadPortrait { @rules(); }
 }
 
 //Function just for doing mobile sizing. If number and no unit, remsize. otherwise use supplied value
@@ -166,39 +174,39 @@
 .sitePadding() {
 	padding: @verticalSpacing @horizontalSpacing;
 	
-	@media @mq-iPhone, @mq-iPhoneSized {
+	.iPhoneMQ({
 	    padding: @verticalSpacing;
-	}
+	});
 }
 
 .siteLeftPadding() {
 	padding-left: @horizontalSpacing;
-    @media @mq-iPhone, @mq-iPhoneSized {
+    .iPhoneMQ({
 	    padding-left: 0;
-	}
+	});
 }
 
 .siteRightPadding() {
 	padding-right: @horizontalSpacing;
-    @media @mq-iPhone, @mq-iPhoneSized {
+    .iPhoneMQ({
 	    padding-right: 0;
-	}
+	});
 }
 
 .siteLeftMargin() {
 	margin-left: @horizontalSpacing;
     
-    @media @mq-iPhone, @mq-iPhoneSized {
+    .iPhoneMQ({
 	    margin-left: 0px;
-	}
+	});
 }
 
 .siteRightMargin() {
 	margin-right: @horizontalSpacing;
 	
-	@media @mq-iPhone, @mq-iPhoneSized {
+	.iPhoneMQ({
 	    margin-right: 0px;
-	}
+	});
 }    
 
 .clear {
