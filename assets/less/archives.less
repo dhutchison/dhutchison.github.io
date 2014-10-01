@@ -20,12 +20,13 @@
 
 }
 
-.archiveLinks {
+.archives {
+
+    .archiveLinks {
         &:extend(.groupingList all);
         
-        @media @mq-iPhone, @mq-iPhoneSized {
-             text-align: center;
-        }
+        text-align: center;
+        margin-bottom: 2em;
 
         li {
             &:extend(.tag-box all);
@@ -41,9 +42,14 @@
         }
     }
 
-.archives {
-
     .sitePadding();
+
+    .groupingList {
+        &:extend(.groupingList all);
+
+        text-align: center;
+        margin-bottom: 1em;
+    }
 
     .groupingList, .groupedPosts {
         margin-left: 0;
@@ -51,9 +57,9 @@
         ul {
             .remSize(margin-left, 2, 2, 0);
 
-            @media @mq-iPhone, @mq-iPhoneSized {
+            .iPhoneMQ({
                 width: 100%;
-            }
+            });
         }
     }
 
@@ -66,7 +72,7 @@
             overflow: hidden;
             text-align: left;
 
-            @media @mq-iPhone, @mq-iPhoneSized {
+            .iPhoneMQ({
                 text-align: center;
                 ul {
                     text-align: left;
@@ -76,7 +82,7 @@
                         text-align: left;
                     }
                 }
-            }
+            });
         }
         
         h3.year, h3.tag, h3.category {
@@ -84,10 +90,13 @@
         	font-weight: @contentFontWeight;
             vertical-align: top;
 
-            @media @mq-iPhone, @mq-iPhoneSized {
+            .iPhoneMQ({
                 display: inline-block;
                 line-height: 1.5em;
                 position: relative;  
+
+                padding-top: 1em;
+                margin-top: -1em;
 
                 &:before, &:after {
                     content: "";
@@ -106,7 +115,7 @@
                     margin-left: 15px;
                 }
         
-            }
+            });
         }
 
         .year {

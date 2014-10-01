@@ -23,6 +23,7 @@
     }
 
     .groupingList {
+        &:extend(.groupingList all);
         margin: 0;
     }
 
@@ -41,36 +42,11 @@
     blockquote {
         background-color: darken(@backgroundColour, 10%);
     }
-
-    ul {
+    
+    article ul {
         list-style-type: circle;
         li {
             padding-left: 2em;
-        }
-    }
-
-
-    footer {
-
-        .page-navigation {
-            width: 100%;
-
-            padding-bottom: 2px;
-            margin-bottom: 2px;
-            
-            .prev {
-                max-width: 50%;
-                display: inline-block;
-            }
-
-            .next {
-                max-width: 50%;
-                display: inline-block;
-
-                float: right;
-                white-space: nowrap;
-            }
-
         }
     }
 
@@ -87,8 +63,8 @@
         background-color: #eef;
         padding: 1em;
 
-        margin-left: -2em;
-        margin-right: -2em;
+        .mobileSize(margin-left, -2em, -2em, -1em);
+        .mobileSize(margin-right, -2em, -2em, -1em);
         
         code {
             font-size: 0.8em;

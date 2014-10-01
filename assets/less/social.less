@@ -10,13 +10,13 @@
     width: 140px;
     right: 0;
     
-    @media @mq-iPhone, @mq-iPhoneSized {
+    .iPhoneMQ({
         float: none;
         display: block;
         right: auto;
         width: auto;
         position: inherit;
-    }
+    });
     
      
      a {
@@ -25,9 +25,9 @@
          margin-left: 2em;
          padding-right: 10px;
          
-         @media @mq-iPhone, @mq-iPhoneSized {
+         .iPhoneMQ({
              padding-top: 1px;
-         }
+         });
      
          &:hover {
              text-decoration: none;     
@@ -35,8 +35,8 @@
      }
      
      h4 {
-         @media @mq-iPhone, @mq-iPhoneSized {
+         .iPhoneMQ({
             display: block;
-         }
+         });
      }
  } 

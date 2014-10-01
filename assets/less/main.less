@@ -33,13 +33,7 @@ body {
 	font-family: @contentFonts;
 	font-weight: @contentFontWeight;
 
-    font-size: @fontSizeStandard;
-    @media @mq-iPadPortrait, @mq-iPadSized {
-        font-size: @fontSizeSmaller;
-    }
-    @media @mq-iPhone, @mq-iPhoneSized {
-        font-size: @fontSizeSmallest;
-    }
+    .mobileSize(font-size, @fontSizeStandard, @fontSizeSmaller, @fontSizeSmallest);
 
 	text-align: center;
 	
@@ -103,10 +97,10 @@ table {
     margin-right: auto;
     margin-left: auto;
 
-    @media @mq-iPhone, @mq-iPhoneSized {
+    .iPhoneMQ({
         margin-right: 0;
         margin-left: 0;
-    }
+    });
 }
 
 .drop-cap { 
@@ -132,7 +126,11 @@ table {
 
     background-color: @headerBackgroundDarkBlue;
     padding: 1em 1em 1em 2em;
-    min-height: 4em;
+
+    .iPhoneMQ({
+        padding-left: 1em;
+    }); 
+    // min-height: 4em;
 
     color: @headerFontColour;
 
@@ -149,10 +147,6 @@ table {
         margin-top: 0;
         margin-bottom: 0;
     }
-
-    @media @mq-iPhone, @mq-iPhoneSized {
-        height: auto;
-    }
 }
 
 .rss {
@@ -166,22 +160,19 @@ table {
     	background-color: @backgroundColour;
     	
     	/* text */
-    	// font-size: @contentFontSize;
     	line-height: @lineHeightEM;
     	text-align: left;
     	text-rendering: optimizelegibility;
     	font-weight: @contentFontWeight;
     	
     	/* Sizing */
-    	width: @widthStandard;
-        @media @mq-iPad, @mq-iPadSized {
-            width: @widthSmaller;
-        }
-        @media @mq-iPhone, @mq-iPhoneSized {
-            width: @widthSmallest;
-        }
+    	.mobileSize(width, @widthStandard, @widthSmaller, @widthSmallest);
 
     	padding-bottom: 0;
+        .iPhoneMQ({
+            padding-top: 1em;
+        });
+
    		.siteMargin();
         
         h2 {
@@ -217,24 +208,17 @@ table {
     		h1.title {
                 margin-bottom: 0.25em;
     			color: @mainHeaderColour;
-                text-shadow: 2px 2px @dividerColour;
 
                 font-family: @titleFonts;
                 font-weight: @titleFontWeight;
 
                 font-size: @fontSizeTitle;
-                @media @mq-iPhone, @mq-iPhoneSized {
+                .iPhoneMQ({
                    font-size: @fontSizeTitleMobile;
-                   text-shadow: 0 0;
-                }
+                });
 
                 a:hover {
                     color: @dividerColour;
-                    text-shadow: 2px 2px @mainHeaderColour;
-
-                    @media @mq-iPhone, @mq-iPhoneSized {
-                        text-shadow: 0 0;
-                    }
                 }
 
 
@@ -331,13 +315,15 @@ table {
     only print {
     
         @page {
-            margin: 0.5cm;
+            margin: 1cm 1cm 1cm 1cm;
             size: A4;
         }
         
         body {
             background: none;
             background-color: #FFFFFF;
+
+            font-size: @fontSizeStandardPrint;
         }
     
         .container {
