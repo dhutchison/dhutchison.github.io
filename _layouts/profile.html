@@ -5,7 +5,16 @@ layout: main
 <section class="profile-container">
     <section class="profile-information">
       {% assign sectionData = site.data.resume.info %}
-      <h3 class="profile-section-title"><i class="fa fa-lg fa-user"></i><span>Profile</span></h3>
+      {% if sectionData.download_path %}
+      <div class="profile-download">
+        <a href="{{ sectionData.download_path }}" alt="Download PDF"><i class="fa fa-lg fa-download"></i></a>
+      </div>
+      {% endif %}
+      <h3 class="profile-section-title">
+        <i class="fa fa-lg fa-user"></i><span>Profile</span>
+      </h3>
+
+      
 
       <div class="profile-section-header">
         <div class="profile-section-name">
@@ -14,7 +23,6 @@ layout: main
           <h4 class="profile-position">{{ sectionData.position }}</h4>
         </div>
         <div class="profile-section-details">
-          <!-- <div class="profile-phone fa fa-lg fa-phone">{{ sectionData.phone }}</div> -->
           {% if sectionData.phone %}
           <div class="profile-phone">
             <span class="profile-icon fa-stack">
