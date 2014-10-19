@@ -10,6 +10,7 @@ layout: main
         <a href="{{ sectionData.download_path }}" alt="Download PDF"><i class="fa fa-lg fa-download"></i></a>
       </div>
       {% endif %}
+      <img class="profile-qrcode" src="{{ sectionData.qrcode_image }}" alt="QR Code for this page">
       <h3 class="profile-section-title">
         <i class="fa fa-lg fa-user"></i><span>Profile</span>
       </h3>
@@ -30,18 +31,22 @@ layout: main
               <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
             </span>
             <span class="profile-field">Phone: </span><a href="tel:{{ sectionData.phone }}">{{ sectionData.phone }}</a></div>{% endif %}
+          {% if sectionData.email %}
           <div class="profile-email">
             <span class="profile-icon fa-stack">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
             </span>
             <span class="profile-field">Email: </span><a href="mailto:{{ sectionData.email }}">{{ sectionData.email }}</a></div>
+          {% endif %}
+          {% if sectionData.website_link %}
           <div class="profile-www">
             <span class="profile-icon fa-stack">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-link fa-stack-1x fa-inverse"></i>
             </span>
             <span class="profile-field">Blog: </span><a href="{{ sectionData.website_link }}">{{ sectionData.website_display }}</a></div>
+          {% endif %}
         </div>
 
       </div>

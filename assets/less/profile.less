@@ -29,6 +29,10 @@
     }
 }
 
+.profile-qrcode {
+    display: none;
+}
+
 .profile-section-header {
     overflow: hidden;
     
@@ -165,6 +169,10 @@
 
     @horizontalSpacingPrint: (2 * @fontSizeStandardPrint);
 
+    .profile-container {
+        color: @mainFontPrintColour;
+    }
+
     .profile-section-title {
         width: auto;
         height: auto;
@@ -178,6 +186,12 @@
         }
     }
 
+    // .profile-qrcode {
+    //     display: inline-block;
+    //     float: right;
+    //     height: 58px;
+    // }
+
     .profile-section-header {
 
         padding-left: @horizontalSpacingPrint;
@@ -188,7 +202,7 @@
         font-size: @fontSizeLargePrint;
     }
 
-    .profile-section-header, .profile-section-header h3, .profile-section-header h4 {
+    .profile-section-header, .profile-section-header h3, .profile-section-header h4, .profile-section-content {
         font-size: @fontSizeStandardPrint;
         text-align: left;
     }

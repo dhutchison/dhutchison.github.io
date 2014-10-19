@@ -1302,6 +1302,10 @@ img.profile-image {
   color: #ffffff;
 }
 
+.profile-qrcode {
+  display: none;
+}
+
 .profile-section-header {
   overflow: hidden;
   text-align: center;
@@ -1491,6 +1495,10 @@ img.profile-image {
 }
 
 @media only print {
+  .profile-container {
+    color: #000000;
+  }
+
   .profile-section-title {
     width: auto;
     height: auto;
@@ -1514,7 +1522,8 @@ img.profile-image {
 
   .profile-section-header,
   .profile-section-header h3,
-  .profile-section-header h4 {
+  .profile-section-header h4,
+  .profile-section-content {
     font-size: 12pt;
     text-align: left;
   }
@@ -2312,13 +2321,14 @@ table {
 
 @media only print {
 @page {
-    margin: 1cm 1cm 1cm 1cm;
+    margin: 1.5cm 1cm 1.5cm 1cm;
     size: A4;
 }
 
   body {
     background: none;
     background-color: #FFFFFF;
+    color: #000000;
     font-size: 12pt;
   }
 
