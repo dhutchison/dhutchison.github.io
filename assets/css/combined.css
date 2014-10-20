@@ -1512,8 +1512,8 @@ img.profile-image {
   }
 
   .profile-section-header {
-    padding-left: 24pt;
-    padding-right: 24pt;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .profile-section-title {
@@ -1542,7 +1542,7 @@ img.profile-image {
   .profile-education-item .profile-section-header h3,
   .profile-employment-item .profile-section-header h4,
   .profile-education-item .profile-section-header h4 {
-    font-weight: 300;
+    font-weight: normal;
   }
 
   .profile-employment-item .profile-section-header,
@@ -1612,8 +1612,8 @@ img.profile-image {
   .profile-education .profile-section-title,
   .profile-employment .profile-section-title,
   .profile-skills .profile-section-title {
-    padding-left: 24pt;
-    padding-right: 24pt;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .profile-information .profile-name {
@@ -1658,6 +1658,10 @@ img.profile-image {
 
   .profile-employment .profile-section-title {
     margin-bottom: 6pt;
+  }
+
+  .profile-section-content {
+    margin: 0;
   }
 }
 
@@ -1864,6 +1868,13 @@ body {
   background-size: 16px 16px;
 }
 
+@media only print {
+  body {
+    font-family: Helvetica;
+    font-weight: normal;
+  }
+}
+
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
   body {
     font-size: 16px;
@@ -1883,6 +1894,17 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+}
+
+@media only print {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
 }
 
 h1 {
@@ -2131,6 +2153,12 @@ table {
   margin-left: auto;
 }
 
+@media only print {
+  .container .site {
+    font-weight: normal;
+  }
+}
+
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait) , only screen and (min-width : 768px) and (max-width : 1024px) {
   .container .site {
     width: 80%;
@@ -2159,6 +2187,12 @@ table {
 .container .site h2 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: left;
+}
+
+@media only print {
+  .container .site h2 {
+    font-family: Helvetica;
+  }
 }
 
 .container .site hr {
@@ -2196,6 +2230,12 @@ table {
   }
 }
 
+@media only print {
+  .container .site .header {
+    font-family: Helvetica;
+  }
+}
+
 .container .site .header h1.title {
   margin-bottom: 0.25em;
   color: #475261;
@@ -2203,6 +2243,13 @@ table {
   font-weight: normal;
   font-size: 6em;
   margin-top: 0;
+}
+
+@media only print {
+  .container .site .header h1.title {
+    font-family: Helvetica;
+    font-weight: normal;
+  }
 }
 
 @media only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px), only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px) {
@@ -2321,7 +2368,7 @@ table {
 
 @media only print {
 @page {
-    margin: 1.5cm 1cm 1.5cm 1cm;
+    margin: 0.75in 0.5in 0.5in 0.5in;
     size: A4;
 }
 

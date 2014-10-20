@@ -167,7 +167,7 @@
 
 @media only print {
 
-    @horizontalSpacingPrint: (2 * @fontSizeStandardPrint);
+    @horizontalSpacingPrint: 0;//(2 * @fontSizeStandardPrint);
 
     .profile-container {
         color: @mainFontPrintColour;
@@ -217,7 +217,7 @@
     .profile-employment-item, .profile-education-item {
 
         .profile-section-header, .profile-section-header h3, .profile-section-header h4 {
-            font-weight: @contentFontWeight;
+            font-weight: @contentPrintFontWeight;
         }
 
         .profile-section-header {
@@ -319,5 +319,9 @@
 
     .profile-employment .profile-section-title {
         margin-bottom: (0.5 * @fontSizeStandardPrint);
+    }
+
+    .profile-section-content{
+        margin: 0;
     }
 }

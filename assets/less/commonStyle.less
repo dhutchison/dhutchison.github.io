@@ -56,11 +56,17 @@
 
 
 @titleFonts: 'League Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@titlePrintFonts: Helvetica;
 @titleFontWeight: normal;
+@titlePrintFontWeight: normal;
 @headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@headerPrintFonts: @titlePrintFonts;
 @headerFontWeight: 700;
+@headerPrintFontWeight: bold;
 @contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@contentPrintFonts: @titlePrintFonts;
 @contentFontWeight: 300;
+@contentPrintFontWeight: normal;
 
 @categoryTagColour: #E82C0C;
 @tagColour: #0089e0;
@@ -108,6 +114,10 @@
 
 .iPadPortraitMQ(@rules) {
     @media @mq-iPadPortrait { @rules(); }
+}
+
+.print(@rules) {
+    @media only print { @rules(); }
 }
 
 //Function just for doing mobile sizing. If number and no unit, remsize. otherwise use supplied value

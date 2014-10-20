@@ -33,6 +33,11 @@ body {
 	font-family: @contentFonts;
 	font-weight: @contentFontWeight;
 
+    .print({
+        font-family: @contentPrintFonts;
+        font-weight: @contentPrintFontWeight;
+    });
+
     .mobileSize(font-size, @fontSizeStandard, @fontSizeSmaller, @fontSizeSmallest);
 
 	text-align: center;
@@ -53,6 +58,10 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: @headerFontWeight;
+
+    .print({
+        font-weight: @headerPrintFontWeight;
+    });
 }
 
 h1 {
@@ -164,6 +173,10 @@ table {
     	text-align: left;
     	text-rendering: optimizelegibility;
     	font-weight: @contentFontWeight;
+
+        .print({
+            font-weight: @contentPrintFontWeight;
+        });
     	
     	/* Sizing */
     	.mobileSize(width, @widthStandard, @widthSmaller, @widthSmallest);
@@ -177,8 +190,11 @@ table {
         
         h2 {
     		font-family: @headerFonts;
-    	
     		text-align: left;    
+
+            .print({
+                font-family: @headerPrintFonts;
+            });
         }
     
         hr {
@@ -204,6 +220,10 @@ table {
             z-index: 100000;
 
             .remSize(padding-bottom, 1);
+
+            .print({
+                font-family: @headerPrintFonts;
+            });
     		
     		h1.title {
                 margin-bottom: 0.25em;
@@ -211,6 +231,11 @@ table {
 
                 font-family: @titleFonts;
                 font-weight: @titleFontWeight;
+
+                .print({
+                    font-family: @titlePrintFonts;
+                    font-weight: @titlePrintFontWeight;
+                });
 
                 font-size: @fontSizeTitle;
                 .iPhoneMQ({
@@ -315,7 +340,8 @@ table {
     only print {
     
         @page {
-            margin: 1.5cm 1cm 1.5cm 1cm;
+            margin: 0.75in 0.5in 0.5in 0.5in;
+
             size: A4;
         }
         
