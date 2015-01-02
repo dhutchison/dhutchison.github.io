@@ -23,7 +23,7 @@ task :build, :opt do |t, args|
       jekyll
     end
     
-    upload
+    #upload
     puts 'Done.'
 end
 
@@ -81,6 +81,15 @@ task :publish, :filename do |t, args|
   content = contents[2].strip
 
   should = { :generate => false, :deploy => false, :schedule => false, :limit => 0 }
+
+  # Check for any required YAML fields we want configured
+  if headers['summary'] == nil
+    print "Post is missing a summary. Please enter one."
+    summary = $stdin.gets.strip
+    if summary != ''
+      headers['summary'] = summary
+    end
+  end
 
   ### draft publishing ###
   # fall back to current date and title-based slug
