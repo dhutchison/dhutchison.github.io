@@ -22,3 +22,11 @@ excerpt_separator: <!--more-->
 drop_caps: false
 
 exclude: [node_modules, assets/less]
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "post"
