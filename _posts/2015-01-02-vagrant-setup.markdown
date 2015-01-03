@@ -7,7 +7,6 @@ tags:
 summary: I have been trying out Vagrant. This is a very quick start guide.
 date: 2015-01-02 23:01
 slug: vagrant-setup
-layout: post
 ---
 For development purposes I use Virtual Machines in [VirtualBox][virtualbox], usually using the Ubuntu Server OS and are manually configured. Vagrant provides a mechanism to easily script the creation of these virtual machines so they can be torn down and rebuilt easily. 
 
@@ -106,7 +105,7 @@ chkconfig httpd on
 service httpd start
 {% endhighlight %}
 
-### Networking
+## Networking
 
 There are a variety of different ways to configure the network setup of the virtual machine. The simple option is to expose a single port on the local host.
 
@@ -126,7 +125,7 @@ If the `bridge` parameter is ommitted, you will be prompted to pick an interface
     3) bridge100
         default: What interface should the network bridge to? 
 
-### Finished
+## Finished
 And there we go! A working CentOS setup using Apache with a shared folder.
 
 The complete Vagrantfile:
