@@ -84,7 +84,7 @@ task :publish, :filename do |t, args|
 
   # Check for any required YAML fields we want configured
   if headers['summary'] == nil
-    print "Post is missing a summary. Please enter one."
+    print "Post is missing a summary. Please enter one: "
     summary = $stdin.gets.strip
     if summary != ''
       headers['summary'] = summary
