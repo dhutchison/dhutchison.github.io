@@ -1,6 +1,9 @@
-- title : "Software Developer"
-  where : "The SEEMiS Group LLP, Hamilton"
-  when : "July 2008-Present"
+- where : "The SEEMiS Group LLP, Hamilton"
+  roles :
+  - title : "Software Development Lead"
+    when : "January 2015 - Present" 
+  - title : "Software Developer"
+    when : "July 2008 - December 2014"
   text : |
     I started off at SEEMiS as a fresh faced graduate, just out of university. In my time here I have honed my skills with a variety of technologies while also gaining confidence in my abilities as a developer. 
     

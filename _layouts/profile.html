@@ -67,12 +67,17 @@ profile: true
       <div class="profile-employment-item">
         <div class="profile-section-header">
           <div class="profile-section-name">
-          <h3 class="profile-name">{{ item.where }}</h3>
-            <h4 class="profile-position">{{ item.title }}</h4>
+            <h3 class="profile-name">{{ item.where }}</h3>
+
+            {% for role in item.roles %}
+            <h4 class="profile-position">{{ role.title }}</h4>
+            <div class="profile-section-details">
+              <div class="profile-when">{{ role.when }}</div>
+            </div>
+            {% endfor %}
+            
           </div>
-          <div class="profile-section-details">
-            <div class="profile-when">{{ item.when }}</div>
-          </div>
+          
         </div>
 
         <div class="profile-section-content">
