@@ -1,12 +1,17 @@
 {% capture paginate_path_part %}{{ site.paginate_path | remove_first: ':num' }}{% endcapture %}
-{% for node in include.pages_list %}
-{% if include.group == null or include.group == node.group %}
+{% assign groupedPages = include.pages_list | where:"group", include.group | sort: "groupOrder" %}
+{% for node in groupedPages %}
 {% capture part %}{{ node.url | remove_first: paginate_path_part }}{% endcapture %}
 {% if node.url == part %}
 	{% if page.url == node.url %}
-	    <li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
+	    <li class="active"><a href="{{node.url}}" class="active">
 	{% else %}
-	    <li><a href="{{node.url}}">{{node.title}}</a></li>
+	    <li><a href="{{node.url}}">
 	{% endif %}
-{% endif %}
+	{% if node.menuIconStyle %}
+		<i class="fa-li fa {{ node.menuIconStyle }} fa-lg fa-fw"></i><span class="hidden">{{ node.title }}</span>
+	{% else %}
+		{{node.title}}
+	{% endif %}
+	</a></li>
 {% endif %}{% endfor %}
