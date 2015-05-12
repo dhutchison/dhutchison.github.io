@@ -10,6 +10,7 @@
 @import "tags.less";
 @import "post.less";
 @import "404.less";
+@import "cycle.less";
 
 @import "league-gothic.less";
 .fonts();
@@ -131,7 +132,7 @@ table {
 /*
 /*****************************************************************************/
 
-.heading, .archivesHeader, .post header, .profile-author, .footer {
+.heading, .archivesHeader, .post header, .profile-author, .footer, .chart-wrapper header {
 
     background-color: @headerBackgroundDarkBlue;
     padding: 1em 1em 1em 2em;
@@ -261,6 +262,12 @@ table {
                         left: 0;
                     }
     		    }
+
+                .fa-li, .fa-li.fa-lg {
+                    left: 0;
+                    position: static;
+                    margin-left: -0.5em;
+                }
     		}
     		
     		.links {
@@ -279,6 +286,7 @@ table {
     					
     					a {
     						text-decoration: none;
+                            position: relative;
     					}
     					
     					a:hover {
@@ -288,7 +296,10 @@ table {
 
                     li + li:before {
                         content: " | ";
-                        padding: 0 10px;
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        .mobileSize(padding-left, 10px, 10px, 5px);
+                        .mobileSize(padding-right, 10px, 10px, 5px);
                     }
     			}
     		}
