@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         },
         files: {
           "assets/temp/build.css": "assets/less/main.less",
-          "assets/temp/build-fontawesome.css": "assets/less/font-awesome-4.2.0/font-awesome.less"
+          "assets/temp/build-fontawesome.css": "assets/less/font-awesome-4.3.0/font-awesome.less"
         }
       }
     },
