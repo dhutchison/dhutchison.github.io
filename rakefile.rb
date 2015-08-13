@@ -23,7 +23,6 @@ task :build, :opt do |t, args|
       jekyll
     end
     
-    #upload
     puts 'Done.'
 end
 
@@ -39,7 +38,7 @@ def css
   puts 'CSS build complete.'
 end
 
-task :deploy_dev do
+task :deploy do
     upload
 end
 
