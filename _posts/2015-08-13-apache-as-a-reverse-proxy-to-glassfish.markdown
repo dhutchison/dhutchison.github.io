@@ -3,6 +3,12 @@ title: Apache as a Reverse Proxy to GlassFish
 summary: Working with Apache as a proxy with certificate authentication.
 date: 2015-08-13 21:27
 slug: apache-as-a-reverse-proxy-to-glassfish
+tags:
+- GlassFish
+- Java
+- Apache
+categories:
+- development
 ---
 This is largely just my notes on this problem. It seems like it should be a relatively simple thing to set up, but scattershot documentation, strange failure behaviours and undocumented inconsistencies have made this a major headache to figure out.
 
