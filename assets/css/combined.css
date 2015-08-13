@@ -1719,6 +1719,11 @@ img.profile-image {
   text-decoration: underline;
 }
 
+.post h3,
+.post h4 {
+  margin: 1em 0;
+}
+
 .post img {
   max-width: 100%;
   display: block;
@@ -1791,6 +1796,11 @@ img.profile-image {
 .post code {
   border: 1px solid #ddd;
   background-color: #eef;
+}
+
+.post table {
+  width: 90%;
+  text-align: center;
 }
 
 .post-footer {
