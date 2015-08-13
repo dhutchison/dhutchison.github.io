@@ -9,7 +9,7 @@
 			</h2>
 			{% if post.date || post.author %}<p class="meta">{% endif %}
 			{% if post.date %}
-					<time datetime="{{ post.date | date_to_xmlschema }}" pubdate="" data-updated="true" title="{{ post.date | date_to_string }}">{% assign d = post.date | date: "%-d"  %}
+					<time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished" data-updated="true" title="{{ post.date | date_to_string }}">{% assign d = post.date | date: "%-d"  %}
 					{% case d %}
   						{% when '1' or '21' or '31' %}{{ d }}st
   						{% when '2' or '22' %}{{ d }}nd

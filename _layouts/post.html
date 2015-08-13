@@ -10,7 +10,7 @@ post: true
 		</h2>
 		{% if post.date || post.author %}<p class="meta">{% endif %}
 		{% if post.date %}
-				<time datetime="{{ post.date | date_to_xmlschema }}" pubdate="" data-updated="true" title="{{ post.date | date_to_string }}">
+				<time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished" data-updated="true" title="{{ post.date | date_to_string }}">
 					{% assign d = page.date | date: "%-d"  %}
 					{% case d %}
   						{% when '1' or '21' or '31' %}{{ d }}st
@@ -35,7 +35,6 @@ post: true
         		{% include post_category_list.html %}
     	    	{% include post_tag_list.html %}
     		</section>
-    		{% include share_box.html %}
     		<div class="clear"></div>
     	</section>
 
