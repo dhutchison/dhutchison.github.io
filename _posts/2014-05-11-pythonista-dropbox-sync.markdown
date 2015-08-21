@@ -148,6 +148,8 @@ This uses the Dropbox API in the way that should maintain versions of files, so 
 
 **Standard disclaimer applies:** ***Make sure you have recent copies of any scripts, sync is hard. Bugs happen. This has been tested for my purposes, but there may be some edge cases that it does not handle.***
 
+The latest version of this script is available [on github][gh_script].
+
 {% highlight python linenos %}
 import webbrowser, os, pprint
 import dropbox
@@ -502,12 +504,10 @@ if __name__ == "__main__":
 
 {% endhighlight %}
 
-This script is also [available as a gist][dropboxsync_gist].
-
 Any feedback on either of these scripts is welcome. I'm just starting to learn Python and it is very different from any language I have tried in the past!
 
 [newfromgist_gist]: https://gist.github.com/dhutchison/8528503 "New from Gist.py "
-[dropboxsync_gist]: https://gist.github.com/dhutchison/b527e2a9e855437539c9 "Python script for use with Pythonista which will sync all scripts to Dropbox. Requires a Dropbox API key. "
+[gh_script]: https://github.com/dhutchison/PythonistaScripts/blob/master/DropboxSync.py "PythonistaScripts/DropboxSync.py at master · dhutchison/PythonistaScripts "
 [gist]: https://gist.github.com/ "Gists "
 [dropbox_create_app]: https://www.dropbox.com/developers/apps "App Console - Dropbox "
 [lastpost]: http://dev-lamp.local/2014/05/06/downloading-files-with-pythonista/ "Downloading files with Pythonista"
