@@ -32,3 +32,5 @@ _data/dev.yaml
 .vagrant/
 
 .settings/tasks.json
+
+.vscode/tasks.json
