@@ -98,7 +98,7 @@ profile: true
       <div class="profile-education-item">
         <div class="profile-section-header">
           <div class="profile-section-name">
-            <h3 class="profile-name">{{ item.qualification }}</h3>
+            <h3 class="profile-name">{{ item.qualification | markdownify }}</h3>
             <h4 class="profile-position">{{ item.location }}</h4>
           </div>
           <div class="profile-section-details">
