@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "../dwi_built_site/", "/vagrant_data", create: true
+  config.vm.synced_folder "../dwi_built_site/", "/vagrant_data", create: true, mount_options: ["dmode=555","fmode=444"]
 
   # Disable the default share. 
   config.vm.synced_folder '.', '/vagrant', disabled: true
