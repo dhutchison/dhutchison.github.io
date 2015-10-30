@@ -89,7 +89,7 @@ This approach uses the [Apache JServ Protocol (AJP)][ajp] to communicate between
 To create a new JK enabled listener in GlassFish the following commands can be run in the `asadmin` console, where "jk-listener" is the name of the listener to create:
 
     asadmin> create-http-listener --listenerport 8009 --listeneraddress 0.0.0.0 --defaultvs server jk-listener
-    asadmin> create-network-listener --protocol jk-listener --listenerport 8009 --jkenabled true jk-connector
+    asadmin> set configs.config.server-config.network-config.network-listeners.network-listener.jk-listener.jk-enabled=true
     
 On the Apache HTTPD server side of things this requires the "mod_proxy" and "mod_proxy_ajp" modules to be enabled. This can be performed by using the `a2enmod` command:
 
