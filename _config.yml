@@ -7,7 +7,7 @@ location: Scotland
 email: david@devwithimagination.com
 twitter: DavidHutchison
 
-highlighter: pygments
+highlighter: rouge
 #markdown: rdiscount
 markdown: kramdown
 timezone: Europe/London
@@ -17,6 +17,8 @@ paginate: 5
 gems:
 - jekyll-redirect-from
 - jekyll-sitemap
+- jekyll-paginate
+- jekyll-gist
 
 excerpt_separator: <!--more-->
 drop_caps: false
