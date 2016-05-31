@@ -1,7 +1,7 @@
 ---
 layout: post
 title: VirtualBox Update Script for OS X
-categories: miscellaneous
+categories: Miscellaneous
 comments: true
 description: Auto-update should be a mandatory feature.
 tags:

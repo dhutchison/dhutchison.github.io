@@ -8,7 +8,7 @@ tags:
 - Java
 - Apache
 categories:
-- development
+- Development
 ---
 This is largely just my notes on this problem. It seems like it should be a relatively simple thing to set up, but scattershot documentation, strange failure behaviours and undocumented inconsistencies have made this a major headache to figure out.
 

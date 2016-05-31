@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Downloading files with Pythonista
-category: development
+category: Development
 tags:
 - python
 - pythonista

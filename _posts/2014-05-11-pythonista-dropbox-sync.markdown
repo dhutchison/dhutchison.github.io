@@ -2,7 +2,7 @@
 layout: post
 title: Pythonista Dropbox Sync
 comments: true
-category: development
+category: Development
 tags:
 - python
 - pythonista

@@ -1,6 +1,6 @@
 ---
 title: Vagrant Setup
-categories: development
+categories: Development
 tags:
 - VirtualBox
 - Vagrant

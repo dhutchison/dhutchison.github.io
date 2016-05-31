@@ -7,7 +7,7 @@ keywords:
 tags:
 - Software
 categories:
-- miscellaneous
+- Miscellaneous
 date: 2014-04-13 22:39
 slug: tldr
 ---

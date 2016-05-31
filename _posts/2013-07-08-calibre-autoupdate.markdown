@@ -2,7 +2,7 @@
 layout: post
 title: Calibre AutoUpdate
 date: 2013-07-08 01:00:00.000000000 +01:00
-categories: miscellaneous
+categories: Miscellaneous
 tags:
 - bash
 - Calibre
