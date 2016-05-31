@@ -3,7 +3,7 @@ title: Recording completed tasks from The Hit List in Slogger
 tags:
 - The Hit List
 - Slogger
-- Applescript
+- AppleScript
 - Ruby
 categories:
 - Development
