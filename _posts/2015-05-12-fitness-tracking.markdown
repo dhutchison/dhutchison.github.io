@@ -147,8 +147,8 @@ Chartjs looks very powerful, and I have only just scratched the surface. I’ll 
 [openshift-cron]: https://access.redhat.com/documentation/en-US/OpenShift/2.0/html/User_Guide/sect-OpenShift-User_Guide-Scheduling_Timed_Jobs_with_Cron.html "6.5. Scheduling Timed Jobs with Cron "
 [chartjs]: http://www.chartjs.org/ "Chart.js | Open source HTML5 Charts for your website "
 [json-loading]: http://codepen.io/KryptoniteDove/blog/load-json-file-locally-using-pure-javascript "Load JSON file locally using pure Javascript by Rich on CodePen "
-[watch_dogs]: http://www.amazon.co.uk/gp/product/B0089AGFGG/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B0089AGFGG&linkCode=as2&tag=devwithimag-21&linkId=Q6QTFKCPV7FAQHDJ "Watch Dogs - Microsoft Xbox 360”
-[saints_row]: http://www.amazon.co.uk/gp/product/B00CLDQH10/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00CLDQH10&linkCode=as2&tag=devwithimag-21&linkId=XJDZT26U64RXU3XT "Saints Row IV (Xbox 360)”
+[watch_dogs]: http://www.amazon.co.uk/gp/product/B0089AGFGG/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B0089AGFGG&linkCode=as2&tag=devwithimag-21&linkId=Q6QTFKCPV7FAQHDJ "Watch Dogs - Microsoft Xbox 360"
+[saints_row]: http://www.amazon.co.uk/gp/product/B00CLDQH10/ref=as_li_tl?ie=UTF8&camp=1634&creative=19450&creativeASIN=B00CLDQH10&linkCode=as2&tag=devwithimag-21&linkId=XJDZT26U64RXU3XT "Saints Row IV (Xbox 360)"
 [cors]: http://en.wikipedia.org/wiki/Cross-origin_resource_sharing "Cross-origin resource sharing - Wikipedia, the free encyclopedia "
 [cors-fix]: http://www.webdevdoor.com/jquery/cross-domain-browser-json-ajax/ "Enable cross-domain, cross-browser AJAX/JSON calls using jQuery"
 [cstats]: /cycle/ "Cycling Stats"
