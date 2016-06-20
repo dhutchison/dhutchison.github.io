@@ -1,6 +1,6 @@
 ---
 title: Pythonista Dropbox Sync - Revisited
-categories: development
+categories: Development
 tags:
 - pythonista
 - python
