@@ -34,3 +34,5 @@ _data/dev.yaml
 .settings/tasks.json
 
 .vscode/tasks.json
+
+.sass-cache
