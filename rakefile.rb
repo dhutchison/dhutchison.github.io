@@ -6,23 +6,7 @@ desc 'Build and send to dev server'
 task :build, :opt do |t, args|
     
     
-    opt = args[:opt]
-    if !opt then
-      opt = "all"
-    end
-
-    puts sprintf("Building %s\n", opt)
-    if ("all".casecmp opt) == 0 then
-        css
-        jekyll
-    elsif("css".casecmp opt) == 0 then
-      css
-      # need to copy to the built site prior to deployment
-      FileUtils.cp_r(Dir['assets/css/*'],'../dwi_built_site/assets/css')
-    elsif("jekyll".casecmp opt) == 0 then
-      jekyll
-    end
-    
+    jekyll
     puts 'Done.'
 end
 
@@ -30,12 +14,6 @@ def jekyll
   puts 'Building Jekyll pages...'
   sh 'bundle exec jekyll build -d ../dwi_built_site --trace'
   puts 'Jekyll page build complete.'
-end
-
-def css
-  puts 'Building CSS...'
-  sh '/usr/local/bin/grunt build'
-  puts 'CSS build complete.'
 end
 
 task :deploy do
