@@ -1,0 +1,142 @@
+@import 'commonStyle';
+/////////////////////////////////
+// Archive specific styling    //
+/////////////////////////////////
+
+$archiveLinkColour: #CBB393;
+
+.archives {
+
+    .archiveLinks {
+        @extend .groupingList;
+        
+        text-align: center;
+        margin-bottom: 2em;
+
+        li {
+            @extend .tag-box;
+            background-color: $mainHeaderLeftGradient;
+
+            &.active {
+                background-color: $archiveLinkColour;
+            }
+
+            a {
+                position: relative;
+            }
+        }
+    }
+
+    @include sitePadding();
+
+    .groupingList {
+        @extend .groupingList;
+
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    .groupingList, .groupedPosts {
+        margin-left: 0;
+
+        ul {
+            @include mobileSize(margin-left, 2, 2, 0);
+
+            @include respond-to(handhelds){
+                width: 100%;
+            }
+        }
+    }
+
+    ul {
+        
+        list-style: none;
+        
+        li {
+            margin-bottom: 2px;
+            overflow: hidden;
+            text-align: left;
+
+            @include respond-to(handhelds){ 
+                text-align: center;
+                ul {
+                    text-align: left;
+                    margin-left: 0;
+
+                    li {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        
+        h3.year, h3.tag, h3.category {
+
+        	font-weight: $contentFontWeight;
+            vertical-align: top;
+
+            @include respond-to(handhelds) {
+                display: inline-block;
+                line-height: 1.5em;
+                position: relative;  
+
+                padding-top: 1em;
+                margin-top: -1em;
+
+                &:before, &:after {
+                    content: "";
+                    position: absolute;
+                    height: 5px;
+                    border-top: 1px solid black;
+                    top: 0.65em;
+                    width: 100px;
+                }
+                &:before {
+                    right: 100%;
+                    margin-right: 15px;
+                }
+                &:after {
+                    left: 100%;
+                    margin-left: 15px;
+                }
+        
+            }
+        }
+
+        .year {
+            display: inline-block;
+        }
+        
+        .meta, .meta_year {
+            float: left;
+            font-family: $headerFonts;
+        	font-weight: $contentFontWeight;
+        	border-color: $linkColour;
+        	border-right: 1px;
+            vertical-align: middle;
+
+            @include mobileSize(margin-right, 2, 0, 0);
+        }
+
+        .meta {
+            @include mobileSize(width, 7, 4, 3);
+        }
+
+        .meta_year {
+            @include mobileSize(width, 7, 7, 6);
+        }
+        
+        .title {
+            font-family: $headerFonts;
+            font-weight: $contentFontWeight;
+            overflow: hidden;
+            padding-left: 4px;
+        }
+        
+        ul {
+            display: inline-block;
+            list-style: none;
+        }
+    }
+
+}

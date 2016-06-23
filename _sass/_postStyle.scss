@@ -1,0 +1,64 @@
+@import 'commonStyle';
+/////////////////
+// Post    //////
+/////////////////
+
+.chart-post {
+
+    p {
+        text-align: center;
+    }
+
+}
+
+.post {
+
+    text-align: left;		
+
+    .groupingList {
+        @extend .groupingList;
+        margin: 0;
+    }
+
+    h3 {
+        text-decoration: underline;
+    }
+    
+    h3, h4 {
+        margin: 1em 0;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    blockquote {
+        background-color: darken($backgroundColour, 10%);
+    }
+    
+    article ul {
+        list-style-type: circle;
+        li {
+            padding-left: 2em;
+        }
+    }
+
+    article, footer {
+        @include sitePadding();
+    }
+    
+    ul, ol {
+        margin-left: 1.35em;
+    }
+}
+
+.post-footer {
+    position: relative;
+}
+
+.post-org {
+    display: inline-block;
+}

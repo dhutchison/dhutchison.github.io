@@ -1,0 +1,111 @@
+@import 'commonStyle';
+/////////////////
+// Tags    //////
+/////////////////
+
+@mixin tagLinkHorizontalList($backgroundColour: #0089e0, $foregroundColour: #FFFFFF) {
+
+	margin: 0;
+	
+	padding-left: 0;
+	padding-right: 0;
+	list-style: none;
+	
+	li {
+      display: inline-block;
+	    padding-left: 0;
+	}
+}
+
+.tag-box {
+
+  border-radius: 4px;
+  
+  a {
+    text-decoration: none;
+    transition-duration: 0s;
+    	
+    padding: 3px 3px;
+    margin: 2px;
+	
+	  font-size: 0.8em;
+
+	  color: $headerFontColour;
+    &:hover {
+    	background: darken($headerFontColour, 50%);
+    }
+  }
+
+  &:hover {
+    background: darken($headerFontColour, 50%);
+  }
+    
+  span {
+      vertical-align: super;
+      @include remSize(font-size, 0.625);
+  }
+}
+
+
+
+
+
+.groupingList {
+  margin: 1em 0 0 0;
+  
+  padding-left: 0;
+  padding-right: 0;
+  list-style: none;
+  
+  li {
+      display: inline-block;
+      padding-left: 0 !important;
+      @include remSize(margin-right, 0.5);
+
+      &.category {
+        @extend .tag-box;        
+        background-color: $categoryTagColour;
+      }
+
+      &.tag {
+        @extend .tag-box;
+        background-color: $tagColour;
+      }
+  }
+}
+
+.groupedPosts {
+
+    @include clear();
+
+    margin-top: 1em;
+    list-style: none;
+
+    li {
+        margin-bottom: 2px;
+        overflow: hidden;
+    }
+    
+    .meta {
+      float: left;
+      font-family: $headerFonts;
+    	font-weight: $contentFontWeight;
+    	width: 10em;
+    	border-color: $linkColour;
+    	border-right: 1px;
+      vertical-align: middle;
+    }
+    
+    .title {
+        font-family: $headerFonts;
+        font-weight: $contentFontWeight;
+        overflow: hidden;
+        padding-left: 4px;
+    }
+    
+    ul {
+        display: inline-block;
+        list-style: none;
+    }
+
+}

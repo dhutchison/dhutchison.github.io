@@ -9,12 +9,11 @@ menuIconStyle: fa-bicycle
 image: /images/charts/cycle.png
 summary: Some graphs from Google Sheet data of my cycling sessions.
 ---
-
-<div class="cycle">
+<article class="chart-post">
 
 	<p><a href="/2015/05/12/fitness-tracking/" alt="Fitness Tracking">A post about this page.</a></p>
 
-	<div class="chartOptions">
+	<div class="chart-options">
 		<div class="granularity">
 			<fieldset class="options">
 
@@ -36,9 +35,9 @@ summary: Some graphs from Google Sheet data of my cycling sessions.
 	</div>
 
 	<div class="chart-wrapper">
-		<header>
+		<header class="heading">
 			<h2>Distance</h2>
-			<div class="chartLegend" id="cycleChartDistanceLegend"/>
+			<div class="chart-legend" id="cycleChartDistanceLegend"/>
 		</header>
 		<article>
 			<canvas id="cycleChartDistance"></canvas>
@@ -46,9 +45,9 @@ summary: Some graphs from Google Sheet data of my cycling sessions.
 	</div>
 
 	<div class="chart-wrapper">
-		<header>
+		<header class="heading">
 			<h2>Time</h2>
-			<div class="chartLegend" id="cycleChartTimeLegend"/>
+			<div class="chart-legend" id="cycleChartTimeLegend"/>
 		</header>	
 		<article>
 			<canvas id="cycleChartTime"></canvas>
@@ -56,9 +55,9 @@ summary: Some graphs from Google Sheet data of my cycling sessions.
 	</div>
 
 	<div class="chart-wrapper">
-		<header>
+		<header class="heading">
 			<h2>Average Speed</h2>
-			<div class="chartLegend" id="cycleChartAverageSpeedLegend"/>
+			<div class="chart-legend" id="cycleChartAverageSpeedLegend"/>
 		</header>
 		<article>
 			<canvas id="cycleChartAverageSpeed"></canvas>
@@ -66,9 +65,9 @@ summary: Some graphs from Google Sheet data of my cycling sessions.
 	</div>
 
 	<div class="chart-wrapper">
-		<header>
+		<header class="heading">
 			<h2>Sessions</h2>
-			<div class="chartLegend" id="cycleChartSessionsLegend"/>
+			<div class="chart-legend" id="cycleChartSessionsLegend"/>
 		</header>
 		<article>
 			<canvas id="cycleChartSessions"></canvas>
@@ -114,6 +113,4 @@ summary: Some graphs from Google Sheet data of my cycling sessions.
 		reloadData();
 
 	</script>
-
-
-</div>
+</article>
