@@ -19,7 +19,7 @@ layout: post
 title: PDF Filing With Hazel
 header_image: "![Hazel Logo](/images/hazel_pdftotext/hazel-icon.png \"Hazel Logo\")"
 image: /images/hazel_pdftotext/hazel-icon.png
-summary: How I got Hazel filing my bank statements
+description: How I got Hazel filing my bank statements
 date: 2014-01-16 23:05
 lastmod: 2014-02-26 22:13:13
 slug: pdf-filing-with-hazel

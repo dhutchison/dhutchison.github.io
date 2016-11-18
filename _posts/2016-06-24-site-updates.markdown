@@ -4,7 +4,7 @@ categories: Site
 tags:
 - jekyll
 - css
-summary: Fixing issues, and process changes.
+description: Fixing issues, and process changes.
 date: 2016-06-24 00:34
 slug: site-updates
 ---

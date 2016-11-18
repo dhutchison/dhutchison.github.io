@@ -7,7 +7,7 @@ tags:
 - Ruby
 categories:
 - Development
-summary: I wrote a plugin to update Slogger from The Hit List
+description: I wrote a plugin to update Slogger from The Hit List
 date: 2015-10-09 21:37
 slug: recording-completed-tasks-from-the-hit-list-in-slogger
 ---

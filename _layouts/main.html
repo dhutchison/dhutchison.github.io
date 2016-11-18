@@ -10,13 +10,11 @@ notlayout: compress
         <meta name="viewport" content="width=device-width">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="favicon.ico"/>
+        <link rel="shortcut icon" href="/favicon.ico"/>
 
         <!-- CSS -->
         <link rel="stylesheet" href="/css/main.css">
-        <!--<link rel="stylesheet" href="/assets/css/combined.min.css">-->
 
-        
         {% if page.headIncludes %}
         <!-- other includes from pages -->
             {% for inc in page.headIncludes %}
@@ -47,16 +45,13 @@ notlayout: compress
         <!--Make RSS feed discoverable -->
         <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
         
-        <!-- Keywords -->
         {% if page.keywords %}
+          <!-- Keywords -->
             <meta name="keywords" content="{{ page.keywords | join:' ' }}">
             {% for keyword in page.keywords %}
                 <meta property="article:tag" content="{{ keyword }}">                
             {% endfor %}
         {% endif %}
-        
-        <!-- Markup for Twitter Cards / Open Meta -->
-        {% include share_support %}
         
         
         <!-- Make older versions of IE understand HTML5 tags -->
@@ -64,6 +59,8 @@ notlayout: compress
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
+        <!-- SEO content -->
+        {% seo title=false %}
     </head>
     <body>
 
@@ -71,12 +68,12 @@ notlayout: compress
           <div class="site" id="container">
               
             <header class="header">
-              <h1 class="title"><a href="/" title="Home">{{ site.data.author.david.name }}</a></h1>
+              <h1 class="title"><a href="/" title="Home">{{ site.data.authors.david.name }}</a></h1>
               <div class="links">
                   <nav id="nav">
       	            <ul class="fa-ul">
                       {% include pages_list.html pages_list = site.pages group = 'navigation'%}
-                      <li><a href="{{ site.data.author.david.profile_url }}"> Profile </a></li>
+                      <li><a href="{{ site.data.authors.david.profile_url }}"> Profile </a></li>
       	            </ul>
                   </nav>
               </div>
@@ -87,23 +84,23 @@ notlayout: compress
 			</div>
             <footer class="footer">
             <!-- If we want to display author's name and bio -->
-            {% if site.data.author.david %}
+            {% if site.data.authors.david %}
                 <section class="author">
                 	<article>
                       <div class="author-details">
                         <!-- Links -->
                         <aside class="author-links">
                               <ul class="social">
-                                {% if site.data.author.david.github %}<li>
-                                      <a href="http://github.com/{{ site.data.author.david.github }}/"><i class="fa fa-github fa-lg fa-fw"></i></a>
+                                {% if site.data.authors.david.github %}<li>
+                                      <a href="http://github.com/{{ site.data.authors.david.github }}/"><i class="fa fa-github fa-lg fa-fw"></i></a>
                                   </li>{% endif %}
-                                {% if site.data.author.david.stackoverflow %}<li>
-                                  <a href="http://stackoverflow.com/users/{{ site.data.author.david.stackoverflow }}/"><i class="fa fa-stack-overflow fa-lg fa-fw"></i></a>
+                                {% if site.data.authors.david.stackoverflow %}<li>
+                                  <a href="http://stackoverflow.com/users/{{ site.data.authors.david.stackoverflow }}/"><i class="fa fa-stack-overflow fa-lg fa-fw"></i></a>
                                 </li>{% endif %}
-                                {% if site.data.author.david.twitter %}<li>
-                                  <a href="http://twitter.com/{{ site.data.author.david.twitter }}/"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                                {% if site.data.authors.david.twitter %}<li>
+                                  <a href="http://twitter.com/{{ site.data.authors.david.twitter }}/"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
                                 </li>{% endif %}
-                                {% if site.data.author.david.email %}<li><a href="mailto:{{ site.data.author.david.email }}"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
+                                {% if site.data.authors.david.email %}<li><a href="mailto:{{ site.data.authors.david.email }}"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
                                   </li>{% endif %}
                                 <li><a href="/feed.xml"><i class="fa fa-rss fa-lg fa-fw"></i></a></li>  
                             </p>

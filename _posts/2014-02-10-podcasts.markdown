@@ -15,7 +15,7 @@ keywords:
 - Brett terpstra
 layout: post
 slug: podcasts
-summary: My podcast picks.
+description: My podcast picks.
 tags:
 - Podcasts
 title: Podcasts

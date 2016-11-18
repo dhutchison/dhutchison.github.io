@@ -3,7 +3,7 @@ title: Bringing the old website back on OpenShift
 categories: Development
 tags:
 - OpenShift
-summary: I put my old site back up, powered by OpenShift.
+description: I put my old site back up, powered by OpenShift.
 date: 2015-01-05 22:34
 slug: bringing-the-old-website-back-on-openshift
 ---

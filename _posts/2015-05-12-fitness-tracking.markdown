@@ -1,7 +1,7 @@
 ---
 title: Fitness Tracking
 image: /images/charts/cycle.png
-summary: I made some graphs from Google Sheet data.
+description: I made some graphs from Google Sheet data.
 date: 2015-05-12 22:39
 slug: fitness-tracking
 ---

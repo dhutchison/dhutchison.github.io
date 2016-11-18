@@ -1,6 +1,6 @@
 ---
 title: "(Temporarily) Abandoned, but not forgotten"
-summary: Normal service will resume soon
+description: Normal service will resume soon
 date: 2016-05-16 20:18
 slug: temporarily-abandoned-but-not-forgotten
 ---

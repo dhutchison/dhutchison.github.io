@@ -8,7 +8,7 @@ keywords:
 - ipad
 - wysiwyg
 layout: post
-summary: Responsive design should no longer be hard.
+description: Responsive design should no longer be hard.
 tags:
 - HTML
 - CSS

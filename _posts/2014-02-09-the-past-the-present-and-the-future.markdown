@@ -10,7 +10,7 @@ keywords:
 - writing
 - career
 layout: post
-summary: Is it time for change?
+description: Is it time for change?
 tags:
 - Podcasts
 - Personal

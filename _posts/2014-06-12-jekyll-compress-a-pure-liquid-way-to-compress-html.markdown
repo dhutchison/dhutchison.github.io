@@ -4,7 +4,7 @@ title: jekyll-compress - A pure Liquid way to compress HTML
 date: 2014-06-12 21:15
 slug: jekyll-compress-a-pure-liquid-way-to-compress-html
 categories: Development
-summary: Jekyll generated pages can contain a lot of whitespace. There IS a solution without using plugins!
+description: Jekyll generated pages can contain a lot of whitespace. There IS a solution without using plugins!
 tags: Jekyll
 keywords:
 - html

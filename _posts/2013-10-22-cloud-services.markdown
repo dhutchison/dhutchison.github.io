@@ -3,7 +3,7 @@ date: 2013-10-22 21:58
 keywords: [iphoto, iphone, flickr, apple, itunes, itunes match, icloud, applescript]
 layout: post
 slug: cloud-services
-summary: Can I get away with storing photos and music in the cloud?
+description: Can I get away with storing photos and music in the cloud?
 title: Cloud Services
 category: Products
 tags: 

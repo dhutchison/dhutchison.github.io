@@ -20,7 +20,7 @@ post: true
   					{% endcase %} of {{ page.date | date: "%B" }}, {{ page.date | date: "%Y" }}</time>
 				{% if post.author %},&nbsp;{% endif %}
 		{% endif%}
-		{% if post.author %}By {{ site.data.author[post.author].name }}{% endif %}
+		{% if post.author %}By {{ site.data.authors[post.author].name }}{% endif %}
 		{% if post.date || post.author %}</p>{% endif %}
 	</header>
 	<article>

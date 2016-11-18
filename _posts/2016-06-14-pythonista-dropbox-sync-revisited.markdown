@@ -4,7 +4,7 @@ categories: Development
 tags:
 - pythonista
 - python
-summary: Pythonista Dropbox Sync script has got some much needed updates
+description: Pythonista Dropbox Sync script has got some much needed updates
 date: 2016-06-14 20:34
 slug: pythonista-dropbox-sync-revisited
 ---

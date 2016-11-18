@@ -5,7 +5,7 @@ date: 2011-06-06 01:00:00.000000000 +01:00
 categories: Site
 tags: []
 status: publish
-summary: I've decided to start writing again. 
+description: I've decided to start writing again. 
 type: post
 published: true
 meta:

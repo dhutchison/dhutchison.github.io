@@ -5,7 +5,9 @@ url: http://www.devwithimagination.com
 jobtitle: Software Development Lead
 location: Scotland
 email: david@devwithimagination.com
-twitter: DavidHutchison
+author: david
+twitter: 
+  username: DavidHutchison
 
 highlighter: rouge
 #markdown: rdiscount
@@ -19,6 +21,7 @@ gems:
 - jekyll-sitemap
 - jekyll-paginate
 - jekyll-gist
+- jekyll-seo-tag
 
 excerpt_separator: <!--more-->
 drop_caps: false

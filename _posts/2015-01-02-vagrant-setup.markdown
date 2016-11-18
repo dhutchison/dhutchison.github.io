@@ -4,7 +4,7 @@ categories: Development
 tags:
 - VirtualBox
 - Vagrant
-summary: I have been trying out Vagrant. This is a very quick start guide.
+description: I have been trying out Vagrant. This is a very quick start guide.
 date: 2015-01-02 23:01
 slug: vagrant-setup
 ---

@@ -1,6 +1,6 @@
 ---
 title: Apache as a Reverse Proxy to GlassFish
-summary: Working with Apache as a proxy with certificate authentication.
+description: Working with Apache as a proxy with certificate authentication.
 date: 2015-08-13 21:27
 slug: apache-as-a-reverse-proxy-to-glassfish
 tags:

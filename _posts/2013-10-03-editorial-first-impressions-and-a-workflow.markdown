@@ -5,7 +5,7 @@ image: /images/editorial_first_look/appIcon.jpg
 keywords: [ipad, python, federico viticci, zemanta, workflow, ibook, ios, mac]
 layout: post
 slug: editorial-first-impressions-and-a-workflow
-summary: "Editorial – Best text editor on iPad?"
+description: "Editorial – Best text editor on iPad?"
 tags: [iPad, Software]
 title: "Editorial – First Impressions, and a Workflow"
 sitemap: 
