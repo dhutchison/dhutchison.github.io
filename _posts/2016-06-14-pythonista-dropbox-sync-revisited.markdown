@@ -30,7 +30,7 @@ The initial version of the script which was published required the user to tweak
 
 ### First run configuration
 
-When the script is ran without the "<Pythonista Documents>/dropbox_sync/PythonistaDropbox.conf" file existing, a set of first-run configuration prompts are shown. This just covers the basic configuration of the Dropbox authentication token required for the script to function.
+When the script is ran without the "&lt;Pythonista Documents&gt;/dropbox_sync/PythonistaDropbox.conf" file existing, a set of first-run configuration prompts are shown. This just covers the basic configuration of the Dropbox authentication token required for the script to function.
 
 ### Advanced configuration
 
