@@ -2,10 +2,10 @@
 notlayout: compress
 ---
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{page.title}} | {{ site.name }}</title>
         <meta name="viewport" content="width=device-width">
 
@@ -77,11 +77,12 @@ notlayout: compress
       	            </ul>
                   </nav>
               </div>
-	        </header>
+	          </header>
 	        
-	        <div class="content">
+	          <section class="content">
                 {{ content }}
-			</div>
+	          </section>
+          
             <footer class="footer">
             <!-- If we want to display author's name and bio -->
             {% if site.data.authors.david %}
@@ -103,7 +104,6 @@ notlayout: compress
                                 {% if site.data.authors.david.email %}<li><a href="mailto:{{ site.data.authors.david.email }}"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
                                   </li>{% endif %}
                                 <li><a href="/feed.xml"><i class="fa fa-rss fa-lg fa-fw"></i></a></li>  
-                            </p>
                           </ul>
                         </aside>
                       </div>
@@ -117,8 +117,8 @@ notlayout: compress
               	  &copy; David Hutchison 2013 - {{ site.time | date: "%Y" }}, <a href="/thanks">with thanks.</a>
               	</p>
               </section>
-            </div>
             </footer>
+          </div>
         </div> <!-- /container -->
     </body>
 </html>
