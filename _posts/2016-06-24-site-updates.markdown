@@ -2,8 +2,8 @@
 title: Site Updates
 categories: Site
 tags:
-- jekyll
-- css
+- Jekyll
+- CSS
 description: Fixing issues, and process changes.
 date: 2016-06-24 00:34
 slug: site-updates

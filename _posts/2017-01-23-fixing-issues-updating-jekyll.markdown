@@ -3,7 +3,7 @@ title: Fixing issues updating Jekyll
 summary: My local Jekyll install had some issues...
 categories: Development
 tags:
-- jekyll
+- Jekyll
 date: 2017-01-23 00:38
 slug: fixing-issues-updating-jekyll
 ---
