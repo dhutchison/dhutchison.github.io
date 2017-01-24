@@ -26,21 +26,18 @@ permalink: /archives/
       {% endif %}
     {% endunless %}
 
-    <li>
-        <article>
-        		<header>
-            			<div class="meta">
-            				<time datetime="{{ post.date | date_to_xmlschema }}" pubdate="" data-updated="true" title="{{ post.date | date_to_string }}">{{ post.date | date:"%d %b" }}</time>
-            			</div>
-            			<div class="title">
-            				<a href="{{ post.url }}">{{ post.title }}</a>		
-        				</div>	
-        		</header>
-        </article>
+    <li itemscope>
+          <div class="meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}" data-updated="true" title="{{ post.date | date_to_string }}">{{ post.date | date:"%d %b" }}</time>
+          </div>
+          <div class="title">
+            <a href="{{ post.url }}">{{ post.title }}</a>		
+        </div>	
     </li>
     {% unless post.next %}
     
     {% endunless %}
   {% endfor %}
+      </ul>
   </li>
 </ul>
