@@ -1,0 +1,12 @@
+---
+---
+[
+{% for post in site.posts %}{% if post.title != null and post.title != empty and post.search_omit != true %}{% if forloop.index > 1 %},{%endif%}{
+            "title": {{ post.title | jsonify }} ,
+            "content": {{post.content | strip_html | jsonify }},
+            "link": "{{ site.url }}{{ post.url }}",
+            "tags": {{ post.tags | jsonify }},
+            "categories": {{ post.categories | jsonify }},
+            "date": "{{ post.date }}"{% if post.summary %},"excerpt": {{ post.summary | strip_html | jsonify }}{% endif %}
+        }{% endif %}{% endfor %}
+]
