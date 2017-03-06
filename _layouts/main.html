@@ -42,8 +42,8 @@ notlayout: compress
         </script>
         {% endunless %}
         
-        <!--Make RSS feed discoverable -->
-        <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
+        <!--Make feed discoverable -->
+        {% feed_meta %}
         
         {% if page.keywords %}
           <!-- Keywords -->
