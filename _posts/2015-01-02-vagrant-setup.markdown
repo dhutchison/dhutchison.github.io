@@ -190,4 +190,4 @@ In Apache:
 [5]: https://github.com/mitchellh/vagrant/issues/351#issuecomment-1339640
 [6]: https://docs.vagrantup.com/v2/synced-folders/virtualbox.html "Permalink to VirtualBox Shared Folders - Synced Folders"
 [virtualbox]: https://www.virtualbox.org/ "Oracle VM VirtualBox"
-[whyvagrant]: https://docs.vagrantup.com/v2/why-vagrant/ "Why Vagrant? - Vagrant Documentation
+[whyvagrant]: https://docs.vagrantup.com/v2/why-vagrant/ "Why Vagrant? - Vagrant Documentation"
