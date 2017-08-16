@@ -4,11 +4,12 @@ function loadJSON(callback) {
 
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-    /*
-    xobj.open('GET', '/assets/workoutTemp.json', true); 
-	*/
+/*    
+    xobj.open('GET', '/assets/workout_shrunk.json', true); 
+*/	
 
-    xobj.open('GET', 'https://apps.devwithimagination.com/workout_shrunk.json', true); 
+    xobj.open('GET', 'https://apps.devwithimagination.com/workout_shrunk.json', true);
+ 
     xobj.onreadystatechange = function () {
           if (xobj.readyState == 4 && xobj.status == "200") {
             /* Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode */

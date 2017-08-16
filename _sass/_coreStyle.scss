@@ -121,6 +121,13 @@ td.code {
     padding-left: 1em;
 }
 
+.fa-ul {
+    .fa-li, .fa-li.fa-lg {
+        left: 0;
+        position: static;
+        margin-left: -0.5em;
+    }
+}
 
 code {
     border: 1px solid #ddd;
@@ -283,12 +290,6 @@ code {
     		    li {
     		        display: inline;
     		    }
-
-                .fa-li, .fa-li.fa-lg {
-                    left: 0;
-                    position: static;
-                    margin-left: -0.5em;
-                }
     		}
     		
     		.links {
