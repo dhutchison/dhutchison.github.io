@@ -1,5 +1,5 @@
 ---
-title: Plex DVR - The direct approach
+title: Plex DVR with the Official Xbox One Digital TV Tuner - The direct approach
 layout: post
 series: Plex DVR with the Official Xbox One Digital TV Tuner
 series_part: 2
@@ -11,11 +11,13 @@ categories:
 - Development
 slug: plex-dvr-the-direct-approach
 ---
-[Part one][part_1] of this series lay the groundwork of what I set out to achieve.
+[Part one][part_1] of this series lay the groundwork of what I set out to achieve, to get Plex to use the [Xbox One Digital TV Tuner][tv_tuner].
 
 The first avenue of investigation with an unsupported setup has to be: does it just work?
 
 In order to answer this question, we needed to pass through the USB device through to Plex running in the Docker container.
+
+<!--more-->
 
 ## Identifying the USB device path
 
@@ -126,3 +128,4 @@ In the next post in this series, we will build a set up which does allow Plex to
 [docker_run]: https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities "Docker run reference" 
 [udev]: https://wiki.archlinux.org/index.php/udev "udev - Arch Wiki"
 [udev_wikipedia]: https://en.wikipedia.org/wiki/Udev "udev - Wikipedia"
+[tv_tuner]: https://www.amazon.co.uk/gp/product/B00E97HVJI/ref=as_li_ss_tl?ie=UTF8&psc=1&linkCode=ll1&tag=devwithimag-21&linkId=cfc0f85bf90f4f64dd5f16b4fb431919 "Amazon - Official Xbox One Digital TV Tuner (Xbox One)" 

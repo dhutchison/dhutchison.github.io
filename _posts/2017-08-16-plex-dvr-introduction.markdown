@@ -1,5 +1,5 @@
 ---
-title: Plex DVR - Introduction
+title: Plex DVR with the Official Xbox One Digital TV Tuner - Introduction
 layout: post
 series: Plex DVR with the Official Xbox One Digital TV Tuner
 series_part: 1
