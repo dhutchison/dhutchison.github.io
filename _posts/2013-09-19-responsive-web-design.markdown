@@ -34,7 +34,7 @@ In order to debug the site, I added in identical media queries that use the `max
 ![Image](/images/responsive_web_design/rwd_options.png "Responsive Design Bookmarklet options")
 
 ## Printing ##
-For the majority of the site I am not overly concerned how it appears when printed. The only section of the site I wanted to pay special attention to the print format to was my [Résumé](/profile/ "Profile"), as it may be needed when I decide it is time to move on. I thought debugging this would be a nightmare, but it turns out the Chrome DevTools can spoof the media type. It is not obviously placed, but clicking this little cog opens up the DevTools settings. 
+For the majority of the site I am not overly concerned how it appears when printed. The only section of the site I wanted to pay special attention to the print format to was my [Résumé]({{ site.data.authors.david.profile_url }} "Profile"), as it may be needed when I decide it is time to move on. I thought debugging this would be a nightmare, but it turns out the Chrome DevTools can spoof the media type. It is not obviously placed, but clicking this little cog opens up the DevTools settings. 
 ![Image](/images/responsive_web_design/chrome_devtools_settings.png "Location of settings in Chrome DevTools")
 
 In the "Overrides" section there is  an "Emulate CSS media" option which can be used to change to the print styles, and for device metrics I used 595x842 for A4. It would be nice if this had preset page sizes when the "Print" option was in use.
