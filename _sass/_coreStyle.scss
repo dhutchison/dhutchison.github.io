@@ -283,16 +283,7 @@ code {
                 margin-top: 0;
     		}
     		
-    		#nav {
-                ul {
-                    margin: 0;
-                }
-    		    li {
-    		        display: inline;
-    		    }
-    		}
-    		
-    		.links {
+    		.header-menu {
     		    width: 100%;
     		    font-weight: $contentFontWeight;
                 @include remSize(font-size, 1.2);
@@ -301,7 +292,8 @@ code {
                 text-align: center;
     
     			ul {
-    				list-style-type: none;
+                    list-style-type: none;
+                    margin: 0;
     				
     				li {
     					display: inline;
