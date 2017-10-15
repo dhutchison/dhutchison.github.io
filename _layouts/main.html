@@ -72,15 +72,12 @@ notlayout: compress
               <div class="header-logo">
                 <h1 class="title"><a href="/" title="Home">{{ site.data.authors.david.name }}</a></h1>
               </div>
-              <!-- <div class="links"> -->
-                  <!-- <nav id="nav"> -->
-                  <nav class="header-menu">
-      	            <ul class="fa-ul">
-                      {% include pages_list.html pages_list = site.pages group = 'navigation'%}
-                      <li class="header-menu-item"><a href="{{ site.data.authors.david.profile_url }}"> Profile </a></li>
-      	            </ul>
-                  </nav>
-              <!-- </div> -->
+              <nav class="header-menu">
+                <ul class="fa-ul">
+                  {% include pages_list.html pages_list = site.pages group = 'navigation'%}
+                  <li class="header-menu-item"><a href="{{ site.data.authors.david.profile_url }}"> Profile </a></li>
+                </ul>
+              </nav>
 	          </header>
 	        
 	          <main class="content" role="main">
