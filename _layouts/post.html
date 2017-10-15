@@ -23,6 +23,31 @@ post: true
 		{% if post.author %}By {{ site.data.authors[post.author].name }}{% endif %}
 		{% if post.date or post.author %}</p>{% endif %}
 	</header>
+	{% if post.series %}
+	<aside class="post-series">
+		<p>This post is part {{ post.series_part }} of the series "{{ post.series }}". </p>
+
+		{% assign series_posts = site.posts | where:"series", post.series | sort:"series_part" %}
+		<ol>
+			{% for node in series_posts %}
+			{% capture part %}{{ node.url | remove_first: paginate_path_part }}{% endcapture %}
+			{% if node.url == part %}
+				{% if page.url == node.url %}
+					<li class="active">
+				{% else %}
+					<li><a href="{{node.url}}">
+				{% endif %}
+				{% if node.menuIconStyle %}
+					<i class="fa-li fa {{ node.menuIconStyle }} fa-lg fa-fw"></i><span class="hidden">{{ node.title }}</span>
+				{% else %}
+					{{node.title}}
+				{% endif %}
+				{% if page.url != node.url %}</a>{% endif %}</li>
+			{% endif %}{% endfor %}
+		</ol>
+
+	</aside>
+	{% endif %}
 	<article>
 		{% if post.header_image %} {{ post.header_image | markdownify }}{% endif %}
 		{% if post.revisited %} (Insert revisited text here) {% endif %}

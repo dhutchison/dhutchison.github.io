@@ -46,7 +46,16 @@
         }
     }
 
-    article, footer {
+    .post-series {
+        //TODO: Should come from config
+        border-width: 1px;
+        border-style: solid;
+        margin: 1em;
+        border-radius: 1em;
+        background: #cbd5e6;
+    }
+
+    article, footer, aside.post-series {
         @include sitePadding();
     }
     
