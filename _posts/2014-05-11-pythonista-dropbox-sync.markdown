@@ -9,6 +9,8 @@ tags:
 image: /images/pythonista_ipad-t.jpg
 header_image: '![Pythonista Logo](/images/pythonista_ipad-p.png "Pythonista Icon")'
 date: 2014-05-11 21:19
+series: Pythonista Dropbox Sync
+series_part: 1
 slug: pythonista-dropbox-sync
 ---
 Continuing on from [my last post][lastpost], I have been delving into Python using [Pythonista][pythonista_itunes]. Syncing scripts between platforms is not as simple as it could be, but now I have a solution. It is not perfect, but it does the job for me and it is developed in Python!
