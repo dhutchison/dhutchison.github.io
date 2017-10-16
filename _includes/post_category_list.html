@@ -1,16 +1,5 @@
-{% comment %}
-	Inline category list for posts
-	Modified to fit needs of site.
-	
-	Author: Sebastian Teumert (<http://www.teumert.net>, <http://www.github.com/NetzwergX>)
-	Licensed under the MIT license (see LICENSE file).
-	
-	This category list can be used to display, in which categories a post was posted.
-	
-	For more Jekyll widgets, see <http://www.github.com/NetzwergX/jekyll-template-toolkit>.
-{% endcomment %}
 {% if post.categories.size > 0 %}
-	<div><h4 class="tagListTitle">Posted in: </h4>
+	<div class="post-category">
 		<ul class="groupingList">
 			{% for category in post.categories %}
 				<li class="category">
