@@ -64,6 +64,15 @@
     }
 }
 
+.post-meta {
+    display: flex;
+
+    .post-category {
+        margin-left: 1em;
+    }
+
+}
+
 .post-heading {
     @extend .heading;
 }
