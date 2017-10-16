@@ -4,12 +4,15 @@ post: true
 ---
 <article class="post">
 	{% assign post=page %}
-	<header class="heading">
-		<h2>
+	<!-- <header class="heading"> -->
+	<header class="post-heading">
+		<h2 class="post-title">
 			<a href="{{ post.url }}" class="title">{{ post.title }}</a>
 		</h2>
-		{% if post.date or post.author %}<p class="meta">{% endif %}
+		{% if post.date or post.author %}{% endif %}
 		{% if post.date %}
+		<div class="post-date">
+			<p class="meta">
 				<time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished" data-updated="true" title="{{ post.date | date_to_string }}">
 					{% assign d = page.date | date: "%-d"  %}
 					{% case d %}
@@ -18,10 +21,9 @@ post: true
   						{% when '3' or '23' %}{{ d }}rd
   						{% else %}{{ d }}th
   					{% endcase %} of {{ page.date | date: "%B" }}, {{ page.date | date: "%Y" }}</time>
-				{% if post.author %},&nbsp;{% endif %}
+			</p>
+		</div>
 		{% endif%}
-		{% if post.author %}By {{ site.data.authors[post.author].name }}{% endif %}
-		{% if post.date or post.author %}</p>{% endif %}
 	</header>
 	{% if post.series %}
 	<aside class="post-series">
@@ -48,13 +50,12 @@ post: true
 
 	</aside>
 	{% endif %}
-	<article>
+	<section class="post-content">
 		{% if post.header_image %} {{ post.header_image | markdownify }}{% endif %}
-		{% if post.revisited %} (Insert revisited text here) {% endif %}
 		{% if site.drop_caps or page.drop_caps %}{% assign drop_cap = content|strip_html|truncate:4|remove:'.' %}{% capture drop_cap_html %}<span class="drop-cap">{{ drop_cap }}</span>{% endcapture %}{{ content|replace_first:drop_cap,drop_cap_html }}
 		{% else %}{{ content }}
 		{% endif %}
-	</article>
+	</section>
 	<footer class="post-footer">
 	    <section class="footer-top">
     	    <section class="post-org">

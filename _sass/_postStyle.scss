@@ -39,7 +39,7 @@
         background-color: darken($backgroundColour, 10%);
     }
     
-    article ul {
+    .post-content ul {
         list-style-type: circle;
         li {
             padding-left: 2em;
@@ -55,13 +55,17 @@
         background: #cbd5e6;
     }
 
-    article, footer, aside.post-series {
+    .post-content, footer, aside.post-series {
         @include sitePadding();
     }
     
     ul, ol {
         margin-left: 1.35em;
     }
+}
+
+.post-heading {
+    @extend .heading;
 }
 
 .post-footer {
