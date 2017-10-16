@@ -111,10 +111,11 @@ figure, pre.highlight {
     border: 1px solid #ddd;
     background-color: #eef;
     padding: 1em;
-
-    @include mobileSize(margin-left, -2em, -2em, -1em);
-    @include mobileSize(margin-right, -2em, -2em, -1em);
     
+}
+
+pre {
+    overflow-x: auto;
 }
 
 td.code {
@@ -203,166 +204,164 @@ code {
 
 }
 
-.container{
+.container {
 
-    .site {
-    	/*	background*/
-    	background-color: $backgroundColour;
-    	
-    	/* text */
-    	line-height: $lineHeightEM;
-    	text-align: left;
-    	text-rendering: optimizelegibility;
-    	font-weight: $contentFontWeight;
+    /*	background*/
+    background-color: $backgroundColour;
+    
+    /* text */
+    line-height: $lineHeightEM;
+    text-align: left;
+    text-rendering: optimizelegibility;
+    font-weight: $contentFontWeight;
+
+    @include respond-to(print) {
+        font-weight: $contentPrintFontWeight;
+    };
+    
+    /* Sizing */
+    width: 100%;
+
+    padding-bottom: 0;
+    @include respond-to(handhelds) {
+        padding-top: 1em;
+    };
+    
+
+    hr {
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid fadeout($dividerColour, 40%);
+        margin-top: 1em;
+        margin-bottom: 1em; 
+    }
+
+    .header {
+
+        background-color: $backgroundColour;
+
+        font-family: $headerFonts;
+        text-align: center;
+
+        position: inherit;
+        height: auto;
+
+        top: 0;
+        z-index: 100000;
+
+        @include remSize(padding-bottom, 1);
 
         @include respond-to(print) {
-            font-weight: $contentPrintFontWeight;
+            font-family: $headerPrintFonts;
         };
-    	
-    	/* Sizing */
-    	@include mobileSize(width, $widthStandard, $widthSmaller, $widthSmallest);
-
-    	padding-bottom: 0;
-        @include respond-to(handhelds) {
-            padding-top: 1em;
-        };
-
-   		@include siteMargin();
         
-    
-        hr {
-        	border: 0;
-        	height: 0;
-        	border-top: 1px solid rgba(0, 0, 0, 0.1);
-        	border-bottom: 1px solid fadeout($dividerColour, 40%);
-        	margin-top: 1em;
-            margin-bottom: 1em; 
-        }
-    
-    	.header {
+        h1.title {
+            margin-bottom: 0.25em;
+            color: $mainHeaderColour;
 
-            background-color: $backgroundColour;
-
-    		font-family: $headerFonts;
-    		text-align: center;
-
-            position: inherit;
-            height: auto;
-
-            top: 0;
-            z-index: 100000;
-
-            @include remSize(padding-bottom, 1);
+            font-family: $titleFonts;
+            font-weight: $titleFontWeight;
 
             @include respond-to(print) {
-                font-family: $headerPrintFonts;
+                font-family: $titlePrintFonts;
+                font-weight: $titlePrintFontWeight;
             };
-    		
-    		h1.title {
-                margin-bottom: 0.25em;
-    			color: $mainHeaderColour;
 
-                font-family: $titleFonts;
-                font-weight: $titleFontWeight;
+            font-size: $fontSizeTitle;
+            @include respond-to(handhelds) {
+                font-size: $fontSizeTitleMobile;
+            };
 
-                @include respond-to(print) {
-                    font-family: $titlePrintFonts;
-                    font-weight: $titlePrintFontWeight;
-                };
-
-                font-size: $fontSizeTitle;
-                @include respond-to(handhelds) {
-                   font-size: $fontSizeTitleMobile;
-                };
-
-                a:hover {
-                    color: $dividerColour;
-                }
-
-
-                margin-top: 0;
-    		}
-    		
-    		.header-menu {
-    		    width: 100%;
-    		    font-weight: $contentFontWeight;
-                @include remSize(font-size, 1.2);
-    		
-                display: inline-block;
-                text-align: center;
-    
-    			ul {
-                    list-style-type: none;
-                    margin: 0;
-    				
-    				li {
-    					display: inline;
-    					
-    					a {
-    						text-decoration: none;
-                            position: relative;
-    					}
-    					
-    					a:hover {
-    						text-decoration: underline;
-    					}
-    				}
-
-                    li + li:before {
-                        content: " | ";
-                        padding-top: 0;
-                        padding-bottom: 0;
-                        @include mobileSize(padding-left, 10px, 10px, 5px);
-                        @include mobileSize(padding-right, 10px, 10px, 5px);
-                    }
-    			}
-    		}
-
-            .meta { 
-                font-family: $headerFonts;
-                font-weight: $contentFontWeight;
+            a:hover {
+                color: $dividerColour;
             }
-    	}
-    	
-    	.content {
+
+
             margin-top: 0;
+        }
+        
+        .header-menu {
+            width: 100%;
+            font-weight: $contentFontWeight;
+            @include remSize(font-size, 1.2);
+        
+            display: inline-block;
+            text-align: center;
 
-            h2 {
-                .meta {
-                    @include remSize(font-size, 1);
+            ul {
+                list-style-type: none;
+                margin: 0;
+                
+                li {
+                    display: inline;
+                    
+                    a {
+                        text-decoration: none;
+                        position: relative;
+                    }
+                    
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                li + li:before {
+                    content: " | ";
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    @include mobileSize(padding-left, 10px, 10px, 5px);
+                    @include mobileSize(padding-right, 10px, 10px, 5px);
                 }
             }
+        }
 
-    		
-    		.pagination {
-    		    text-align: center;
-    		    
-    		    ul {
-    		        list-style:none; 
-        		    
-    	    	    
-    	    	    li{
-                        display: inline-block;
-                        margin-right: 1em;
-    	    	    }
-    	    	    
-    		    }    		    
-    		}
-    	}
-    	
-    	.footer {
-    	    	        
-   	        font-size: 0.8em;
-    		// overflow: hidden;
-    		padding-top: 1em;
-    		z-index: 1;
-    		
-    		.copy {
-    			width: 100%;
-                padding-top: 1em;
-    			text-align: center;
-    		}
-    	}
+        .meta { 
+            font-family: $headerFonts;
+            font-weight: $contentFontWeight;
+        }
+    }
+    
+    .content {
+        margin-top: 0;
+        @include mobileSize(width, $widthStandard, $widthSmaller, $widthSmallest);
+        @include siteMargin();
+
+        h2 {
+            .meta {
+                @include remSize(font-size, 1);
+            }
+        }
+
+        
+        .pagination {
+            text-align: center;
+            
+            ul {
+                list-style:none; 
+                
+                
+                li{
+                    display: inline-block;
+                    margin-right: 1em;
+                }
+                
+            }    		    
+        }
+    }
+    
+    .footer {
+                    
+        font-size: 0.8em;
+        // overflow: hidden;
+        padding-top: 1em;
+        z-index: 1;
+        
+        .copy {
+            width: 100%;
+            padding-top: 1em;
+            text-align: center;
+        }
     }
 }
 
@@ -438,24 +437,22 @@ code {
         }
     
         .container {
-            .site {
                 
-                width: 100%;
-                margin-left: 0;
-                margin-right: 0;
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        
+            .header, .footer {
+                display: none;
+            }
             
-                .header, .footer {
-                    display: none;
-                }
-                
-                .content {
-                    margin-top: 0;
-                }
-                
-                a {
-                    text-decoration: none;
-                    color: $mainHeaderColour;
-                }
+            .content {
+                margin-top: 0;
+            }
+            
+            a {
+                text-decoration: none;
+                color: $mainHeaderColour;
             }
         }
 
