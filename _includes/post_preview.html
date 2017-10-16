@@ -3,12 +3,15 @@
 {% endcomment %}
 
 <article class="post">
-		<header class="heading">
-			<h2>
+		<header class="post-heading">
+			<h2 class="post-title">
 				<a href="{{ post.url }}" {% if noPreview != true %}class="title"{% endif %}>{{ post.title }}</a>
 			</h2>
-			{% if post.date || post.author %}<p class="meta">{% endif %}
+			{% if post.date || post.author %}{% endif %}
 			{% if post.date %}
+			<div class="post-date">
+				<p class="meta">
+			
 					<time datetime="{{ post.date | date_to_xmlschema }}" data-updated="true" title="{{ post.date | date_to_string }}">{% assign d = post.date | date: "%-d"  %}
 					{% case d %}
   						{% when '1' or '21' or '31' %}{{ d }}st
@@ -18,13 +21,12 @@
   					{% endcase %} of {{ post.date | date: "%B" }} {% if hideYear == false %}, {{ post.date | date: "%Y" }}{% endif %}
   					<!--{% if hideYear == true %}{{ post.date | date:"%d %b" }}{% else %}{{ post.date | date_to_string }}{% endif %}-->
   					</time>
-					{% if post.author %},&nbsp;{% endif %}
+				</p>
+			</div>
 			{% endif%}
-			{% if post.author %}By {{ site.data.authors[post.author].name }}{% endif %}
-			{% if post.date || post.author %}</p>{% endif %}
 		</header>
 		{% if noPreview != true %}
-		<article>
+		<section class="post-content">
 			{% if post.header_image %} {{ post.header_image | markdownify }}{% endif %}
 			{% if post.content contains site.excerpt_separator %}
 				{{ post.excerpt }}
@@ -32,8 +34,8 @@
 			{% else %}
 				{{ post.content }}
 			{% endif %}
-		</article>
-		<footer>
+		</section>
+		<footer class="post-footer">
 			{% include post_category_list.html %}
 			{% include post_tag_list.html %}
 		</footer>
