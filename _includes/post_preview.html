@@ -7,23 +7,23 @@
 			<h2 class="post-title">
 				<a href="{{ post.url }}" {% if noPreview != true %}class="title"{% endif %}>{{ post.title }}</a>
 			</h2>
-			{% if post.date || post.author %}{% endif %}
-			{% if post.date %}
-			<div class="post-date">
-				<p class="meta">
-			
-					<time datetime="{{ post.date | date_to_xmlschema }}" data-updated="true" title="{{ post.date | date_to_string }}">{% assign d = post.date | date: "%-d"  %}
-					{% case d %}
-  						{% when '1' or '21' or '31' %}{{ d }}st
-  						{% when '2' or '22' %}{{ d }}nd
-  						{% when '3' or '23' %}{{ d }}rd
-  						{% else %}{{ d }}th
-  					{% endcase %} of {{ post.date | date: "%B" }} {% if hideYear == false %}, {{ post.date | date: "%Y" }}{% endif %}
-  					<!--{% if hideYear == true %}{{ post.date | date:"%d %b" }}{% else %}{{ post.date | date_to_string }}{% endif %}-->
-  					</time>
-				</p>
-			</div>
-			{% endif%}
+			<div class="post-meta">
+				{% if post.date %}
+				<div class="post-date">
+					<p class="meta">
+						<time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished" data-updated="true" title="{{ post.date | date_to_string }}">
+							{% assign d = post.date | date: "%-d"  %}
+							{% case d %}
+								{% when '1' or '21' or '31' %}{{ d }}st
+								{% when '2' or '22' %}{{ d }}nd
+								{% when '3' or '23' %}{{ d }}rd
+								{% else %}{{ d }}th
+							{% endcase %} of {{ post.date | date: "%B" }}, {{ post.date | date: "%Y" }}</time>
+					</p>
+				</div>
+				{% endif%}
+				{% include post_category_list.html %}
+			</div>	
 		</header>
 		{% if noPreview != true %}
 		<section class="post-content">
@@ -36,7 +36,6 @@
 			{% endif %}
 		</section>
 		<footer class="post-footer">
-			{% include post_category_list.html %}
 			{% include post_tag_list.html %}
 		</footer>
 		{% endif %}

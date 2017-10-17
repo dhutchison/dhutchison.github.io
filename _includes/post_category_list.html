@@ -1,7 +1,7 @@
-{% if post.categories.size > 0 %}
+{% if page.categories.size > 0 %}
 	<div class="post-category">
 		<ul class="groupingList">
-			{% for category in post.categories %}
+			{% for category in page.categories %}
 				<li class="category">
 				    <a href="/archives/categories/#{{ category | downcase | cgi_escape }}">
 				        {{ category }}

@@ -9,10 +9,10 @@
 	
 	For more Jekyll widgets, see <http://www.github.com/NetzwergX/jekyll-template-toolkit>.
 {% endcomment %}
-{% if post.tags.size > 0 %}
+{% if page.tags.size > 0 %}
 	<div><h4 class="tagListTitle">Tagged with: </h4>
 		<ul class="groupingList">
-		{% for tag in post.tags %}
+		{% for tag in page.tags %}
 			<li class="tag">
 			    <a href="/archives/tags/#{{ tag | downcase | cgi_escape }}">
 			        {{ tag }}
