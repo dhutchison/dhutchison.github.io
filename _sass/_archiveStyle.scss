@@ -105,8 +105,6 @@ $archiveLinkColour: #CBB393;
         
         .meta, .meta_year {
             float: left;
-            font-family: $headerFonts;
-        	font-weight: $contentFontWeight;
         	border-color: $linkColour;
         	border-right: 1px;
             vertical-align: middle;
@@ -123,8 +121,6 @@ $archiveLinkColour: #CBB393;
         }
         
         .title {
-            font-family: $headerFonts;
-            font-weight: $contentFontWeight;
             overflow: hidden;
             padding-left: 4px;
         }

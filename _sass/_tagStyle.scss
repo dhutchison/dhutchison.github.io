@@ -88,8 +88,6 @@
     
     .meta {
       float: left;
-      font-family: $headerFonts;
-    	font-weight: $contentFontWeight;
     	width: 10em;
     	border-color: $linkColour;
     	border-right: 1px;
@@ -97,8 +95,6 @@
     }
     
     .title {
-        font-family: $headerFonts;
-        font-weight: $contentFontWeight;
         overflow: hidden;
         padding-left: 4px;
     }
