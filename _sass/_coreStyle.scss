@@ -31,27 +31,16 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: $headerFontWeight;
+    font-family: $contentFonts;
 
     @include respond-to(print) {
         font-weight: $headerPrintFontWeight;
+        font-family: $contentPrintFonts;
     };
 }
 
 h1, h2 {
-    font-family: $headerFonts;
     text-align: left;    
-
-    @include respond-to(print) {
-        font-family: $headerPrintFonts;
-    };
-}
-
-h3, h4, h5, h6 {
-    font-family: $contentFonts;
-
-    @include respond-to(print) {
-        font-family: $contentPrintFonts;
-    }
 }
 
 h1 {
@@ -135,23 +124,20 @@ code {
     }
 }
 
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
 .heading {
     background-color: $headerBackground;
+
+    border-color: $dividerColour;
+    border-top-width: 1px;
+    border-top-style: dotted;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted
+    ;
 }
 
 .heading, .footer {
     
-    padding: 1em 1em 1em 2em;
-
-    @include respond-to(handhelds) {
-        padding-left: 1em;
-    }; 
+    @include sitePadding();
 
     color: $headerFontColour;
 
@@ -164,16 +150,17 @@ code {
         }
     }
 
-    p {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
     h2 {
         font-weight: $contentFontWeight;
         text-align: left;
 
         margin-top: 0;
+    }
+}
+
+.footer { 
+    p {
+        margin: 0 0 0 0;
     }
 }
 
