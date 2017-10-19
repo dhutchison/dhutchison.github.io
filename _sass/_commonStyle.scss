@@ -13,18 +13,17 @@ $mqTablet: "only screen and (min-width : 768px) and (max-width : 1024px) ";
 //
 // Variables 
 //
-$backgroundBlue: #5D83C4;
 $dividerColour: #5D83C4;
 
-$headerBackgroundDarkBlue: #212E45; 
+$headerBackground: #212121; 
 $headerFontColour: #DDDDDD;
-$headerLinkHoverColour: $backgroundBlue;
+$headerLinkHoverColour: #5D83C4;
 
 $mainHeaderColour: #475261;
 $mainFontColour: #333333;
-$outerBackgroundColour: #666666;
-$shadowColour: #333333;
-$backgroundColour: #FFFFFF;
+
+$backgroundColour: $headerBackground;
+$contentBackgroundColour: #FFFFFF;
 
 $mainFontPrintColour: #000000;
 
@@ -52,7 +51,7 @@ $headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $headerPrintFonts: $titlePrintFonts;
 $headerFontWeight: 700;
 $headerPrintFontWeight: bold;
-$contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$contentFonts: $headerFonts;
 $contentPrintFonts: $titlePrintFonts;
 $contentFontWeight: 300;
 $contentPrintFontWeight: normal;
