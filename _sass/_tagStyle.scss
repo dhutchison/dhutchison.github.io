@@ -59,20 +59,19 @@
   transform: translateY(-50%);
   top: 50%;
   
-  li {
-      display: inline-block;
-      padding-left: 0 !important;
-      @include remSize(margin-right, 0.5);
+  li.category, li.tag {
+    display: inline-block;
+    padding-left: 0 !important;
+    @include remSize(margin-right, 0.5);
+    @extend .tag-box;
+  }
 
-      &.category {
-        @extend .tag-box;        
-        background-color: $categoryTagColour;
-      }
+  li.category {
+    background-color: $categoryTagColour;
+  }
 
-      &.tag {
-        @extend .tag-box;
-        background-color: $tagColour;
-      }
+  li.tag {
+    background-color: $tagColour;
   }
 }
 
