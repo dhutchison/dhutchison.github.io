@@ -78,12 +78,7 @@ a {
 	}
 }
 
-table {
-    text-align: center;
-	font-size: inherit;
-}
-
-figure, pre.highlight {
+figure {
     border: 1px solid #ddd;
     background-color: #eef;
     padding: 1em;
@@ -94,10 +89,6 @@ pre {
     overflow-x: auto;
 }
 
-td.code {
-    padding-left: 1em;
-}
-
 .fa-ul {
     .fa-li, .fa-li.fa-lg {
         left: 0;
@@ -106,33 +97,13 @@ td.code {
     }
 }
 
-code {
-    border: 1px solid #ddd;
-    background-color: #eef;
-
-    font-size: 0.8em;
-    border: none;
-    
-    word-wrap: break-word;  
-    
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
-
-    table {
-        text-align: left;
-    }
-}
-
 .heading {
     background-color: $headerBackground;
 
-    border-color: $dividerColour;
-    border-top-width: 1px;
-    border-top-style: dotted;
-    border-bottom-width: 1px;
-    border-bottom-style: dotted
-    ;
+    // border-color: $dividerColour;
+    border-color: $contentBackgroundColour;
+    border-style: inset;
+    border-width: 2px 2px 0 2px;
 }
 
 .heading, .footer {
