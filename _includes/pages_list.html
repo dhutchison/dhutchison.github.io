@@ -9,7 +9,7 @@
 	    <li><a href="{{node.url}}">
 	{% endif %}
 	{% if node.menuIconStyle %}
-		<i class="fa-li fa {{ node.menuIconStyle }} fa-lg fa-fw"></i><span class="hidden">{{ node.title }}</span>
+		<i class="fa-li fa {{ node.menuIconStyle }} fa-lg fa-fw"></i>{{ node.title }}
 	{% else %}
 		{{node.title}}
 	{% endif %}

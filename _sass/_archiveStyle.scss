@@ -16,8 +16,18 @@ $archiveLinkColour: #CBB393;
     top: 0;
 }
 
+.archiveLinks .active {
+    border-color: $headerFontColour;
+    border-width: 1px;
+    border-style: solid;
+}
+
 .archives {
     @include sitePadding();
+
+    .fa-li, .fa-li.fa-lg {
+        margin-left: 0;
+    }
 
     .groupedPosts {
         margin-left: 0;
