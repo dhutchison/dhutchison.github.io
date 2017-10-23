@@ -5,38 +5,21 @@
 
 $archiveLinkColour: #CBB393;
 
+.archiveLinks, .archives .groupingList {
+    @extend .groupingList;
+
+    /* Reset these two - archive links are not to appear the same way
+     * as other grouping lists - as we are using it for a nav element
+     * (and there is a lot more of them than normal).
+     */
+    transform: none;
+    top: 0;
+}
+
 .archives {
-
-    .archiveLinks {
-        @extend .groupingList;
-        
-        text-align: center;
-        margin-bottom: 2em;
-
-        li {
-            @extend .tag-box;
-            background-color: $mainHeaderLeftGradient;
-
-            &.active {
-                background-color: $archiveLinkColour;
-            }
-
-            a {
-                position: relative;
-            }
-        }
-    }
-
     @include sitePadding();
 
-    .groupingList {
-        @extend .groupingList;
-
-        text-align: center;
-        margin-bottom: 1em;
-    }
-
-    .groupingList, .groupedPosts {
+    .groupedPosts {
         margin-left: 0;
 
         ul {

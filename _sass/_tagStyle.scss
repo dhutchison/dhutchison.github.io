@@ -31,13 +31,6 @@
 	  font-size: 0.8em;
 
 	  color: $headerFontColour;
-    &:hover {
-    	background: darken($headerFontColour, 50%);
-    }
-  }
-
-  &:hover {
-    background: darken($headerFontColour, 50%);
   }
     
   span {
@@ -59,9 +52,9 @@
   transform: translateY(-50%);
   top: 50%;
   
-  li.category, li.tag {
+  li {
     display: inline-block;
-    padding-left: 0 !important;
+    padding-left: 0;
     @include remSize(margin-right, 0.5);
     @extend .tag-box;
   }
@@ -72,6 +65,12 @@
 
   li.tag {
     background-color: $tagColour;
+  }
+
+  li.category, li.tag {
+    a:hover {
+    	background: darken($headerFontColour, 50%);
+    }
   }
 }
 

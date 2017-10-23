@@ -3,18 +3,17 @@ layout: main
 ---
 
 <header class="heading">
-    <h2>Archives</h2>
-</header>
-
-<div class="archives">
-	<nav class="archiveLinks">
-		<ul>
+	<h2>Archives</h2>
+	<nav>
+		<ul class="archiveLinks">
 			<li {% if page.url == "/archives/" %} class="active" {% endif %}><a href="/archives/"><i class="fa fa-calendar fa-lg fa-fw"></i>Date</a></li>
 			<li {% if page.url == "/archives/tags/" %} class="active" {% endif %}><a href="/archives/tags/"><i class="fa fa-tags fa-lg fa-fw"></i>Tags</a></li>
 			<li {% if page.url == "/archives/categories/" %} class="active" {% endif %}><a href="/archives/categories/"><i class="fa fa-bookmark fa-lg fa-fw"></i>Categories</a></li>
 			<li {% if page.url == "/archives/projects/" %} class="active" {% endif %}><a href="/archives/projects/"><i class="fa fa-file-code-o fa-lg fa-fw"></i>Projects</a></li>
 		</ul>
 	</nav>
-    
+</header>
+
+<div class="archives">
 {{ content }}
 </div>
