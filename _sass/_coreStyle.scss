@@ -280,8 +280,6 @@ pre {
     }
     
     .content {
-        margin-top: 0;
-
         background: $contentBackgroundColour;
 
         @include mobileSize(width, $widthStandard, $widthSmaller, $widthSmallest);
@@ -323,60 +321,6 @@ pre {
             padding-top: 1em;
             text-align: center;
         }
-    }
-}
-
-.chart-wrapper {
-
-    h2 {
-		display: inline-block;
-		padding-right: 2em;
-		margin-top: 0;
-	}
-
-    .chart-legend {
-
-		display: inline-block;
-		vertical-align: top;
-
-  		ul {
-    		list-style: none;
-    		padding:0;
-    		margin:0;
-    		position: relative;
-		}
-
-		li {
-			display: inline;
-			padding-right: 2em;
-			position: relative;
-		}
-	}
-}
-
-.chart-options {
-    text-align: center;
-
-    .granularity, .distanceUnit, .options {
-		display: inline-block;
-	}
-
-    input {
-		margin-right: $horizontalSpacing / 2;
-	}
-
-	label {
-		margin-right: $horizontalSpacing;
-	}
-
-    legend.heading {
-		border: 1px black solid; 
-		margin-left: 1em; 
-		padding: 0.2em 0.8em;
-	}
-
-    fieldset.options {
-        padding: .35em .625em .75em;
     }
 }
 
