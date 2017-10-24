@@ -36,7 +36,53 @@
     }
 
     blockquote {
-        background-color: darken($backgroundColour, 10%);
+        //TODO: Fix magic numbers
+
+        display: block;
+        background: #fff;
+        padding: 15px 20px 15px 45px;
+        @include remSize(margin-top, 1);
+        @include remSize(margin-bottom, 1);
+        position: relative;
+        
+        /*Font*/
+        line-height: 1.2;
+        text-align: justify;
+        
+        /*Borders - (Optional)*/
+        border-left: 15px solid $dividerColour;
+        border-right: 2px solid $dividerColour;
+        
+        /*Box Shadow - (Optional)*/
+        -moz-box-shadow: 2px 2px 15px #ccc;
+        -webkit-box-shadow: 2px 2px 15px #ccc;
+        box-shadow: 2px 2px 15px #ccc;
+        
+
+        &::before, &::after {
+            //TODO: rem-size
+            font-size: 3em;
+            font-weight: bold;
+            color: lighten($mainFontColour, 10%);
+        }
+
+        &::before {
+            /* Unicode for Left Double Quote in the top left */
+            content: "\201C"; 
+            
+            position: absolute;
+            left: 10px;
+            top: 5px;
+        }
+        
+        &::after {
+            /* Unicode for Left Double Quote in the bottom right */
+            content: "\201D";
+            
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
+        }
     }
     
     .post-content ul {
