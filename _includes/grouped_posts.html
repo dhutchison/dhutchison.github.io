@@ -16,7 +16,7 @@ Requires 3 variables to be set:
 <article>
 
     <ul class="groupingList">{% for item in (0..num_words) %}{% unless forloop.last %}{% capture this_word %}{{ grouping_words[item] | strip_newlines }}{% endcapture %}{% for grouping in include.groupings %}{% capture lower_grouping %}{{ grouping | first | downcase }}{% endcapture %}{% capture display_grouping %}{{ grouping | first }}{% endcapture %}{% if this_word == lower_grouping %}
-        <li class="{{ include.groupingClass }}"><a href="#{{ this_word | cgi_escape }}">{{ display_grouping }} <span>{{ include.groupings[display_grouping].size }}</span></a></li>
+        <li class="{{ include.groupingClass }}"><a href="#{{ this_word | cgi_escape }}">{{ display_grouping }} <sup>{{ include.groupings[display_grouping].size }}</sup></a></li>
         {% endif %} {% endfor %}{% endunless %}{% endfor %}
     </ul>
 

@@ -3,46 +3,6 @@
 // Tags    //////
 /////////////////
 
-@mixin tagLinkHorizontalList($backgroundColour: #0089e0, $foregroundColour: #FFFFFF) {
-
-	margin: 0;
-	
-	padding-left: 0;
-	padding-right: 0;
-	list-style: none;
-	
-	li {
-      display: inline-block;
-	    padding-left: 0;
-	}
-}
-
-.tag-box {
-
-  border-radius: 4px;
-  
-  a {
-    text-decoration: none;
-    transition-duration: 0s;
-    	
-    padding: 3px 3px;
-    margin: 2px;
-	
-	  font-size: 0.8em;
-
-	  color: $headerFontColour;
-  }
-    
-  span {
-      vertical-align: super;
-      @include remSize(font-size, 0.625);
-  }
-}
-
-
-
-
-
 .groupingList {
   margin: 1em 0 0 0;
 
@@ -56,7 +16,19 @@
     display: inline-block;
     padding-left: 0;
     @include remSize(margin-right, 0.5);
-    @extend .tag-box;
+
+    border-radius: 4px;
+    
+    a {
+      text-decoration: none;
+        
+      padding: 3px 3px;
+      margin: 2px;
+    
+      font-size: 0.8em;
+  
+      color: $headerFontColour;
+    }
   }
 
   li.category {

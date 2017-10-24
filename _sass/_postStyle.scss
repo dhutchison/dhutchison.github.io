@@ -13,8 +13,6 @@
 
 .post {
 
-    text-align: left;		
-
     .groupingList {
         @extend .groupingList;
         margin: 0;
@@ -82,13 +80,6 @@
             position: absolute;
             right: 10px;
             bottom: 5px;
-        }
-    }
-    
-    .post-content ul {
-        list-style-type: circle;
-        li {
-            padding-left: 2em;
         }
     }
 
