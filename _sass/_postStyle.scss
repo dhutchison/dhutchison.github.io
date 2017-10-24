@@ -33,7 +33,7 @@
         margin-right: auto;
     }
 
-    blockquote {
+    .box {
         //TODO: Fix magic numbers
 
         display: block;
@@ -47,18 +47,22 @@
         line-height: 1.2;
         text-align: justify;
         
-        /*Borders - (Optional)*/
-        border-left: 15px solid $dividerColour;
-        border-right: 2px solid $dividerColour;
-        
         /*Box Shadow - (Optional)*/
         -moz-box-shadow: 2px 2px 15px #ccc;
         -webkit-box-shadow: 2px 2px 15px #ccc;
         box-shadow: 2px 2px 15px #ccc;
-        
+
+    }
+
+    blockquote {
+        @extend .box;
+
+        /* Borders */
+        border-left: 15px solid $dividerColour;
+        border-right: 2px solid $dividerColour;
+
 
         &::before, &::after {
-            //TODO: rem-size
             font-size: 3em;
             font-weight: bold;
             color: lighten($mainFontColour, 10%);
@@ -84,12 +88,8 @@
     }
 
     .post-series {
-        //TODO: Should come from config
-        border-width: 1px;
-        border-style: solid;
-        margin: 1em;
-        border-radius: 1em;
-        background: #cbd5e6;
+        @extend .box;
+        margin: $verticalSpacing $horizontalSpacing;
     }
 
     .post-content, footer, aside.post-series {
