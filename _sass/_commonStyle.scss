@@ -94,6 +94,47 @@ $horizontalSpacing: 2em;
     }
 }
 
+// Extra small devices (portrait phones, less than 576px)
+@mixin for-xs-only {
+    @media (max-width: 575px) {
+        @content;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin for-sm-up {
+    @media (min-width: 576px) { 
+        @content;
+    }    
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin for-md-up {
+    @media (min-width: 768px) { 
+        @content;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@mixin for-lg-up {
+    @media (min-width: 992px) { 
+        @content;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@mixin for-xl-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+// Only for printing
+@mixin for-print-only {
+    @media only print { 
+        @content;
+    }
+}
 
 //Function just for doing mobile sizing. If number and no unit, remsize. otherwise use supplied value
 @mixin mobileSize($property, $sizeValue, $iPadSizeValue: $sizeValue, $iPhoneSizeValue: $sizeValue) {
@@ -132,49 +173,30 @@ $horizontalSpacing: 2em;
     
     @if $media == handhelds {
         @media #{$mqiPhone}, #{$mqHandheld} {
-            @content
+            @content;
         }
     } @else if $media == tablets {
         @media #{$mqiPad},#{$mqTablet} { 
-            @content 
+            @content;
         }
     } @else if $media == print {
         @media only print { 
-            @content 
+            @content;
         }
     } @else {
         // Standard screen
-        @content
+        @content;
     }
         
 }
 
-@mixin liImage($image, $size: 16px) {
-    list-style: none;
-    background-image: $image;
-    background-size: $size; 
-    background-repeat: no-repeat;
-    background-position: 0px ($size / 4); 
-    padding-left: ($size + ($size / 4)); 
-}
-
 @mixin sitePadding() {
-	padding: $verticalSpacing $horizontalSpacing;
-	
-	@include respond-to(handhelds) {
-	    padding: $verticalSpacing;
-	};
+    padding: $verticalSpacing;
+    
+    @include for-md-up {
+        padding: $verticalSpacing $horizontalSpacing;
+    }
 }
-
-@mixin siteMargin() {
-    margin-right: auto;
-    margin-left: auto;
-
-    @include respond-to(handhelds) {
-        margin-right: 0;
-        margin-left: 0;
-    };
-} 
 
 @mixin clear {
     clear: both;

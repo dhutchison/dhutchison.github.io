@@ -19,7 +19,7 @@ body {
 	font-family: $contentFonts;
 	font-weight: $contentFontWeight;
 
-    @include respond-to(print) {
+    @include for-print-only {
         font-family: $contentPrintFonts;
         font-weight: $contentPrintFontWeight;
     };
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: $headerFontWeight;
     font-family: $contentFonts;
 
-    @include respond-to(print) {
+    @include for-print-only {
         font-weight: $headerPrintFontWeight;
         font-family: $contentPrintFonts;
     };
@@ -161,7 +161,7 @@ pre {
     text-rendering: optimizelegibility;
     font-weight: $contentFontWeight;
 
-    @include respond-to(print) {
+    @include for-print-only {
         font-weight: $contentPrintFontWeight;
     };
     
@@ -209,7 +209,7 @@ pre {
 
         @include remSize(padding-bottom, 1);
 
-        @include respond-to(print) {
+        @include for-print-only {
             font-family: $headerPrintFonts;
         };
         
@@ -220,7 +220,7 @@ pre {
             font-family: $titleFonts;
             font-weight: $titleFontWeight;
 
-            @include respond-to(print) {
+            @include for-print-only {
                 font-family: $titlePrintFonts;
                 font-weight: $titlePrintFontWeight;
             };
@@ -285,7 +285,12 @@ pre {
         background: $contentBackgroundColour;
 
         @include mobileSize(width, $widthStandard, $widthSmaller, $widthSmallest);
-        @include siteMargin();
+        
+        margin: 0;
+        @include for-md-up {
+            margin-right: auto;
+            margin-left: auto;
+        }
 
         h2 {
             .meta {
