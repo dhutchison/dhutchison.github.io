@@ -20,7 +20,7 @@ body {
 	font-weight: $contentFontWeight;
 
     @include for-print-only {
-        font-family: $contentPrintFonts;
+        font-family: $printFonts;
         font-weight: $contentPrintFontWeight;
     };
 
@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 
     @include for-print-only {
         font-weight: $headerPrintFontWeight;
-        font-family: $contentPrintFonts;
+        font-family: $printFonts;
     };
 }
 
@@ -210,7 +210,7 @@ pre {
         @include remSize(padding-bottom, 1);
 
         @include for-print-only {
-            font-family: $headerPrintFonts;
+            font-family: $printFonts;
         };
         
         h1.title {
@@ -221,7 +221,7 @@ pre {
             font-weight: $titleFontWeight;
 
             @include for-print-only {
-                font-family: $titlePrintFonts;
+                font-family: $printFonts;
                 font-weight: $titlePrintFontWeight;
             };
 
@@ -265,10 +265,11 @@ pre {
 
                 li + li:before {
                     content: " | ";
-                    padding-top: 0;
-                    padding-bottom: 0;
-                    @include mobileSize(padding-left, 10px, 10px, 5px);
-                    @include mobileSize(padding-right, 10px, 10px, 5px);
+                    padding: 0 5px;
+
+                    @include for-md-up {
+                        padding: 0 10px;
+                    }
                 }
             }
         }
@@ -281,13 +282,21 @@ pre {
     
     .content {
         background: $contentBackgroundColour;
-
-        @include mobileSize(width, $widthStandard, $widthSmaller, $widthSmallest);
         
         margin: 0;
+        width: 100%;
+
         @include for-md-up {
-            margin-right: auto;
-            margin-left: auto;
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        @include for-lg-up {
+            width: 70%;
+        }
+
+        @include for-xl-up {
+            width: 60%;
         }
 
         h2 {

@@ -38,22 +38,20 @@ $lineHeightEM: #{$lineHeight}em;
 $linkColour: $mainFontColour;
 $linkHoverColour: $dividerColour;
 
-$widthStandard: 60%;
-$widthSmaller: 80%;
-$widthSmallest: 100%;
-
 
 $titleFonts: 'League Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$titlePrintFonts: Helvetica;
 $titleFontWeight: normal;
-$titlePrintFontWeight: normal;
+
 $headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$headerPrintFonts: $titlePrintFonts;
 $headerFontWeight: 700;
-$headerPrintFontWeight: bold;
+
 $contentFonts: $headerFonts;
-$contentPrintFonts: $titlePrintFonts;
 $contentFontWeight: 300;
+
+
+$printFonts: Helvetica;
+$titlePrintFontWeight: normal;
+$headerPrintFontWeight: bold;
 $contentPrintFontWeight: normal;
 
 $categoryTagColour: #E82C0C;
@@ -68,10 +66,6 @@ $fontSizeSmallest: 14px;
 $fontSizeTitlePrint: 32pt;
 $fontSizeLargePrint: 16pt;
 $fontSizeStandardPrint: 12pt;
-
-$widthStandard: 60%;
-$widthSmaller: 80%;
-$widthSmallest: 100%;
 
 $verticalSpacing: 1em;
 $horizontalSpacing: 2em;
