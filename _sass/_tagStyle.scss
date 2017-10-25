@@ -45,35 +45,3 @@
     }
   }
 }
-
-.groupedPosts {
-
-    @include clear();
-
-    margin-top: 1em;
-    list-style: none;
-
-    li {
-        margin-bottom: 2px;
-        overflow: hidden;
-    }
-    
-    .meta {
-      float: left;
-    	width: 10em;
-    	border-color: $linkColour;
-    	border-right: 1px;
-      vertical-align: middle;
-    }
-    
-    .title {
-        overflow: hidden;
-        padding-left: 4px;
-    }
-    
-    ul {
-        display: inline-block;
-        list-style: none;
-    }
-
-}

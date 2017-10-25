@@ -30,9 +30,34 @@ $archiveLinkColour: #CBB393;
     }
 
     .groupedPosts {
+ 
+        @include clear();
+    
+        margin-top: 1em;
+        list-style: none;
+    
+        li {
+            margin-bottom: 2px;
+            overflow: hidden;
+        }
+    
+        .meta {
+            width: 7em;
+            border-color: $linkColour;
+            border-right: 1px;
+            vertical-align: middle;
+        }
+        
+        .title {
+            overflow: hidden;
+            padding-left: 4px;
+        }   
+            
         margin-left: 0;
 
         ul {
+            list-style: none;
+
             @include mobileSize(margin-left, 2, 2, 0);
 
             @include respond-to(handhelds){
@@ -67,49 +92,24 @@ $archiveLinkColour: #CBB393;
 
         	font-weight: $contentFontWeight;
             vertical-align: top;
-
-            @include respond-to(handhelds) {
-                display: inline-block;
-                line-height: 1.5em;
-                position: relative;  
-
-                padding-top: 1em;
-                margin-top: -1em;
-
-                &:before, &:after {
-                    content: "";
-                    position: absolute;
-                    height: 5px;
-                    border-top: 1px solid black;
-                    top: 0.65em;
-                    width: 100px;
-                }
-                &:before {
-                    right: 100%;
-                    margin-right: 15px;
-                }
-                &:after {
-                    left: 100%;
-                    margin-left: 15px;
-                }
-        
-            }
         }
         
-        .meta, .meta_year {
-            float: left;
+        .post-list-item {
+            display: flex;
+        }
+
+        .title {
+            flex: 1;
+        }
+
+        .meta, .meta-year {
+
         	border-color: $linkColour;
         	border-right: 1px;
             vertical-align: middle;
-
-            @include mobileSize(margin-right, 2, 0, 0);
         }
 
-        .meta {
-            @include mobileSize(width, 7, 4, 3);
-        }
-
-        .meta_year {
+        .meta-year {
             @include mobileSize(width, 7, 7, 6);
         }
         
@@ -119,7 +119,6 @@ $archiveLinkColour: #CBB393;
         }
         
         ul {
-            display: inline-block;
             list-style: none;
         }
     }
