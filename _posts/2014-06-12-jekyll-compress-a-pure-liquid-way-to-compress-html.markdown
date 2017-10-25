@@ -17,14 +17,16 @@ I have [written in the past][prev_post] about my dislike of the amount of whites
 
 <!--more-->
 
-##What is it?
+## What is it?
+
 [Jekyll-compress][jekyll_compress] is a layout for [Jekyll][jekyll] which removes all whitespace between block level elements. This reduces the size of the file that is to be served, and fixes some other [undesirable spacing issues][spacing_issue].
 
 Most modern web browsers come with tools to inspect the source of a page in a more meaningful way than just viewing the raw source. Theses tools usually format the source to make it look readable, so stripping the whitespace will not cause an issue.
 
 One of the benefits, [fixing spacing issues][spacing_issue] actually bit me the other way round. I had to add padding to my tag and category links after applying this layout.
 
-##Usage
+## Usage
+
 It is simple to use. There is just one file `_layouts/compress.html` which needs to go in the `_layouts` directoy of your Jekyll site. Then just change your main layout, for me this is `_layouts/main.html` to declare a parent layout as so:
 
     ---
