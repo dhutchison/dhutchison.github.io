@@ -36,11 +36,6 @@ $archiveLinkColour: #CBB393;
         margin-top: 1em;
         list-style: none;
     
-        li {
-            margin-bottom: 2px;
-            overflow: hidden;
-        }
-    
         .meta {
             width: 7em;
             border-color: $linkColour;
@@ -56,12 +51,10 @@ $archiveLinkColour: #CBB393;
         margin-left: 0;
 
         ul {
-            list-style: none;
 
-            @include mobileSize(margin-left, 2, 2, 0);
-
-            @include respond-to(handhelds){
-                width: 100%;
+            margin: 0;
+            @include for-md-up {
+                margin-left: 1.5em;
             }
         }
     }
@@ -70,28 +63,15 @@ $archiveLinkColour: #CBB393;
         
         list-style: none;
         
-        li {
-            margin-bottom: 2px;
-            overflow: hidden;
-            text-align: left;
-
-            @include respond-to(handhelds){ 
-                text-align: center;
-                ul {
-                    text-align: left;
-                    margin-left: 0;
-
-                    li {
-                        text-align: left;
-                    }
-                }
-            }
-        }
-        
         h3.year, h3.tag, h3.category {
 
         	font-weight: $contentFontWeight;
             vertical-align: top;
+            text-align: center;
+
+            @include for-md-up {
+                text-align: left;
+            }
         }
         
         .post-list-item {
@@ -116,10 +96,6 @@ $archiveLinkColour: #CBB393;
         .title {
             overflow: hidden;
             padding-left: 4px;
-        }
-        
-        ul {
-            list-style: none;
         }
     }
 
