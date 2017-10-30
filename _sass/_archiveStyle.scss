@@ -81,15 +81,11 @@ $archiveLinkColour: #CBB393;
             flex: 1;
         }
 
-        .meta, .meta-year {
+        .meta {
 
         	border-color: $linkColour;
         	border-right: 1px;
             vertical-align: middle;
-        }
-
-        .meta-year {
-            @include mobileSize(width, 7, 7, 6);
         }
         
         .title {
