@@ -6,6 +6,8 @@ tags:
 - python
 description: Pythonista Dropbox Sync script has got some much needed updates
 date: 2016-06-14 20:34
+series: Pythonista Dropbox Sync
+series_part: 2
 slug: pythonista-dropbox-sync-revisited
 ---
 As mentioned in my [previous post][prev] the Pythonista Dropbox Sync script has been receiving some improvements as a result of "issues" raised on the [GitHub Project][ghp]. It still has some outstanding issues, but has gained many new features since it was first introduced.

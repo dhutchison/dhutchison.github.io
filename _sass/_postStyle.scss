@@ -13,15 +13,9 @@
 
 .post {
 
-    text-align: left;		
-
     .groupingList {
         @extend .groupingList;
         margin: 0;
-    }
-
-    h3 {
-        text-decoration: underline;
     }
     
     h3, h4 {
@@ -35,27 +29,65 @@
         margin-right: auto;
     }
 
-    blockquote {
-        background-color: darken($backgroundColour, 10%);
+    .box {
+        //TODO: Fix magic numbers
+
+        display: block;
+        background: #fff;
+        padding: 15px 20px 15px 45px;
+        margin: 1em 0;
+        position: relative;
+        
+        /*Font*/
+        line-height: 1.2;
+        text-align: justify;
+        
+        /*Box Shadow - (Optional)*/
+        -moz-box-shadow: $thinSpacing $thinSpacing 15px #ccc;
+        -webkit-box-shadow: $thinSpacing $thinSpacing 15px #ccc;
+        box-shadow: $thinSpacing $thinSpacing 15px #ccc;
+
     }
-    
-    article ul {
-        list-style-type: circle;
-        li {
-            padding-left: 2em;
+
+    blockquote {
+        @extend .box;
+
+        /* Borders */
+        border-left: 15px solid $dividerColour;
+        border-right: $thinSpacing solid $dividerColour;
+
+
+        &::before, &::after {
+            font-size: 3em;
+            font-weight: bold;
+            color: lighten($mainFontColour, 10%);
+        }
+
+        &::before {
+            /* Unicode for Left Double Quote in the top left */
+            content: "\201C"; 
+            
+            position: absolute;
+            left: 10px;
+            top: 5px;
+        }
+        
+        &::after {
+            /* Unicode for Left Double Quote in the bottom right */
+            content: "\201D";
+            
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
         }
     }
 
     .post-series {
-        //TODO: Should come from config
-        border-width: 1px;
-        border-style: solid;
-        margin: 1em;
-        border-radius: 1em;
-        background: #cbd5e6;
+        @extend .box;
+        margin: $verticalSpacing $horizontalSpacing;
     }
 
-    article, footer, aside.post-series {
+    .post-content, footer, aside.post-series {
         @include sitePadding();
     }
     
@@ -64,8 +96,21 @@
     }
 }
 
-.post-footer {
-    position: relative;
+.post-meta {
+    display: flex;
+
+    .post-date {
+        margin-right: 1em;
+    }
+
+    .post-category li.category {
+        margin-top: 0;
+    }
+
+}
+
+.post-heading {
+    @extend .heading;
 }
 
 .post-org {

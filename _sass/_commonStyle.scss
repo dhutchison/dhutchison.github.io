@@ -13,18 +13,17 @@ $mqTablet: "only screen and (min-width : 768px) and (max-width : 1024px) ";
 //
 // Variables 
 //
-$backgroundBlue: #5D83C4;
 $dividerColour: #5D83C4;
 
-$headerBackgroundDarkBlue: #212E45; 
+$headerBackground: #212121; 
 $headerFontColour: #DDDDDD;
-$headerLinkHoverColour: $backgroundBlue;
+$headerLinkHoverColour: #5D83C4;
 
 $mainHeaderColour: #475261;
 $mainFontColour: #333333;
-$outerBackgroundColour: #666666;
-$shadowColour: #333333;
-$backgroundColour: #FFFFFF;
+
+$backgroundColour: $headerBackground;
+$contentBackgroundColour: #FFFFFF;
 
 $mainFontPrintColour: #000000;
 
@@ -39,29 +38,26 @@ $lineHeightEM: #{$lineHeight}em;
 $linkColour: $mainFontColour;
 $linkHoverColour: $dividerColour;
 
-$widthStandard: 60%;
-$widthSmaller: 80%;
-$widthSmallest: 100%;
-
 
 $titleFonts: 'League Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$titlePrintFonts: Helvetica;
 $titleFontWeight: normal;
-$titlePrintFontWeight: normal;
+
 $headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$headerPrintFonts: $titlePrintFonts;
 $headerFontWeight: 700;
-$headerPrintFontWeight: bold;
-$contentFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$contentPrintFonts: $titlePrintFonts;
+
+$contentFonts: $headerFonts;
 $contentFontWeight: 300;
+
+
+$printFonts: Helvetica;
+$titlePrintFontWeight: normal;
+$headerPrintFontWeight: bold;
 $contentPrintFontWeight: normal;
 
 $categoryTagColour: #E82C0C;
 $tagColour: #0089e0;
 
 $fontSizeTitle: 6em;
-$fontSizeTitleMobile: 5em;
 $fontSizeStandard: 18px;
 $fontSizeSmaller: 16px;
 $fontSizeSmallest: 14px;
@@ -70,12 +66,10 @@ $fontSizeTitlePrint: 32pt;
 $fontSizeLargePrint: 16pt;
 $fontSizeStandardPrint: 12pt;
 
-$widthStandard: 60%;
-$widthSmaller: 80%;
-$widthSmallest: 100%;
-
 $verticalSpacing: 1em;
 $horizontalSpacing: 2em;
+
+$thinSpacing: 2px;
 
 ///////////////////
 // Common Mixins //
@@ -95,87 +89,55 @@ $horizontalSpacing: 2em;
     }
 }
 
-
-//Function just for doing mobile sizing. If number and no unit, remsize. otherwise use supplied value
-@mixin mobileSize($property, $sizeValue, $iPadSizeValue: $sizeValue, $iPhoneSizeValue: $sizeValue) {
-    
-    @include remSize($property, $sizeValue, $fontSizeStandard);
-    
-    @if $iPadSizeValue != $sizeValue {
-        @include respond-to(tablets) {
-            @include remSize($property, $iPadSizeValue, $fontSizeSmaller);
-        }
-    }
-
-    @if $iPhoneSizeValue != $sizeValue {
-        @include respond-to(handhelds) {
-            @include remSize($property, $iPhoneSizeValue, $fontSizeSmallest);
-        }
+// Extra small devices (portrait phones, less than 576px)
+@mixin for-xs-only {
+    @media (max-width: 575px) {
+        @content;
     }
 }
 
-@mixin remSize($property, $sizeValue, $pxFontSize: $fontSizeStandard) {
-    
-    @if isnumber($sizeValue) and unitless($sizeValue) {    
-        $pxValue: round(($sizeValue * $pxFontSize));
-        @if unitless($pxValue) {       
-            #{$property}: #{$pxValue}px;
-        } @else {
-            #{$property}: #{$pxValue};
-        }
-        #{$property}: #{$sizeValue}rem; 
-    } @else {
-        #{$property}: $sizeValue;
+// Small devices (landscape phones, 576px and up)
+@mixin for-sm-up {
+    @media (min-width: 576px) { 
+        @content;
+    }    
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin for-md-up {
+    @media (min-width: 768px) { 
+        @content;
     }
 }
 
-@mixin respond-to($media) {
-    
-    @if $media == handhelds {
-        @media #{$mqiPhone}, #{$mqHandheld} {
-            @content
-        }
-    } @else if $media == tablets {
-        @media #{$mqiPad},#{$mqTablet} { 
-            @content 
-        }
-    } @else if $media == print {
-        @media only print { 
-            @content 
-        }
-    } @else {
-        // Standard screen
-        @content
+// Large devices (desktops, 992px and up)
+@mixin for-lg-up {
+    @media (min-width: 992px) { 
+        @content;
     }
-        
 }
 
-@mixin liImage($image, $size: 16px) {
-    list-style: none;
-    background-image: $image;
-    background-size: $size; 
-    background-repeat: no-repeat;
-    background-position: 0px ($size / 4); 
-    padding-left: ($size + ($size / 4)); 
+// Extra large devices (large desktops, 1200px and up)
+@mixin for-xl-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+// Only for printing
+@mixin for-print-only {
+    @media only print { 
+        @content;
+    }
 }
 
 @mixin sitePadding() {
-	padding: $verticalSpacing $horizontalSpacing;
-	
-	@include respond-to(handhelds) {
-	    padding: $verticalSpacing;
-	};
+    padding: $verticalSpacing;
+    
+    @include for-md-up {
+        padding: $verticalSpacing $horizontalSpacing;
+    }
 }
-
-@mixin siteMargin() {
-    margin-right: auto;
-    margin-left: auto;
-
-    @include respond-to(handhelds) {
-        margin-right: 0;
-        margin-left: 0;
-    };
-} 
 
 @mixin clear {
     clear: both;

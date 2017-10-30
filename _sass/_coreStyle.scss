@@ -16,71 +16,56 @@ html, body { height: 100%; }
 body {
 	color: $mainFontColour;
 
+    text-align: center;
+
 	font-family: $contentFonts;
 	font-weight: $contentFontWeight;
 
-    @include respond-to(print) {
-        font-family: $contentPrintFonts;
+    @include for-print-only {
+        font-family: $printFonts;
         font-weight: $contentPrintFontWeight;
     };
 
-    @include mobileSize(font-size, $fontSizeStandard, $fontSizeSmaller, $fontSizeSmallest);
+    font-size: $fontSizeSmallest;
 
-	text-align: center;
-	
-        /* Carbon fibre 
-     * by Atle Mo (design), Lea Verou (code)
-     * from http://lea.verou.me/css3patterns/#carbon-fibre */
-    background:
-        radial-gradient(black 15%, transparent 16%) 0 0,
-        radial-gradient(black 15%, transparent 16%) 8px 8px,
-        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-    background-color:#282828;
-    background-size:16px 16px;
-	// background-color: @backgroundBlue;
-	
+    @include for-sm-up {
+        font-size: $fontSizeSmaller;
+    }
+
+    @include for-md-up {
+        font-size: $fontSizeStandard;
+    }	
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: $headerFontWeight;
+    font-family: $contentFonts;
 
-    @include respond-to(print) {
+    @include for-print-only {
         font-weight: $headerPrintFontWeight;
+        font-family: $printFonts;
     };
 }
 
 h1, h2 {
-    font-family: $headerFonts;
     text-align: left;    
-
-    @include respond-to(print) {
-        font-family: $headerPrintFonts;
-    };
-}
-
-h3, h4, h5, h6 {
-    font-family: $contentFonts;
-
-    @include respond-to(print) {
-        font-family: $contentPrintFonts;
-    }
 }
 
 h1 {
-    @include mobileSize(font-size, 2.4, 2.4, 1.6);
+    font-size: 2.4em;
     line-height: 1em;
     text-align: center;
 }
 
 h2 {
-    @include mobileSize(font-size, 1.75, 1.75, 1.4);
+    font-size: 1.75em;
     line-height: 1em;
-    @include remSize(margin-top, 1);
+
+    margin-top: 1em;
 }
 
 h3 {
-    @include remSize(font-size, 1.3);
+    font-size: 1.3em;
 }
 
 h4, h5, h6 {
@@ -102,23 +87,14 @@ a {
 	}
 }
 
-table {
-    text-align: center;
-	font-size: inherit;
-}
-
-figure, pre.highlight {
+figure {
     border: 1px solid #ddd;
     background-color: #eef;
     padding: 1em;
-
-    @include mobileSize(margin-left, -2em, -2em, -1em);
-    @include mobileSize(margin-right, -2em, -2em, -1em);
-    
 }
 
-td.code {
-    padding-left: 1em;
+figure > pre, pre.highlight {
+    overflow-x: auto;
 }
 
 .fa-ul {
@@ -129,38 +105,17 @@ td.code {
     }
 }
 
-code {
-    border: 1px solid #ddd;
-    background-color: #eef;
+.heading {
+    background-color: $headerBackground;
 
-    font-size: 0.8em;
-    border: none;
-    
-    word-wrap: break-word;  
-    
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
-
-    table {
-        text-align: left;
-    }
+    border-color: $dividerColour;
+    border-style: solid;
+    border-width: $thinSpacing 0 0 0;
 }
 
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
 .heading, .footer {
-
-    background-color: $headerBackgroundDarkBlue;
-    padding: 1em 1em 1em 2em;
-
-    @include respond-to(handhelds) {
-        padding-left: 1em;
-    }; 
+    
+    @include sitePadding();
 
     color: $headerFontColour;
 
@@ -173,18 +128,17 @@ code {
         }
     }
 
-    p {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
     h2 {
         font-weight: $contentFontWeight;
         text-align: left;
 
         margin-top: 0;
+    }
+}
 
-        display: inline-block;
+.footer { 
+    p {
+        margin: 0 0 0 0;
     }
 }
 
@@ -203,228 +157,177 @@ code {
 
 }
 
-.container{
+.container {
 
-    .site {
-    	/*	background*/
-    	background-color: $backgroundColour;
-    	
-    	/* text */
-    	line-height: $lineHeightEM;
-    	text-align: left;
-    	text-rendering: optimizelegibility;
-    	font-weight: $contentFontWeight;
-
-        @include respond-to(print) {
-            font-weight: $contentPrintFontWeight;
-        };
-    	
-    	/* Sizing */
-    	@include mobileSize(width, $widthStandard, $widthSmaller, $widthSmallest);
-
-    	padding-bottom: 0;
-        @include respond-to(handhelds) {
-            padding-top: 1em;
-        };
-
-   		@include siteMargin();
-        
+    /*	background*/
+    background-color: $backgroundColour;
     
-        hr {
-        	border: 0;
-        	height: 0;
-        	border-top: 1px solid rgba(0, 0, 0, 0.1);
-        	border-bottom: 1px solid fadeout($dividerColour, 40%);
-        	margin-top: 1em;
-            margin-bottom: 1em; 
-        }
+    /* text */
+    line-height: $lineHeightEM;
+    text-align: left;
+    text-rendering: optimizelegibility;
+    font-weight: $contentFontWeight;
+
+    @include for-print-only {
+        font-weight: $contentPrintFontWeight;
+    };
     
-    	.header {
+    /* Sizing */
+    width: 100%;
 
-            background-color: $backgroundColour;
+    padding: 1em 0 0 0;
 
-    		font-family: $headerFonts;
-    		text-align: center;
-
-            position: inherit;
-            height: auto;
-
-            top: 0;
-            z-index: 100000;
-
-            @include remSize(padding-bottom, 1);
-
-            @include respond-to(print) {
-                font-family: $headerPrintFonts;
-            };
-    		
-    		h1.title {
-                margin-bottom: 0.25em;
-    			color: $mainHeaderColour;
-
-                font-family: $titleFonts;
-                font-weight: $titleFontWeight;
-
-                @include respond-to(print) {
-                    font-family: $titlePrintFonts;
-                    font-weight: $titlePrintFontWeight;
-                };
-
-                font-size: $fontSizeTitle;
-                @include respond-to(handhelds) {
-                   font-size: $fontSizeTitleMobile;
-                };
-
-                a:hover {
-                    color: $dividerColour;
-                }
-
-
-                margin-top: 0;
-    		}
-    		
-    		#nav {
-                ul {
-                    margin: 0;
-                }
-    		    li {
-    		        display: inline;
-    		    }
-    		}
-    		
-    		.links {
-    		    width: 100%;
-    		    font-weight: $contentFontWeight;
-                @include remSize(font-size, 1.2);
-    		
-                display: inline-block;
-                text-align: center;
-    
-    			ul {
-    				list-style-type: none;
-    				
-    				li {
-    					display: inline;
-    					
-    					a {
-    						text-decoration: none;
-                            position: relative;
-    					}
-    					
-    					a:hover {
-    						text-decoration: underline;
-    					}
-    				}
-
-                    li + li:before {
-                        content: " | ";
-                        padding-top: 0;
-                        padding-bottom: 0;
-                        @include mobileSize(padding-left, 10px, 10px, 5px);
-                        @include mobileSize(padding-right, 10px, 10px, 5px);
-                    }
-    			}
-    		}
-
-            .meta { 
-                font-family: $headerFonts;
-                font-weight: $contentFontWeight;
-            }
-    	}
-    	
-    	.content {
-            margin-top: 0;
-
-            h2 {
-                .meta {
-                    @include remSize(font-size, 1);
-                }
-            }
-
-    		
-    		.pagination {
-    		    text-align: center;
-    		    
-    		    ul {
-    		        list-style:none; 
-        		    
-    	    	    
-    	    	    li{
-                        display: inline-block;
-                        margin-right: 1em;
-    	    	    }
-    	    	    
-    		    }    		    
-    		}
-    	}
-    	
-    	.footer {
-    	    	        
-   	        font-size: 0.8em;
-    		// overflow: hidden;
-    		padding-top: 1em;
-    		z-index: 1;
-    		
-    		.copy {
-    			width: 100%;
-                padding-top: 1em;
-    			text-align: center;
-    		}
-    	}
+    @include for-md-up {
+        padding: 0;
     }
-}
+    
 
-.chart-wrapper {
+    hr {
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid fadeout($dividerColour, 40%);
+        margin-top: 1em;
+        margin-bottom: 1em; 
+    }
 
-    h2 {
-		display: inline-block;
-		padding-right: 2em;
-		margin-top: 0;
-	}
+    .header {
 
-    .chart-legend {
+        background-color: $backgroundColour;
+        color: $headerFontColour;
 
-		display: inline-block;
-		vertical-align: top;
+        a { 
+            color: $headerFontColour;
 
-  		ul {
-    		list-style: none;
-    		padding:0;
-    		margin:0;
-    		position: relative;
-		}
+            &:hover {
+                text-decoration: underline;
+                color: $headerLinkHoverColour;
+                transition: .5s;
+            }
+        }
 
-		li {
-			display: inline;
-			padding-right: 2em;
-			position: relative;
-		}
-	}
-}
+        font-family: $headerFonts;
+        text-align: center;
 
-.chart-options {
-    text-align: center;
+        position: inherit;
+        height: auto;
 
-    .granularity, .distanceUnit, .options {
-		display: inline-block;
-	}
+        top: 0;
+        z-index: 100000;
 
-    input {
-		margin-right: $horizontalSpacing / 2;
-	}
+        padding-bottom: 1em;
 
-	label {
-		margin-right: $horizontalSpacing;
-	}
+        @include for-print-only {
+            font-family: $printFonts;
+        };
+        
+        h1.title {
+            margin-bottom: 0.25em;
+            color: $mainHeaderColour;
 
-    legend.heading {
-		border: 1px black solid; 
-		margin-left: 1em; 
-		padding: 0.2em 0.8em;
-	}
+            font-family: $titleFonts;
+            font-weight: $titleFontWeight;
 
-    fieldset.options {
-        padding: .35em .625em .75em;
+            @include for-print-only {
+                font-family: $printFonts;
+                font-weight: $titlePrintFontWeight;
+            };
+
+            font-size: $fontSizeTitle;
+
+            a:hover {
+                color: $dividerColour;
+            }
+
+
+            margin-top: 0;
+        }
+        
+        .header-menu {
+            width: 100%;
+            font-weight: $contentFontWeight;
+            font-size: 1.4em;
+        
+            display: inline-block;
+            text-align: center;
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                
+                li {
+                    display: inline;
+                    
+                    a {
+                        text-decoration: none;
+                        position: relative;
+                    }
+                    
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                li + li:before {
+                    content: " | ";
+                    padding: 0 5px;
+
+                    @include for-md-up {
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+
+        .meta { 
+            font-family: $headerFonts;
+            font-weight: $contentFontWeight;
+        }
+    }
+    
+    .content {
+        background-color: $contentBackgroundColour;
+        
+        margin: 0;
+        width: 100%;
+
+        @include for-md-up {
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        @include for-lg-up {
+            width: 70%;
+        }
+
+        @include for-xl-up {
+            width: 60%;
+        }
+        
+        .pagination {
+            text-align: center;
+            
+            ul {
+                list-style:none; 
+                
+                
+                li{
+                    display: inline-block;
+                    margin-right: 1em;
+                }
+                
+            }    		    
+        }
+    }
+    
+    .footer {
+                    
+        font-size: 0.8em;
+        
+        .copy {
+            padding-top: 1em;
+            text-align: center;
+        }
     }
 }
 
@@ -446,24 +349,22 @@ code {
         }
     
         .container {
-            .site {
                 
-                width: 100%;
-                margin-left: 0;
-                margin-right: 0;
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        
+            .header, .footer {
+                display: none;
+            }
             
-                .header, .footer {
-                    display: none;
-                }
-                
-                .content {
-                    margin-top: 0;
-                }
-                
-                a {
-                    text-decoration: none;
-                    color: $mainHeaderColour;
-                }
+            .content {
+                margin-top: 0;
+            }
+            
+            a {
+                text-decoration: none;
+                color: $mainHeaderColour;
             }
         }
 

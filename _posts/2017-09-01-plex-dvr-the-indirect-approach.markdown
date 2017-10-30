@@ -30,6 +30,7 @@ So, no official driver support just now, but if we want to run a tainted kernel 
 > Tvheadend is a TV streaming server and recorder for Linux, FreeBSD and Android supporting DVB-S, DVB-S2, DVB-C, DVB-T, ATSC, ISDB-T, IPTV, SAT>IP and HDHomeRun as input sources.
 >
 > Tvheadend offers the HTTP (VLC, MPlayer), HTSP (Kodi, Movian) and SAT>IP streaming.
+>
 > --<cite>[Tvheadend.org][tvh]</cite>
 
 ## Another DVR with Live TV - How does that help with Plex?
@@ -83,33 +84,33 @@ The Vagrantfile is as follows. Note that it is important we use a fixed IP addre
 
 {% highlight ruby %}
 
-    # -*- mode: ruby -*-
-    # vi: set ft=ruby :
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
-    # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-    VAGRANTFILE_API_VERSION = "2"
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
 
-    Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-    config.vm.box = "ubuntu/xenial64"
-    
-    config.vm.network "public_network", bridge: 'eno1', ip: "192.168.0.99"
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+config.vm.box = "ubuntu/xenial64"
 
-    # If using virtualbox, pass through our USB device
-    config.vm.provider "virtualbox" do |vb|
-        vb.customize ["modifyvm", :id, "--usb", "on"]
-        vb.customize ["modifyvm", :id, "--usbxhci", "on"]
-        vb.customize ["usbfilter", "add", "0",
-        "--target", :id,
-        "--name", "MicrosoftUSB",
-        "--serialnumber", "001234567890"]
-    end
+config.vm.network "public_network", bridge: 'eno1', ip: "192.168.0.99"
 
-    # Disable the default share.
-    config.vm.synced_folder '.', '/vagrant', disabled: true
+# If using virtualbox, pass through our USB device
+config.vm.provider "virtualbox" do |vb|
+    vb.customize ["modifyvm", :id, "--usb", "on"]
+    vb.customize ["modifyvm", :id, "--usbxhci", "on"]
+    vb.customize ["usbfilter", "add", "0",
+    "--target", :id,
+    "--name", "MicrosoftUSB",
+    "--serialnumber", "001234567890"]
+end
 
-    # Provision the VM using a shell script
-    config.vm.provision :shell, path: "Vagrant_bootstrap.sh"
-    end
+# Disable the default share.
+config.vm.synced_folder '.', '/vagrant', disabled: true
+
+# Provision the VM using a shell script
+config.vm.provision :shell, path: "Vagrant_bootstrap.sh"
+end
 
 {% endhighlight %}
 
