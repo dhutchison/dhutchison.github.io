@@ -16,6 +16,8 @@ html, body { height: 100%; }
 body {
 	color: $mainFontColour;
 
+    text-align: center;
+
 	font-family: $contentFonts;
 	font-weight: $contentFontWeight;
 
@@ -24,9 +26,15 @@ body {
         font-weight: $contentPrintFontWeight;
     };
 
-    @include mobileSize(font-size, $fontSizeStandard, $fontSizeSmaller, $fontSizeSmallest);
+    font-size: $fontSizeSmallest;
 
-	text-align: center;
+    @include for-sm-up {
+        font-size: $fontSizeSmaller;
+    }
+
+    @include for-md-up {
+        font-size: $fontSizeStandard;
+    }	
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -82,10 +90,9 @@ figure {
     border: 1px solid #ddd;
     background-color: #eef;
     padding: 1em;
-    
 }
 
-pre {
+figure > pre, pre.highlight {
     overflow-x: auto;
 }
 
