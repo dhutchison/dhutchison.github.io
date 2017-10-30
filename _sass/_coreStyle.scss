@@ -100,10 +100,9 @@ pre {
 .heading {
     background-color: $headerBackground;
 
-    // border-color: $dividerColour;
-    border-color: $contentBackgroundColour;
-    border-style: inset;
-    border-width: 2px 2px 0 2px;
+    border-color: $dividerColour;
+    border-style: solid;
+    border-width: 2px 0 0 0;
 }
 
 .heading, .footer {
@@ -281,7 +280,7 @@ pre {
     }
     
     .content {
-        background: $contentBackgroundColour;
+        background-color: $contentBackgroundColour;
         
         margin: 0;
         width: 100%;

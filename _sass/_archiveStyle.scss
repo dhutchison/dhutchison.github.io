@@ -33,7 +33,7 @@ $archiveLinkColour: #CBB393;
  
         @include clear();
     
-        margin-top: 1em;
+        margin: 1em 0 0 0;
         list-style: none;
     
         .meta {
@@ -47,12 +47,10 @@ $archiveLinkColour: #CBB393;
             overflow: hidden;
             padding-left: 4px;
         }   
-            
-        margin-left: 0;
 
         ul {
 
-            margin: 0;
+            margin: 1em 0;
             @include for-md-up {
                 margin-left: 1.5em;
             }
@@ -76,6 +74,7 @@ $archiveLinkColour: #CBB393;
         
         .post-list-item {
             display: flex;
+            margin: 0.5em 0;
         }
 
         .title {
