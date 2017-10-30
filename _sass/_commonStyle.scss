@@ -58,7 +58,6 @@ $categoryTagColour: #E82C0C;
 $tagColour: #0089e0;
 
 $fontSizeTitle: 6em;
-$fontSizeTitleMobile: 5em;
 $fontSizeStandard: 18px;
 $fontSizeSmaller: 16px;
 $fontSizeSmallest: 14px;
@@ -69,6 +68,8 @@ $fontSizeStandardPrint: 12pt;
 
 $verticalSpacing: 1em;
 $horizontalSpacing: 2em;
+
+$thinSpacing: 2px;
 
 ///////////////////
 // Common Mixins //
@@ -128,60 +129,6 @@ $horizontalSpacing: 2em;
     @media only print { 
         @content;
     }
-}
-
-//Function just for doing mobile sizing. If number and no unit, remsize. otherwise use supplied value
-@mixin mobileSize($property, $sizeValue, $iPadSizeValue: $sizeValue, $iPhoneSizeValue: $sizeValue) {
-    
-    @include remSize($property, $sizeValue, $fontSizeStandard);
-    
-    @if $iPadSizeValue != $sizeValue {
-        @include respond-to(tablets) {
-            @include remSize($property, $iPadSizeValue, $fontSizeSmaller);
-        }
-    }
-
-    @if $iPhoneSizeValue != $sizeValue {
-        @include respond-to(handhelds) {
-            @include remSize($property, $iPhoneSizeValue, $fontSizeSmallest);
-        }
-    }
-}
-
-@mixin remSize($property, $sizeValue, $pxFontSize: $fontSizeStandard) {
-    
-    @if isnumber($sizeValue) and unitless($sizeValue) {    
-        $pxValue: round(($sizeValue * $pxFontSize));
-        @if unitless($pxValue) {       
-            #{$property}: #{$pxValue}px;
-        } @else {
-            #{$property}: #{$pxValue};
-        }
-        #{$property}: #{$sizeValue}rem; 
-    } @else {
-        #{$property}: $sizeValue;
-    }
-}
-
-@mixin respond-to($media) {
-    
-    @if $media == handhelds {
-        @media #{$mqiPhone}, #{$mqHandheld} {
-            @content;
-        }
-    } @else if $media == tablets {
-        @media #{$mqiPad},#{$mqTablet} { 
-            @content;
-        }
-    } @else if $media == print {
-        @media only print { 
-            @content;
-        }
-    } @else {
-        // Standard screen
-        @content;
-    }
-        
 }
 
 @mixin sitePadding() {

@@ -35,8 +35,7 @@
         display: block;
         background: #fff;
         padding: 15px 20px 15px 45px;
-        @include remSize(margin-top, 1);
-        @include remSize(margin-bottom, 1);
+        margin: 1em 0;
         position: relative;
         
         /*Font*/
@@ -44,9 +43,9 @@
         text-align: justify;
         
         /*Box Shadow - (Optional)*/
-        -moz-box-shadow: 2px 2px 15px #ccc;
-        -webkit-box-shadow: 2px 2px 15px #ccc;
-        box-shadow: 2px 2px 15px #ccc;
+        -moz-box-shadow: $thinSpacing $thinSpacing 15px #ccc;
+        -webkit-box-shadow: $thinSpacing $thinSpacing 15px #ccc;
+        box-shadow: $thinSpacing $thinSpacing 15px #ccc;
 
     }
 
@@ -55,7 +54,7 @@
 
         /* Borders */
         border-left: 15px solid $dividerColour;
-        border-right: 2px solid $dividerColour;
+        border-right: $thinSpacing solid $dividerColour;
 
 
         &::before, &::after {
