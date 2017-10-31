@@ -37,6 +37,11 @@ body {
     }	
 }
 
+main {
+    /* This is here because IE 11 still does not support the "main" tag */
+    display: block;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: $headerFontWeight;
     font-family: $contentFonts;
