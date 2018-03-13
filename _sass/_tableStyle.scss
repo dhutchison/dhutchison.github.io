@@ -1,0 +1,49 @@
+@import "commonStyle";
+
+table {
+    width: 100%;
+    margin-bottom: $verticalSpacing;
+    
+    
+    thead {
+        border: 0;
+      
+        th {
+            background-color: $mainHeaderColour;
+            border: 1px solid $mainHeaderColour;
+            font-weight: normal;
+            color: $headerFontColour;
+            
+            &:first-of-type {
+                text-align: left; 
+            }
+        }
+    }
+    
+    th, td {
+        padding: .5em;
+        vertical-align: middle;
+    }
+    
+    tbody {
+        
+        tr {
+            margin-bottom: 1em;
+            border: 2px solid $mainHeaderColour;
+            
+            
+            &:last-of-type {
+                margin-bottom: 0; 
+            }
+            
+            &:nth-of-type(even) {
+                background-color: #f8f8f8;
+            }
+        }
+      
+        th[scope="row"] {
+            background-color: $mainHeaderColour;
+            color: $headerFontColour;
+        }
+    }
+}

@@ -37,6 +37,10 @@ body {
     }	
 }
 
+code {
+    font-size: $fontSizeSmallest;
+}
+
 main {
     /* This is here because IE 11 still does not support the "main" tag */
     display: block;
