@@ -127,7 +127,7 @@ The sample project exposes the urls:
     - The resource path for this on the GlassFish server is "*/WarWSService*"
     - This is a JAX-WS Web Service which will return details of the certificate which has been used to authenticate.
     - The project contains a "*TestClient*" class to call this web service. This is not a proper test case, just code which calls a set of URLs and outputs the results. The "Run Test Client" Ant target can be used to run this. 
-        - *Note: * This Ant target contains hard coded details of a key store which contains the Client Certificate to authenticate with the service. It is not configured with proper dependency management, learning maven is for another day.
+        - *Note:* This Ant target contains hard coded details of a key store which contains the Client Certificate to authenticate with the service. It is not configured with proper dependency management, learning maven is for another day.
 
 
 ### Proxying EAR web service traffic
@@ -247,7 +247,7 @@ The "*proxyHandler*" property only takes effect if "*auth-pass-through-enabled*"
 
 The documentation says: 
 
-    The proxy handler inspects incoming requests for the custom request headers through which the proxy server conveys the information about the original client request, and makes this information available to the web application using standard `ServletRequest` APIs.
+> The proxy handler inspects incoming requests for the custom request headers through which the proxy server conveys the information about the original client request, and makes this information available to the web application using standard `ServletRequest` APIs.
 
 The proxy handler implementation is configurable globally at the HTTP service level with the "*proxyHandler*" property, whose value specifies the fully-qualified class name of an implementation of the `com.sun.appserv.ProxyHandler` abstract class. The default implementation of this uses the following headers:
 
