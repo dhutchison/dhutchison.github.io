@@ -82,8 +82,11 @@
         }
     }
 
-    .post-series {
+    .post-series, .toc-container {
         @extend .box;
+    }
+
+    .post-series {
         margin: $verticalSpacing $horizontalSpacing;
     }
 

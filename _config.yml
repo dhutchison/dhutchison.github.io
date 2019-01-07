@@ -10,7 +10,6 @@ twitter:
   username: DavidHutchison
 
 highlighter: rouge
-#markdown: rdiscount
 markdown: kramdown
 timezone: Europe/London
 permalink: /:year/:month/:day/:title/
@@ -23,6 +22,9 @@ plugins:
 - jekyll-gist
 - jekyll-seo-tag
 - jekyll-feed
+
+kramdown:
+  parse_block_html: true
 
 excerpt_separator: <!--more-->
 drop_caps: false
