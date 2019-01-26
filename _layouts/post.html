@@ -6,7 +6,9 @@ post: true
 	<header class="post-heading">
 		{% if page.header_image %} {{ page.header_image | markdownify }}{% endif %}
 		<h2 class="post-title">
-			<a href="{{ page.url }}" class="title">{{ page.title }}</a>
+			<a href="{% if page.link %}{{ page.link }}{% else %}{{ page.url }}{% endif %}" class="title">
+				{{ page.title }}</a>
+			{% if page.link %}<span class="link-arrow"> &rarr;</span>{% endif %}
 		</h2>
 		<div class="post-meta">
 			{% if page.date %}
