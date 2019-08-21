@@ -24,6 +24,7 @@ The mission of the project is described to provide:
 
 The collection of framework specifications which are included in this standard, when used along with JAX-RS, provides the pieces  required to build applications in a modern "microservices" architecture, while leaving behind more legacy aspects (and bloat) of the Java EE specification.
 
+<!--more-->
 
 ## Starter
 
