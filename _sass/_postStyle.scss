@@ -56,6 +56,10 @@
         border-left: 15px solid $dividerColour;
         border-right: $thinSpacing solid $dividerColour;
 
+        p {
+            text-align: left;
+        }
+
 
         &::before, &::after {
             font-size: 3em;
