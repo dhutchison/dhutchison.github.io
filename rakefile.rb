@@ -32,7 +32,7 @@ task :publish, :filename do |t, args|
   # if there's a filename passed (rake publish[filename])
   # use it. Otherwise, list all available drafts in a menu
   
-  source_dir = '/Users/david/Sites/dhutchison.github.io'
+  source_dir = './'
   posts_dir = '_posts'
   new_post_ext = 'markdown'
   
