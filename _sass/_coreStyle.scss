@@ -231,7 +231,6 @@ figure > pre, pre.highlight {
         };
         
         h1.title {
-            margin-bottom: 0.25em;
             color: $mainHeaderColour;
 
             font-family: $titleFonts;
@@ -247,9 +246,11 @@ figure > pre, pre.highlight {
             a:hover {
                 color: $dividerColour;
             }
+        }
 
-
-            margin-top: 0;
+        .site-byline {
+            font-size: $fontSizeSmaller;
+            margin-bottom: 1.2em;
         }
         
         .header-menu {

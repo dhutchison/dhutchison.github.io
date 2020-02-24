@@ -59,15 +59,22 @@ notlayout: compress
         <script src="/assets/js/html5shiv-3.7.3/dist/html5shiv.min.js"></script>
         <![endif]-->
 
-        <!-- SEO content -->
-        {% seo title=false %}
+        <!-- SEO content: {{ page.include_seo }} -->
+        {% if page.include_seo %}
+          {% seo title=false %}
+        {% else %}
+          <meta name="robots" content="noindex">
+        {% endif %}
     </head>
     <body>
 
         <div class="container">
             <header class="header">
               <div class="header-logo">
-                <h1 class="title"><a href="/" title="Home">{{ site.data.authors.david.name }}</a></h1>
+                <h1 class="title"><a href="/" title="Home">Dev With Imagination</a></h1>
+              </div>
+              <div class="site-byline">
+                By {{ site.data.authors.david.name }}
               </div>
               <nav class="header-menu">
                 <ul class="fa-ul">
