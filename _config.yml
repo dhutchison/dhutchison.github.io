@@ -38,3 +38,10 @@ defaults:
       type: "posts" # previously `post` in Jekyll 2.2.
     values:
       layout: "post"
+      include_seo: true
+  -
+    scope:
+      path: "archives"
+      type: "pages"
+    values:
+      include_seo: true
