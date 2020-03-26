@@ -87,7 +87,7 @@ Missing dependencies
 * openapi3-ts: ./src/app/components/api-components-detail/api-components-detail.component.ts
 ~~~
 
-This did however highlight a number of Angular components as not required when they are, and a few missing ones due to the way they had been imported. In my option this tool can only be used as an advisory check at this point and could not be included as part of a linting phase.
+This did however highlight a number of Angular components as not required when they are, and a few missing ones due to the way they had been imported. In my opinion this tool can only be used as an advisory check at this point and could not be included as part of a linting phase.
 
 ## Checking for Outdated Dependencies
 
