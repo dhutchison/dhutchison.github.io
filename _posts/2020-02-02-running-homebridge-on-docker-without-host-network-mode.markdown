@@ -2,6 +2,8 @@
 title: Running HomeBridge on Docker without Host Network Mode
 layout: post
 summary: How to run HomeBridge on Docker without Host Network Mode
+series: Running HomeBridge on Docker without Host Network Mode
+series_part: 1
 categories:
 - Development
 tags:
