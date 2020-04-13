@@ -5,6 +5,7 @@ categories:
 tags:
 - maven
 - git
+- pre-commit
 summary: How to install Git Hooks as part of the Maven Lifecycle
 date: 2020-04-05 23:17
 slug: managing-git-hooks-in-maven-projects
