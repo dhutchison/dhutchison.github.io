@@ -1,5 +1,7 @@
 ---
 title: Git Commit Hooks for Branch Naming Using Pre-commit
+series: Git Commit Hooks for Branch Naming
+series_part: 1
 categories:
 - Development
 tags:
