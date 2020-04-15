@@ -21,7 +21,7 @@ There is not a hook that we can specifically use at the point that a branch is c
 
 If we are using [pre-commit][precommit], like in our [previous post]({% post_url 2020-04-05-managing-git-hooks-in-maven-projects %}), this can be achieved by using the out-of-the-box [no-commit-to-branch][no-commit-to-branch-hook] hook. This is designed to protect specific branches from direct checkins, but can also take in zero or more `pattern` parameters for regex patterns. By using negations in the regex we can prevent commits to branches which do not match the naming convention. 
 
-With this example `.pre-commit-hooks.yaml`, only branch names starting with "fix/" or "feat/" followed by some alphanumeric description will be accepted. 
+With this example `.pre-commit-config.yaml`, only branch names starting with "fix/" or "feat/" followed by some alphanumeric description will be accepted. 
 
 ~~~ yaml
 - repo: https://github.com/pre-commit/pre-commit-hooks
