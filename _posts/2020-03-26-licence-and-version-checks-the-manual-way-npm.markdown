@@ -1,5 +1,5 @@
 ---
-title: Licence & Version Checks - The Manual Way - NPM
+title: License & Version Checks - The Manual Way - NPM
 series: Software Dependency Lifecycle
 series_part: 3
 categories:
@@ -8,12 +8,12 @@ tags:
 - nexus
 - npm
 - sdlc
-summary: An overview of the tools available to do dependency licence & version checks
+summary: An overview of the tools available to do dependency license & version checks
   with NPM.
 date: 2020-03-26 22:57
 slug: licence-and-version-checks-the-manual-way-npm
 ---
-Throughout this series of blog posts I am looking at how to manage third party dependencies in the software development lifecycle. Before we get into how to automate the process of checking library licences and checking if they are up to date, it is worth looking at how to do this yourself.
+Throughout this series of blog posts I am looking at how to manage third party dependencies in the software development lifecycle. Before we get into how to automate the process of checking library licenses and checking if they are up to date, it is worth looking at how to do this yourself.
 
 In this blog post I will look at the tools available for scanning an Angular application, which would also work for any type of project using NPM. 
 
@@ -28,9 +28,9 @@ In this blog post I will look at the tools available for scanning an Angular app
 
 
 
-## Checking Licences of Dependencies
+## Checking Licenses of Dependencies
 
-There is an NPM module available for inspecting the licence information of modules and their dependencies - [License Checker][npm_license_checker].
+There is an NPM module available for inspecting the license information of modules and their dependencies - [License Checker][npm_license_checker].
 
 ~~~ bash
 MacBook:OpenAPIVisualiser dhutchison$ npx -q license-checker
@@ -51,7 +51,7 @@ MacBook:OpenAPIVisualiser dhutchison$ npx -q license-checker
 
 As well as being able to just list out the licenses which are used, additional options can be used to filter the output. The default output can be very long depending on the amount of nested dependencies.
 
-The `--summary` flag can be used just to provide a count of the number of dependencies with each licence count, and in most cases the production dependencies are the most important ones to check.
+The `--summary` flag can be used just to provide a count of the number of dependencies with each license count, and in most cases the production dependencies are the most important ones to check.
 
 ~~~ bash
 MacBook:OpenAPIVisualiser dhutchison$ npx -q license-checker --summary --production
@@ -62,7 +62,7 @@ MacBook:OpenAPIVisualiser dhutchison$ npx -q license-checker --summary --product
 └─ BSD-3-Clause: 1
 ~~~
 
-The `--failOn` or `--onlyAllow` flags can be used to supply licence names which will cause the build to fail, so this used be used in a build pipeline to ensure noncompliant licenses do not enter the build chain. 
+The `--failOn` or `--onlyAllow` flags can be used to supply license names which will cause the build to fail, so this used be used in a build pipeline to ensure noncompliant licenses do not enter the build chain. 
 
 ## Finding Unused Dependencies
 
@@ -174,7 +174,7 @@ npm ERR! code ENOAUDIT
 npm ERR! audit Your configured registry (https://nexus.lan/repository/npm-central/) does not support audit requests.
 ~~~
 
-There has been an open [Jira ticket][nexus_audit_issue] about this for the last two years, and the most recent comments suggest a fix is coming but will require a Sonatype IQ licence. However, about three weeks ago (4th of March 2020) Sonatype published a new blog post [Beyond npm Audit to Traverse an Increasingly Complex Dependency Tree][audit_js_blog]. This talks about how an NPM module [Audit.js][auditjs] which audits JavaScript projects using the [Sonatype OSS Index][oss_index] to identify known vulnerabilities and outdated package versions. If you are an IQ subscriber, then this can use an IQ server instead. 
+There has been an open [Jira ticket][nexus_audit_issue] about this for the last two years, and the most recent comments suggest a fix is coming but will require a Sonatype IQ license. However, about three weeks ago (4th of March 2020) Sonatype published a new blog post [Beyond npm Audit to Traverse an Increasingly Complex Dependency Tree][audit_js_blog]. This talks about how an NPM module [Audit.js][auditjs] which audits JavaScript projects using the [Sonatype OSS Index][oss_index] to identify known vulnerabilities and outdated package versions. If you are an IQ subscriber, then this can use an IQ server instead. 
 
 Running this with the "ossi" argument will use the OSS Index
 
