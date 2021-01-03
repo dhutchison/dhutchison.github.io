@@ -5,7 +5,8 @@ group: navigation
 groupOrder: 1
 ---
 {% for post in paginator.posts %}
-	{% include post_preview.html %}
+    {% include post_preview.html %}
+    <hr class="post-divider"/>
 {% endfor %}
 
 <nav class="pagination">    

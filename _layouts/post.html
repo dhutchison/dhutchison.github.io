@@ -25,7 +25,7 @@ post: true
 				</p>
 			</div>
 			{% endif%}
-			{% include post_category_list.html %}
+			{% include post_categories_and_tags.html %}
 		</div>	
 	</header>
 	{% if page.series %}
@@ -59,12 +59,12 @@ post: true
 		{% endif %}
 	</section>
 	<footer class="post-footer">
-	    <section class="footer-top">
+	    <!-- <section class="footer-top">
     	    <section class="post-org">
     	    	{% include post_tag_list.html %}
     		</section>
     		<div class="clear"></div>
-    	</section>
+    	</section> -->
 
     	{% if page.comments %}
     		<div id="disqus_thread"></div>

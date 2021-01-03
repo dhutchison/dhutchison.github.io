@@ -1,61 +1,25 @@
 // Common style information between print and screen
 
 
-// Media query values ************************/
-$mqiPhone: "only screen and (max-device-width: 640px), only screen and (max-device-width: 568px), only screen and (max-device-width: 540px), only screen and (max-device-width: 320px)";
-$mqHandheld: "only screen and (max-width: 640px), only screen and (max-width: 568px), only screen and (max-width: 540px), only screen and (max-width: 320px)";
- 
-$mqiPad: "only screen and (min-device-width : 768px) and (max-device-width : 1024px) ";
-$mqTablet: "only screen and (min-width : 768px) and (max-width : 1024px) ";
-//Retina add rule and (-webkit-min-device-pixel-ratio: 2)
-//Non-Retina add rule and (-webkit-min-device-pixel-ratio: 1)
+
 
 //
 // Variables 
 //
-$dividerColour: #5D83C4;
-
-$headerBackground: #212121; 
-$headerFontColour: #DDDDDD;
-$headerLinkHoverColour: #5D83C4;
 
 $mainHeaderColour: #475261;
 $mainFontColour: #333333;
 
-$backgroundColour: $headerBackground;
-$contentBackgroundColour: #FFFFFF;
-
 $mainFontPrintColour: #000000;
-
-$mainHeaderLeftGradient: #5D83C4;
-
-$headerHeight: 6em;
-
 
 $lineHeight: 1.5;
 $lineHeightEM: #{$lineHeight}em;
 
 $linkColour: $mainFontColour;
-$linkHoverColour: $dividerColour;
+$linkHoverColour: #5D83C4;
 
 
-$titleFonts: 'League Gothic', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$titleFontWeight: normal;
 
-$headerFonts: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$headerFontWeight: 700;
-
-$contentFonts: $headerFonts;
-$contentFontWeight: 300;
-
-
-$printFonts: Helvetica;
-$titlePrintFontWeight: normal;
-$headerPrintFontWeight: bold;
-$contentPrintFontWeight: normal;
-
-$categoryTagColour: #E82C0C;
-$tagColour: #0089e0;
 
 $fontSizeTitle: 6em;
 $fontSizeStandard: 18px;
@@ -63,82 +27,34 @@ $fontSizeSmaller: 16px;
 $fontSizeSmallest: 14px;
 
 $fontSizeTitlePrint: 32pt;
-$fontSizeLargePrint: 16pt;
 $fontSizeStandardPrint: 12pt;
 
 $verticalSpacing: 1em;
 $horizontalSpacing: 2em;
 
+//TODO: Remove
 $thinSpacing: 2px;
-
 ///////////////////
 // Common Mixins //
 ///////////////////
 
-@mixin fonts() {
-    /* Font Definitions */
-    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
+@mixin respond-to($media) {
     
-    $lg-font-path: '/assets/fonts/league-gothic';
-    @font-face {
-        font-family: 'League Gothic';
-        src: url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.eot");
-        src: local('☺'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.woff") format('woff'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.ttf") format('truetype'), url("#{$lg-font-path}/leaguegothic-condensed-regular-webfont.svg") format('svg');
-        font-weight: normal;
-        font-style: normal;
+    @if $media == handhelds {
+        @media #{$mqHandheld} {
+            @content
+        }
+    } @else if $media == tablets {
+        @media #{$mqiPad},#{$mqTablet} { 
+            @content 
+        }
+    } @else if $media == print {
+        @media only print { 
+            @content 
+        }
+    } @else {
+        // Standard screen
+        @content
     }
-}
-
-// Extra small devices (portrait phones, less than 576px)
-@mixin for-xs-only {
-    @media (max-width: 575px) {
-        @content;
-    }
-}
-
-// Small devices (landscape phones, 576px and up)
-@mixin for-sm-up {
-    @media (min-width: 576px) { 
-        @content;
-    }    
-}
-
-// Medium devices (tablets, 768px and up)
-@mixin for-md-up {
-    @media (min-width: 768px) { 
-        @content;
-    }
-}
-
-// Large devices (desktops, 992px and up)
-@mixin for-lg-up {
-    @media (min-width: 992px) { 
-        @content;
-    }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@mixin for-xl-up {
-    @media (min-width: 1200px) {
-        @content;
-    }
-}
-
-// Only for printing
-@mixin for-print-only {
-    @media only print { 
-        @content;
-    }
-}
-
-@mixin sitePadding() {
-    padding: $verticalSpacing;
-    
-    @include for-md-up {
-        padding: $verticalSpacing $horizontalSpacing;
-    }
-}
-
-@mixin clear {
-    clear: both;
+        
 }

@@ -23,7 +23,7 @@ $archiveLinkColour: #CBB393;
 }
 
 .archives {
-    @include sitePadding();
+    // @include sitePadding();
 
     .fa-li, .fa-li.fa-lg {
         margin-left: 0;
@@ -31,7 +31,7 @@ $archiveLinkColour: #CBB393;
 
     .groupedPosts {
  
-        @include clear();
+        // @include clear();
     
         margin: 1em 0 0 0;
         list-style: none;
@@ -51,9 +51,9 @@ $archiveLinkColour: #CBB393;
         ul {
 
             margin: 1em 0;
-            @include for-md-up {
-                margin-left: 1.5em;
-            }
+            // @include for-md-up {
+            //     margin-left: 1.5em;
+            // }
         }
     }
 
@@ -67,9 +67,9 @@ $archiveLinkColour: #CBB393;
             vertical-align: top;
             text-align: center;
 
-            @include for-md-up {
-                text-align: left;
-            }
+            // @include for-md-up {
+            //     text-align: left;
+            // }
         }
         
         .post-list-item {

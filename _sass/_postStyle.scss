@@ -94,9 +94,9 @@
         margin: $verticalSpacing $horizontalSpacing;
     }
 
-    .post-content, footer, aside.post-series {
-        @include sitePadding();
-    }
+    // .post-content, footer, aside.post-series {
+    //     @include sitePadding();
+    // }
     
     ul, ol {
         margin-left: 1.35em;
