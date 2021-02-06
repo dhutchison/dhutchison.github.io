@@ -67,7 +67,7 @@ While I could have just captured the output of the container's mDNS record and p
 
 Ultimately this involved some research into the HAP protocol, and how HomeBridge uses [HAP-NodeJS][HAP-NodeJS] to advertise the service. 
 
-The result is the following linked bash script which inspects a running HomeBridge container for the required configuration it needs to generate an Avahi service file. This file is then moved to the `/etc/avahi/services` directory for use. This should be published without the need for a restart of the avahi-daemon. [generate_service.sh][generate_service.sh]
+The result is the linked bash script, [generate_service.sh][generate_service.sh], which inspects a running HomeBridge container for the required configuration it needs to generate an Avahi service file. This file is then moved to the `/etc/avahi/services` directory for use. This should be published without the need for a restart of the avahi-daemon. 
 
 ## Docker Compose
 
