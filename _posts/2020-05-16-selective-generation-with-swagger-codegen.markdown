@@ -1,6 +1,8 @@
 ---
 title: Selective Generation with Swagger Codegen
 summary: How to restrict the server stubs Swagger Codegen generates
+series: Selective Code Generation from OpenAPI Specifications
+series_part: 1
 categories:
 - Development
 tags:
