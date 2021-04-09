@@ -3,7 +3,7 @@ title: Raspberry Pi USB Boot with JMS578 Based USB-to-SATA Enclosures
 summary: "Some JMS578 based USB-to-SATA enclosures cannot boot a Raspberry Pi 4B over
   USB 3 without a firmware update being applied. \n"
 tags:
-- raspberry-pi
+- RaspberryPi
 categories:
 - Development
 date: 2021-01-03 18:29
