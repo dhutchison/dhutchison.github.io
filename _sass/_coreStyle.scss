@@ -3,7 +3,7 @@
 @import "commonStyle";
 
 /* Font Definitions */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;600&display=swap');
 
 /* Global Reset */
 * {
@@ -27,15 +27,11 @@ body {
 }
 
 h1 {
-    font-size: $titleFontSize;
+    font-size: calc(1.5rem + 3vw);
     line-height: 1em;
 
     font-family: $titleFonts;
     font-weight: $titleFontWeight;
-
-    @include respond-to(handhelds) {
-        font-size: $titleFontSizeHandheld;
-    }
 }
 
 h2, h3, h4, h5, h6 {
@@ -109,50 +105,49 @@ figure > pre, pre.highlight {
     .header {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         margin: 2rem;
         
         ul {
             list-style-type: none;
-            margin-top: ($fontSizeTitle - 1);
+            
             padding: 0;
             overflow: hidden;
+
+            display: flex;
+
+            @include respond-to(handhelds) {
+                display: block;
+            }
         }
+
         
         li {
-            float: left;
             margin-left: 1em;
         }
     }
 
-    // .post-heading {
-    //     background-color: $main;
-    //     color: $headerFontColour;
+    .post-title {
+        margin-bottom: 1rem;
+    }
 
-    //     transform: skew(-20deg);
-    //     padding: 1rem;
-    //     margin-left: -1rem;
+    ul.social {
+        display: flex;
 
-    //     .post-title, .post-meta, img {
-    //         /* Unskew content */
-    //         transform: skew(20deg);
+        justify-content: center;
+        list-style-type: none;
 
-    //         a {
-    //             color: $headerFontColour;  
+        margin: 1rem 0;
 
-    //             &:hover {
-    //                 color: $linkHoverColour;
-    //             }
-    //         }
-    //     }
-        // &:after {
-        //     content: " ";
-        //     // width: 0;
-        //     // height: 0;
-        //     border-top: 100px solid $sec;
-        //     border-right: 100px solid transparent;
-        // }
-    // }
+        li {
+            margin: 0 0.5rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
 
     .post-meta {
         display: flex;
@@ -185,11 +180,6 @@ figure > pre, pre.highlight {
         }
     }
 
-    // .content {
-    //     display: grid;
-    //     grid-template-columns: auto 1fr auto;
-    // }
-
     hr.post-divider {
         background: radial-gradient( $sec, $mainBackgroundColour);
         border: 0;
@@ -202,10 +192,8 @@ figure > pre, pre.highlight {
 
     .post {
         max-width: 80ch;
-        // grid-column: 2;
-
-        margin-left: auto;
-        margin-right: auto;
+        
+        margin: 1rem auto;
 
         img {
             max-width: 100%;

@@ -5,11 +5,15 @@ post: true
 <article class="post">
 	<header class="post-heading">
 		{% if page.header_image %} {{ page.header_image | markdownify }}{% endif %}
-		<h2 class="post-title">
-			<a href="{% if page.link %}{{ page.link }}{% else %}{{ page.url }}{% endif %}" class="title">
-				{{ page.title }}</a>
-			{% if page.link %}<span class="link-arrow"> &rarr;</span>{% endif %}
-		</h2>
+		<h1 class="post-title">
+			{{ page.title }}
+			{% if page.link %}
+				<a href="{% if page.link %}{{ page.link }}{% else %}{{ page.url }}{% endif %}" class="title">
+					<!-- TODO: Update icon -->
+					<span class="link-arrow"> &rarr;</span>
+				</a>
+			{% endif %}
+		</h1>
 		<div class="post-meta">
 			{% if page.date %}
 			<div class="post-date">

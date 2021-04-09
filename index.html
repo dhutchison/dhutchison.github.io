@@ -6,11 +6,12 @@ groupOrder: 1
 ---
 {% for post in paginator.posts %}
     {% include post_preview.html %}
+    {% if forloop.last == false %}
     <hr class="post-divider"/>
+    {% endif %}
 {% endfor %}
 
-<nav class="pagination">    
-    <hr/>
+<nav class="pagination">
     <ul>
         <li class="older">
     {% if paginator.next_page %}
