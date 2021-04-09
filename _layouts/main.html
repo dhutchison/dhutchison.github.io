@@ -1,5 +1,4 @@
 ---
-notlayout: compress
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +70,7 @@ notlayout: compress
         <div class="container">
             <header class="header">
               <div class="header-logo">
-                <h1 class="title"><!--<a href="/" title="Home">-->Dev With Imagination<!--</a>--></h1>
+                <h1 class="title">Dev With Imagination</h1>
                 <div class="site-byline">
                   By {{ site.data.authors.david.name }}
                 </div>
@@ -98,27 +97,27 @@ notlayout: compress
                     {% if site.data.authors.david.github %}
                     <li>
                       <a href="http://github.com/{{ site.data.authors.david.github }}/">
-                        <i class="fa fa-github fa-lg fa-fw"></i>
+                        <span class="icon-github1"></span>
                       </a>
                     </li>{% endif %} {% if site.data.authors.david.stackoverflow %}
                     <li>
                       <a href="http://stackoverflow.com/users/{{ site.data.authors.david.stackoverflow }}/">
-                        <i class="fa fa-stack-overflow fa-lg fa-fw"></i>
+                        <span class="icon-stackoverflow"></span>
                       </a>
                     </li>{% endif %} {% if site.data.authors.david.twitter %}
                     <li>
                       <a href="http://twitter.com/{{ site.data.authors.david.twitter }}/">
-                        <i class="fa fa-twitter fa-lg fa-fw"></i>
+                        <span class="icon-twitter"></span>
                       </a>
                     </li>{% endif %} {% if site.data.authors.david.email %}
                     <li>
                       <a href="mailto:{{ site.data.authors.david.email }}">
-                        <i class="fa fa-envelope fa-lg fa-fw"></i>
+                        <span class="icon-envelop"></span>
                       </a>
                     </li>{% endif %}
                     <li>
                       <a href="/feed.xml">
-                        <i class="fa fa-rss fa-lg fa-fw"></i>
+                        <span class="icon-rss"></span>
                       </a>
                     </li>
                   </ul>
@@ -127,7 +126,7 @@ notlayout: compress
             {% endif %}
               <div class="copy">
               	<p>
-              	  &copy; David Hutchison 2013 - {{ site.time | date: "%Y" }}, <a href="/thanks">with thanks.</a>
+              	  &copy; <a href="{{ site.data.authors.david.profile_url }}">David Hutchison</a> 2013 - {{ site.time | date: "%Y" }}, <a href="/thanks">with thanks.</a>
               	</p>
               </div>
             </footer>
