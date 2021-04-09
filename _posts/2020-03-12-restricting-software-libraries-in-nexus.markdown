@@ -6,7 +6,7 @@ categories:
 - Development
 tags:
 - nexus
-- maven
+- Maven
 - sdlc
 summary: How to use Nexus to whitelist approved dependencies
 date: 2020-03-12 20:29
