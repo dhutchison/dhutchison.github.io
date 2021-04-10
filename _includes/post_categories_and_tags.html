@@ -7,16 +7,12 @@
 		<ul class="groupingList">
 			{% for category in page.categories %}
 				<li class="category">
-				    <a href="/archives/categories/#{{ category | downcase | cgi_escape }}">
-				        {{ category }}
-				    </a>		    
+				    <a href="/archives/categories/#{{ category | downcase | cgi_escape }}">{{ category }}</a>
 				</li>					
             {% endfor %}
             {% for tag in page.tags %}
                 <li class="tag">
-                    <a href="/archives/tags/#{{ tag | downcase | cgi_escape }}">
-                        {{ tag }}
-                    </a>
+                    <a href="/archives/tags/#{{ tag | downcase | cgi_escape }}">{{ tag }}</a>
                 </li>
 		    {% endfor %}
 		</ul>

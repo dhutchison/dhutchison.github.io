@@ -8,9 +8,8 @@ post: true
 		<h1 class="post-title">
 			{{ page.title }}
 			{% if page.link %}
-				<a href="{% if page.link %}{{ page.link }}{% else %}{{ page.url }}{% endif %}" class="title">
-					<!-- TODO: Update icon -->
-					<span class="link-arrow"> &rarr;</span>
+				<a href="{{ page.link }}" class="post-link">
+					<span class="icon-link1"></span>
 				</a>
 			{% endif %}
 		</h1>

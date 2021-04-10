@@ -5,21 +5,59 @@
 
 $archiveLinkColour: #CBB393;
 
-.archiveLinks, .archives .groupingList {
-    @extend .groupingList;
+.archives {
+    @extend .post;
+}
+
+.archive-link-wrapper {
+    padding: 0.25rem 0;
+    box-shadow: 2px 2px 15px #ccc;
+}
+
+.archive-links, .archives .grouping-list {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin: 1rem 0;
+
+    li.tag, li.category {
+        margin: 0.5rem;
+    }
+    
+    // @extend .groupingList;
 
     /* Reset these two - archive links are not to appear the same way
      * as other grouping lists - as we are using it for a nav element
      * (and there is a lot more of them than normal).
      */
-    transform: none;
-    top: 0;
+    // transform: none;
+    // top: 0;
 }
 
-.archiveLinks .active {
-    border-color: $headerFontColour;
-    border-width: 1px;
-    border-style: solid;
+li.tag {
+    &::before {
+        content: '#'
+    }
+
+    margin: 0 0.5rem;
+}
+
+.archive-links {
+    .active {
+        border-color: $sec;
+        border-width: 0 0 1px 0;
+        border-style: solid;
+    }
+
+    li {
+        margin: 0 0.5rem;
+    }
+
+    a, a:hover {
+        text-decoration: none;
+    }
 }
 
 .archives {

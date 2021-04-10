@@ -11,12 +11,10 @@
 {% endcomment %}
 {% if page.tags.size > 0 %}
 	<div><h4 class="tagListTitle">Tagged with: </h4>
-		<ul class="groupingList">
+		<ul class="grouping-list">
 		{% for tag in page.tags %}
 			<li class="tag">
-			    <a href="/archives/tags/#{{ tag | downcase | cgi_escape }}">
-			        {{ tag }}
-			    </a>
+			    <a href="/archives/tags/#{{ tag | downcase | cgi_escape }}">{{ tag }}</a>
 			</li>
 		{% endfor %}
 		</ul>

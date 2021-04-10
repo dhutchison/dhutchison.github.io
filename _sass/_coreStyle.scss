@@ -202,6 +202,17 @@ figure > pre, pre.highlight {
             margin-right: auto;
         }
     }
+    
+    a.post-link {
+        text-decoration: none;
+        font-size: 0.5em;
+    }
+
+    .post-series {
+        padding: 1rem;
+        margin-top: 1rem;
+        box-shadow: 2px 2px 15px #ccc;
+    }
 
     .site {
     	/*	background*/
