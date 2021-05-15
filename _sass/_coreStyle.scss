@@ -24,26 +24,29 @@ body {
     background-color: $mainBackgroundColour;
 	font-family: $contentFonts;
 	font-weight: $contentFontWeight;
+
+    @media (max-width: 1024px) {
+        padding: 0 1em;
+    }
 }
 
 h1 {
     font-size: calc(1.5rem + 3vw);
     line-height: 1em;
-
-    font-family: $titleFonts;
-    font-weight: $titleFontWeight;
 }
 
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: $headerFonts;
     font-weight: $headerFontWeight;
+
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 h2 {
     font-size: 2rem;
     line-height: 1em;
-    margin-top: 1rem;
-
+    
     @include respond-to(handhelds) {
         font-size: 1.4rem;
     }
@@ -99,15 +102,18 @@ figure > pre, pre.highlight {
 
 .container{
 
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-
     .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         margin: 2rem;
+
+        @include respond-to(handhelds) {
+            flex-direction: column;
+
+            margin: 2rem 0;
+        }
         
         ul {
             list-style-type: none;
@@ -118,7 +124,7 @@ figure > pre, pre.highlight {
             display: flex;
 
             @include respond-to(handhelds) {
-                display: block;
+                margin: 1rem 0;
             }
         }
 
@@ -129,7 +135,7 @@ figure > pre, pre.highlight {
     }
 
     .post-title {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     ul.social {
@@ -151,14 +157,19 @@ figure > pre, pre.highlight {
 
     .post-meta {
         display: flex;
-        padding-left: 2rem;
 
         .meta {
             margin: 0;
         }
+
+        .post-date {
+            white-space: nowrap;
+        }
     }
 
     .post-grouping {
+
+        margin-left: 1rem;
 
         ul {
             display: inline;
@@ -172,7 +183,7 @@ figure > pre, pre.highlight {
         }
 
         li::after {
-            content: " / ";
+            content: ",";
         }
 
         li:last-child::after {
@@ -256,7 +267,7 @@ figure > pre, pre.highlight {
 
 .footer {
  
-    padding: 0 0 1em 0;
+    padding: 2rem 0;
     text-align: center;
 
     p {

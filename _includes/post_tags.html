@@ -1,0 +1,15 @@
+{% comment %}
+	Inline category & tag list for posts
+{% endcomment %}
+{% if page.tags.size > 0 %}
+	<div class="post-grouping">
+        <span class="fa icon-price-tags fa-lg fa-fw"></span>
+		<ul class="groupingList">
+            {% for tag in page.tags %}
+                <li class="tag">
+                    <a href="/archives/tags/#{{ tag | downcase | cgi_escape }}">{{ tag }}</a>
+                </li>
+		    {% endfor %}
+		</ul>
+    </div>
+{% endif %}

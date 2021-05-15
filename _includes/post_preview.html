@@ -14,6 +14,7 @@
 				{% if post.date %}
 				<div class="post-date">
 					<p class="meta">
+						<span class="icon-calendar"></span>
 						<time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished" data-updated="true" title="{{ post.date | date_to_string }}">
 							{% assign d = post.date | date: "%-d"  %}
 							{% case d %}
@@ -25,7 +26,8 @@
 					</p>
 				</div>
 				{% endif%}
-				{% include post_category_list.html %}
+				{% assign page = post %}
+				{% include post_tags.html %}
 			</div>	
 		</header>
 		{% if noPreview != true %}
@@ -38,9 +40,6 @@
 				{{ post.content }}
 			{% endif %}
 		</section>
-		<footer class="post-footer">
-			{% include post_tag_list.html %}
-		</footer>
 		{% endif %}
 		
 </article>
