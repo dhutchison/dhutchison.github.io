@@ -13,7 +13,7 @@ Since I rebuilt my server I have been seeing issues where my use of the [transco
 
 The [linked post][docker-and-locales] led me to the solution - I needed to update the Dockerfile for my version of the image to include additional commands to configure the locale. This was a pretty easy addition as I already was using my own to customise a couple of things. I do not know why the appeared, but all I really care about is that it is working again now. 
 
-{% highlight yaml %}
+~~~ yaml
 FROM ntodd/video-transcoding
   
 # Configure locale
@@ -21,7 +21,7 @@ RUN locale-gen en_GB.UTF-8
 ENV LANG en_GB.UTF-8
 ENV LANGUAGE en_GB:en
 ENV LC_ALL en_GB.UTF-8
-{% endhighlight %}
+~~~
 
 
 [transcode-video]: https://hub.docker.com/r/ntodd/video-transcoding "ntodd/video-transcoding - Docker Hub" 

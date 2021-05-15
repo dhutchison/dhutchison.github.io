@@ -54,7 +54,7 @@ You can either set this argument by holding the Run button in Pythonista, which 
 
 The first time the script is run it will ask to be authenticated with Dropbox.
 
-{% highlight python linenos %}
+~~~ python
 # Script for downloading a URL to Dropbox
 import sys
 import urllib2
@@ -178,7 +178,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-{% endhighlight %}
+~~~
 
 This script is also available as a [gist][filedownloader_gist].
 

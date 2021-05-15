@@ -29,7 +29,7 @@ This script performs four main steps:
 
 I don't write a lot of scripts, so there may be better ways to achieve this, but it works.
 
-{% highlight bash linenos %}
+~~~ bash
 #!/bin/bash
 # Script to check for updates, and download updates for VirtualBox  (http://virtualbox.org/)
 # Author: David Hutchison
@@ -117,7 +117,7 @@ case $? in
     	echo "Update finished."
     	;;
 esac
-{% endhighlight %}
+~~~
 
 [calibre_post]: /2013/07/08/calibre-autoupdate/ "Calibre AutoUpdate"
 [virtualbox]: https://www.virtualbox.org/ "Oracle VM VirtualBox "

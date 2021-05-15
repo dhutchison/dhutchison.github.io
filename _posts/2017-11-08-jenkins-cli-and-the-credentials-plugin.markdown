@@ -15,13 +15,13 @@ This Jenkins instance was an EC2 server, and part of the install process was usi
 
 One thing I was trying to get working, and failed on, was using the Jenkins CLI to configure the [credentials plugin][credentials_plugin]. Each attempt to run a command would have the same result, a return code of "255" with no errors displayed on the client.
 
-{% highlight bash %}
+~~~ bash
 
 MacBook:temp dhutchison$ java -jar jenkins-cli.jar -s http://procent.local:8080 -auth jenkinsuser:supersecurepassword list-credentials system::system::jenkins
 MacBook:temp dhutchison$ echo $?
 255
 
-{% endhighlight %}
+~~~
 
 I revisited this the other day, and encountered the same issue when using a fresh Jenkins docker image and configuring it through the quick start wizard. After a bit of investigation, the solution to this was frustratingly simple.
 

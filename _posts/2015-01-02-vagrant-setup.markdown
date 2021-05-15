@@ -89,7 +89,7 @@ More information on the configuration options which can be applied to synced fol
 
 The next step is to create a script to install any pre-requisite packages into the VM. We will call this `Vagrant_bootstrap.sh`. This will install a stock Apache 2 and create a symlink between our synced folder and the default apache `wwwroot`. If Apache is already installed (i.e. if doing a re-provision via `vagrant up --provision`), this will attempt to update the package.
 
-{% highlight bash linenos %}
+~~~ bash
 #!/usr/bin/env bash
 yum update -y # Not strictly necessary, but nice to make sure up to date linux when provisioning.
 if  yum info httpd | grep installed ; then
@@ -103,7 +103,7 @@ rm -rf /var/www/html
 ln -fs /vagrant_data /var/www/html
 chkconfig httpd on
 service httpd start
-{% endhighlight %}
+~~~
 
 ## Networking
 
@@ -130,7 +130,7 @@ And there we go! A working CentOS setup using Apache with a shared folder.
 
 The complete Vagrantfile:
 
-{% highlight ruby linenos %}
+~~~ ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -165,7 +165,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Provision the VM using a shell script
   config.vm.provision :shell, path: "Vagrant_bootstrap.sh"
 end
-{% endhighlight %}
+~~~
 
 ## Caveats
 

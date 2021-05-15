@@ -30,7 +30,7 @@ Following a post from a previous user of OmniFocus in The Hit List mailing list,
 ### The Script ###
 Seeing this, I instantly thought that this should be easy in AppleScript, and the basics of it were:
 
-{% highlight applescript %}
+~~~ applescript
 tell application "The Hit List"
     set currentSelection to selection
     repeat with theTask in currentSelection
@@ -39,7 +39,7 @@ tell application "The Hit List"
         set newList to result
     end repeat
 end tell
-{% endhighlight %}
+~~~
 
 This creates a new list for each of the currently selected tasks.
 
@@ -65,10 +65,10 @@ Next, in the Keyboard pane of System Preferences I configured a keyboard shortcu
 ### Finally ###
 Every time I dabble in AppleScript, I seem to run into issues that result in unhelpful errors. I can see it is meant to be like typing natural language commands instead of the what I would consider "normal" programming syntax, but the syntax always seems to catch me out. While copying the properties for the new task, I kept getting errors about missing values not being allowed. I tried various comparisons using nulls and nils, and none of them worked. It appears the correct way to determine if a variable has a value in AppleScript is:
 
-{% highlight applescript %}
+~~~ applescript
 if (taskSD is not missing value) then
     --do something here
 end if
-{% endhighlight %}
+~~~
 
 But anyway, the final script solution is available on my [GitHub](https://github.com/dhutchison/DWI) in the [THL-ListFromTask](https://github.com/dhutchison/DWI/tree/master/THL-ListFromTask) folder.

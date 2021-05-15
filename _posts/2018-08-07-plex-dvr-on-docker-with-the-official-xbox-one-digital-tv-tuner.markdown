@@ -68,7 +68,7 @@ I have a shell script I use when I need to set this container up again, purely s
 
 The complete command is shown below. 
 
-{% highlight bash %}
+~~~ bash
 
 sudo docker run \
 -d \
@@ -98,7 +98,7 @@ sudo docker run \
 --device=/dev/dvb \
 plexinc/pms-docker:plexpass
 
-{% endhighlight %}
+~~~
 
 
 
