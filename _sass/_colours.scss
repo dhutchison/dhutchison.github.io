@@ -3,8 +3,7 @@
 */
 
 :root, [data-theme="default"] {
-    --color-primary: blue;
-    // --color-primary: #2E2C54;
+    --color-primary: hsl(240, 4%, 20%);
     --color-secondary: #1282A2;
     --color-tertiary: #42a8c0;
     /* color contrasts */
@@ -18,13 +17,12 @@
   
   [data-theme] {
     background-color: var(--color-bg);
-    color: var(--color-contrast-high);
+    color: var(--color-primary);
   }
   
   [data-theme="dark"] {
-    --color-primary: red;
+    --color-primary: hsl(0, 0%, 89%);
     /* color contrasts */
-    // --color-bg: black;
     --color-bg: rgb(34, 39, 46);
     --color-contrast-lower: hsl(240, 6%, 15%);
     --color-contrast-low: hsl(252, 4%, 25%);

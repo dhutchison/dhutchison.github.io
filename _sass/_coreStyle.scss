@@ -67,7 +67,7 @@ p {
 }
 
 a { 
-    color: var(--color-contrast-high);
+    color: var(--color-primary);
 	transition-duration: .5s;
 	text-decoration: underline;
 
@@ -92,6 +92,72 @@ figure > pre, pre.highlight {
     border-radius: 1em;
 }
 
+/* Our Theme Toggle switch styles. 
+ * Based on https://www.w3schools.com/howto/howto_css_switch.asp
+ */
+ .switch {
+    /* The switch - the box around the slider */
+    position: relative;
+    display: inline-block;
+    width: 1.75rem;
+    height: 1rem;
+  
+  
+    /* Hide default HTML checkbox */
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+  
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 1rem;
+        width: 1rem;
+        // background-color: white;
+        background-color: var(--color-contrast-high);
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    input:checked + .slider {
+        background-color: var(--color-secondary);
+    }
+    
+    input:focus + .slider {
+        box-shadow: 0 0 1px var(--color-secondary);
+    }
+    
+    input:checked + .slider:before {
+        -webkit-transform: translateX(0.75rem);
+        -ms-transform: translateX(0.75rem);
+        transform: translateX(0.75rem);
+    }
+    
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 1rem;
+    }
+    
+    .slider.round:before {
+        border-radius: 50%;
+    }
+}
+
 /*****************************************************************************/
 /*
 /* Site
@@ -107,10 +173,18 @@ figure > pre, pre.highlight {
 
         margin: 2rem;
 
+        border-width: 0 0 0.5rem 0;
+        border-style: solid;
+        border-image: linear-gradient(to right, var(--color-bg), var(--color-contrast-low), var(--color-secondary), var(--color-contrast-low), var(--color-bg)) 1;
+
         @include respond-to(handhelds) {
             flex-direction: column;
 
-            margin: 2rem 0;
+            margin: 1rem 0 2rem 0;
+
+            .site-byline {
+                text-align: center;
+            }
         }
         
         ul {

@@ -80,10 +80,10 @@
                   {% include pages_list.html pages_list = site.pages group = 'navigation'%}
                   <li class="header-menu-item"><a href="{{ site.data.authors.david.profile_url }}"> Profile </a></li>
                   <li class="header-menu-item">
-                    <div class="swtich">
-                      <input class="switch__input" type="checkbox" id="themeSwitch">
-                      <label aria-hidden="true" class="switch__label" for="themeSwitch">On</label>
-                    </div>
+                    <label class="switch" aria-hidden="true">
+                      <input type="checkbox" id="themeSwitch">
+                      <span class="slider round"></span>
+                    </label>
                   </li>
                 </ul>
               </nav>
