@@ -13,15 +13,15 @@ groupOrder: 1
 
 <nav class="pagination">
     <ul>
-        <li class="older">
+        <li id="pagination-older">
     {% if paginator.next_page %}
         <a href="{{ paginator.next_page_path }}">← Older</a>
     {% endif %}
         </li>
-        <li class="archives">
+        <li id="pagination-archives">
             <a href="/archives">Archives</a>
         </li>
-        <li class="newer">
+        <li id="pagination-newer">
     {% if paginator.previous_page %}
       {% if paginator.previous_page == 1 %}<a href="/">Newer →</a>
       {% else %}<a href="{{ paginator.previous_page_path }}">Newer →</a>

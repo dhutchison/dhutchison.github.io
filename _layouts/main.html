@@ -79,6 +79,12 @@
                 <ul class="fa-ul">
                   {% include pages_list.html pages_list = site.pages group = 'navigation'%}
                   <li class="header-menu-item"><a href="{{ site.data.authors.david.profile_url }}"> Profile </a></li>
+                  <li class="header-menu-item">
+                    <div class="swtich">
+                      <input class="switch__input" type="checkbox" id="themeSwitch">
+                      <label aria-hidden="true" class="switch__label" for="themeSwitch">On</label>
+                    </div>
+                  </li>
                 </ul>
               </nav>
 	          </header>
@@ -131,5 +137,7 @@
               </div>
             </footer>
         </div> <!-- /container -->
+
+        <script src="/assets/js/themeSwitcher.js"></script>
     </body>
 </html>

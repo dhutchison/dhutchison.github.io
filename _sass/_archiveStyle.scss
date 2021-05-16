@@ -3,8 +3,6 @@
 // Archive specific styling    //
 /////////////////////////////////
 
-$archiveLinkColour: #CBB393;
-
 .archives {
     @extend .post;
 }
@@ -47,7 +45,7 @@ li.tag {
 
 .archive-links {
     .active {
-        border-color: $sec;
+        border-color: var(--color-secondary);
         border-width: 0 0 1px 0;
         border-style: solid;
     }
@@ -84,7 +82,7 @@ li.tag {
     
         .meta {
             width: 7em;
-            border-color: $linkColour;
+            border-color: var(--color-secondary);
             border-right: 1px;
             vertical-align: middle;
         }
@@ -129,7 +127,7 @@ li.tag {
 
         .meta {
 
-        	border-color: $linkColour;
+        	border-color: var(--color-secondary);
         	border-right: 1px;
             vertical-align: middle;
         }

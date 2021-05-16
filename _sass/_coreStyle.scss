@@ -20,8 +20,6 @@ html, body {
 }
 
 body {
-    color: $mainFontColour;
-    background-color: $mainBackgroundColour;
 	font-family: $contentFonts;
 	font-weight: $contentFontWeight;
 
@@ -69,13 +67,13 @@ p {
 }
 
 a { 
-    color: $linkColour;
+    color: var(--color-contrast-high);
 	transition-duration: .5s;
 	text-decoration: underline;
 
 	
 	&:hover {
-	    color: $linkHoverColour;
+	    color: var(--color-secondary);
 	}
 }
 
@@ -192,7 +190,7 @@ figure > pre, pre.highlight {
     }
 
     hr.post-divider {
-        background: radial-gradient( $sec, $mainBackgroundColour);
+        background: radial-gradient( var(--color-secondary), var(--color-bg));
         border: 0;
         height: 5px;
         
@@ -227,7 +225,7 @@ figure > pre, pre.highlight {
 
     .site {
     	/*	background*/
-        background-color: $mainBackgroundColour;
+        background-color: var(--color-bg);
     	
     	/* text */
     	line-height: $lineHeightEM;
@@ -272,28 +270,5 @@ figure > pre, pre.highlight {
 
     p {
         margin: 0;
-    }
-}
-
-/* Style applied to icons to customise their display */
-.icon {
-    text-align: center;
-    
-    font-size: 1rem;
-    width: 1em;
-    height: 1em;
-
-    padding: 0.25em;
-    margin: 0.25em;
-    border-radius: 50%;
-    transition: all .5s;
-
-    &:hover {
-        color: $main;
-        background: #FFF;
-    }
-    &:active {
-        color: $main;
-        background: #FFF;
     }
 }
