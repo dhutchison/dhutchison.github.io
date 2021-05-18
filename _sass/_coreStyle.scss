@@ -171,16 +171,17 @@ figure > pre, pre.highlight {
         justify-content: space-between;
         align-items: center;
 
-        margin: 2rem;
+        margin: 2rem 2rem 1rem 2rem;
+        padding-bottom: 1rem;
 
-        border-width: 0 0 0.5rem 0;
+        border-width: 0 0 0.25rem 0;
         border-style: solid;
         border-image: linear-gradient(to right, var(--color-bg), var(--color-contrast-low), var(--color-secondary), var(--color-contrast-low), var(--color-bg)) 1;
 
         @include respond-to(handhelds) {
             flex-direction: column;
 
-            margin: 1rem 0 2rem 0;
+            margin: 1rem 0;
 
             .site-byline {
                 text-align: center;
