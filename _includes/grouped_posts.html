@@ -16,25 +16,7 @@ Requires 3 variables to be set:
 <article>
 
     <ul class="grouping-list">{% for item in (0..num_words) %}{% unless forloop.last %}{% capture this_word %}{{ grouping_words[item] | strip_newlines }}{% endcapture %}{% for grouping in include.groupings %}{% capture lower_grouping %}{{ grouping | first | downcase }}{% endcapture %}{% capture display_grouping %}{{ grouping | first }}{% endcapture %}{% if this_word == lower_grouping %}
-        <li class="{{ include.groupingClass }}"><a href="#{{ this_word | cgi_escape }}">{{ display_grouping }} ({{ include.groupings[display_grouping].size }})</a></li>
+        <li class="{{ include.groupingClass }}"><a href="/archives/tags/{{ this_word | cgi_escape }}">{{ display_grouping }} ({{ include.groupings[display_grouping].size }})</a></li>
         {% endif %} {% endfor %}{% endunless %}{% endfor %}
     </ul>
-
-    <div class="groupedPosts">{% for item in (0..num_words) %}{% unless forloop.last %}{% capture this_word %}{{ grouping_words[item] | strip_newlines }}{% endcapture %}{% for grouping in include.groupings %}{% capture lower_grouping %}{{ grouping | first | downcase }}{% endcapture %}{% capture display_grouping %}{{ grouping | first }}{% endcapture %}{% if this_word == lower_grouping %}
-        
-        <h2 class="{{ include.groupingClass }}" id="{{ this_word | downcase | cgi_escape }}">{{ display_grouping }}</h3>
-        <ul class="posts">{% for post in include.groupings[display_grouping] %}{% if post.title != null %}
-            <li itemscope>
-                <div class="post-list-item">
-                    <div class="meta">
-                        <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%d %b, %Y" }}</time>
-                    </div>
-                    <div class="title">
-                        <a href="{{ post.url }}">{{ post.title }}</a>
-                    </div>
-                </div>
-            </li>{% endif %}{% endfor %}
-        </ul>
-        {% endif %} {% endfor %}{% endunless %}{% endfor %}
-    </div>
 </article>

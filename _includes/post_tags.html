@@ -7,7 +7,7 @@
 		<ul class="groupingList">
             {% for tag in page.tags %}
                 <li class="tag">
-                    <a href="/archives/tags/#{{ tag | downcase | cgi_escape }}">{{ tag }}</a>
+                    <a href="/archives/tags/{{ tag | downcase | cgi_escape }}">{{ tag }}</a>
                 </li>
 		    {% endfor %}
 		</ul>
