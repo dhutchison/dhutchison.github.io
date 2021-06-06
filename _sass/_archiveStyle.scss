@@ -20,23 +20,16 @@
 
     margin: 1rem 0;
 
-    @include respond-to(handhelds) {
-        justify-content: left;
-        margin: 0;
-    }
-
     li.tag, li.category {
         margin: 0.5rem;
     }
-    
-    // @extend .groupingList;
+}
 
-    /* Reset these two - archive links are not to appear the same way
-     * as other grouping lists - as we are using it for a nav element
-     * (and there is a lot more of them than normal).
-     */
-    // transform: none;
-    // top: 0;
+.archives .grouping-list {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20ch, 1fr));
+    grid-gap: 1rem;
 }
 
 li.tag {
@@ -85,6 +78,10 @@ li.tag {
             border-color: var(--color-secondary);
             border-right: 1px;
             vertical-align: middle;
+        }
+
+        .meta-year {
+            width: 12ch;
         }
         
         .title {
