@@ -38,7 +38,7 @@ li.tag {
 
 .archive-links {
     .active {
-        border-color: var(--color-secondary);
+        border-color: var(--colour-secondary);
         border-width: 0 0 1px 0;
         border-style: solid;
     }
@@ -75,7 +75,7 @@ li.tag {
     
         .meta {
             width: 6ch;
-            border-color: var(--color-secondary);
+            border-color: var(--colour-secondary);
             border-right: 1px;
             vertical-align: middle;
         }
@@ -124,7 +124,7 @@ li.tag {
 
         .meta {
 
-        	border-color: var(--color-secondary);
+        	border-color: var(--colour-secondary);
         	border-right: 1px;
             vertical-align: middle;
         }

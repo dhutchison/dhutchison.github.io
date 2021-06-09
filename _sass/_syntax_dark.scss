@@ -3,7 +3,7 @@
  * but with a few changes:
  *
  * - wrapped with the data-theme grouping
- * - refrences to #002b36 replaced with "var(--color-bg)"
+ * - refrences to #002b36 replaced with "var(--colour-bg)"
  */
 
 [data-theme="dark"] {
@@ -11,10 +11,10 @@
   .highlight table pre { margin: 0; }
   .highlight, .highlight .w {
     color: #93a1a1;
-    background-color: var(--color-bg);
+    background-color: var(--colour-bg);
   }
   .highlight .err {
-    color: var(--color-bg);
+    color: var(--colour-bg);
     background-color: #dc322f;
   }
   .highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
@@ -40,7 +40,7 @@
   }
   .highlight .gh {
     color: #268bd2;
-    background-color: var(--color-bg);
+    background-color: var(--colour-bg);
     font-weight: bold;
   }
   .highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {

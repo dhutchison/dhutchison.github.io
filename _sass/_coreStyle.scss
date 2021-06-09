@@ -65,13 +65,13 @@ p {
 }
 
 a { 
-    color: var(--color-primary);
+    color: var(--colour-primary);
 	transition-duration: .5s;
 	text-decoration: underline;
 
 	
 	&:hover {
-	    color: var(--color-secondary);
+	    color: var(--colour-secondary);
 	}
 }
 
@@ -88,6 +88,13 @@ figure > pre, pre.highlight {
     margin-right: -1em;
     padding: 1em;
     border-radius: 1em;
+}
+
+blockquote {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 2.5em;
+    margin-inline-end: 2.5em;
 }
 
 /* Our Theme Toggle switch styles. 
@@ -127,17 +134,17 @@ figure > pre, pre.highlight {
         height: 1rem;
         width: 1rem;
         // background-color: white;
-        background-color: var(--color-contrast-high);
+        background-color: var(--colour-contrast-high);
         -webkit-transition: .4s;
         transition: .4s;
     }
     
     input:checked + .slider {
-        background-color: var(--color-secondary);
+        background-color: var(--colour-secondary);
     }
     
     input:focus + .slider {
-        box-shadow: 0 0 1px var(--color-secondary);
+        box-shadow: 0 0 1px var(--colour-secondary);
     }
     
     input:checked + .slider:before {
@@ -178,7 +185,7 @@ figure > pre, pre.highlight {
 
         border-width: 0 0 0.25rem 0;
         border-style: solid;
-        border-image: linear-gradient(to right, var(--color-bg), var(--color-contrast-low), var(--color-secondary), var(--color-contrast-low), var(--color-bg)) 1;
+        border-image: linear-gradient(to right, var(--colour-bg), var(--colour-contrast-low), var(--colour-secondary), var(--colour-contrast-low), var(--colour-bg)) 1;
 
         @include respond-to(handhelds) {
             flex-direction: column;
@@ -267,7 +274,7 @@ figure > pre, pre.highlight {
     }
 
     hr.post-divider {
-        background: radial-gradient( var(--color-secondary), var(--color-bg));
+        background: radial-gradient( var(--colour-secondary), var(--colour-bg));
         border: 0;
         height: 5px;
         
@@ -300,13 +307,13 @@ figure > pre, pre.highlight {
         margin-top: 2rem;
         margin-bottom: 1rem;
 
-        box-shadow: 0px 0px 10px 1px var(--color-secondary);
-        background: var(--color-contrast-lower);
+        box-shadow: 0px 0px 10px 1px var(--colour-secondary);
+        background: var(--colour-contrast-lower);
     }
 
     .site {
     	/*	background*/
-        background-color: var(--color-bg);
+        background-color: var(--colour-bg);
     	
     	/* text */
     	line-height: $lineHeightEM;

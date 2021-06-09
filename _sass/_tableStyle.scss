@@ -9,10 +9,10 @@ table {
         border: 0;
       
         th {
-            background-color: var(--color-contrast-high);
-            border: 1px solid var(--color-contrast-high);
+            background-color: var(--colour-contrast-high);
+            border: 1px solid var(--colour-contrast-high);
             font-weight: normal;
-            color: var(--color-contrast-low);
+            color: var(--colour-contrast-low);
             
             &:first-of-type {
                 text-align: left; 
@@ -29,7 +29,7 @@ table {
         
         tr {
             margin-bottom: 1em;
-            border: 2px solid var(--color-contrast-high);
+            border: 2px solid var(--colour-contrast-high);
             
             
             &:last-of-type {
@@ -37,13 +37,13 @@ table {
             }
             
             &:nth-of-type(even) {
-                background-color: var(--color-contrast-low);
+                background-color: var(--colour-contrast-low);
             }
         }
       
         th[scope="row"] {
-            background-color: var(--color-contrast-high);
-            color: var(--color-contrast-low);
+            background-color: var(--colour-contrast-high);
+            color: var(--colour-contrast-low);
         }
     }
 }
