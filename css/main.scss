@@ -2,13 +2,16 @@
 ---
 /* File containing the configuration variables that other stylesheets can depend on */
 @import "vars";
+/* Regular font definitions */
+@import "fonts";
+/* Custom icon font */
+@import "icons";
 /* Colour definitions */
 @import "colours";
+
 /* Common styles which are global to the site */
 @import "commonStyle";
 @import "coreStyle";
-/* Custom icon font */
-@import "icons";
 /* Syntax highlighting */
 @import "syntax_light";
 @import "syntax_dark";
