@@ -171,8 +171,8 @@ blockquote {
 
 .container {
 
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
 
     .header {
@@ -361,6 +361,7 @@ blockquote {
  
     padding: 2rem 0;
     text-align: center;
+    margin-top: auto;
 
     p {
         margin: 0;
