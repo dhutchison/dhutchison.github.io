@@ -33,14 +33,14 @@ User created build systems, on the Mac at least, need to be in the `~/Library/Ap
 
 
 For my Jekyll site development I have created a `Jekyll.sublime-build` file with this content:
-{% highlight json %}
+~~~ json
 {
   "cmd": ["/usr/bin/rake",  "build[jekyll]"],
   "env": {"LANG":"en_US.UTF-8", "LC_ALL":"en_US.UTF-8"},
   "working_dir": "$project_path",
   "selector": "text.html.markdown.jekyll"
 }
-{% endhighlight %}
+~~~
 
 Based on the number of incompatible guides I found on the format of this file, I can only assume this has changed between the different versions of Sublime Text. I found [this documentation][bs guide] at least gave me a pointer in the direction to go, although it required a lot of trial and error to get working.
 
@@ -53,14 +53,14 @@ In all of the Jekyll based projects I am currently working on I stick to the sam
 Not long ago I switched from using the [less][lessnode] node compiler directly to setting up a workflow in [Grunt][grunt]. I wanted to switch to a better workflow so I could perform actions such as using [myth] to handle adding in required browser prefixes for CSS and [uncss][uncss] for cleaning up unused styles produced by Font Awesome. My `build` target, with the 'less' parameter, now calls Grunt. This just calls the command line, but still required some set up to work within Sublime Text.
 
 I created another build file called `Less.sublime-build` with the content:
-{% highlight json %}
+~~~ json
 {
   "cmd": ["/usr/bin/rake",  "build[css]"],
   "env": {"LANG":"en_US.UTF-8", "LC_ALL":"en_US.UTF-8"},
   "working_dir": "$project_path",
   "selector": "source.less"
 }
-{% endhighlight %}
+~~~
 
 To save having to configure the path that Sublime Text uses, I set up a symlink for the node binary, and in the rake file included the full path to my grunt binary. The error I had got without the symlink was pretty cryptic, but [Stack Overflow][env question] came to the rescue as always.
 
@@ -68,7 +68,7 @@ To save having to configure the path that Sublime Text uses, I set up a symlink 
 
 As previouly mentioned, these targets just call the command line so the rake file itself remains simple to understand. 
 
-{% highlight ruby %}
+~~~ ruby
 
 require 'yaml'
 require 'rubygems'
@@ -120,7 +120,7 @@ def upload
   puts 'Sent'
 
 end
-{% endhighlight %}
+~~~
 
 
 ## In Conclusion

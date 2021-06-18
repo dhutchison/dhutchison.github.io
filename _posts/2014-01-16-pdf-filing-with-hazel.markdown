@@ -37,17 +37,17 @@ I use [Brew][brew] as my general purpose package manager, but it took me a while
 
 I gave ```pdftotext``` a shot (available via the xpdf package in brew). This allowed me to get so far as writing some sort of script that at least confirmed if a file contained my partially redacted credit card number. This step was relatively simple, I just needed two conditions. The first just checks that the file extension is "pdf", the second is that it passes a shell script. As ```grep``` treats finding a result as a success, the script is just piping the output of pdftotext to grep and looking for the partially redactacted card number as it appears on my statement, remembering to escape the asterisks. The below command is the format my statement uses, but obviously not the correct number.
 
-{% highlight bash %}
+~~~ bash
 pdftotext $1 - | grep "1111 11\*\* \*\*\*\* 1111"
-{% endhighlight %}
+~~~
 
 After I got this far I came across [this article][auto_filing] which explains the whole process of getting this working in Hazel. Unfortunately it does not include the text of the script, only an image. The script also looks a bit overly verbose, so I wanted to try to find a cleaner solution that was also not as dependant on the date appearing in a fixed number of lines.
 
 I went through every utility that I could think of (grep, awk and sed) to regex match and capture the date sequence. Annoyingly my regex memory is stuck in Java mode which does not use the same character classes, so many attempts were taken before I just got the regex syntax correct. Finally I got matches with awk but couldn't get the printing of groups correct. I had to resort to Perl. I wish I had remembered Perl earlier, I always used to associate regex with Perl code. I was trying to match to the format ```27th December 2013``` and Perl had my solution:
 
-{% highlight bash %}
+~~~ bash
 pdftotext thestatement.pdf - | perl -ne '/([0-9]{2})[a-z]{2} ([A-Z]{1}[a-z]*) ([0-9]{4})/ && print $1." ".$2." ".$3."\n"' | head -n 1
-{% endhighlight %}
+~~~
 
  So to break what this does down:
 
@@ -56,7 +56,8 @@ pdftotext thestatement.pdf - | perl -ne '/([0-9]{2})[a-z]{2} ([A-Z]{1}[a-z]*) ([
  3. Use ```head``` to restrict to the first matching row.
 
 At this point we can use this bash script in a very similar Applescript as the original article:
-{% highlight applescript %}
+
+~~~ applescript
 set itemPath to quoted form of POSIX path of theFile
 set theCommand to "/usr/local/bin/pdftotext " & itemPath & " - | perl -ne '/([0-9]{2})[a-z]{2} ([A-Z]{1}[a-z]*) ([0-9]{4})/ && print $1.\" \".$2.\" \".$3.\"\\n\"' | head -n 1"
 log "Command is " & theCommand
@@ -89,7 +90,7 @@ else if stmtMonth is "December" then
 	set stmtMonth to "12"
 end if
 return {hazelExportTokens:{stmtMonth:stmtMonth, stmtYear:word 3 of dateString, stmtDay:word 1 of dateString}}
-{% endhighlight %}
+~~~
 
 This did not work without specifying the full path to the ```pdftotext``` command, it just resulted in the error that there was no word 2 in the (empty) date string. I had hoped to do the month mapping in Perl but the solutions I came across using Hashes just resulted in similar logic, just squeezed into a single line. While verbose this is readable. 
 
@@ -106,9 +107,10 @@ Hopefully this helps someone apart from me, as this took quite a while to get co
 ### Update
 This month (February 2014) the format of the date used in my statements changed to just ```24 February 2014
 ```. This of course broke my existing script. In order to handle both formats the second line of the AppleScript required a small change. This modification adds an extra group that can appear zero or one times to capture the "th" type part of the old date format.
-{% highlight applescript %}
+
+~~~ applescript
 set theCommand to "/usr/local/bin/pdftotext " & itemPath & " - | perl -ne '/([0-9]{2})([a-z]{2})? ([A-Z]{1}[a-z]*) ([0-9]{4})/ && print $1.\" \".$3.\" \".$4.\"\\n\"' | head -n 1"
-{% endhighlight %}
+~~~
 
 
 

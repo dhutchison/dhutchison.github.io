@@ -5,27 +5,29 @@ group: navigation
 groupOrder: 1
 ---
 {% for post in paginator.posts %}
-	{% include post_preview.html %}
+{% include post_preview.html %}
+{% if forloop.last == false %}
+<hr class="post-divider" />
+{% endif %}
 {% endfor %}
 
-<nav class="pagination">    
-    <hr/>
+<nav class="pagination">
     <ul>
-        <li class="older">
-    {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}">← Older</a>
-    {% endif %}
+        <li id="pagination-newer">
+            {% if paginator.previous_page %}
+            {% if paginator.previous_page == 1 %}<a href="/">← Newer</a>
+            {% else %}<a href="{{ paginator.previous_page_path }}">← Newer</a>
+            {% endif %}
+            {% endif %}
         </li>
-        <li class="archives">
+        <li id="pagination-archives">
             <a href="/archives">Archives</a>
         </li>
-        <li class="newer">
-    {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}<a href="/">Newer →</a>
-      {% else %}<a href="{{ paginator.previous_page_path }}">Newer →</a>
-      {% endif %}
-    {% else %}Newer →
-    {% endif %}
+
+        <li id="pagination-older">
+            {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}">Older →</a>
+            {% endif %}
         </li>
     </ul>
 </nav>

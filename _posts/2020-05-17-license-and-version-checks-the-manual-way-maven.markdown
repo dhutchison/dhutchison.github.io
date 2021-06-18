@@ -6,7 +6,7 @@ categories:
 - Development
 tags:
 - nexus
-- maven
+- Maven
 - sdlc
 summary: An overview of the tools available to do dependency license & version checks
   with Maven.

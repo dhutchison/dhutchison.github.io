@@ -3,27 +3,64 @@
 // Archive specific styling    //
 /////////////////////////////////
 
-$archiveLinkColour: #CBB393;
-
-.archiveLinks, .archives .groupingList {
-    @extend .groupingList;
-
-    /* Reset these two - archive links are not to appear the same way
-     * as other grouping lists - as we are using it for a nav element
-     * (and there is a lot more of them than normal).
-     */
-    transform: none;
-    top: 0;
+.archives {
+    @extend .post;
 }
 
-.archiveLinks .active {
-    border-color: $headerFontColour;
-    border-width: 1px;
-    border-style: solid;
+// .archive-link-wrapper {
+//     padding: 0.25rem 0;
+//     box-shadow: 2px 2px 15px #ccc;
+// }
+
+.archive-links, .archives .grouping-list {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin: 1rem 0;
+
+    li.tag, li.category {
+        margin: 0.5rem;
+    }
+}
+
+.archives .grouping-list {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20ch, 1fr));
+    grid-gap: 1rem;
+}
+
+li.tag {
+    margin: 0 0.5rem, 0, 0;
+}
+
+.archive-links {
+    .active {
+        border-color: var(--colour-secondary);
+        border-width: 0 0 1px 0;
+        border-style: solid;
+    }
+
+    li {
+        margin: 0 0.5rem;
+
+        @include respond-to(handhelds) {
+            margin-left: 0;
+            margin-right: 1rem;
+        }
+    }
+
+
+
+    a, a:hover {
+        text-decoration: none;
+    }
 }
 
 .archives {
-    @include sitePadding();
+    // @include sitePadding();
 
     .fa-li, .fa-li.fa-lg {
         margin-left: 0;
@@ -31,16 +68,20 @@ $archiveLinkColour: #CBB393;
 
     .groupedPosts {
  
-        @include clear();
+        // @include clear();
     
         margin: 1em 0 0 0;
         list-style: none;
     
         .meta {
-            width: 7em;
-            border-color: $linkColour;
+            width: 6ch;
+            border-color: var(--colour-secondary);
             border-right: 1px;
             vertical-align: middle;
+        }
+
+        .meta-year {
+            width: 12ch;
         }
         
         .title {
@@ -51,9 +92,9 @@ $archiveLinkColour: #CBB393;
         ul {
 
             margin: 1em 0;
-            @include for-md-up {
-                margin-left: 1.5em;
-            }
+            // @include for-md-up {
+            //     margin-left: 1.5em;
+            // }
         }
     }
 
@@ -67,9 +108,9 @@ $archiveLinkColour: #CBB393;
             vertical-align: top;
             text-align: center;
 
-            @include for-md-up {
-                text-align: left;
-            }
+            // @include for-md-up {
+            //     text-align: left;
+            // }
         }
         
         .post-list-item {
@@ -83,7 +124,7 @@ $archiveLinkColour: #CBB393;
 
         .meta {
 
-        	border-color: $linkColour;
+        	border-color: var(--colour-secondary);
         	border-right: 1px;
             vertical-align: middle;
         }

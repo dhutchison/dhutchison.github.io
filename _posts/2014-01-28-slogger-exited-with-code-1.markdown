@@ -33,12 +33,12 @@ Deducing the problem took a bit of scavenging the internet to find parts to a so
 
 Launchd allows for a LaunchAgent plist file to specify locations for log files. All that is required is to add the following in to the main ```dict``` node, updating paths as appropriate to a writable location.
 
-{% highlight xml %}
+~~~ xml 
 <key>StandardOutPath</key>
 <string>/Users/david/temp/Slogger.out</string>
 <key>StandardErrorPath</key>
 <string>/Users/david/temp/Slogger.err</string>
-{% endhighlight %}
+~~~
 
 ## Step 2: Dealing with the error
 This additional logging did give me some progress. The ```Slogger.err``` file now contained an error that I could debug.
@@ -65,7 +65,7 @@ It turns out that an RVM script is included as part of my ```~/.bash_profile``` 
 
 In order to get this working I had to bastardise my plist file quite a lot, but now Slogger can run via Launchd. The finished plist file I am using is below.
 
-{% highlight xml %}
+~~~ xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -86,7 +86,7 @@ In order to get this working I had to bastardise my plist file quite a lot, but 
 	<string>/Users/david/temp/Slogger.out</string>
 </dict>
 </plist>
-{% endhighlight %}
+~~~
 
 Hopefully this helps someone else get past this issue, or at least make a start on diagnosing any issues.
 

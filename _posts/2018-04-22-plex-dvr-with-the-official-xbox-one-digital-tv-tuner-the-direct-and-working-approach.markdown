@@ -34,7 +34,7 @@ The Plex web interface will be available at [http://192.168.0.88:32400/web/](htt
 
 ### Vagrantfile
 
-{% highlight ruby linenos %}
+~~~ ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -71,11 +71,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, path: "Vagrant_bootstrap.sh"
   config.vm.provision :reload
 end
-{% endhighlight %}
+~~~
 
 ### Vagrant_bootstrap.sh
 
-{% highlight bash linenos %}
+~~~ bash
 #!/usr/bin/env bash
 set -euo pipefail
 IFS=$'\n\t'
@@ -107,7 +107,7 @@ fi
 
 # Install Plex
 dnf install -y "https://downloads.plex.tv/plex-media-server/1.12.3.4973-215c28d86/plexmediaserver-1.12.3.4973-215c28d86.x86_64.rpm"
-{% endhighlight %}
+~~~
 
 
 

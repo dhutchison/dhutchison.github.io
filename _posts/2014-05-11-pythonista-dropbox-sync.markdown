@@ -32,7 +32,7 @@ My bookmarklet is just:
 
 `javascript:window.location='pythonista://NewFromGist.py?action=run&argv='+ encodeURIComponent(location.href)`
 
-{% highlight python linenos %}
+~~~ python
 ### Based on: https://gist.github.com/b0644f5ed1d94bd32805
 ### This version strips unicode characters from the downloaded script
 ### to work around the currently limited unicode support of the editor
@@ -136,7 +136,7 @@ def main():
 
 if __name__ == '__main__':
   main()
-{% endhighlight %}
+~~~
 
 This script is also [available as a gist][newfromgist_gist].
 
@@ -152,7 +152,7 @@ This uses the Dropbox API in the way that should maintain versions of files, so 
 
 The latest version of this script is available [on github][gh_script].
 
-{% highlight python linenos %}
+~~~ python
 import webbrowser, os, pprint
 import dropbox
 import hashlib
@@ -504,7 +504,7 @@ if __name__ == "__main__":
   main()
   print 'Dropbox sync done!'
 
-{% endhighlight %}
+~~~
 
 Any feedback on either of these scripts is welcome. I'm just starting to learn Python and it is very different from any language I have tried in the past!
 

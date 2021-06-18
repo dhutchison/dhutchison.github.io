@@ -1,0 +1,16 @@
+
+/* Background particle configuration */
+$particle-spacing: 2560px;
+$particle-timing-1: 60s;
+$particle-timing-2: 120s;
+$particle-timing-3: 180s;
+
+/* Media query values */
+$mqHandheld: "only screen and (max-width: 767px)";
+ 
+$mqiPad: "only screen and (min-device-width : 768px) and (max-device-width : 1024px) ";
+$mqTablet: "only screen and (min-width : 768px) and (max-width : 1024px) ";
+//Retina add rule and (-webkit-min-device-pixel-ratio: 2)
+//Non-Retina add rule and (-webkit-min-device-pixel-ratio: 1)
+
+

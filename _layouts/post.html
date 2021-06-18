@@ -5,15 +5,19 @@ post: true
 <article class="post">
 	<header class="post-heading">
 		{% if page.header_image %} {{ page.header_image | markdownify }}{% endif %}
-		<h2 class="post-title">
-			<a href="{% if page.link %}{{ page.link }}{% else %}{{ page.url }}{% endif %}" class="title">
-				{{ page.title }}</a>
-			{% if page.link %}<span class="link-arrow"> &rarr;</span>{% endif %}
-		</h2>
+		<h1 class="post-title">
+			{{ page.title }}
+			{% if page.link %}
+				<a href="{{ page.link }}" class="post-link">
+					<span class="icon-link1"></span>
+				</a>
+			{% endif %}
+		</h1>
 		<div class="post-meta">
 			{% if page.date %}
 			<div class="post-date">
 				<p class="meta">
+					<span class="icon-calendar"></span>
 					<time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" data-updated="true" title="{{ page.date | date_to_string }}">
 						{% assign d = page.date | date: "%-d"  %}
 						{% case d %}
@@ -25,7 +29,7 @@ post: true
 				</p>
 			</div>
 			{% endif%}
-			{% include post_category_list.html %}
+			{% include post_tags.html %}
 		</div>	
 	</header>
 	{% if page.series %}
@@ -59,13 +63,6 @@ post: true
 		{% endif %}
 	</section>
 	<footer class="post-footer">
-	    <section class="footer-top">
-    	    <section class="post-org">
-    	    	{% include post_tag_list.html %}
-    		</section>
-    		<div class="clear"></div>
-    	</section>
-
     	{% if page.comments %}
     		<div id="disqus_thread"></div>
 		    <script src="//devwithimagination.disqus.com/embed.js" async></script>

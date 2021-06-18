@@ -1,0 +1,34 @@
+/**
+ * File containing all our colour definitions
+*/
+
+:root, [data-theme="default"], [data-theme="light"]{
+    --colour-primary: hsl(240, 4%, 20%);
+    --colour-secondary: #1282A2;
+    --colour-tertiary: #42a8c0;
+    /* color contrasts */
+    --colour-bg: white;
+    --colour-contrast-lower: hsl(0, 0%, 95%);
+    --colour-contrast-low: hsl(240, 1%, 83%);
+    --colour-contrast-medium: hsl(240, 1%, 48%);
+    --colour-contrast-high: hsl(240, 4%, 20%);
+    --colour-contrast-higher: black;
+  }
+  
+  [data-theme] {
+    background-color: var(--colour-bg);
+    color: var(--colour-primary);
+  }
+  
+  [data-theme="dark"] {
+    --colour-primary: hsl(0, 0%, 89%);
+    --colour-secondary: #1282A2;
+    --colour-tertiary: #42a8c0;
+    /* color contrasts */
+    --colour-bg: rgb(34, 39, 46);
+    --colour-contrast-lower: hsl(240, 6%, 15%);
+    --colour-contrast-low: hsl(252, 4%, 25%);
+    --colour-contrast-medium: hsl(240, 1%, 57%);
+    --colour-contrast-high: hsl(0, 0%, 89%);
+    --colour-contrast-higher: white;
+  }

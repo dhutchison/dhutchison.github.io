@@ -3,7 +3,7 @@ title: Managing Git Hooks in Maven Projects
 categories:
 - Development
 tags:
-- maven
+- Maven
 - git
 - pre-commit
 summary: How to install Git Hooks as part of the Maven Lifecycle

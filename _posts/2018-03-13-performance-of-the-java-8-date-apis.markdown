@@ -8,19 +8,19 @@ tags:
 
 At the weekend I was skimming over the parts of the OCA exam book which are new for Java 8, and the comparison on working with the new java.time APIs versus the previous java.util offerings got me thinking about performance. Recently I had been looking at a bit of code which was creating objects based on an object loaded from a database table with the fields shown below. 
 
-{% highlight java %}
+~~~ java
     private java.util.Date date;
     private int startHour;
     private int startMinute;
     private int endHour;
     private int endMinute
-{% endhighlight %}
+~~~
 
 The date in this object is set to midnight time. Based on this object the code was then making two java.util.Date objects, one for each time on the date. This requires a trip in to a Calendar object to set the time fields, then converting back to a Date. This appeared to be quite an expensive operation when we were executing it tens of thousands of times during the process of a calculation.   
 
 For a test, I wrote a simple program which created an object representing today's date, and then created 20,000 objects based on this including a time. These steps were performed for both the java.time and java.util approaches. 
 
-{% highlight java linenos %}
+~~~ java
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -125,14 +125,14 @@ public class DateTest {
 }
 
 
-{% endhighlight %} 
+~~~
 
 I compiled the code and ran the test 10 times, just to rule out  any blips in system performance. 
 
-{% highlight bash %}
+~~~ bash
 javac DateTest.java
 for i in {1..10}; do echo $i $(java -cp . DateTest); sleep 2s; done
-{% endhighlight %}
+~~~
 
 It is a crude test, but the results were quite surprising. 
 

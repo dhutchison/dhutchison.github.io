@@ -1,0 +1,31 @@
+---
+layout: main
+---
+<div class="archives">
+    <div class="archive-content">
+
+        <header>
+            <h2 class="tag"><a href="/archives/tags/">Tags</a> / {{ page.tag }}</h2>
+        </header>
+
+        <article>
+            <div class="groupedPosts">
+
+                <ul class="posts">{% for post in site.tags[page.tag] %}{% if post.title != null %}
+                    <li itemscope>
+                        <div class="post-list-item">
+                            <div class="meta meta-year">
+                                <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{
+                                    post.date | date: "%d %b, %Y" }}</time>
+                            </div>
+                            <div class="title">
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </div>
+                        </div>
+                    </li>{% endif %}{% endfor %}
+                </ul>
+            </div>
+        </article>
+
+    </div>
+</div>

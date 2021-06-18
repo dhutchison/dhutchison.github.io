@@ -1,12 +1,23 @@
 ---
 ---
-@import "font-awesome-4.7.0/font-awesome";
+/* File containing the configuration variables that other stylesheets can depend on */
+@import "vars";
+/* Regular font definitions */
+@import "fonts";
+/* Custom icon font */
+@import "icons";
+/* Colour definitions */
+@import "colours";
+
+/* Common styles which are global to the site */
 @import "commonStyle";
 @import "coreStyle";
+/* Syntax highlighting */
+@import "syntax_light";
+@import "syntax_dark";
+
+/* Existing styles */
 @import "tableStyle";
-@import "syntax";
-@import "chartStyle";
-@import "tagStyle";
-@import "postStyle";
+// @import "chartStyle";
 @import "archiveStyle";
 @import "404Style";

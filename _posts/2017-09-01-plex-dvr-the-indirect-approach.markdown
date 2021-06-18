@@ -82,7 +82,7 @@ The choice to run this in a Virtual Machine was down to two main points:
 
 The Vagrantfile is as follows. Note that it is important we use a fixed IP address here.
 
-{% highlight ruby %}
+~~~ ruby
 
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
@@ -112,11 +112,11 @@ config.vm.synced_folder '.', '/vagrant', disabled: true
 config.vm.provision :shell, path: "Vagrant_bootstrap.sh"
 end
 
-{% endhighlight %}
+~~~
 
 The provisioning script is
 
-{% highlight bash %}
+~~~ bash
 
 #!/usr/bin/env bash
 
@@ -231,7 +231,7 @@ else
   modprobe tda18250
   modprobe dvb-usb-dib0700
 fi
-{% endhighlight %}
+~~~
 
 Note that the custom kernel module build steps of this may take some time, depending on the resources available on the host.
 

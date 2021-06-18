@@ -48,7 +48,7 @@ The test case [EmbeddedPostgresTest][EmbeddedPostgresTest] shows a very basic ex
 
 Before delving into the MicroProfile features, I set up a simple "Hello World" type of controller to test with first to get the setup right. 
 
-This only exposes a single endpoint method which always returns the same hard-coded response. [[HelloController]][hello_controller].
+This only exposes a single endpoint method which always returns the same hard-coded response. [HelloController][hello_controller].
 
 ~~~ java
 @Path("/hello")

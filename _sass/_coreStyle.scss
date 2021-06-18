@@ -2,97 +2,76 @@
 
 @import "commonStyle";
 
-//Include the font definitions
-@include fonts();
-
 /* Global Reset */
 * {
     margin: 0;
     padding: 0;
 }
 
-html, body { height: 100%; }
+html {
+    font-size: 100%;
+}
+
+html, body { 
+    height: 100%; 
+}
 
 body {
-	color: $mainFontColour;
-
-    text-align: center;
-
 	font-family: $contentFonts;
 	font-weight: $contentFontWeight;
 
-    @include for-print-only {
-        font-family: $printFonts;
-        font-weight: $contentPrintFontWeight;
-    };
-
-    font-size: $fontSizeSmallest;
-
-    @include for-sm-up {
-        font-size: $fontSizeSmaller;
+    @media (max-width: 1024px) {
+        padding: 0 1em;
     }
-
-    @include for-md-up {
-        font-size: $fontSizeStandard;
-    }	
-}
-
-code {
-    font-size: $fontSizeSmallest;
-}
-
-main {
-    /* This is here because IE 11 still does not support the "main" tag */
-    display: block;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: $headerFontWeight;
-    font-family: $contentFonts;
-
-    @include for-print-only {
-        font-weight: $headerPrintFontWeight;
-        font-family: $printFonts;
-    };
-}
-
-h1, h2 {
-    text-align: left;    
 }
 
 h1 {
-    font-size: 2.4em;
+    font-size: calc(1.5rem + 3vw);
     line-height: 1em;
-    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headerFonts;
+    font-weight: $headerFontWeight;
+
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 h2 {
-    font-size: 1.75em;
+    font-size: 2rem;
     line-height: 1em;
-
-    margin-top: 1em;
+    
+    @include respond-to(handhelds) {
+        font-size: 1.4rem;
+    }
 }
 
 h3 {
-    font-size: 1.3em;
+    font-size: 1.3rem;
 }
 
 h4, h5, h6 {
     font-size: 100%; 
 }
 
+ul, ol {
+    margin-left: 2em;
+}
+
 p { 
     margin: 1em 0; 
+    line-height: $lineHeightEM;
 }
 
 a { 
-    color: $linkColour;
+    color: var(--colour-primary);
 	transition-duration: .5s;
 	text-decoration: underline;
 
 	
 	&:hover {
-	    color: $linkHoverColour;
+	    color: var(--colour-secondary);
 	}
 }
 
@@ -104,295 +83,287 @@ figure {
 
 figure > pre, pre.highlight {
     overflow-x: auto;
+
+    margin-left: -1em;
+    margin-right: -1em;
+    padding: 1em;
+    border-radius: 1em;
 }
 
-.fa-ul {
-    .fa-li, .fa-li.fa-lg {
+blockquote {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 2.5em;
+    margin-inline-end: 2.5em;
+}
+
+/* Our Theme Toggle switch styles. 
+ * Based on https://www.w3schools.com/howto/howto_css_switch.asp
+ */
+ .switch {
+    /* The switch - the box around the slider */
+    position: relative;
+    display: inline-block;
+    width: 1.75rem;
+    height: 1rem;
+  
+  
+    /* Hide default HTML checkbox */
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+  
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
         left: 0;
-        position: static;
-        margin-left: -0.5em;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
     }
-}
-
-.heading {
-    background-color: $headerBackground;
-
-    border-color: $dividerColour;
-    border-style: solid;
-    border-width: $thinSpacing 0 0 0;
-}
-
-.heading, .footer {
     
-    @include sitePadding();
-
-    color: $headerFontColour;
-
-    a {
-        color: $headerFontColour;
-
-        &:hover{
-            color: $headerLinkHoverColour;
-            transition: .5s;
-        }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 1rem;
+        width: 1rem;
+        // background-color: white;
+        background-color: var(--colour-contrast-high);
+        -webkit-transition: .4s;
+        transition: .4s;
     }
-
-    h2 {
-        font-weight: $contentFontWeight;
-        text-align: left;
-
-        margin-top: 0;
-    }
-}
-
-.footer { 
-    p {
-        margin: 0 0 0 0;
-    }
-}
-
     
-.author-links {
-    width: 100%;
-    text-align: center;
-
-    ul ,li {
-        display: inline-block;
+    input:checked + .slider {
+        background-color: var(--colour-secondary);
     }
-
-    li + li {
-        margin-left: 4em;
+    
+    input:focus + .slider {
+        box-shadow: 0 0 1px var(--colour-secondary);
     }
-
+    
+    input:checked + .slider:before {
+        -webkit-transform: translateX(0.75rem);
+        -ms-transform: translateX(0.75rem);
+        transform: translateX(0.75rem);
+    }
+    
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 1rem;
+    }
+    
+    .slider.round:before {
+        border-radius: 50%;
+    }
 }
+
+/*****************************************************************************/
+/*
+/* Site
+/*
+/*****************************************************************************/
 
 .container {
 
-    /*	background*/
-    background-color: $backgroundColour;
-    
-    /* text */
-    line-height: $lineHeightEM;
-    text-align: left;
-    text-rendering: optimizelegibility;
-    font-weight: $contentFontWeight;
-
-    @include for-print-only {
-        font-weight: $contentPrintFontWeight;
-    };
-    
-    /* Sizing */
-    width: 100%;
-
-    padding: 1em 0 0 0;
-
-    @include for-md-up {
-        padding: 0;
-    }
-    
-
-    hr {
-        border: 0;
-        height: 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        border-bottom: 1px solid fadeout($dividerColour, 40%);
-        margin-top: 1em;
-        margin-bottom: 1em; 
-    }
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
     .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-        background-color: $backgroundColour;
-        color: $headerFontColour;
+        margin: 2rem 2rem 1rem 2rem;
+        padding-bottom: 1rem;
 
-        a { 
-            color: $headerFontColour;
+        border-width: 0 0 0.25rem 0;
+        border-style: solid;
+        border-image: linear-gradient(to right, var(--colour-bg), var(--colour-contrast-low), var(--colour-secondary), var(--colour-contrast-low), var(--colour-bg)) 1;
 
-            &:hover {
-                text-decoration: underline;
-                color: $headerLinkHoverColour;
-                transition: .5s;
+        @include respond-to(handhelds) {
+            flex-direction: column;
+
+            margin: 1rem 0;
+
+            .site-byline {
+                text-align: center;
             }
         }
-
-        font-family: $headerFonts;
-        text-align: center;
-
-        position: inherit;
-        height: auto;
-
-        top: 0;
-        z-index: 100000;
-
-        padding-bottom: 1em;
-
-        @include for-print-only {
-            font-family: $printFonts;
-        };
         
-        h1.title {
-            color: $mainHeaderColour;
-
-            font-family: $titleFonts;
-            font-weight: $titleFontWeight;
-
-            @include for-print-only {
-                font-family: $printFonts;
-                font-weight: $titlePrintFontWeight;
-            };
-
-            font-size: $fontSizeTitle;
-
-            a:hover {
-                color: $dividerColour;
-            }
-        }
-
-        .site-byline {
-            font-size: $fontSizeSmaller;
-            margin-bottom: 1.2em;
-        }
-        
-        .header-menu {
-            width: 100%;
-            font-weight: $contentFontWeight;
-            font-size: 1.4em;
-        
-            display: inline-block;
-            text-align: center;
-
-            ul {
-                list-style-type: none;
-                margin: 0;
-                
-                li {
-                    display: inline;
-                    
-                    a {
-                        text-decoration: none;
-                        position: relative;
-                    }
-                    
-                    a:hover {
-                        text-decoration: underline;
-                    }
-                }
-
-                li + li:before {
-                    content: " | ";
-                    padding: 0 5px;
-
-                    @include for-md-up {
-                        padding: 0 10px;
-                    }
-                }
-            }
-        }
-
-        .meta { 
-            font-family: $headerFonts;
-            font-weight: $contentFontWeight;
-        }
-    }
-    
-    .content {
-        background-color: $contentBackgroundColour;
-        
-        margin: 0;
-        width: 100%;
-
-        @include for-md-up {
-            margin: 0 auto;
-            width: 80%;
-        }
-
-        @include for-lg-up {
-            width: 70%;
-        }
-
-        @include for-xl-up {
-            width: 60%;
-        }
-        
-        .pagination {
-            text-align: center;
+        ul {
+            list-style-type: none;
             
-            ul {
-                list-style:none; 
-                
-                
-                li{
-                    display: inline-block;
-                    margin-right: 1em;
-                }
-                
-            }    		    
+            padding: 0;
+            overflow: hidden;
+
+            display: flex;
+
+            @include respond-to(handhelds) {
+                margin: 1rem 0;
+            }
+        }
+
+        
+        li {
+            margin-left: 1em;
         }
     }
-    
-    .footer {
-                    
-        font-size: 0.8em;
-        
-        .copy {
-            padding-top: 1em;
-            text-align: center;
+
+    .post-title {
+        margin-bottom: 2rem;
+    }
+
+    ul.social {
+        display: flex;
+
+        justify-content: center;
+        list-style-type: none;
+
+        margin: 1rem 0;
+
+        li {
+            margin: 0 0.5rem;
+        }
+
+        a {
+            text-decoration: none;
         }
     }
-}
 
-@media
-    only print {
-    
-        @page {
-            margin: 0.75in 0.5in 0.5in 0.5in;
+    .post-meta {
+        display: flex;
 
-            size: A4;
+        .meta {
+            margin: 0;
         }
-        
-        body {
-            background: none;
-            background-color: #FFFFFF;
 
-            color: $mainFontPrintColour;
-            font-size: $fontSizeStandardPrint;
+        .post-date {
+            white-space: nowrap;
         }
-    
-        .container {
-                
-            width: 100%;
+    }
+
+    .post-grouping {
+
+        margin-left: 1rem;
+
+        ul {
+            display: inline;
+            list-style: none;
+            padding: 0px;
             margin-left: 0;
-            margin-right: 0;
-        
-            .header, .footer {
-                display: none;
-            }
-            
-            .content {
-                margin-top: 0;
-            }
-            
-            a {
-                text-decoration: none;
-                color: $mainHeaderColour;
-            }
         }
 
-        .post-footer .share, #disqus_thread, .page-navigation {
-            display: none;
+        li {
+            display: inline;
         }
 
-        .author-links {
-            display: none;
+        li::after {
+            content: ",";
         }
+
+        li:last-child::after {
+            content: "";
+        }
+    }
+
+    hr.post-divider {
+        background: radial-gradient( var(--colour-secondary), var(--colour-bg));
+        border: 0;
+        height: 5px;
         
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .post {
+        max-width: 80ch;
+        
+        margin: 1rem auto;
+
+        img {
+            max-width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    
+    a.post-link {
+        text-decoration: none;
+        font-size: 0.5em;
+    }
+
+    .post-series {
+        padding: 1rem;
+
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+
+        box-shadow: 0px 0px 10px 1px var(--colour-secondary);
+        background: var(--colour-contrast-lower);
+    }
+
+    .site {
+    	/*	background*/
+        background-color: var(--colour-bg);
+    	
+    	/* text */
+    	line-height: $lineHeightEM;
+    	text-align: left;
+    	text-rendering: optimizelegibility;
+    	font-weight: $contentFontWeight;
+    	
+    	/* Sizing */
+        margin: 5vh 2vw;
+    	padding-bottom: 0;
+        @include respond-to(handhelds) {
+            margin: 0;
+        };
+    
+    	
+    }
 }
 
- /* Hides stuff */
- .hidden {
-     text-indent: -9999px;
-     direction: ltr;
-     visibility: hidden;
-     display: none;
- }
+.highlight {
+    background-color: #f8f8f8;
 
+    code {
+        font-family: $ff-mono;
+    }
+}
+
+.pagination {
+    
+    padding-top: 2em;
+    text-align: center;
+    
+    ul {
+        list-style: none; 
+        
+        max-width: 40ch;
+        margin: 0 auto;
+
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+    }    		    
+}
+
+.footer {
+ 
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: auto;
+
+    p {
+        margin: 0;
+    }
+}

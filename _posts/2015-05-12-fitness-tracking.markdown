@@ -70,7 +70,7 @@ This was achieved by adding an additional step to my cron task:
 
     python $OPENSHIFT_REPO_DIR/py/manipulateJSON.py $OPENSHIFT_REPO_DIR/py/workout.json $OPENSHIFT_REPO_DIR/workout_shrunk.json
 
-{% highlight python linenos %}
+~~~ python
 /* manipulateJSON.py */
 import json
 import sys
@@ -104,7 +104,7 @@ def main():
 
 if __name__ == "__main__”:
     main()
-{% endhighlight %}
+~~~
 
 ## Graphing
 

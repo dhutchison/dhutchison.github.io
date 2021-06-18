@@ -1,6 +1,113 @@
 require 'yaml'
 require 'rubygems'
 require 'stringex'
+require 'jekyll'
+
+# https://gist.github.com/stammy/790778
+# Using multi-word tags support from http://tesoriere.com/2010/08/25/automatically-generated-tags-and-tag-clouds-with-jekyll--multiple-word-tags-allowed-/
+# If using with jekyll gem, remove bits loop and site.read_bits('') and add require 'rubygems' and require 'jekyll'
+# Using full HTML instead of layout include to manually set different page title (tag, not tag_slug) and canonical URL in header
+ 
+ 
+desc 'Build tags pages'
+task :build_with_tags do
+    build_with_tags
+end
+
+def build_with_tags
+#     sh 'rm -rf _site'
+    
+    puts "Generating tags..."
+
+    include Jekyll::Filters
+ 
+    options = Jekyll.configuration({})
+    site = Jekyll::Site.new(options)
+    site.process
+ 
+    # nuke old tags pages, recreate
+    FileUtils.rm_rf("tags")
+    FileUtils.mkdir_p("tags")
+
+    puts "Tags: " + site.tags.to_s
+ 
+    site.tags.sort.each do |tag, posts|
+	  # generate slug-friendly tag
+      tag_slug = tag.gsub(' ','').gsub('&amp;', '&').downcase 
+ 
+      html = <<-HTML
+---
+layout: tag
+title: Tagged #{tag}
+permalink: /archives/tags/#{tag_slug}/
+tag: #{tag}
+---
+HTML
+      File.open("tags/#{tag_slug}.html", 'w+') do |file|
+        file.puts html
+      end
+    end
+ 
+    puts 'Done.'
+end
+
+desc 'Build category pages'
+task :build_with_categories do
+    build_with_categories
+end
+
+def build_with_categories
+    puts "Generating categories..."
+
+    include Jekyll::Filters
+ 
+    options = Jekyll.configuration({})
+    site = Jekyll::Site.new(options)
+    site.read_posts('')
+ 
+    # nuke old pages, recreate
+    FileUtils.rm_rf("categories")
+    FileUtils.mkdir_p("categories")
+    
+    #Regenerate the index page
+    html = <<-HTML
+---
+layout: main
+title: Categories
+---
+
+<h2>Tags</h2>
+<ul class="catList">
+{% for cat in site.categories %}
+	<li><a href="/categories/{{ cat | first | downcase | replace:' ','' | replace:'&amp;','&'}}">{{ cat | first }} <span>({{ cat | last | size }})</span></a></li>			
+{% endfor %}
+</ul>
+HTML
+    File.open("categories/index.html", 'w+') do |file|
+        file.puts html
+    end
+ 
+    site.categories.sort.each do |cat, posts|
+	  # generate slug-friendly category
+      cat_slug = cat.gsub(' ','').gsub('&amp;', '&').downcase 
+ 
+      html = <<-HTML
+---
+layout: main
+title: In Category #{cat}
+permalink: /categories/#{cat_slug}/
+---
+{% assign catName='#{cat_slug}' %}
+{% include category_page %}
+HTML
+      File.open("categories/#{cat_slug}.html", 'w+') do |file|
+        file.puts html
+      end
+    end
+ 
+    puts 'Done.'
+end
+
 
 desc 'Build and send to dev server'
 task :build, :opt do |t, args|

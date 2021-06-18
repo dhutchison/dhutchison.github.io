@@ -1,19 +1,21 @@
 ---
 layout: main
 ---
-
-<header class="heading">
-	<h2>Archives</h2>
-	<nav>
-		<ul class="archiveLinks">
-			<li {% if page.url == "/archives/" %} class="active" {% endif %}><a href="/archives/"><i class="fa fa-calendar fa-lg fa-fw"></i>Date</a></li>
-			<li {% if page.url == "/archives/tags/" %} class="active" {% endif %}><a href="/archives/tags/"><i class="fa fa-tags fa-lg fa-fw"></i>Tags</a></li>
-			<li {% if page.url == "/archives/categories/" %} class="active" {% endif %}><a href="/archives/categories/"><i class="fa fa-bookmark fa-lg fa-fw"></i>Categories</a></li>
-			<li {% if page.url == "/archives/projects/" %} class="active" {% endif %}><a href="/archives/projects/"><i class="fa fa-file-code-o fa-lg fa-fw"></i>Projects</a></li>
-		</ul>
-	</nav>
-</header>
-
 <div class="archives">
-{{ content }}
+
+	<header class="heading">
+		<h1>Archives</h1>
+		<nav class="archive-link-wrapper">
+			<ul class="archive-links">
+				<li {% if page.url == "/archives/" %} class="active" {% endif %}><a href="/archives/"><span class="fa icon-calendar fa-lg fa-fw"></span>Date</a></li>
+				<li {% if page.url == "/archives/tags/" %} class="active" {% endif %}><a href="/archives/tags/"><span class="fa icon-price-tags fa-lg fa-fw"></span>Tags</a></li>
+				<!-- <li {% if page.url == "/archives/categories/" %} class="active" {% endif %}><a href="/archives/categories/"><span class="fa icon-bookmarks fa-lg fa-fw"></span>Categories</a></li> -->
+				<!-- <li {% if page.url == "/archives/projects/" %} class="active" {% endif %}><a href="/archives/projects/"><span class="fa icon-embed2 fa-lg fa-fw"></span>Projects</a></li> -->
+			</ul>
+		</nav>
+	</header>
+
+	<div class="archive-content">
+		{{ content }}
+	</div>
 </div>

@@ -26,7 +26,7 @@ In version 1.8 of Day One they introduced the ability to add an image into the e
 
 Jordan Patterson blogged a script ([link](http://http://jordanpatterson.me/post/28961089470/aperture-to-dayone "aperture-to-dayone")) to do this from Aperture, which I have modified to work with the selected image in iPhoto. It is not smart, it does not check for selection etc but it does the job.
 
-{% highlight applescript %}
+~~~ applescript
 #Script to add a photo from iPhoto to DayOne. 
 #Based on script by Jordan Patterson and posted originally at 
 #http://jordanpatterson.me/post/28961089470/aperture-to-dayone
@@ -72,4 +72,4 @@ set theEnd to theLength - 8
 set theUDID to text theStart thru theEnd of theEntry
     
 do shell script "open dayone://edit?entryId='" & theUDID & "'"
-{% endhighlight %}
+~~~

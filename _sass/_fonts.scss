@@ -1,0 +1,32 @@
+/* Main Layout Fonts */
+// @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;600&display=swap');
+
+/* Instead of importing custom web fonts, taking the same approach as Stack Overflow and
+ * using a selection of native system fonts. 
+ * Based on https://github.com/StackExchange/Stacks/blob/d76e32dad24ba0f8ae7c087c6f099f52a3e98a52/lib/css/exports/_stacks-constants-type.less ,
+ * just not as LESS.
+ */
+
+ $ff-sans:
+-apple-system, BlinkMacSystemFont, // San Francisco on macOS and iOS
+"Segoe UI", // Windows
+"Liberation Sans", // Linux
+sans-serif; // The final fallback for rendering in sans-serif.
+
+$ff-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+
+$ff-mono:
+ui-monospace, // San Francisco Mono on macOS and iOS
+"Cascadia Mono", "Segoe UI Mono", // Newer Windows monospace fonts that are optionally installed. Most likely to be rendered in Consolas
+"Liberation Mono", // Linux
+    Menlo, Monaco, Consolas, // A few sensible system font choices
+monospace; // The final fallback for rendering in monospace.
+
+/* Font setup */
+// $headerFonts: 'Fira Sans', arial, sans-serif;
+$headerFonts: $ff-sans;
+$headerFontWeight: 600;
+
+// $contentFonts: 'Fira Sans', arial, sans-serif;
+$contentFonts: $ff-sans;
+$contentFontWeight: 300;
