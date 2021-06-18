@@ -24,8 +24,6 @@ GitHub offer free hosting for sites that are either static or powered by Jekyll.
 
 ### [IcoMoon - Icon Font & SVG Icon Sets][icomoon]
 The icons used in various parts of this site use a font instead of images. 
-### [Jekyll-sitemap Plugin][sitemap]
-The [sitemap][site_sitemap] for this site is now produced by this plugin, thanks to Github pages [now supporting][sitemap_ghpages] it. 
 
 ### [Stack Overflow Design][stacks_font]
 
