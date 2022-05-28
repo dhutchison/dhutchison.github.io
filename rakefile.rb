@@ -177,6 +177,7 @@ task :publish, :filename do |t, args|
 
   ### draft publishing ###
   # fall back to current date and title-based slug
+  I18n.enforce_available_locales = false
   headers['date'] ||= long_date
   headers['slug'] ||= headers['title'].to_url.downcase
 
