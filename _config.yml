@@ -1,4 +1,5 @@
 name: Dev With Imagination
+title: Dev With Imagination
 description: I like to develop things. This is a dumping ground of random thoughts.
 url: http://www.devwithimagination.com
 
@@ -16,12 +17,14 @@ permalink: /:year/:month/:day/:title/
 relative_permalinks: false
 paginate: 5
 plugins:
-- jekyll-redirect-from
-- jekyll-sitemap
-- jekyll-paginate
-- jekyll-gist
-- jekyll-seo-tag
 - jekyll-feed
+- jekyll-gist
+- jekyll-github-metadata
+- jekyll-octicons
+- jekyll-paginate
+- jekyll-redirect-from
+- jekyll-seo-tag
+- jekyll-sitemap
 
 kramdown:
   parse_block_html: true
@@ -45,3 +48,20 @@ defaults:
       type: "pages"
     values:
       include_seo: true
+
+# The base projects view this uses is based on the GitHub project
+# https://github.com/github/personal-website
+projects:
+  sort_by: pushed
+  # sort_by options:
+  #   - pushed
+  #   - stars
+  limit: 12
+  exclude:
+    archived: false
+    forks: true
+    projects:
+    - dhutchison.github.io
+    - davidhutchison.scot
+    - homepi
+    - MWVisualisation

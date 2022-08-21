@@ -1,0 +1,85 @@
+@import 'commonStyle';
+/////////////////////////////////
+// Projects specific styling    //
+/////////////////////////////////
+
+.projects {
+    @extend .post;
+}
+
+.projects-content {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    @include respond-to(tablets) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond-to(handhelds) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+
+
+    .github-component {
+
+        background-color: var(--colour-contrast-high);
+        padding: 1rem;
+        border-radius: 1rem;
+
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+
+        h1 {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        a {
+            color: var(--colour-secondary);
+
+            &:hover {
+                color: var(--colour-tertiary);
+            }
+        }
+
+        a, a:hover {
+            text-decoration: none;
+        }
+
+        .repo-desc, footer {
+            color: var(--colour-contrast-lower);
+        }
+
+        .footer-item {
+            display: inline-block;
+            margin-right: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .repo-language-color {
+            filter: brightness(125%);
+            border-radius: 50%;
+            display: inline-block;
+            height: 1rem;
+            position: relative;
+            width: 1rem;
+        }
+
+        .octicon {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .repo-language-color, svg {
+            margin-right: 0.5rem;
+        }
+
+        footer {
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
