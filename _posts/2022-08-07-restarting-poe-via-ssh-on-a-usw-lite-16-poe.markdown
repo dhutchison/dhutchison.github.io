@@ -5,6 +5,7 @@ tags: unifi
 date: 2022-08-07 23:04
 slug: restarting-poe-via-ssh-on-a-usw-lite-16-poe
 ---
+
 I recently moved my Unifi controller off of my Proliant MicroServer and on to a Raspberry Pi, which is powered via PoE from my main Unifi USW-Lite-16-PoE switch. This evening this Pi was unresponsive, and unlike on the MicroServer there is no out-of-band interface I could use to restart it. If this did not host the Unifi controller I could have used the controller to power-cycle the PoE port, but as the controller couldn't be accessed either I needed another approach. While I could have just got up and went under the stairs to pull some cables, it would be preferable to be able to solve this via SSH.
 
 There are [many posts][telnet_post] on the Unifi community forums with solutions for this involving `telnet` after connecting to the switch via SSH, but `telnet` is not available on the newer devices like the USW-Lite-16-PoE. 
@@ -36,6 +37,8 @@ This doesn't include any of the port labels, but at a guess the highest current 
 This port can be turned off by running `swctrl poe set off id 6`, then switched back on with `swctrl poe set auto id 6`. 
 
 As a word of caution with this though - originally I had ran `swctrl poe set off 6` (note the missing `id` between `off` and `6`). This is the incorrect syntax, so it ignores the number and turned PoE off on all ports of the switch. This was a problem for me as the Wifi Access Points were also powered by this switch so I needed to go reconnect with a cable to re-enable PoE for the access points too. 
+
+A safer option, sent in by Shawn Kelley, is the `restart` command. So instead of setting poe "off" then "on" you can run `swctrl poe restart id 6` to power cycle the port. 
 
 
 
