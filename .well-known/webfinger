@@ -1,0 +1,23 @@
+ {
+   "subject": "acct:davidhutchison@mastodon.scot",
+   "aliases": [
+     "https://mastodon.scot/@davidhutchison",
+     "https://mastodon.scot/users/davidhutchison"
+   ],
+   "links": [
+      {
+       "rel": "http://webfinger.net/rel/profile-page",
+       "type": "text/html",
+       "href": "https://mastodon.scot/@davidhutchison"
+     },
+     {
+       "rel": "self",
+       "type": "application/activity+json",
+       "href": "https://mastodon.scot/users/davidhutchison"
+     },
+     {
+       "rel": "http://ostatus.org/schema/1.0/subscribe",
+       "template": "https://mastodon.scot/authorize_interaction?uri={uri}"
+     }
+   ]
+ }
