@@ -8,7 +8,7 @@ tags:
 date: 2023-01-21 00:30
 slug: counting-sensors-in-home-assistant
 ---
-I have been building up my Home Assistant dashboard for a while, mostly using [Mushroom Cards][mushroom-cards]. My main dashboard started off largely inspired by [this Everything Smart Home][youtube-video] tutorial and has continued to evolve as I have thought of new ways to make it more useful. 
+I have been building up my Home Assistant dashboard for a while, mostly using [Mushroom Cards][mushroom-cards]. My main dashboard started off largely inspired by this [Everything Smart Home tutorial][youtube-video] and has continued to evolve as I have thought of new ways to make it more useful. 
 
 At the very top of my dashboard I have a few informational chips:
 
@@ -38,7 +38,7 @@ Creating these sensors was the first time I had really worked with Jinja2 templa
 Breaking this one down our state definition has 5 main parts, separated with pipe (`|`) characters:
 
 1. `states.light` - start with all the state information for the `light` type of entities
-2. `rejectattr('entity_id', 'in' <list of items>` - filter out any items with an `entity_id` in the following list. I use this to avoid double counting some lights as both the light and the light group are included in `states.light`. This might be a quirk from the groups coming through from Zigbee2MQTT, but does not appear to be a way to exclude the light groups automatically by filtering an attribure, so I am needing to do manually by name.
+2. `rejectattr('entity_id', 'in' <list of items>` - filter out any items with an `entity_id` in the following list. I use this to avoid double counting some lights as both the light and the light group are included in `states.light`. This might be a quirk from the groups coming through from Zigbee2MQTT, but does not appear to be a way to exclude the light groups automatically by filtering an attribure, so I am needing to add exclusions manually by name.
 3. `selectattr('state', 'eq', 'on')` filter the list of items to only those which have a `state` attribute with a value of `on`. This is how we restrict to only lights which are currently turned on
 4. `list` - converts the results into a list
 5. `count` - counts the items in the source list and returns the number
