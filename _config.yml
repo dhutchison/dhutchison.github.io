@@ -29,6 +29,9 @@ kramdown:
 excerpt_separator: <!--more-->
 drop_caps: false
 
+# Include these files/folders that are excluded by default
+include: [ "/.well-known" ]
+
 exclude: [node_modules, assets/less]
 
 defaults:

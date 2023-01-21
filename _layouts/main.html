@@ -113,6 +113,11 @@
                       <a href="http://twitter.com/{{ site.data.authors.david.twitter }}/">
                         <span class="icon-twitter"></span>
                       </a>
+                    </li>{% endif %}{% if site.data.authors.david.mastodon %}
+                    <li>
+                      <a rel="me" href="{{ site.data.authors.david.mastodon }}">
+                        <span class="icon-mastodon"></span>
+                      </a>
                     </li>{% endif %} {% if site.data.authors.david.email %}
                     <li>
                       <a href="mailto:{{ site.data.authors.david.email }}">

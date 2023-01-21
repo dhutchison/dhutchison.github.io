@@ -30,6 +30,10 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  .icon-mastodon:before {
+    content: "\e902";
+    /* color: #3088d4; */
+  }
   .icon-chevrons-down:before {
     content: "\e900";
   }
