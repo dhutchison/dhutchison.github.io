@@ -1,6 +1,8 @@
 ---
 title: Bin Sensors in Home Assistant - Shell & Template
 summary: Adding custom sensors for bin collections
+series: Bin Sensors in Home Assistant
+series_part: 1
 category:
 - iot
 tags:
