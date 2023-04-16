@@ -5,10 +5,10 @@
 <article class="post">
 		<header class="post-heading">
 			<h2 class="post-title">
+				{% if post.link %}<span class="icon-link"></span>{% endif %}
 				<a href="{% if post.link %}{{ post.link }}{% else %}{{ post.url }}{% endif %}" 
 					{% if noPreview != true %}class="title"{% endif %}>
 						{{ post.title }}</a>
-				{% if post.link %}<span class=".icon-link1"></span>{% endif %}
 			</h2>
 			<div class="post-meta">
 				{% if post.date %}
