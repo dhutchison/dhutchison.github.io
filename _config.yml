@@ -14,11 +14,15 @@ markdown: kramdown
 timezone: Europe/London
 permalink: /:year/:month/:day/:title/
 relative_permalinks: false
-paginate: 5
+pagination: 
+  enabled: true
+  collection: 'posts'
+  sort_reverse: true
+  per_page: 5
 plugins:
 - jekyll-redirect-from
 - jekyll-sitemap
-- jekyll-paginate
+- jekyll-paginate-v2
 - jekyll-gist
 - jekyll-seo-tag
 - jekyll-feed
