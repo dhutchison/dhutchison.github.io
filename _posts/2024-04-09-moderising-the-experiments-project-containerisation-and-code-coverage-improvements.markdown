@@ -1,5 +1,5 @@
 ---
-title: Moderising the Experiments Project - Containerisation and Code Coverage Improvements
+title: Modernising the Experiments Project - Containerisation and Code Coverage Improvements
 layout: post
 series: A look in to MicroProfile
 series_part: 5
