@@ -3,15 +3,15 @@ title: Extracting a Maven Artifact Version from the Command Line
 category:
 - Development
 tags:
-- maven
+- Maven
 summary: How to extract the version number from a maven artifact using commonly available
   CLI tools.
 date: 2021-06-13 20:42
 slug: extracting-a-maven-artifact-version-from-the-command-line
 ---
-As part of ongoing maintenance and releases to application servers, I needed a quick way to determine the versions of various components to check if they were up to date or not. 
+As part of ongoing maintenance and releases to application servers, I needed a quick way to determine the versions of various components to check if they were up to date or not.
 
-Ideally what I was after was a shell command I could run against one or more components to extract version information, as ultimately this check would likely be run via an SSH session from a central management host. 
+Ideally what I was after was a shell command I could run against one or more components to extract version information, as ultimately this check would likely be run via an SSH session from a central management host.
 
 This one-liner can do what I needed:
 
