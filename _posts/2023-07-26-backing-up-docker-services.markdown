@@ -4,7 +4,7 @@ layout: post
 categories:
 - Development
 tags:
-- Ansible
+- ansible
 - Docker
 - RaspberryPi
 summary: How to backup self-hosted Docker service data.
@@ -22,27 +22,27 @@ This server had backups taken on a very ad-hoc basis, and as is often the case t
 ## What do I need to backup?
 
 This server currently runs 5 main services:
-* [traefik][traefik] - a load balancer that serves as the entrypoint for all my dockerized services. This handles provisioning certificates from LetsEncrypt, and uses labels on running Docker containers to drive most of the service level configuration. Beyond configuration files, this service has no persistant data that I need to back up. 
+* [traefik][traefik] - a load balancer that serves as the entrypoint for all my dockerized services. This handles provisioning certificates from LetsEncrypt, and uses labels on running Docker containers to drive most of the service level configuration. Beyond configuration files, this service has no persistant data that I need to back up.
 * [heimdall][heimdall] - an application dashboard which I use as a landing page to link to other services
 * [pihole][pihole] - for DNS level adblocking
 * [actual budget][actual] - a personal finance & budgeting application (which I've not used a huge amount yet)
-* [unifi controller][unifi-controller] - a docker version of the Ubiquiti Networks Unifi Controller software. This consists of two containers: the `jacobalberty/unifi-docker` one for the actual controller and a `mongodb` container for it's database. 
+* [unifi controller][unifi-controller] - a docker version of the Ubiquiti Networks Unifi Controller software. This consists of two containers: the `jacobalberty/unifi-docker` one for the actual controller and a `mongodb` container for it's database.
 
 ## How do I back these up?
 
-Each piece of software stores data in it's own format, and have different approaches for backups. While I could use a consistent approach of backing up the entire docker volumes, where software has it's own backup utilities I would prefer to use them. 
+Each piece of software stores data in it's own format, and have different approaches for backups. While I could use a consistent approach of backing up the entire docker volumes, where software has it's own backup utilities I would prefer to use them.
 
-From the above list there are 4 services that I want to backup, and 3 different approaches. In all cases I want to have a location on the host filesystem that I can collect these from to ship them off-device. 
+From the above list there are 4 services that I want to backup, and 3 different approaches. In all cases I want to have a location on the host filesystem that I can collect these from to ship them off-device.
 
 ### Unifi Controller - built-in scheduled backups
 
-The Unifi controller software has an option in the settings for scheduled backups. Unfortunately it looks like my previous controller had not performed one of these in 2 months, even with the option enabled. I have no idea why this was the case, but the rebuilt server appears to be backing up on schedule. I'll need to monitor this to ensure it does not stop working randomly again. 
+The Unifi controller software has an option in the settings for scheduled backups. Unfortunately it looks like my previous controller had not performed one of these in 2 months, even with the option enabled. I have no idea why this was the case, but the rebuilt server appears to be backing up on schedule. I'll need to monitor this to ensure it does not stop working randomly again.
 
-These backup files are written to `/unifi/data/backup` within the container, and set to keep a fixed number of past backups. This location is bind mounted to a directory on the host filesystem to allow for them to be collected and published off device. 
+These backup files are written to `/unifi/data/backup` within the container, and set to keep a fixed number of past backups. This location is bind mounted to a directory on the host filesystem to allow for them to be collected and published off device.
 
 ### Pi-Hole - Scheduling of CLI tool
 
-Pi-Hole includes a teleporter tool that can be used to import & export configuration files. This does not include statistics, but I'm less concerned about those. 
+Pi-Hole includes a teleporter tool that can be used to import & export configuration files. This does not include statistics, but I'm less concerned about those.
 
 An export can be performed using the `pihole` [CLI](https://docs.pi-hole.net/core/pihole-command/). In the container I can run `pihole -a -t <path to file>` to create an export of the configuration to a location that is mounted into the container. As I run this as part of a `docker-compose` file, the cron job will be configured something like this:
 
@@ -50,7 +50,7 @@ An export can be performed using the `pihole` [CLI](https://docs.pi-hole.net/cor
 0 2 * * * pi docker compose -f /data-storage/docker-stacks/docker-compose.yml exec pihole pihole -a -t /etc/pihole/backups/adminpi_pihole_backup_$(date -d "today" +"\%Y\%m\%d\%H\%M").tar.gz
 ```
 
-This will execute a command at 2am daily to run the Pi-Hole teleporter in the docker container, writing the backup file into the `/etc/pihole/backups/` directory in the container as a file containing the current date and time. This location in the container is mounted to a location on the host filesystem for later collection. 
+This will execute a command at 2am daily to run the Pi-Hole teleporter in the docker container, writing the backup file into the `/etc/pihole/backups/` directory in the container as a file containing the current date and time. This location in the container is mounted to a location on the host filesystem for later collection.
 
 I configured this with Ansible using the following task configuration:
 
@@ -72,15 +72,15 @@ I configured this with Ansible using the following task configuration:
 
 ### Heimdall and Actual Budget - Filesystem backups
 
-Both of these applications have no native backup solutions that we can automate. There is an ongoing [discussion](https://github.com/linuxserver/Heimdall/discussions/695) for Heimdall on backups, and while Actual Budget has a way to [manually create backups in the web interface](https://actualbudget.org/docs/backup-restore/backup) there is no API for it. For these we will need to backup their data manually. 
+Both of these applications have no native backup solutions that we can automate. There is an ongoing [discussion](https://github.com/linuxserver/Heimdall/discussions/695) for Heimdall on backups, and while Actual Budget has a way to [manually create backups in the web interface](https://actualbudget.org/docs/backup-restore/backup) there is no API for it. For these we will need to backup their data manually.
 
 The core data for these applications are stored within the containers in:
 * `/config/www/` for heimdall
 * `/app/server-files` and `/app/user-files` for actual
 
-As is a familiar pattern by now - I have these locations in the container as volume mounts to known directories on the host filesystem, so this is just a matter of creating an archive of these locations. I use a common naming pattern so these any mount points for a service are in a local directory `/data-storage/app-data/<service name>`. Backups will be stored in a sub directory of this location. 
+As is a familiar pattern by now - I have these locations in the container as volume mounts to known directories on the host filesystem, so this is just a matter of creating an archive of these locations. I use a common naming pattern so these any mount points for a service are in a local directory `/data-storage/app-data/<service name>`. Backups will be stored in a sub directory of this location.
 
-The cron job for each service is something like this, which creates a timestamped backup file for the service directory, excluding the backups subdirectory. 
+The cron job for each service is something like this, which creates a timestamped backup file for the service directory, excluding the backups subdirectory.
 
 ```shell
 0 18 * * * dhutchison tar -cvzf /data-storage/app-data/actual-server/backups/adminpi_actual-server_backup_$(date -d "today" +"\%Y\%m\%d\%H\%M").tar.gz --exclude backups /data-storage/app-data/actual-server
@@ -115,16 +115,16 @@ backup_app_data_dirs:
 
 ## How do I limit the number of backup files retained?
 
-In addition to setting up the above to create the backup files, I wanted another to limit the number of backup files which were retained locally on the host to prevent disk space running out. The Unifi controller does this as part of it's backup scheduling, so I didn't need to do anything for that. For the other services, I have an additionl cron job for each service which will delete any files from the  backup directory which have not been modified in a set number of days. 
+In addition to setting up the above to create the backup files, I wanted another to limit the number of backup files which were retained locally on the host to prevent disk space running out. The Unifi controller does this as part of it's backup scheduling, so I didn't need to do anything for that. For the other services, I have an additionl cron job for each service which will delete any files from the  backup directory which have not been modified in a set number of days.
 
-This example was used for initial testing, and deletes any pihole backups which were last modified more than two days ago. 
+This example was used for initial testing, and deletes any pihole backups which were last modified more than two days ago.
 
 ```shell
 5 2 * * * pi find /data-storage/app-data/pihole/backups -maxdepth 1 -type f -mtime +2 -exec rm {} \;
 ```
 
 
-I have configured these in a general fashion using Ansible with the following snippet. 
+I have configured these in a general fashion using Ansible with the following snippet.
 
 ```yaml
 {% raw %}
@@ -154,19 +154,19 @@ backup_rotate_app_data_dirs:
 
 ## How to I store the backups off the original device?
 
-In looking for some options to upload to a cloud service I came across  [Rclone][rclone]. 
+In looking for some options to upload to a cloud service I came across  [Rclone][rclone].
 
 > Rclone is a command-line program to manage files on cloud storage. It is a feature-rich alternative to cloud vendors' web storage interfaces. [Over 70 cloud storage products](https://rclone.org/#providers) support rclone including S3 object stores, business & consumer file storage services, as well as standard transfer protocols.
 
-Unfortunately it doesn't support iCloud which would have been my preference, but I've opted to use Google Drive initially. I won't go into the specifics of how this is configured as the project documentation is pretty good, and it will largely depend on where you are trying to copy files to. 
+Unfortunately it doesn't support iCloud which would have been my preference, but I've opted to use Google Drive initially. I won't go into the specifics of how this is configured as the project documentation is pretty good, and it will largely depend on where you are trying to copy files to.
 
 At the moment this is using the rclone [copy](https://rclone.org/commands/rclone_copy/) action:
 
 > Copy the source to the destination. Does not transfer files that are identical on source and destination, testing by size and modification time or MD5SUM. Doesn't delete files from the destination. If you want to also delete files from destination, to make it match source, use the [sync](https://rclone.org/commands/rclone_sync/)command instead.
 
-This means that if anything goes wrong it should not delete files from Google Drive, but it is not a long term solution as I will run out of space there. I may switch this to sync later on, but I'll be looking at other maintenance & observability options in a follow up post. 
+This means that if anything goes wrong it should not delete files from Google Drive, but it is not a long term solution as I will run out of space there. I may switch this to sync later on, but I'll be looking at other maintenance & observability options in a follow up post.
 
-Once it was configured, I have another cron job that periodically runs the following command to copy all the created backup files to a location in Google Drive. 
+Once it was configured, I have another cron job that periodically runs the following command to copy all the created backup files to a location in Google Drive.
 
 ```
 docker run --rm -it \
@@ -180,7 +180,7 @@ docker run --rm -it \
   copy /data/adminpi gdrive:adminpi-backup
 ```
 
-[actual]: https://actualbudget.org "Actual - Actual Budget Documentation" 
+[actual]: https://actualbudget.org "Actual - Actual Budget Documentation"
 [pihole]: https://pi-hole.net "Pi-hole – Network-wide Ad Blocking"
 [traefik]: https://traefik.io/traefik/ "Traefik, The Cloud Native Application Proxy - Traefik Labs"
 [unifi-controller]: https://github.com/jacobalberty/unifi-docker "jacobalberty/unifi-docker: Unifi Docker files"
