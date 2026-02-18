@@ -4,6 +4,8 @@ summary: |
   I love that there is now a way to do Configuration as Code for Jenkins, but I hit a number of issues with escaping while trying to import Jobs. Come see what I tried and what did (and did not) work.
 
   This includes Ansible, but most of the problems encountered are related to Jenkins processing.
+series: Jenkins Configuration-as-Code
+series_part: 1
 date: 2026-01-31 11:17
 slug: jenkins-configuration-as-code-and-job-definition-featuring-ansible
 tags:
