@@ -6,7 +6,7 @@ summary: |
   Continuing on from my last post about Configuration as Code in Jenkins, this goes in to a bit more detail on how I've configured ephemeral docker-based Jenkins agents (and the container it runs for my transcoding workflow).
 tags:
 - jenkins
-- docker
+- Docker
 - transcode-video
 date: 2026-02-18 21:52
 slug: video-transcode-container-and-jenkins-docker-agents

@@ -1,0 +1,20 @@
+{% if page.series %}
+  {% assign series_posts = site.posts | where: "series", page.series | sort: "series_part" %}
+  <section class="series-box my-4 p-3">
+    <p class="mb-2">
+      <strong>Series:</strong> {{ page.series }}
+      {% if page.series_part %}<span class="text-muted">Part {{ page.series_part }}</span>{% endif %}
+    </p>
+    <ol class="mb-0">
+      {% for series_post in series_posts %}
+        <li>
+          {% if series_post.url == page.url %}
+            <span class="fw-semibold">{{ series_post.title }}</span>
+          {% else %}
+            <a href="{{ series_post.url | relative_url }}">{{ series_post.title }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+{% endif %}

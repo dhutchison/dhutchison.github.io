@@ -1,0 +1,42 @@
+---
+---
+
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+.series-box {
+  border: 1px solid var(--card-border-color);
+  border-radius: 0.75rem;
+  background-color: var(--card-bg);
+}
+
+.external-link-icon,
+.external-post-link {
+  color: var(--link-color);
+}
+
+.permalink-note {
+  font-size: 0.9rem;
+}
+
+.permalink-link {
+  color: var(--link-color);
+}
+
+.not-found-legacy {
+  text-align: center;
+}
+
+.not-found-legacy img {
+  max-width: min(100%, 420px);
+  height: auto;
+}
+
+.highlight > code {
+  display: block;
+  padding: 0 1rem;
+  white-space: pre;
+}

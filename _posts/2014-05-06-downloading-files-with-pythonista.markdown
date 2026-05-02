@@ -5,8 +5,9 @@ category: Development
 tags:
 - python
 - pythonista
-image: /images/pythonista_ipad-t.jpg
-header_image: "![Pythonista Logo](/images/pythonista_ipad-p.png \"Pythonista Icon\")"
+image:
+  path: /images/pythonista_ipad-p.png
+  alt: Pythonista Icon
 date: 2014-05-06 21:49
 slug: downloading-files-with-pythonista
 comments: true
@@ -16,7 +17,7 @@ I have been trying to broaden the programming languages that I am familiar with 
 
 The first script I want to share solves a little problem I have. While browsing the internet during the day on my iPhone, when I am away from my main computer, there will be files that I want to download later. Up to now the process has been to add a reminder with the link to come back to it later.
 
-Now I can use Pythonista to download the file and upload it to my Dropbox folder. Later on, when I am at home, this will sync to my desktop and Hazel can process it appropriately. 
+Now I can use Pythonista to download the file and upload it to my Dropbox folder. Later on, when I am at home, this will sync to my desktop and Hazel can process it appropriately.
 
 <!--more-->
 
@@ -35,13 +36,13 @@ If you are looking for a complete review of the application, this is not the pla
 In order to use the Dropbox API you will require your own developer account. You will need to [create an app][dropbox_create_app] and plug in your own `APP_KEY` and `APP_SECRET` values into the script below. I set up my script to use a seperate application directory, but you can choose to use the root of your Dropbox by changing the `ACCESS_TYPE` variable.
 
     #### App folder
-    
+
     A dedicated folder named after your app is created within the Apps folder of a user's Dropbox. Your app gets read and write access to this folder only and users can provide content to your app by moving files into this folder. Your app can also read and write datastores using the Datastore API.
-    
+
     #### Full Dropbox
-    
+
     You get full access to all the files and folders in a user's Dropbox, as well as permission to read and write datastores using the Datastore API.
-    
+
     Your app should use the least privileged permission it can. When applying for production, we'll review that your app doesn't request an unnecessarily broad permission.
 
 ## The Script
@@ -75,31 +76,31 @@ ACCESS_TYPE = 'app_folder'
 PYTHONISTA_DOC_DIR = os.path.expanduser('~/Documents')
 SYNC_STATE_FOLDER = os.path.join(PYTHONISTA_DOC_DIR, 'dropbox_sync')
 TOKEN_FILEPATH = os.path.join(SYNC_STATE_FOLDER, TOKEN_FILENAME)
- 
+
 def transfer_file(a_url):
 
     # Configure Dropbox
     sess = dropbox.session.DropboxSession(APP_KEY, APP_SECRET, ACCESS_TYPE)
     configure_token(sess)
     client = dropbox.client.DropboxClient(sess)
-    
-    print "Attempting to download %s" % a_url
-    
-    file_name = a_url.split('/')[-1]
-    file_name = urllib.unquote(file_name).decode('utf8') 
 
-    
+    print "Attempting to download %s" % a_url
+
+    file_name = a_url.split('/')[-1]
+    file_name = urllib.unquote(file_name).decode('utf8')
+
+
     if not os.path.exists(DOWNLOAD_FOLDER):
         os.makedirs(DOWNLOAD_FOLDER)
-        
+
     download_file = os.path.join(DOWNLOAD_FOLDER, file_name)
-    
+
     u = urllib2.urlopen(a_url)
     f = open(download_file, 'wb')
     meta = u.info()
     file_size = int(meta.getheaders("Content-Length")[0])
     print "Downloading: %s Bytes: %s" % (file_name, file_size)
-    
+
     file_size_dl = 0
     block_sz = 8192
     while True:
@@ -112,25 +113,25 @@ def transfer_file(a_url):
         status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
         status = status + chr(8)*(len(status)+1)
         print status,
-        
+
     f.close()
-    
+
     print "Uploading to dropbox"
     upload(download_file, client)
-    
+
     # Delete the local file
     os.remove(download_file)
-    
+
     print "DONE !"
 
 def upload(file, client):
     print "Trying to upload %s" % file
 
     response = client.put_file(file, open(file, 'r'), True)
-    
+
     print "File %s uploaded to Dropbox" % file
-    
- 
+
+
 def configure_token(dropbox_session):
     if os.path.exists(TOKEN_FILEPATH):
         token_file = open(TOKEN_FILEPATH)
@@ -144,7 +145,7 @@ def configure_token(dropbox_session):
 def setup_new_auth_token(sess):
     request_token = sess.obtain_request_token()
     url = sess.build_authorize_url(request_token)
-    
+
     # Make the user sign in and authorize this token
     print "url:", url
     print "Please visit this website and press the 'Allow' button, then hit 'Enter' here."
@@ -174,7 +175,7 @@ def main():
 
     console.clear()
     transfer_file(the_url)
- 
+
 if __name__ == '__main__':
     main()
 
@@ -182,7 +183,7 @@ if __name__ == '__main__':
 
 This script is also available as a [gist][filedownloader_gist].
 
-I would appriciate any feedback, as my coding experience these days is mostly Java and there may be a better way to do this in Python that I have missed. 
+I would appriciate any feedback, as my coding experience these days is mostly Java and there may be a better way to do this in Python that I have missed.
 
 ## Next?
 After my last few Python projects are complete, I think the next language I want to try my hand at will be JavaScript. I did my final year project at University in JavaScript and have barely touched it since. I have a handful of projects in mind that shouldn't be too difficult to achieve, but will still give me a good understanding of the language.

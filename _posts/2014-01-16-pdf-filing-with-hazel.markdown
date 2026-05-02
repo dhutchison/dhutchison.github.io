@@ -17,8 +17,9 @@ tags:
 - Hazel
 layout: post
 title: PDF Filing With Hazel
-header_image: "![Hazel Logo](/images/hazel_pdftotext/hazel-icon.png \"Hazel Logo\")"
-image: /images/hazel_pdftotext/hazel-icon.png
+image:
+  path: /images/hazel_pdftotext/hazel-icon.png
+  alt: Hazel Logo
 description: How I got Hazel filing my bank statements
 date: 2014-01-16 23:05
 lastmod: 2014-02-26 22:13:13
@@ -52,7 +53,7 @@ pdftotext thestatement.pdf - | perl -ne '/([0-9]{2})[a-z]{2} ([A-Z]{1}[a-z]*) ([
  So to break what this does down:
 
  1. Extract the text of the PDF file using ```pdftotext```. The "-" at the end signifies that the output should be to stdout instead of a file. This information is not in the help for the command!
- 2. Using Perl, print out the groups in the regex match for the day, month and year parts. A new line is added to aid filtering later. 
+ 2. Using Perl, print out the groups in the regex match for the day, month and year parts. A new line is added to aid filtering later.
  3. Use ```head``` to restrict to the first matching row.
 
 At this point we can use this bash script in a very similar Applescript as the original article:
@@ -92,7 +93,7 @@ end if
 return {hazelExportTokens:{stmtMonth:stmtMonth, stmtYear:word 3 of dateString, stmtDay:word 1 of dateString}}
 ~~~
 
-This did not work without specifying the full path to the ```pdftotext``` command, it just resulted in the error that there was no word 2 in the (empty) date string. I had hoped to do the month mapping in Perl but the solutions I came across using Hashes just resulted in similar logic, just squeezed into a single line. While verbose this is readable. 
+This did not work without specifying the full path to the ```pdftotext``` command, it just resulted in the error that there was no word 2 in the (empty) date string. I had hoped to do the month mapping in Perl but the solutions I came across using Hashes just resulted in similar logic, just squeezed into a single line. While verbose this is readable.
 
 The values that are returned from this script can be used later when setting the new filename by defining the names of these tokens in Hazel.
 
