@@ -100,7 +100,7 @@ jekyll-archives:
 feed:
   path: atom.xml
 
-avatar: /images/self_square.jpg
+avatar: /images/self_small.jpg
 
 analytics:
   google:
