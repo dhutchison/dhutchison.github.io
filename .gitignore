@@ -36,3 +36,4 @@ _data/dev.yaml
 .vscode/tasks.json
 
 .sass-cache
+.jekyll-cache
