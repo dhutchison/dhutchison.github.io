@@ -121,6 +121,7 @@ exclude:
   - node_modules
   - assets/less
   - _pre-theme
+  - scripts
   - vendor
   - README.md
   - LICENSE
