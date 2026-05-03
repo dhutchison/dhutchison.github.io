@@ -44,13 +44,8 @@ layout: default
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
 {% for post in posts %}
-    {% if post.link %}
-      {% assign preview_href = post.link %}
-    {% else %}
-      {% assign preview_href = post.url | relative_url %}
-    {% endif %}
     <article class="card-wrapper card">
-      <a href="{{ preview_href }}" class="post-preview row g-0 flex-md-row-reverse"{% if post.link %} target="_blank" rel="noopener noreferrer"{% endif %}>
+      <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
         {% assign card_body_col = '12' %}
 
         {% if post.image %}
@@ -129,11 +124,6 @@ layout: default
               {% endif %}
             </div>
 
-            {% if post.link %}
-              <div class="mt-2 permalink-note">
-                <a href="{{ post.url | relative_url }}" class="permalink-link">View local post page</a>
-              </div>
-            {% endif %}
           </div>
         </div>
       </a>
