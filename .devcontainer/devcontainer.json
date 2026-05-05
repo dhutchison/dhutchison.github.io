@@ -6,6 +6,9 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
+	"runArgs": [
+		"--security-opt=seccomp=.devcontainer/seccomp-userns.json"
+	],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {},
