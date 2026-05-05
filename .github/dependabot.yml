@@ -10,3 +10,8 @@ updates:
     schedule:
       # Check for updates to GitHub Actions every week
       interval: "weekly"
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      # Check for updates to Jekyll and theme gems every week
+      interval: "weekly"

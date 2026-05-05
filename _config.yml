@@ -97,9 +97,6 @@ jekyll-archives:
     tag: /archives/tags/:name/
     category: /archives/categories/:name/
 
-feed:
-  path: atom.xml
-
 avatar: /images/self_small.jpg
 
 analytics:

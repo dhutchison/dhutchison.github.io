@@ -33,8 +33,6 @@ _data/dev.yaml
 
 .settings/tasks.json
 
-.vscode/tasks.json
-
 .sass-cache
 .jekyll-cache
 __pycache__

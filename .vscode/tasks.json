@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Jekyll: Serve",
+      "type": "shell",
+      "command": "bundle exec jekyll serve --livereload",
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Jekyll: Build",
+      "type": "shell",
+      "command": "bundle exec jekyll build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Posts: Publish Draft",
+      "type": "shell",
+      "command": "python3 scripts/publish_draft.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Posts: Validate Front Matter",
+      "type": "shell",
+      "command": "find _posts _drafts -type f \\( -name '*.markdown' -o -name '*.md' \\) -print0 2>/dev/null | xargs -0 python3 scripts/validate_front_matter.py",
+      "problemMatcher": []
+    }
+  ]
+}
