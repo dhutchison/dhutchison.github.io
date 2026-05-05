@@ -6,8 +6,9 @@ category: Development
 tags:
 - python
 - pythonista
-image: /images/pythonista_ipad-t.jpg
-header_image: '![Pythonista Logo](/images/pythonista_ipad-p.png "Pythonista Icon")'
+image:
+  path: /images/pythonista_ipad-p.png
+  alt: Pythonista Icon
 date: 2014-05-11 21:19
 series: Pythonista Dropbox Sync
 series_part: 1

@@ -1,54 +1,128 @@
-name: Dev With Imagination
-description: I like to develop things. This is a dumping ground of random thoughts.
-url: http://www.devwithimagination.com
+lang: en-GB
+timezone: Europe/London
 
-jobtitle: Software Development Lead
-location: Scotland
-email: david@devwithimagination.com
-author: david
-twitter: 
+title: David Hutchison
+tagline: Building, tinkering, and documenting the useful bits along the way.
+description: >-
+  A personal blog by David Hutchison about software, self-hosting, home
+  automation, and the occasional side quest.
+
+url: "https://www.devwithimagination.com"
+baseurl: ""
+
+github:
+  username: dhutchison
+
+twitter:
   username: DavidHutchison
+
+social:
+  name: David Hutchison
+  email: david@devwithimagination.com
+  links:
+    - https://github.com/dhutchison
+    - https://mastodon.scot/@davidhutchison
+    - https://www.linkedin.com/in/david-hutchison-dev
+    - https://about.devwithimagination.com
+
+theme: jekyll-theme-chirpy
 
 highlighter: rouge
 markdown: kramdown
-timezone: Europe/London
 permalink: /:year/:month/:day/:title/
-relative_permalinks: false
-pagination: 
-  enabled: true
-  collection: 'posts'
-  sort_reverse: true
-  per_page: 5
-plugins:
-- jekyll-redirect-from
-- jekyll-sitemap
-- jekyll-paginate-v2
-- jekyll-gist
-- jekyll-seo-tag
-- jekyll-feed
 
 kramdown:
   parse_block_html: true
+  input: GFM
+  syntax_highlighter: rouge
 
 excerpt_separator: <!--more-->
-drop_caps: false
 
-# Include these files/folders that are excluded by default
-include: [ "/.well-known" ]
-
-exclude: [node_modules, assets/less]
+collections:
+  tabs:
+    output: true
+    sort_by: order
 
 defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-      type: "posts" # previously `post` in Jekyll 2.2.
+  - scope:
+      path: ""
+      type: posts
     values:
-      layout: "post"
-      include_seo: true
-  -
-    scope:
-      path: "archives"
-      type: "pages"
+      layout: post
+      comments: false
+      toc: true
+      permalink: /:year/:month/:day/:title/
+  - scope:
+      path: ""
+      type: tabs
     values:
-      include_seo: true
+      layout: page
+      dynamic_title: true
+  - scope:
+      path: "assets/images/404"
+    values:
+      swcache: false
+  - scope:
+      path: ""
+      type: pages
+    values:
+      comments: false
+
+plugins:
+  - jekyll-archives
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: /page/:num/
+  title: ":title - page :num"
+  sort_reverse: true
+
+paginate: 5
+paginate_path: /page/:num/
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /archives/tags/:name/
+    category: /archives/categories/:name/
+
+avatar: /images/self_small.jpg
+
+analytics:
+  google:
+    id: G-ZWZMXJ0CPW
+
+comments:
+  provider: disqus
+  disqus:
+    shortname: devwithimagination
+
+toc: true
+
+include:
+  - .well-known
+
+exclude:
+  - 404.html
+  - node_modules
+  - assets/less
+  - _pre-theme
+  - scripts
+  - vendor
+  - README.md
+  - LICENSE
+  - "*.gemspec"
+
+sass:
+  style: compressed

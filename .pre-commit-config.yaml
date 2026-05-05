@@ -1,8 +1,23 @@
 repos:
   -   repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v4.6.0
+      rev: v6.0.0
       hooks:
       -   id: trailing-whitespace
       -   id: end-of-file-fixer
       -   id: check-yaml
+      -   id: check-merge-conflict
+      -   id: mixed-line-ending
       -   id: check-added-large-files
+  -   repo: local
+      hooks:
+      -   id: validate-front-matter
+          name: Validate post and draft front matter
+          entry: python3 scripts/validate_front_matter.py
+          language: system
+          files: ^(_posts|_drafts)/.*\.(md|markdown)$
+      -   id: jekyll-build
+          name: Jekyll build
+          entry: bundle exec jekyll build
+          language: system
+          pass_filenames: false
+          files: ^(_config\.yml|_data/|_drafts/|_includes/|_layouts/|_posts/|_tabs/|assets/|index\.html|404\.html|CNAME|thanks\.md)
