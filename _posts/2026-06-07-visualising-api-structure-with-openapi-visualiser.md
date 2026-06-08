@@ -1,12 +1,12 @@
 ---
-title: OpenAPI Visualiser modernisation
+title: Visualising API Structure with OpenAPI Visualiser
 categories:
     - Projects
 tags:
     - OpenAPI
 summary: My OpenAPI Visualiser project has had a modernisation update and reached 1.x. What is it, and what is new?
 date: "2026-06-07 00:00"
-slug: openapi-visualiser-modernisation
+slug: visualising-api-structure-with-openapi-visualiser
 image:
     path: /images/openapi-visualiser/openapi-visualiser-modernisation-hero.png
     alt: OpenAPI Visualiser branching path logo on a decorated technical background
